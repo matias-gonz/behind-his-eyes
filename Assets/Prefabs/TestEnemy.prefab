@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3810293127780206277}
   - component: {fileID: 2344586426578614142}
+  - component: {fileID: -7820625848759640182}
   - component: {fileID: 8413536987410357331}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: TestEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +47,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ea68509464742e2afb020a4732b39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0
+--- !u!114 &-7820625848759640182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439955528887200592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04edbba8247934e4a9af52d7bc3ee5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  _fov: 120
 --- !u!54 &8413536987410357331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -242,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 9221330165279252769}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.92, z: 0}
+  m_LocalPosition: {x: 0.55, y: -4.92, z: 0.5}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
