@@ -9,14 +9,14 @@ public class PatrollingScript : MonoBehaviour
         public Vector3 Position;
         public float WaitTime;
     }
-    
+
     public EnemyControllerScript enemyControllerScript;
     public bool isPatrolling = true;
 
     private List<PathPoint> PathPoints = new List<PathPoint>();
     private int _currentPointIndex = 0;
     private bool _isWaiting = false;
-    
+
 
     void Start()
     {
@@ -47,7 +47,7 @@ public class PatrollingScript : MonoBehaviour
             enemyControllerScript.MoveTo(PathPoints[_currentPointIndex].Position);
         }
     }
-    
+
     private IEnumerator Wait(float waitTime)
     {
         _isWaiting = true;
