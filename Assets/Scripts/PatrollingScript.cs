@@ -10,11 +10,13 @@ public class PatrollingScript : MonoBehaviour
         public float WaitTime;
     }
     
+    public EnemyControllerScript enemyControllerScript;
     public bool isPatrolling = true;
 
     private List<PathPoint> PathPoints = new List<PathPoint>();
     private int _currentPointIndex = 0;
     private bool _isWaiting = false;
+    
 
     void Start()
     {
@@ -32,15 +34,17 @@ public class PatrollingScript : MonoBehaviour
             return;
         }
 
-
-        if (Vector3.Distance(transform.position, PathPoints[_currentPointIndex].Position) < 0.1f)
+        Vector3 position = transform.position;
+        position.y = 0;
+        if (Vector3.Distance(position, PathPoints[_currentPointIndex].Position) < 0.1f)
         {
-            StartCoroutine(Wait(PathPoints[_currentPointIndex].WaitTime));
+            enemyControllerScript.Stop();
             _currentPointIndex = (_currentPointIndex + 1) % PathPoints.Count;
+            StartCoroutine(Wait(PathPoints[_currentPointIndex].WaitTime));
         }
         else
         {
-            // MoveTo(PathPoints[_currentPointIndex].Position);
+            enemyControllerScript.MoveTo(PathPoints[_currentPointIndex].Position);
         }
     }
     
