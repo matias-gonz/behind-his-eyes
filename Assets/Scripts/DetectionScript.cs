@@ -7,7 +7,7 @@ public class DetectionScript : MonoBehaviour
 {
     public GameObject target;
     public float _fov = 120f;
-    
+
     void Update()
     {
         if (!target)

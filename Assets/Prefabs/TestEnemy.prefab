@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3810293127780206277}
   - component: {fileID: 2344586426578614142}
   - component: {fileID: -7820625848759640182}
+  - component: {fileID: -5608412156029585224}
   - component: {fileID: 8413536987410357331}
   m_Layer: 0
   m_Name: TestEnemy
@@ -62,6 +63,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   _fov: 120
+--- !u!114 &-5608412156029585224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439955528887200592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5a6dcb08a664cb696c0a7f835d039e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPatrolling: 1
 --- !u!54 &8413536987410357331
 Rigidbody:
   m_ObjectHideFlags: 0
