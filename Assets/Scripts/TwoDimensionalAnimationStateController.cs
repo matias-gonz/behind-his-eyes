@@ -7,6 +7,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 {
 
     Animator animator;
+    public Transform Door;  
     float velocityX = 0.0f;
     float velocityZ = 0.0f;
     public float acceleration = 1.0f;
@@ -173,8 +174,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX);
+        isOpenDoor();
 
-        
+
     }
 
     void handleMovement()
@@ -190,5 +192,16 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     void OnDisable()
     {
         input.CharacterControls.Disable();
+    }
+    private void isOpenDoor()
+    {
+        if (transform.Find("Canvas/Image").gameObject.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                DoorController.isOpen = !DoorController.isOpen;
+                Door.GetComponent<Animator>().SetBool("Open", DoorController.isOpen);
+            }
+        }
     }
 }
