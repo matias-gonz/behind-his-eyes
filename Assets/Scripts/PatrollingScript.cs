@@ -21,10 +21,10 @@ public class PatrollingScript : MonoBehaviour
     void Start()
     {
         // TODO: Read path points from a file
-        PathPoints.Add(new PathPoint { Position = new Vector3(0, 0, 0), WaitTime = 1 });
-        PathPoints.Add(new PathPoint { Position = new Vector3(0, 0, 10), WaitTime = 1 });
-        PathPoints.Add(new PathPoint { Position = new Vector3(10, 0, 10), WaitTime = 1 });
-        PathPoints.Add(new PathPoint { Position = new Vector3(10, 0, 0), WaitTime = 1 });
+        PathPoints.Add(new PathPoint { Position = new Vector3(20, 0, 30), WaitTime = 1 });
+        PathPoints.Add(new PathPoint { Position = new Vector3(20, 0, 40), WaitTime = 1 });
+        PathPoints.Add(new PathPoint { Position = new Vector3(30, 0, 40), WaitTime = 1 });
+        PathPoints.Add(new PathPoint { Position = new Vector3(30, 0, 30), WaitTime = 1 });
     }
 
     void Update()

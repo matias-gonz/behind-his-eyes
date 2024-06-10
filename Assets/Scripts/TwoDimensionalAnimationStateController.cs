@@ -44,8 +44,6 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         VelocityZHash = Animator.StringToHash("Velocity Z");
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
-        
-        Debug.Log(animator);
     }
 
 

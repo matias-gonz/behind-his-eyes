@@ -12,6 +12,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
     //float turnSpeed = 90f; // degrees per second
+    public float speedMultiplier = 3f;
     public float jumpSpeed = 4f;
     public float gravity = 9.8f;
     private float vSpeed = 0f; // current vertical velocity
@@ -37,7 +38,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         // make sure character moves in direction of target angle
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction; //Vector3.forward;
-        controller.Move(moveDir * 2 * Time.deltaTime);
+        controller.Move(moveDir * speedMultiplier * Time.deltaTime);
 
         if (controller.isGrounded)
         {
