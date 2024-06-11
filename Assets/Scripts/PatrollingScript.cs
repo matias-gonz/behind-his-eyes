@@ -6,6 +6,7 @@ using utils;
 public class PatrollingScript : MonoBehaviour
 {
     public EnemyControllerScript enemyControllerScript;
+    public string pathName;
     public bool isPatrolling = true;
 
     private List<PathPoint> _pathPoints = new List<PathPoint>();
@@ -15,7 +16,7 @@ public class PatrollingScript : MonoBehaviour
 
     void Start()
     {
-        _pathPoints = PathPointsReader.ReadPathPoints("path1");
+        _pathPoints = PathPointsReader.ReadPathPoints(pathName);
     }
 
     void Update()
