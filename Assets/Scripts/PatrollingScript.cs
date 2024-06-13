@@ -41,16 +41,16 @@ public class PatrollingScript : MonoBehaviour
         {
             hasReachedCurrentGoal = true;
             enemyControllerScript.Stop();
-            Wait(15f);
+            Wait(1f);
             _currentPointIndex = (_currentPointIndex + 1) % PathPoints.Count;
             StartCoroutine(Wait(PathPoints[_currentPointIndex].WaitTime));
         }
         else if (hasReachedCurrentGoal == true)
         {
-            Debug.Log("Patroling scriptMoveTo");
+            Debug.Log("Patroling script MoveTo new Goal");
             hasReachedCurrentGoal = false;
         
-            enemyControllerScript.MoveTo(PathPoints[_currentPointIndex].Position);
+            enemyControllerScript.MoveTo(PathPoints[_currentPointIndex].Position, true);
         }
     }
 

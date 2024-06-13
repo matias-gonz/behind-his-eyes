@@ -11,6 +11,8 @@ public class EnemyControllerScript : MonoBehaviour
     public float animationMaxSpeed = 2f;
     float animationSpeed = 0f;
     float currentSpeed; //formerly speed
+    float currentMaxSpeed;
+    float acceleration = 2f;
     
 
     private Rigidbody _rigidbody;
@@ -25,10 +27,10 @@ public class EnemyControllerScript : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();  
-        VelocityXHash = Animator.StringToHash("Velocity X");
-        VelocityZHash = Animator.StringToHash("Velocity Z");
         currentSpeed = walkingSpeed; //for testing purposes
         runningSpeed = 4 * walkingSpeed;
+        VelocityXHash = Animator.StringToHash("Velocity X");
+        VelocityZHash = Animator.StringToHash("Velocity Z");
      
     }
 
@@ -43,14 +45,21 @@ public class EnemyControllerScript : MonoBehaviour
         float angle = Mathf.SmoothDampAngle(this.transform.eulerAngles.y, targetAngle, ref _angularVelocity,
             _turnSmoothTime);
         Vector3 currentPosition = transform.position;
+        //adjust speed when starting to move or getting close to the goal position
         float distanceFromGoal = Vector3.Distance(currentPosition, currentTargetPosition);
         if (distanceFromGoal*4 < currentSpeed )
         {
             currentSpeed = distanceFromGoal*4;
+        } else if (currentSpeed < currentMaxSpeed)
+        {
+            currentSpeed += acceleration * Time.fixedDeltaTime;
+        } else if (currentSpeed > currentMaxSpeed)
+        {
+            currentSpeed = currentMaxSpeed;
         }
         Vector3 intermediatePosition = currentPosition + _direction * (currentSpeed * Time.fixedDeltaTime);
         //deltaMove stores actually traversed distance
-        float deltaMove = Vector3.Distance(intermediatePosition, currentPosition);
+        //float deltaMove = Vector3.Distance(intermediatePosition, currentPosition);
         _rigidbody.MovePosition(intermediatePosition);
         transform.rotation = Quaternion.Euler(0, angle, 0);
         // maps  to animation max speed boundaries
@@ -58,11 +67,11 @@ public class EnemyControllerScript : MonoBehaviour
         animator.SetFloat(VelocityZHash, animationSpeed);
     }
 
-    public void MoveTo(Vector3 position)
+    public void MoveTo(Vector3 position, bool isRunning)
     {
         Debug.Log("Guard: New Target to MoveTo");
         currentTargetPosition = position;
-        currentSpeed = walkingSpeed;
+        currentMaxSpeed = isRunning ? runningSpeed : walkingSpeed;
         Vector3 direction = (position - transform.position).normalized;
         Move(direction);
     }
