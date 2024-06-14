@@ -31,7 +31,6 @@ public class EnemyControllerScript : MonoBehaviour
         runningSpeed = 4 * walkingSpeed;
         VelocityXHash = Animator.StringToHash("Velocity X");
         VelocityZHash = Animator.StringToHash("Velocity Z");
-     
     }
 
     private void FixedUpdate()
