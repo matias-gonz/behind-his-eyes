@@ -29,7 +29,7 @@ public class PatrollingScript : MonoBehaviour
 
         Vector3 position = transform.position;
         position.y = 0;
-        if (hasReachedCurrentGoal == false && Vector3.Distance(position, _pathPoints[_currentPointIndex].Position) < 0.02f)
+        if (!hasReachedCurrentGoal && Vector3.Distance(position, _pathPoints[_currentPointIndex].Position) < 0.02f)
         {
             hasReachedCurrentGoal = true;
             enemyControllerScript.Stop();
