@@ -14,9 +14,10 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float maximumWalkVelocity = 0.5f;
     public float maximumRunVelocity = 2.0f;
     public float maximumBackwardsVelocity = 0.25f;
+    bool fallDownBackwards; //character stumbles when player tries to run backwards
     int VelocityXHash;
     int VelocityZHash;
-
+    int fallDownBackwardsHash;
     int isWalkingHash;
     int isRunningHash;
 
@@ -45,6 +46,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         animator = GetComponent<Animator>();
         VelocityXHash = Animator.StringToHash("Velocity X");
         VelocityZHash = Animator.StringToHash("Velocity Z");
+        fallDownBackwardsHash = Animator.StringToHash("fallDownBackwards");
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
     }
@@ -91,6 +93,13 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         if ( !rightPressed && velocityX > 0.0f)
         {
             velocityX-= Time.deltaTime * deceleration;
+        }
+        // accelerate backward, but only to walking speed
+        if (backwardPressed && runPressed)
+        {
+            velocityZ = 0f;
+            velocityX = 0f;
+            fallDownBackwards = true;
         }
     }
 
@@ -190,8 +199,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         lockOrResetVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         
         animator.SetFloat(VelocityZHash, velocityZ);
-        animator.SetFloat(VelocityXHash, velocityX);  
-        Debug.Log(velocityZ);    
+        animator.SetFloat(VelocityXHash, velocityX); 
+        animator.SetBool(fallDownBackwardsHash, fallDownBackwards); 
+        
     }
 
     // Toggle character controls action map
