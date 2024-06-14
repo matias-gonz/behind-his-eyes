@@ -36,7 +36,7 @@ public class PatrollingScript : MonoBehaviour
             _currentPointIndex = (_currentPointIndex + 1) % _pathPoints.Count;
             StartCoroutine(Wait(_pathPoints[_currentPointIndex].WaitTime));
         }
-        else if (hasReachedCurrentGoal == true)
+        else if (hasReachedCurrentGoal)
         {
             Debug.Log("Patroling script MoveTo new Goal");
             hasReachedCurrentGoal = false;
