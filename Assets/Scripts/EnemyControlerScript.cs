@@ -80,7 +80,6 @@ public class EnemyControllerScript : MonoBehaviour
     {
         currentSpeed = 0f;
         currentTargetPosition = transform.position;
-        //Move(Vector3.zero);
     }
 
     private void Move(Vector3 direction)
