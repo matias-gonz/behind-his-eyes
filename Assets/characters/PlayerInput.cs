@@ -71,6 +71,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MovementBackward"",
+                    ""type"": ""Button"",
+                    ""id"": ""d9e641eb-bbaa-4853-94a3-29ec61c3b823"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -128,6 +137,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e8ea674-3f75-4c80-889a-d48ed6e24aac"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementBackward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -141,6 +161,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_CharacterControls_MovementLeft = m_CharacterControls.FindAction("MovementLeft", throwIfNotFound: true);
         m_CharacterControls_MovementRight = m_CharacterControls.FindAction("MovementRight", throwIfNotFound: true);
         m_CharacterControls_Jump = m_CharacterControls.FindAction("Jump", throwIfNotFound: true);
+        m_CharacterControls_MovementBackward = m_CharacterControls.FindAction("MovementBackward", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +228,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_MovementLeft;
     private readonly InputAction m_CharacterControls_MovementRight;
     private readonly InputAction m_CharacterControls_Jump;
+    private readonly InputAction m_CharacterControls_MovementBackward;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -216,6 +238,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @MovementLeft => m_Wrapper.m_CharacterControls_MovementLeft;
         public InputAction @MovementRight => m_Wrapper.m_CharacterControls_MovementRight;
         public InputAction @Jump => m_Wrapper.m_CharacterControls_Jump;
+        public InputAction @MovementBackward => m_Wrapper.m_CharacterControls_MovementBackward;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -240,6 +263,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @MovementBackward.started += instance.OnMovementBackward;
+            @MovementBackward.performed += instance.OnMovementBackward;
+            @MovementBackward.canceled += instance.OnMovementBackward;
         }
 
         private void UnregisterCallbacks(ICharacterControlsActions instance)
@@ -259,6 +285,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @MovementBackward.started -= instance.OnMovementBackward;
+            @MovementBackward.performed -= instance.OnMovementBackward;
+            @MovementBackward.canceled -= instance.OnMovementBackward;
         }
 
         public void RemoveCallbacks(ICharacterControlsActions instance)
@@ -283,5 +312,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMovementLeft(InputAction.CallbackContext context);
         void OnMovementRight(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnMovementBackward(InputAction.CallbackContext context);
     }
 }

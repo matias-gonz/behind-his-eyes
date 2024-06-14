@@ -23,6 +23,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
     //variables to store player input
     bool forwardPressed;
+    bool backwardPressed;
     bool runPressed;
     bool leftPressed;
     bool rightPressed;
@@ -32,6 +33,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         input = new PlayerInput();
         input.CharacterControls.Run.performed += ctx => runPressed = ctx.ReadValueAsButton();
         input.CharacterControls.MovementForward.performed += ctx => forwardPressed = ctx.ReadValueAsButton();
+        input.CharacterControls.MovementBackward.performed += ctx => backwardPressed = ctx.ReadValueAsButton();
         input.CharacterControls.MovementLeft.performed += ctx => leftPressed = ctx.ReadValueAsButton();
         input.CharacterControls.MovementRight.performed += ctx => rightPressed = ctx.ReadValueAsButton();
         
@@ -47,12 +49,17 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     }
 
 
-    void changeVelocity(bool forwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
+    void changeVelocity(bool forwardPressed,  bool backwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
     {
         // accelerate forward
         if (forwardPressed && velocityZ < currentMaxVelocity)
         {
             velocityZ+= Time.deltaTime * acceleration;
+        }
+        // accelerate backward, but only to walking speed
+        if (backwardPressed && velocityZ > -maximumWalkVelocity)
+        {
+            velocityZ-= Time.deltaTime * acceleration;
         }
          //accelerate into left strafe
         if (leftPressed && velocityX > -currentMaxVelocity)
@@ -64,10 +71,15 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         {
             velocityX+= Time.deltaTime * acceleration;
         }
-        //decelerate up to halt 
+        //decelerate up to halt from forward
         if (!forwardPressed && velocityZ > 0.0f)
         {
             velocityZ-= Time.deltaTime * deceleration;
+        }
+        //decelerate up to halt from forwabackward
+        if (!backwardPressed && velocityZ < 0.0f)
+        {
+            velocityZ+= Time.deltaTime * deceleration;
         }
          //decelerate from left strafe
         if (!leftPressed &&  velocityX < 0.0f)
@@ -81,10 +93,10 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
     }
 
-    void lockOrResetVelocity(bool forwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
+    void lockOrResetVelocity(bool forwardPressed, bool backwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
     {
         //reset velocityZ
-        if (!forwardPressed && velocityZ < 0.0f)
+        if (!forwardPressed && !backwardPressed && (velocityZ > -0.05f && velocityZ < 0.05f))
         {
             velocityZ = 0.0f;
         }
@@ -113,6 +125,18 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         {
             velocityZ = currentMaxVelocity;
         }
+
+        //lock backward to walk speed
+        if (backwardPressed && velocityZ < -maximumWalkVelocity)
+        {
+            velocityZ = -maximumWalkVelocity;
+        }
+        // round to maximumWalkVelocity if within offset
+        else if (backwardPressed && velocityZ > -maximumWalkVelocity && velocityZ < (maximumWalkVelocity + 0.05f))
+        {
+            velocityZ = maximumWalkVelocity;
+        }
+
         //locking left
         if (leftPressed && runPressed && velocityX < -currentMaxVelocity)
         {
@@ -161,8 +185,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         
         float currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
 
-        changeVelocity(forwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
-        lockOrResetVelocity(forwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
+        changeVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
+        lockOrResetVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX);       
