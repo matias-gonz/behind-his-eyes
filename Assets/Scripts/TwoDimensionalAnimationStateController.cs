@@ -13,6 +13,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float deceleration = 1.0f;
     public float maximumWalkVelocity = 0.5f;
     public float maximumRunVelocity = 2.0f;
+    public float maximumBackwardsVelocity = 0.25f;
     int VelocityXHash;
     int VelocityZHash;
 
@@ -49,7 +50,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     }
 
 
-    void changeVelocity(bool forwardPressed,  bool backwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
+    void changeVelocity(bool forwardPressed, bool backwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
     {
         // accelerate forward
         if (forwardPressed && velocityZ < currentMaxVelocity)
@@ -57,7 +58,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             velocityZ+= Time.deltaTime * acceleration;
         }
         // accelerate backward, but only to walking speed
-        if (backwardPressed && velocityZ > -maximumWalkVelocity)
+        if (backwardPressed && velocityZ > -maximumBackwardsVelocity)
         {
             velocityZ-= Time.deltaTime * acceleration;
         }
@@ -76,7 +77,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         {
             velocityZ-= Time.deltaTime * deceleration;
         }
-        //decelerate up to halt from forwabackward
+        //decelerate up to halt from backward
         if (!backwardPressed && velocityZ < 0.0f)
         {
             velocityZ+= Time.deltaTime * deceleration;
@@ -127,14 +128,14 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
 
         //lock backward to walk speed
-        if (backwardPressed && velocityZ < -maximumWalkVelocity)
+        if (backwardPressed && velocityZ < -maximumBackwardsVelocity)
         {
-            velocityZ = -maximumWalkVelocity;
+            velocityZ = -maximumBackwardsVelocity;
         }
         // round to maximumWalkVelocity if within offset
-        else if (backwardPressed && velocityZ > -maximumWalkVelocity && velocityZ < (maximumWalkVelocity + 0.05f))
+        else if (backwardPressed && velocityZ > -maximumBackwardsVelocity && velocityZ < (maximumBackwardsVelocity + 0.05f))
         {
-            velocityZ = maximumWalkVelocity;
+            velocityZ = -maximumBackwardsVelocity;
         }
 
         //locking left
@@ -189,7 +190,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         lockOrResetVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         
         animator.SetFloat(VelocityZHash, velocityZ);
-        animator.SetFloat(VelocityXHash, velocityX);       
+        animator.SetFloat(VelocityXHash, velocityX);  
+        Debug.Log(velocityZ);    
     }
 
     // Toggle character controls action map
