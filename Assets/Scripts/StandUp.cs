@@ -19,8 +19,10 @@ public class StandUp : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log(animator.GetBool("falldownBackwards"));
+        Debug.Log("stand up exit");
+        Debug.Log(animator.GetBool("fallDownBackwards"));
         animator.SetBool("fallDownBackwards", false); 
+        Debug.Log(animator.GetBool("fallDownBackwards"));
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
