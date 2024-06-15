@@ -37,10 +37,11 @@ public class EnemyControllerScript : MonoBehaviour
     private void FixedUpdate()
     {
         calculateDirection();
-        // if (_direction == Vector3.zero)
-        // {
-        //     return;
-        // }        
+        if (_direction == Vector3.zero)
+        {
+            Debug.Log("_direction is zero!!!");
+            return;
+        }        
         float targetAngle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg;
         float angle = Mathf.SmoothDampAngle(this.transform.eulerAngles.y, targetAngle, ref _angularVelocity,
             _turnSmoothTime);
@@ -72,7 +73,7 @@ public class EnemyControllerScript : MonoBehaviour
 
     public void MoveTo(Vector3 position, bool isRunning)
     {
-        Debug.Log("Guard: New Target to MoveTo");
+        //Debug.Log("Guard: New Target to MoveTo");
         currentTargetPosition = position;
         currentMaxSpeed = isRunning ? runningSpeed : walkingSpeed;
     }
