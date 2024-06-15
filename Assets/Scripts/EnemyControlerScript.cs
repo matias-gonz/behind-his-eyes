@@ -50,7 +50,6 @@ public class EnemyControllerScript : MonoBehaviour
         float distanceFromGoal = Vector3.Distance(currentPosition, currentTargetPosition);
         if (distanceFromGoal < currentSpeed )
         {
-            // currentSpeed = distanceFromGoal*4;
             currentSpeed -= acceleration * Time.fixedDeltaTime;
         } else if (currentSpeed < currentMaxSpeed)
         {
