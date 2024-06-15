@@ -79,7 +79,6 @@ public class EnemyControllerScript : MonoBehaviour
 
     public void Stop()
     {
-        // currentSpeed = 0f;
         currentTargetPosition = transform.position;
     }
 
