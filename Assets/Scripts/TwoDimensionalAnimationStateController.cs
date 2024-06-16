@@ -8,6 +8,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
     Animator animator;
     PlayerInput input;
+    private CharacterController controller;
 
     float velocityX = 0.0f;
     float velocityZ = 0.0f;
@@ -53,6 +54,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        controller = GetComponent<CharacterController>();
         VelocityXHash = Animator.StringToHash("Velocity X");
         VelocityZHash = Animator.StringToHash("Velocity Z");
         fallDownBackwardsHash = Animator.StringToHash("fallDownBackwards");
@@ -203,16 +205,19 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     // character stands up when runPressed ist held.
     void changeStance(bool runPressed, bool crouchedClicked, bool proneClicked)
     {
-        if (runPressed)
+        if (runPressed && (isCrouched || isProne))
         {
             isCrouched = false;
             isProne = false;
+            changeControllerCollider();
         } else if (proneClicked)
         {
             isProne = !isProne;
+            changeControllerCollider();
         } else if (crouchedClicked)
         {
             isCrouched = !isCrouched;
+            changeControllerCollider();
         } 
     }
 
@@ -230,6 +235,24 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
         }
         return currentMaxVelocity;
+    }
+
+    void changeControllerCollider()
+    {
+        if (isProne)
+        {
+            
+        } else if (isCrouched)
+        {
+            controller.height = 1.0f;
+            controller.radius = 0.3f; 
+            controller.center = new Vector3(0f, 0.56f, 0.2f);
+        } else {
+        controller.height = 1.72f;
+        controller.radius = 0.2f; 
+        controller.center = new Vector3(0f, 0.92f, 0f);
+        }
+       
     }
     // Update is called once per frame
     void Update()
