@@ -15,7 +15,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float deceleration = 1.0f;
     public float maximumWalkVelocity = 0.5f;
     public float maximumRunVelocity = 2.0f;
-    public float maximumBackwardsVelocity = 0.25f;
+    public float maximumCrouchVelocity = 0.5f;
+    public float maximumProneVelocity = 0.25f;
+    public float maximumBackwardsVelocity = 0.5f;
     bool isCrouched = false;
     bool isProne = false;
      
@@ -32,8 +34,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     bool runPressed;
     bool leftPressed;
     bool rightPressed;
-    bool crouchedPressed;
-    bool pronePressed;
+    bool crouchedClicked;
+    bool proneClicked;
 
     void Awake() 
     {
@@ -43,8 +45,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         input.CharacterControls.MovementBackward.performed += ctx => backwardPressed = ctx.ReadValueAsButton();
         input.CharacterControls.MovementLeft.performed += ctx => leftPressed = ctx.ReadValueAsButton();
         input.CharacterControls.MovementRight.performed += ctx => rightPressed = ctx.ReadValueAsButton();
-        input.CharacterControls.Crouch.performed += ctx => crouchedPressed = ctx.ReadValueAsButton();
-        input.CharacterControls.Prone.performed += ctx => pronePressed = ctx.ReadValueAsButton();
+        input.CharacterControls.Crouch.started += ctx => crouchedClicked = ctx.ReadValueAsButton();
+        input.CharacterControls.Prone.performed += ctx => proneClicked = ctx.ReadValueAsButton();
         
     }
     // Start is called before the first frame update
@@ -101,8 +103,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         {
             velocityX-= Time.deltaTime * deceleration;
         }
-        // accelerate backward, but only to walking speed
-        if (backwardPressed && runPressed)
+        // trying to sprint backwards while standing results in the character stumbeling
+        if (backwardPressed && runPressed && !isCrouched && !isProne)
         {
             velocityZ = 0f;
             velocityX = 0f;
@@ -196,28 +198,50 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             velocityX = currentMaxVelocity;
         }
     }
-    void changeStance(bool crouchedPressed, bool pronePressed)
+    // changes stance if there is some input that motivates such a change
+    // prone overrides crouch
+    // character stands up when runPressed ist held.
+    void changeStance(bool runPressed, bool crouchedClicked, bool proneClicked)
     {
-        if (crouchedPressed)
-        {
-            isCrouched = true;
-        } else
+        if (runPressed)
         {
             isCrouched = false;
+            isProne = false;
+        } else if (proneClicked)
+        {
+            isProne = !isProne;
+        } else if (crouchedClicked)
+        {
+            isCrouched = !isCrouched;
+        } 
+    }
+
+    float calculateCurrentMaxVelocity(bool runPressed) 
+    {
+        float currentMaxVelocity;
+        if (isProne)
+        {
+            currentMaxVelocity = maximumProneVelocity;
+        } else if (isCrouched)
+        {
+            currentMaxVelocity = maximumCrouchVelocity;
+        } else 
+        {
+            currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
         }
-
-
+        return currentMaxVelocity;
     }
     // Update is called once per frame
     void Update()
     {
                 // animator.SetBool("fallDownBackwards", false); 
-
-        float currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
+        changeStance(runPressed, crouchedClicked, proneClicked);
+        float currentMaxVelocity = calculateCurrentMaxVelocity(runPressed);
 
         changeVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         lockOrResetVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
-        changeStance(crouchedPressed, pronePressed);
+        
+        crouchedClicked = false;
 
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX); 
