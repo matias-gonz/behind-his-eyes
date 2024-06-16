@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class StandUp : StateMachineBehaviour
 {
+    // public CharacterController controller;
+    public ThirdPersonMovement myThirdPersonMovement;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        animator.SetBool("fallDownBackwards", false); 
+      
+        // Vector3 moveDir = new Vector3(0f,0f,1f);//Quaternion.Euler(0f, targetAngle, 0f) * direction; //Vector3.forward;
+        // controller.Move(moveDir);
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -17,13 +22,11 @@ public class StandUp : StateMachineBehaviour
     //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        Debug.Log("stand up exit");
-        Debug.Log(animator.GetBool("fallDownBackwards"));
-        animator.SetBool("fallDownBackwards", false); 
-        Debug.Log(animator.GetBool("fallDownBackwards"));
-    }
+    // override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    // {
+        
+    
+    // }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

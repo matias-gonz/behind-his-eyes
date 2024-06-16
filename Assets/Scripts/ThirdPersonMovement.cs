@@ -11,6 +11,7 @@ public class ThirdPersonMovement : MonoBehaviour
     float sidewardMovement;
     public CharacterController controller;
     public Transform cam;
+    bool allowPlayerInput = true;
     //float turnSpeed = 90f; // degrees per second
     public float speedMultiplier = 3f;
     public float jumpSpeed = 4f;
@@ -56,5 +57,9 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 vertMove = new Vector3(0f, vSpeed, 0f);
         controller.Move(vertMove * Time.deltaTime);
     
+    }
+    public void togglePlayerInput(bool value)
+    {
+        allowPlayerInput = value;
     }
 }

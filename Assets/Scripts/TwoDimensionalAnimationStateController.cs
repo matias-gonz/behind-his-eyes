@@ -14,7 +14,6 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float maximumWalkVelocity = 0.5f;
     public float maximumRunVelocity = 2.0f;
     public float maximumBackwardsVelocity = 0.25f;
-    bool fallDownBackwards; //character stumbles when player tries to run backwards
     int VelocityXHash;
     int VelocityZHash;
     int fallDownBackwardsHash;
@@ -99,7 +98,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         {
             velocityZ = 0f;
             velocityX = 0f;
-            fallDownBackwards = true;
+            animator.SetBool(fallDownBackwardsHash, true);
         }
     }
 
@@ -142,7 +141,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             velocityZ = -maximumBackwardsVelocity;
         }
         // round to maximumWalkVelocity if within offset
-        else if (backwardPressed && velocityZ > -maximumBackwardsVelocity && velocityZ < (maximumBackwardsVelocity + 0.05f))
+        else if (backwardPressed && velocityZ > -maximumBackwardsVelocity && velocityZ < (-maximumBackwardsVelocity + 0.05f))
         {
             velocityZ = -maximumBackwardsVelocity;
         }
@@ -192,7 +191,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+                // animator.SetBool("fallDownBackwards", false); 
+
         float currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
 
         changeVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
@@ -200,7 +200,6 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX); 
-        animator.SetBool(fallDownBackwardsHash, fallDownBackwards); 
         
     }
 
