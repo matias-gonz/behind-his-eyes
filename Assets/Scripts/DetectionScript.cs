@@ -43,5 +43,6 @@ public class DetectionScript : MonoBehaviour
         if (Physics.Raycast(rayStart, playerDirection, out hit, distance, _layerMask)) return;
 
         Debug.Log("Target in sight");
+        AudioManager.Instance.PlaySoundFx("alert");
     }
 }
