@@ -7,6 +7,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 {
 
     Animator animator;
+    PlayerInput input;
+
     float velocityX = 0.0f;
     float velocityZ = 0.0f;
     public float acceleration = 1.0f;
@@ -14,13 +16,15 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float maximumWalkVelocity = 0.5f;
     public float maximumRunVelocity = 2.0f;
     public float maximumBackwardsVelocity = 0.25f;
+    bool isCrouched = false;
+    bool isProne = false;
+     
+    // hashes
     int VelocityXHash;
     int VelocityZHash;
     int fallDownBackwardsHash;
-    int isWalkingHash;
-    int isRunningHash;
-
-    PlayerInput input;
+    int isCrouchedHash;
+    int isProneHash;
 
     //variables to store player input
     bool forwardPressed;
@@ -28,6 +32,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     bool runPressed;
     bool leftPressed;
     bool rightPressed;
+    bool crouchedPressed;
+    bool pronePressed;
 
     void Awake() 
     {
@@ -37,6 +43,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         input.CharacterControls.MovementBackward.performed += ctx => backwardPressed = ctx.ReadValueAsButton();
         input.CharacterControls.MovementLeft.performed += ctx => leftPressed = ctx.ReadValueAsButton();
         input.CharacterControls.MovementRight.performed += ctx => rightPressed = ctx.ReadValueAsButton();
+        input.CharacterControls.Crouch.performed += ctx => crouchedPressed = ctx.ReadValueAsButton();
+        input.CharacterControls.Prone.performed += ctx => pronePressed = ctx.ReadValueAsButton();
         
     }
     // Start is called before the first frame update
@@ -46,8 +54,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         VelocityXHash = Animator.StringToHash("Velocity X");
         VelocityZHash = Animator.StringToHash("Velocity Z");
         fallDownBackwardsHash = Animator.StringToHash("fallDownBackwards");
-        isWalkingHash = Animator.StringToHash("isWalking");
-        isRunningHash = Animator.StringToHash("isRunning");
+        isCrouchedHash = Animator.StringToHash("isCrouched");
+        isProneHash = Animator.StringToHash("isProne");
     }
 
 
@@ -188,6 +196,18 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             velocityX = currentMaxVelocity;
         }
     }
+    void changeStance(bool crouchedPressed, bool pronePressed)
+    {
+        if (crouchedPressed)
+        {
+            isCrouched = true;
+        } else
+        {
+            isCrouched = false;
+        }
+
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -197,9 +217,11 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
         changeVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         lockOrResetVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
-        
+        changeStance(crouchedPressed, pronePressed);
+
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX); 
+        animator.SetBool(isCrouchedHash, isCrouched);
         
     }
 
