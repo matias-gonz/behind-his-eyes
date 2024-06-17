@@ -26,6 +26,8 @@ public class ThirdPersonMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         VelocityXHash = Animator.StringToHash("Velocity X");
         VelocityZHash = Animator.StringToHash("Velocity Z");
+        // turns mouse cursor invisible and locks it in place, allowing indefinite mouse movement
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
