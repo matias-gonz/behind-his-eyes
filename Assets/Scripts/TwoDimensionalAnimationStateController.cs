@@ -241,9 +241,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     {
         if (isProne)
         {
-            controller.height = 1.0f;
-            controller.radius = 0.3f; 
-            controller.center = new Vector3(0f, 0.56f, 0.2f);
+            controller.height = 0.25f;
+            controller.radius = 0.33f; 
+            controller.center = new Vector3(0.1f, 0.39f, 0.2f);
         } else if (isCrouched)
         {
             controller.height = 1.0f;
