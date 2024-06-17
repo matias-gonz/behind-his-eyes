@@ -41,7 +41,7 @@ public class PatrollingScript : MonoBehaviour
             // Debug.Log("Patroling script MoveTo new Goal");
             hasReachedCurrentGoal = false;
 
-            enemyControllerScript.MoveTo(_pathPoints[_currentPointIndex].Position, true);
+            enemyControllerScript.MoveTo(_pathPoints[_currentPointIndex].Position, false);
         }
     }
 
