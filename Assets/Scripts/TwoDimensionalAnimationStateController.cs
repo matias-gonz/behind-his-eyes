@@ -10,8 +10,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     PlayerInput input;
     private CharacterController controller;
 
-    float velocityX = 0.0f;
-    float velocityZ = 0.0f;
+    //constants
     public float acceleration = 1.0f;
     public float deceleration = 1.0f;
     public float maximumWalkVelocity = 0.5f;
@@ -19,8 +18,12 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float maximumCrouchVelocity = 0.5f;
     public float maximumProneVelocity = 0.25f;
     public float maximumBackwardsVelocity = 0.5f;
+
+    // local variables for animation state
     bool isCrouched = false;
     bool isProne = false;
+    float velocityX = 0.0f;
+    float velocityZ = 0.0f;
      
     // hashes
     int VelocityXHash;
@@ -37,6 +40,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     bool rightPressed;
     bool crouchedClicked;
     bool proneClicked;
+    bool allowPlayerInput = true;
 
     void Awake() 
     {
@@ -256,16 +260,26 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
        
     }
+
+    void checkPlayerInputAllowed()
+    {
+        bool animationEventPlaying = animator.GetBool(fallDownBackwardsHash);
+        // block playerinput if animation is currently being played
+        allowPlayerInput = !animationEventPlaying;
+    }
     // Update is called once per frame
     void Update()
     {
-                // animator.SetBool("fallDownBackwards", false); 
+        checkPlayerInputAllowed();
+        if (allowPlayerInput)
+        {
+          // handle player input      
         changeStance(runPressed, crouchedClicked, proneClicked);
         float currentMaxVelocity = calculateCurrentMaxVelocity(runPressed);
 
         changeVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         lockOrResetVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
-        
+        }
         //reset clicked values
         crouchedClicked = false;
         proneClicked = false;

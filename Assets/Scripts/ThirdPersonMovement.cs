@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
+    //components
     Animator animator;
-    int VelocityXHash;
-    int VelocityZHash;
-    float forwardMovement;
-    float sidewardMovement;
     public CharacterController controller;
     public Transform cam;
-    bool allowPlayerInput = true;
-    //float turnSpeed = 90f; // degrees per second
+    // constants
     public float speedMultiplier = 3f;
     public float jumpSpeed = 4f;
     public float gravity = 9.8f;
     private float vSpeed = 0f; // current vertical velocity
+    // local variable
+    float forwardMovement;
+    float sidewardMovement;
+    //hashes
+    int VelocityXHash;
+    int VelocityZHash;
 
     // Start is called before the first frame update
     void Start()
@@ -57,9 +59,5 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 vertMove = new Vector3(0f, vSpeed, 0f);
         controller.Move(vertMove * Time.deltaTime);
     
-    }
-    public void togglePlayerInput(bool value)
-    {
-        allowPlayerInput = value;
     }
 }
