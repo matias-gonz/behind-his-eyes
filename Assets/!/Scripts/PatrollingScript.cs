@@ -8,8 +8,8 @@ public class PatrollingScript : MonoBehaviour
     public EnemyControllerScript enemyControllerScript;
     public string pathName;
     public bool isPatrolling = true;
-    private bool hasReachedCurrentGoal = true; //initialise with true
-
+    
+    private bool _hasReachedCurrentGoal = true; //initialise with true
     private List<PathPoint> _pathPoints = new List<PathPoint>();
     private int _currentPointIndex = 0;
     private bool _isWaiting = false;
@@ -29,18 +29,16 @@ public class PatrollingScript : MonoBehaviour
 
         Vector3 position = transform.position;
         position.y = 0;
-        if (!hasReachedCurrentGoal && Vector3.Distance(position, _pathPoints[_currentPointIndex].Position) < 0.2f)
+        if (!_hasReachedCurrentGoal && Vector3.Distance(position, _pathPoints[_currentPointIndex].Position) < 0.2f)
         {
-            hasReachedCurrentGoal = true;
+            _hasReachedCurrentGoal = true;
             enemyControllerScript.Stop();
-            _currentPointIndex = (_currentPointIndex + 1) % _pathPoints.Count;
             StartCoroutine(Wait(_pathPoints[_currentPointIndex].WaitTime));
+            _currentPointIndex = (_currentPointIndex + 1) % _pathPoints.Count;
         }
-        else if (hasReachedCurrentGoal)
+        else if (_hasReachedCurrentGoal)
         {
-            // Debug.Log("Patroling script MoveTo new Goal");
-            hasReachedCurrentGoal = false;
-
+            _hasReachedCurrentGoal = false;
             enemyControllerScript.MoveTo(_pathPoints[_currentPointIndex].Position, false);
         }
     }
