@@ -8,7 +8,7 @@ namespace utils
         public Vector3 Position;
         public float WaitTime;
     }
-
+    
     public static class JsonHelper
     {
         public static T[] FromJson<T>(string json)
@@ -26,6 +26,7 @@ namespace utils
 
     public class PathPointsReader
     {
+        
         [System.Serializable]
         private class PathPointRaw
         {

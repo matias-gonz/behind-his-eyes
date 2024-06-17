@@ -5,40 +5,39 @@ using UnityEngine;
 
 public class EnemyControllerScript : MonoBehaviour
 {
-    Animator _animator;
+    Animator animator;
     public float walkingSpeed = 1.5f;
-    float _runningSpeed; //must be 4 times higher than speed
+    float runningSpeed; //must be 4 times higher than speed
     public float animationMaxSpeed = 2f;
-    float _animationSpeed = 0f;
-    float _currentSpeed; //formerly speed
-    float _currentMaxSpeed;
-    readonly float acceleration = 2f;
+    float animationSpeed = 0f;
+    float currentSpeed; //formerly speed
+    float currentMaxSpeed;
+    float acceleration = 2f;
+    
 
     private Rigidbody _rigidbody;
     private float _angularVelocity;
-    private readonly float _turnSmoothTime = 0.3f;
+    private float _turnSmoothTime = 0.1f;
     private Vector3 _direction;
-    private Vector3 _currentTargetPosition;
-    int _velocityXHash; //sidewards animation, can be use for strafe walking
-    int _velocityZHash; //forwards animation
+    private Vector3 currentTargetPosition;
+    int VelocityXHash; //sidewards animation, can be use for strafe walking
+    int VelocityZHash; //forwards animation
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _animator = GetComponent<Animator>();
-        _currentSpeed = walkingSpeed; //for testing purposes
-        _runningSpeed = 4 * walkingSpeed;
-        _velocityXHash = Animator.StringToHash("Velocity X");
-        _velocityZHash = Animator.StringToHash("Velocity Z");
-        _direction = Vector3.zero;
+        animator = GetComponent<Animator>();  
+        currentSpeed = walkingSpeed; //for testing purposes
+        runningSpeed = 4 * walkingSpeed;
+        VelocityXHash = Animator.StringToHash("Velocity X");
+        VelocityZHash = Animator.StringToHash("Velocity Z");
+     
     }
 
     private void FixedUpdate()
     {
-        CalculateDirection();
         if (_direction == Vector3.zero)
         {
-            Debug.Log("_direction is zero!!!");
             return;
         }
 
@@ -47,51 +46,44 @@ public class EnemyControllerScript : MonoBehaviour
             _turnSmoothTime);
         Vector3 currentPosition = transform.position;
         //adjust speed when starting to move or getting close to the goal position
-        float distanceFromGoal = Vector3.Distance(currentPosition, _currentTargetPosition);
-        if (distanceFromGoal < _currentSpeed)
+        float distanceFromGoal = Vector3.Distance(currentPosition, currentTargetPosition);
+        if (distanceFromGoal*4 < currentSpeed )
         {
-            _currentSpeed -= acceleration * Time.fixedDeltaTime;
-        }
-        else if (_currentSpeed < _currentMaxSpeed)
+            currentSpeed = distanceFromGoal*4;
+        } else if (currentSpeed < currentMaxSpeed)
         {
-            _currentSpeed += acceleration * Time.fixedDeltaTime;
-        }
-        else if (_currentSpeed > _currentMaxSpeed)
+            currentSpeed += acceleration * Time.fixedDeltaTime;
+        } else if (currentSpeed > currentMaxSpeed)
         {
-            _currentSpeed = _currentMaxSpeed;
+            currentSpeed = currentMaxSpeed;
         }
-
-        if (_currentSpeed < 0f)
-        {
-            _currentSpeed = 0f;
-        }
-
-        Vector3 intermediatePosition = currentPosition + _direction * (_currentSpeed * Time.fixedDeltaTime);
+        Vector3 intermediatePosition = currentPosition + _direction * (currentSpeed * Time.fixedDeltaTime);
+        //deltaMove stores actually traversed distance
+        //float deltaMove = Vector3.Distance(intermediatePosition, currentPosition);
         _rigidbody.MovePosition(intermediatePosition);
         transform.rotation = Quaternion.Euler(0, angle, 0);
         // maps  to animation max speed boundaries
-        if (_animator)
-        {
-            _animationSpeed = (_currentSpeed / _runningSpeed) * animationMaxSpeed;
-            _animator.SetFloat(_velocityZHash, _animationSpeed);
-        }
+        animationSpeed = (currentSpeed/runningSpeed) * animationMaxSpeed; 
+        animator.SetFloat(VelocityZHash, animationSpeed);
     }
 
     public void MoveTo(Vector3 position, bool isRunning)
     {
-        //Debug.Log("Guard: New Target to MoveTo");
-        _currentTargetPosition = position;
-        _currentMaxSpeed = isRunning ? _runningSpeed : walkingSpeed;
+        Debug.Log("Guard: New Target to MoveTo");
+        currentTargetPosition = position;
+        currentMaxSpeed = isRunning ? runningSpeed : walkingSpeed;
+        Vector3 direction = (position - transform.position).normalized;
+        Move(direction);
     }
 
     public void Stop()
     {
-        _currentTargetPosition = transform.position;
+        currentSpeed = 0f;
+        currentTargetPosition = transform.position;
     }
 
-    private void CalculateDirection()
+    private void Move(Vector3 direction)
     {
-        Vector3 direction = (_currentTargetPosition - transform.position).normalized;
         _direction = direction;
     }
 }

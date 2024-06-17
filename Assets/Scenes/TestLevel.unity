@@ -1313,6 +1313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingSpeed: 1.5
+  runningSpeed: 6
   animationMaxSpeed: 2
 --- !u!114 &322355474
 MonoBehaviour:
@@ -1327,7 +1328,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyControllerScript: {fileID: 322355470}
-  pathName: path2
   isPatrolling: 1
 --- !u!54 &322355475
 Rigidbody:
