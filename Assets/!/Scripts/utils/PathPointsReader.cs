@@ -36,7 +36,7 @@ namespace utils
 
         public static List<PathPoint> ReadPathPoints(string pathName)
         {
-            string path = $"Assets/Resources/Paths/{pathName}.json";
+            string path = $"Assets/!/Resources/Paths/{pathName}.json";
             List<PathPoint> pathPoints = new List<PathPoint>();
             string text = System.IO.File.ReadAllText(path);
             PathPointRaw[] pathPointRaws = JsonHelper.FromJson<PathPointRaw>(text);
