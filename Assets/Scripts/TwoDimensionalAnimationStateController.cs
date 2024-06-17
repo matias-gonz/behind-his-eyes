@@ -47,7 +47,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         input.CharacterControls.MovementLeft.performed += ctx => leftPressed = ctx.ReadValueAsButton();
         input.CharacterControls.MovementRight.performed += ctx => rightPressed = ctx.ReadValueAsButton();
         input.CharacterControls.Crouch.started += ctx => crouchedClicked = ctx.ReadValueAsButton();
-        input.CharacterControls.Prone.performed += ctx => proneClicked = ctx.ReadValueAsButton();
+        input.CharacterControls.Prone.started += ctx => proneClicked = ctx.ReadValueAsButton();
         
     }
     // Start is called before the first frame update
@@ -241,7 +241,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     {
         if (isProne)
         {
-            
+            controller.height = 1.0f;
+            controller.radius = 0.3f; 
+            controller.center = new Vector3(0f, 0.56f, 0.2f);
         } else if (isCrouched)
         {
             controller.height = 1.0f;
@@ -264,11 +266,13 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         changeVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         lockOrResetVelocity(forwardPressed, backwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         
+        //reset clicked values
         crouchedClicked = false;
-
+        proneClicked = false;
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX); 
         animator.SetBool(isCrouchedHash, isCrouched);
+        animator.SetBool(isProneHash, isProne);
         
     }
 
