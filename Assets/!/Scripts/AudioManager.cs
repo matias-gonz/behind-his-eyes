@@ -28,9 +28,9 @@ public class AudioManager : MonoBehaviour
     {
         if (audioSource.isPlaying) return;
         
-        Audio audio = Array.Find(soundFxs, soundFx => soundFx.id == id);
-        if (!audio.clip) return;
+        Audio sound = Array.Find(soundFxs, soundFx => soundFx.id == id);
+        if (!sound.clip) return;
         
-        audioSource.PlayOneShot(audio.clip);
+        audioSource.PlayOneShot(sound.clip);
     }
 }
