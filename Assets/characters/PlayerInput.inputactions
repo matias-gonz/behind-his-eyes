@@ -49,33 +49,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "MovementBackward",
-                    "type": "Button",
-                    "id": "d9e641eb-bbaa-4853-94a3-29ec61c3b823",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Crouch",
-                    "type": "Button",
-                    "id": "972ef7d3-71aa-4cf9-b89f-9fbf827e186e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Prone",
-                    "type": "Button",
-                    "id": "eb3da6e1-b966-4ad9-873d-dae42697aca4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -131,39 +104,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8e8ea674-3f75-4c80-889a-d48ed6e24aac",
-                    "path": "<Keyboard>/s",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementBackward",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0d8fb2c2-474f-4775-923e-816cd1a9289b",
-                    "path": "<Keyboard>/c",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4e3a9616-e42f-46b2-b554-a6466f635ba3",
-                    "path": "<Keyboard>/x",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Prone",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
