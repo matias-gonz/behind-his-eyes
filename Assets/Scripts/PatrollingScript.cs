@@ -29,7 +29,7 @@ public class PatrollingScript : MonoBehaviour
 
         Vector3 position = transform.position;
         position.y = 0;
-        if (!hasReachedCurrentGoal && Vector3.Distance(position, _pathPoints[_currentPointIndex].Position) < 0.02f)
+        if (!hasReachedCurrentGoal && Vector3.Distance(position, _pathPoints[_currentPointIndex].Position) < 0.2f)
         {
             hasReachedCurrentGoal = true;
             enemyControllerScript.Stop();
@@ -38,9 +38,9 @@ public class PatrollingScript : MonoBehaviour
         }
         else if (hasReachedCurrentGoal)
         {
-            Debug.Log("Patroling script MoveTo new Goal");
+            // Debug.Log("Patroling script MoveTo new Goal");
             hasReachedCurrentGoal = false;
-        
+
             enemyControllerScript.MoveTo(_pathPoints[_currentPointIndex].Position, true);
         }
     }
