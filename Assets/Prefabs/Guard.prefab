@@ -2969,8 +2969,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyControllerScript: {fileID: 8298327512672982210}
-  pathName: path2
-  isPatrolling: 1
+  pathName: 
+  isPatrolling: 0
 --- !u!54 &5261338027926967721
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2993,10 +2993,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7612400057799860527
 MonoBehaviour:
@@ -3033,9 +3033,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.3
-  m_Height: 1.72
+  m_Height: 1.85
   m_Direction: 1
-  m_Center: {x: 0, y: 0.92, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &8881005426333453824
 GameObject:
   m_ObjectHideFlags: 0
