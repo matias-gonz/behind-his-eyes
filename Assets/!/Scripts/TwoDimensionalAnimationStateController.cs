@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class TwoDimensionalAnimationStateController : MonoBehaviour
 {
     //constants
-    public float acceleration = 1.0f;
-    public float deceleration = 1.0f;
+    public float acceleration = 2.0f;
+    public float deceleration = 2.0f;
     public float maximumWalkVelocity = 0.5f;
     public float maximumRunVelocity = 2.0f;
     public float maximumCrouchVelocity = 0.5f;
@@ -296,10 +296,11 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_jumpPressed && !_animator.GetBool(_isJumpHash) && !_isProne && !_isCrouched)
+        bool isJump = _animator.GetBool(_isJumpHash);
+        if(_jumpPressed && !isJump && !_isProne && !_isCrouched)
         {
             _animator.SetBool(_isJumpHash, true);
-            _controller.center = new Vector3(0f, 1.42f, 0f);
+            this.GetComponent<ThirdPersonMovement>().StartJump();
             
         }
         CheckPlayerInputAllowed();
