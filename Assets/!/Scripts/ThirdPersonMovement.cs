@@ -16,9 +16,11 @@ public class ThirdPersonMovement : MonoBehaviour
 
     // local variable
     // current vertical velocity, used for falling but not jumping
-    private float _vSpeed = 0f; 
+    private float _vSpeed = 0f;
+
     //jumping collider function variables, this corresponds to jumping time/2
-    private float _offsetX = 0.35f; 
+    private float _offsetX = 0.35f;
+
     // jumping hight
     private float _offsetY;
     private float _colliderCenterY;
@@ -26,7 +28,6 @@ public class ThirdPersonMovement : MonoBehaviour
     private float _forwardMovement;
     private float _sidewardMovement;
     private float _jumpStartTime;
-    
 
     //hashes
     private int _velocityXHash;
@@ -102,8 +103,8 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             float currentHeight = -gravity * Mathf.Pow((deltaT - _offsetX), 2f) + _offsetY;
             controller.center = new Vector3(0f, _colliderCenterY + 0.7f * currentHeight, 0f);
-           
-        } else
+        }
+        else
         {
             controller.center = new Vector3(0f, _colliderCenterY, 0f);
         }
