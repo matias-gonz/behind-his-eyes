@@ -31,6 +31,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     private int _fallDownBackwardsHash;
     private int _isCrouchedHash;
     private int _isProneHash;
+    private int _isJumpHash;
 
     //variables to store player input
     private bool _forwardPressed;
@@ -40,6 +41,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     private bool _rightPressed;
     private bool _crouchedClicked;
     private bool _proneClicked;
+    private bool _jumpPressed;
     private bool _allowPlayerInput = true;
 
     void Awake()
@@ -52,6 +54,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         _input.CharacterControls.MovementRight.performed += ctx => _rightPressed = ctx.ReadValueAsButton();
         _input.CharacterControls.Crouch.started += ctx => _crouchedClicked = ctx.ReadValueAsButton();
         _input.CharacterControls.Prone.started += ctx => _proneClicked = ctx.ReadValueAsButton();
+        _input.CharacterControls.Jump.performed += ctx => _jumpPressed = ctx.ReadValueAsButton();
     }
 
     // Start is called before the first frame update
@@ -64,6 +67,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         _fallDownBackwardsHash = Animator.StringToHash("fallDownBackwards");
         _isCrouchedHash = Animator.StringToHash("isCrouched");
         _isProneHash = Animator.StringToHash("isProne");
+        _isJumpHash = Animator.StringToHash("isJump");
     }
 
 
@@ -292,6 +296,12 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(_jumpPressed && !_animator.GetBool(_isJumpHash) && !_isProne && !_isCrouched)
+        {
+            _animator.SetBool(_isJumpHash, true);
+            _controller.center = new Vector3(0f, 1.42f, 0f);
+            
+        }
         CheckPlayerInputAllowed();
         if (_allowPlayerInput)
         {

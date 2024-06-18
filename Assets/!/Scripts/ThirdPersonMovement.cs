@@ -51,11 +51,11 @@ public class ThirdPersonMovement : MonoBehaviour
         if (controller.isGrounded)
         {
             _vSpeed = 0; // grounded character has vSpeed = 0...
-            if (Input.GetKeyDown("space"))
-            {
-                // unless it jumps:
-                _vSpeed = jumpSpeed;
-            }
+            // if (Input.GetKeyDown("space"))
+            // {
+            //     // unless it jumps:
+            //     _vSpeed = jumpSpeed;
+            // }
         }
         else
         {
