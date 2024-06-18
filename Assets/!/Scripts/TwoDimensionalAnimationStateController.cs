@@ -48,11 +48,16 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     {
         _input = new PlayerInput();
         _input.CharacterControls.Run.performed += ctx => _runPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.MovementForward.performed += ctx => _forwardPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.MovementBackward.performed += ctx => _backwardPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.MovementLeft.performed += ctx => _leftPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.MovementRight.performed += ctx => _rightPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.Crouch.started += ctx => _crouchedClicked = ctx.ReadValueAsButton();
+        _input.CharacterControls.MovementForward.performed += ctx =>
+            _forwardPressed = ctx.ReadValueAsButton();
+        _input.CharacterControls.MovementBackward.performed += ctx =>
+            _backwardPressed = ctx.ReadValueAsButton();
+        _input.CharacterControls.MovementLeft.performed += ctx =>
+            _leftPressed = ctx.ReadValueAsButton();
+        _input.CharacterControls.MovementRight.performed += ctx =>
+            _rightPressed = ctx.ReadValueAsButton();
+        _input.CharacterControls.Crouch.started += ctx =>
+            _crouchedClicked = ctx.ReadValueAsButton();
         _input.CharacterControls.Prone.started += ctx => _proneClicked = ctx.ReadValueAsButton();
         _input.CharacterControls.Jump.performed += ctx => _jumpPressed = ctx.ReadValueAsButton();
     }
@@ -70,9 +75,14 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         _isJumpHash = Animator.StringToHash("isJump");
     }
 
-
-    void ChangeVelocity(bool forwardPressed, bool backwardPressed, bool leftPressed, bool rightPressed,
-        bool runPressed, float currentMaxVelocity)
+    void ChangeVelocity(
+        bool forwardPressed,
+        bool backwardPressed,
+        bool leftPressed,
+        bool rightPressed,
+        bool runPressed,
+        float currentMaxVelocity
+    )
     {
         // accelerate forward
         if (forwardPressed && _velocityZ < currentMaxVelocity)
@@ -131,8 +141,14 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
     }
 
-    void LockOrResetVelocity(bool forwardPressed, bool backwardPressed, bool leftPressed, bool rightPressed,
-        bool runPressed, float currentMaxVelocity)
+    void LockOrResetVelocity(
+        bool forwardPressed,
+        bool backwardPressed,
+        bool leftPressed,
+        bool rightPressed,
+        bool runPressed,
+        float currentMaxVelocity
+    )
     {
         //reset velocityZ
         if (!forwardPressed && !backwardPressed && (_velocityZ > -0.05f && _velocityZ < 0.05f))
@@ -141,7 +157,12 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
 
         //reset velocityX
-        if (!leftPressed && !rightPressed && _velocityX != 0.0f && (_velocityX > -0.05f && _velocityX < 0.05f))
+        if (
+            !leftPressed
+            && !rightPressed
+            && _velocityX != 0.0f
+            && (_velocityX > -0.05f && _velocityX < 0.05f)
+        )
         {
             _velocityX = 0.0f;
         }
@@ -162,7 +183,11 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             }
         }
         // round to currentMaxVelocity if within offset
-        else if (forwardPressed && _velocityZ < currentMaxVelocity && _velocityZ > (currentMaxVelocity - 0.05f))
+        else if (
+            forwardPressed
+            && _velocityZ < currentMaxVelocity
+            && _velocityZ > (currentMaxVelocity - 0.05f)
+        )
         {
             _velocityZ = currentMaxVelocity;
         }
@@ -173,8 +198,11 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             _velocityZ = -maximumBackwardsVelocity;
         }
         // round to maximumWalkVelocity if within offset
-        else if (backwardPressed && _velocityZ > -maximumBackwardsVelocity &&
-                 _velocityZ < (-maximumBackwardsVelocity + 0.05f))
+        else if (
+            backwardPressed
+            && _velocityZ > -maximumBackwardsVelocity
+            && _velocityZ < (-maximumBackwardsVelocity + 0.05f)
+        )
         {
             _velocityZ = -maximumBackwardsVelocity;
         }
@@ -184,7 +212,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         {
             _velocityX = -currentMaxVelocity;
         }
-        // decelerate to the maximum walk velocity 
+        // decelerate to the maximum walk velocity
         else if (leftPressed && _velocityX < -currentMaxVelocity)
         {
             _velocityX += Time.deltaTime * deceleration;
@@ -195,7 +223,11 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             }
         }
         //round the currentMaxVelocity within offset
-        else if (leftPressed && _velocityX > -currentMaxVelocity && _velocityX < (-currentMaxVelocity + 0.05f))
+        else if (
+            leftPressed
+            && _velocityX > -currentMaxVelocity
+            && _velocityX < (-currentMaxVelocity + 0.05f)
+        )
         {
             _velocityX = -currentMaxVelocity;
         }
@@ -205,7 +237,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         {
             _velocityX = currentMaxVelocity;
         }
-        // decelerate to the maximum walk velocity 
+        // decelerate to the maximum walk velocity
         else if (rightPressed && _velocityX > currentMaxVelocity)
         {
             _velocityX -= Time.deltaTime * deceleration;
@@ -216,7 +248,11 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             }
         }
         //round the currentMaxVelocity within offset
-        else if (rightPressed && _velocityX < currentMaxVelocity && _velocityX > (currentMaxVelocity - 0.05f))
+        else if (
+            rightPressed
+            && _velocityX < currentMaxVelocity
+            && _velocityX > (currentMaxVelocity - 0.05f)
+        )
         {
             _velocityX = currentMaxVelocity;
         }
@@ -243,6 +279,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
             _isCrouched = !_isCrouched;
             ChangeControllerCollider();
         }
+        // only call ChangeControllerCollider when stance not changed
     }
 
     float CalculateCurrentMaxVelocity(bool runPressed)
@@ -293,27 +330,44 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         _allowPlayerInput = !animationEventPlaying;
     }
 
-    // Update is called once per frame
-    void Update()
+    // jumping can be triggered while player is standing and not in a Jump
+    void StartToJump()
     {
         bool isJump = _animator.GetBool(_isJumpHash);
-        if(_jumpPressed && !isJump && !_isProne && !_isCrouched)
+        if (_jumpPressed && !isJump && !_isProne && !_isCrouched)
         {
             _animator.SetBool(_isJumpHash, true);
             this.GetComponent<ThirdPersonMovement>().StartJump();
-            
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        StartToJump();
         CheckPlayerInputAllowed();
         if (_allowPlayerInput)
         {
-            // handle player input      
+            // handle player input
             ChangeStance(_runPressed, _crouchedClicked, _proneClicked);
             float currentMaxVelocity = CalculateCurrentMaxVelocity(_runPressed);
 
-            ChangeVelocity(_forwardPressed, _backwardPressed, _leftPressed, _rightPressed, _runPressed,
-                currentMaxVelocity);
-            LockOrResetVelocity(_forwardPressed, _backwardPressed, _leftPressed, _rightPressed, _runPressed,
-                currentMaxVelocity);
+            ChangeVelocity(
+                _forwardPressed,
+                _backwardPressed,
+                _leftPressed,
+                _rightPressed,
+                _runPressed,
+                currentMaxVelocity
+            );
+            LockOrResetVelocity(
+                _forwardPressed,
+                _backwardPressed,
+                _leftPressed,
+                _rightPressed,
+                _runPressed,
+                currentMaxVelocity
+            );
         }
 
         //reset clicked values
