@@ -17,7 +17,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     // references
     private Animator _animator;
     private PlayerInput _input;
-    private CharacterController _controller;
+    public Collider standingCollider;
+    public Collider crouchCollider;
+    public Collider proneCollider;
 
     // local variables for animation state
     private bool _isCrouched = false;
@@ -66,7 +68,6 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _controller = GetComponent<CharacterController>();
         _velocityXHash = Animator.StringToHash("Velocity X");
         _velocityZHash = Animator.StringToHash("Velocity Z");
         _fallDownBackwardsHash = Animator.StringToHash("fallDownBackwards");
@@ -305,21 +306,21 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     {
         if (_isProne)
         {
-            _controller.height = 0.25f;
-            _controller.radius = 0.33f;
-            _controller.center = new Vector3(0.1f, 0.39f, 0.2f);
+            proneCollider.enabled = true;
+            crouchCollider.enabled = false;
+            standingCollider.enabled = false;
         }
         else if (_isCrouched)
         {
-            _controller.height = 1.0f;
-            _controller.radius = 0.3f;
-            _controller.center = new Vector3(0f, 0.56f, 0.2f);
+            proneCollider.enabled = false;
+            crouchCollider.enabled = true;
+            standingCollider.enabled = false;
         }
         else
         {
-            _controller.height = 1.72f;
-            _controller.radius = 0.2f;
-            _controller.center = new Vector3(0f, 0.92f, 0f);
+            proneCollider.enabled = false;
+            crouchCollider.enabled = false;
+            standingCollider.enabled = true;
         }
     }
 
@@ -337,7 +338,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         if (_jumpPressed && !isJump && !_isProne && !_isCrouched)
         {
             _animator.SetBool(_isJumpHash, true);
-            this.GetComponent<ThirdPersonMovement>().StartJump();
+            // this.GetComponent<ThirdPersonMovement>().StartJump();
         }
     }
 

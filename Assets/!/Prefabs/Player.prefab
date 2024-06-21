@@ -1473,10 +1473,11 @@ GameObject:
   - component: {fileID: 3885523475313681157}
   - component: {fileID: 4980397922530417058}
   - component: {fileID: 327623586495336380}
-  - component: {fileID: 471229322924049084}
   - component: {fileID: 3240364155029121252}
   - component: {fileID: 7245086291701221048}
   - component: {fileID: 8942561800098541415}
+  - component: {fileID: 914915420097912652}
+  - component: {fileID: 5008557186593552270}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1551,32 +1552,9 @@ MonoBehaviour:
   maximumCrouchVelocity: 0.5
   maximumProneVelocity: 0.25
   maximumBackwardsVelocity: 0.5
---- !u!143 &471229322924049084
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4514849483161549247}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Height: 1.72
-  m_Radius: 0.2
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.06
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.92, z: 0}
+  standingCollider: {fileID: 7245086291701221048}
+  crouchCollider: {fileID: 914915420097912652}
+  proneCollider: {fileID: 5008557186593552270}
 --- !u!114 &3240364155029121252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,7 +1567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d33a8173bb4dc8519061752693e39b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 471229322924049084}
   cam: {fileID: 0}
   speedMultiplier: 3
   jumpSpeed: 4
@@ -1614,7 +1591,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.3
-  m_Height: 1.85
+  m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &8942561800098541415
@@ -1639,11 +1616,57 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &914915420097912652
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514849483161549247}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 1.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6, z: 0.2}
+--- !u!136 &5008557186593552270
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514849483161549247}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.36
+  m_Height: 1.8
+  m_Direction: 2
+  m_Center: {x: 0.1, y: 0.36, z: 0}
 --- !u!1 &4899586341017006717
 GameObject:
   m_ObjectHideFlags: 0

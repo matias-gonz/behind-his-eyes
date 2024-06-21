@@ -6,8 +6,9 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     //components
     private Animator _animator;
-    public CharacterController controller;
+    private Rigidbody _rigidbody;
     public Transform cam;
+    public Collider standingCollider;
 
     // constants
     public float speedMultiplier = 3f;
@@ -42,6 +43,7 @@ public class ThirdPersonMovement : MonoBehaviour
         _colliderCenterY = 0.92f;
         _defaultStepOffset = 0.3f;
         _animator = GetComponent<Animator>();
+        _rigidbody = GetComponent<Rigidbody>();
         _velocityXHash = Animator.StringToHash("Velocity X");
         _velocityZHash = Animator.StringToHash("Velocity Z");
         _isJumpHash = Animator.StringToHash("isJump");
@@ -60,34 +62,36 @@ public class ThirdPersonMovement : MonoBehaviour
         float targetAngle = cam.eulerAngles.y; //Mathf.Atan2(velocityZ, velocityX) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
 
+        Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction;
+        Vector3 currentPosition = transform.position;
+        Vector3 intermediatePosition = currentPosition + moveDir * speedMultiplier * Time.deltaTime;
         // make sure character moves in direction of target angle
-        Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction; //Vector3.forward;
-        controller.Move(moveDir * speedMultiplier * Time.deltaTime);
+        _rigidbody.MovePosition(intermediatePosition);
 
-        bool _isGrounded = controller.isGrounded;
-        if (_animator.GetBool(_isJumpHash))
-        {
-            jumpAdjustCollider();
-            _vSpeed = 0f;
-        }
-        else if (_isGrounded)
-        {
-            _vSpeed = 0f; // grounded character has vSpeed = 0...
-            //     _vSpeed = jumpSpeed;
-        }
-        else
-        {
-            _vSpeed -= gravity * Time.deltaTime;
-        }
-        // apply gravity acceleration to vertical speed:
-        Vector3 vertMove = new Vector3(0f, _vSpeed, 0f);
-        controller.Move(vertMove * Time.deltaTime);
+        // bool _isGrounded = controller.isGrounded;
+        // if (_animator.GetBool(_isJumpHash))
+        // {
+        //     // jumpAdjustCollider();
+        //     _vSpeed = 0f;
+        // }
+        // else if (_isGrounded)
+        // {
+        //     _vSpeed = 0f; // grounded character has vSpeed = 0...
+        //     //     _vSpeed = jumpSpeed;
+        // }
+        // else
+        // {
+        //     _vSpeed -= gravity * Time.deltaTime;
+        // }
+        // // apply gravity acceleration to vertical speed:
+        // Vector3 vertMove = new Vector3(0f, _vSpeed, 0f);
+        // controller.Move(vertMove * Time.deltaTime);
     }
 
     public void StartJump()
     {
         _jumpStartTime = Time.time;
-        controller.stepOffset = 0f;
+        // controller.stepOffset = 0f;
     }
 
     public void StopJump()
