@@ -16,6 +16,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
     // references
     private Animator _animator;
+    private Rigidbody _rigidbody;
     private PlayerInput _input;
     public Collider standingCollider;
     public Collider crouchCollider;
@@ -68,6 +69,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+        _rigidbody = GetComponent<Rigidbody>();
         _velocityXHash = Animator.StringToHash("Velocity X");
         _velocityZHash = Animator.StringToHash("Velocity Z");
         _fallDownBackwardsHash = Animator.StringToHash("fallDownBackwards");
@@ -337,8 +339,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         bool isJump = _animator.GetBool(_isJumpHash);
         if (_jumpPressed && !isJump && !_isProne && !_isCrouched)
         {
+            GetComponent<ThirdPersonMovement>().StopJump();
+            // _rigidbody.useGravity = false;
             _animator.SetBool(_isJumpHash, true);
-            // this.GetComponent<ThirdPersonMovement>().StartJump();
         }
     }
 

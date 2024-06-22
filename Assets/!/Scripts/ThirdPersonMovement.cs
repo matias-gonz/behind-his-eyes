@@ -25,7 +25,6 @@ public class ThirdPersonMovement : MonoBehaviour
     // jumping hight
     private float _offsetY;
     private float _colliderCenterY;
-    private float _defaultStepOffset;
     private float _forwardMovement;
     private float _sidewardMovement;
     private float _jumpStartTime;
@@ -40,8 +39,7 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         // jumping function y value
         _offsetY = gravity * Mathf.Pow((_offsetX), 2f);
-        _colliderCenterY = 0.92f;
-        _defaultStepOffset = 0.3f;
+        _colliderCenterY = 0.9f;
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
         _velocityXHash = Animator.StringToHash("Velocity X");
@@ -87,30 +85,12 @@ public class ThirdPersonMovement : MonoBehaviour
         // Vector3 vertMove = new Vector3(0f, _vSpeed, 0f);
         // controller.Move(vertMove * Time.deltaTime);
     }
-
     public void StartJump()
     {
-        _jumpStartTime = Time.time;
-        // controller.stepOffset = 0f;
+         _rigidbody.useGravity = false;
     }
-
-    public void StopJump()
+    public void StopJump() 
     {
-        controller.center = new Vector3(0f, _colliderCenterY, 0f);
-        controller.stepOffset = _defaultStepOffset;
-    }
-
-    private void jumpAdjustCollider()
-    {
-        float deltaT = Time.time - _jumpStartTime;
-        if (deltaT < 2 * _offsetX)
-        {
-            float currentHeight = -gravity * Mathf.Pow((deltaT - _offsetX), 2f) + _offsetY;
-            controller.center = new Vector3(0f, _colliderCenterY + 0.7f * currentHeight, 0f);
-        }
-        else
-        {
-            controller.center = new Vector3(0f, _colliderCenterY, 0f);
-        }
+        _rigidbody.useGravity = true;
     }
 }
