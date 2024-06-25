@@ -169,8 +169,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0d8fb2c2-474f-4775-923e-816cd1a9289b"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""id"": ""979fb2b5-1dc2-4fc6-bb47-45b8fc64dcbb"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
                     ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": """",
@@ -180,8 +180,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4e3a9616-e42f-46b2-b554-a6466f635ba3"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""id"": ""0d8fb2c2-474f-4775-923e-816cd1a9289b"",
+                    ""path"": ""<Keyboard>/c"",
                     ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": """",

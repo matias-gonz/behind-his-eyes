@@ -316,11 +316,13 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         else if (proneClicked)
         {
             _isProne = !_isProne;
+            _isCrouched = false;
             ChangeControllerCollider();
         }
         else if (crouchedClicked)
         {
             _isCrouched = !_isCrouched;
+            _isProne = false;
             ChangeControllerCollider();
         }
         // only call ChangeControllerCollider when stance not changed
