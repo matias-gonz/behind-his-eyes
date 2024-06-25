@@ -8,7 +8,6 @@ public class ThirdPersonMovement : MonoBehaviour
     private Animator _animator;
     private Rigidbody _rigidbody;
     public Transform cam;
-    public Collider standingCollider;
 
     // constants
     public float speedMultiplier = 3f;
@@ -27,7 +26,10 @@ public class ThirdPersonMovement : MonoBehaviour
     private float _colliderCenterY;
     private float _forwardMovement;
     private float _sidewardMovement;
+
+    // private Vector3 currentPosition;
     private float _jumpStartTime;
+    private bool _isGrounded = true;
 
     //hashes
     private int _velocityXHash;
@@ -50,7 +52,7 @@ public class ThirdPersonMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         _forwardMovement = _animator.GetFloat(_velocityZHash);
         _sidewardMovement = _animator.GetFloat(_velocityXHash);
@@ -58,39 +60,66 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 direction = new Vector3(_sidewardMovement, 0f, _forwardMovement);
 
         float targetAngle = cam.eulerAngles.y; //Mathf.Atan2(velocityZ, velocityX) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+        // transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
 
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction;
         Vector3 currentPosition = transform.position;
-        Vector3 intermediatePosition = currentPosition + moveDir * speedMultiplier * Time.deltaTime;
+        Vector3 intermediatePosition =
+            currentPosition + moveDir * speedMultiplier * Time.fixedDeltaTime;
         // make sure character moves in direction of target angle
-        _rigidbody.MovePosition(intermediatePosition);
+        _rigidbody.Move(intermediatePosition, Quaternion.Euler(0f, targetAngle, 0f));
+        // _rigidbody.velocity =
 
-        // bool _isGrounded = controller.isGrounded;
-        // if (_animator.GetBool(_isJumpHash))
-        // {
-        //     // jumpAdjustCollider();
-        //     _vSpeed = 0f;
-        // }
-        // else if (_isGrounded)
-        // {
-        //     _vSpeed = 0f; // grounded character has vSpeed = 0...
-        //     //     _vSpeed = jumpSpeed;
-        // }
-        // else
-        // {
-        //     _vSpeed -= gravity * Time.deltaTime;
-        // }
-        // // apply gravity acceleration to vertical speed:
-        // Vector3 vertMove = new Vector3(0f, _vSpeed, 0f);
-        // controller.Move(vertMove * Time.deltaTime);
+        bool isJump = _animator.GetBool(_isJumpHash);
+        if (!isJump)
+        {
+            
+            RaycastHit hit = new RaycastHit();
+            if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
+            {
+                float distanceToGround = hit.distance;
+                _isGrounded = distanceToGround <= 0.91f;
+            }
+
+            if (!_isGrounded)
+            {
+                Vector3 gravityVector = new Vector3(0f, -9.8f, 0f);
+                // _rigidbody.AddForce(gravityVector);
+                 _rigidbody.velocity = gravityVector;
+            } else
+            {
+                Debug.Log("is Grounded");
+                _rigidbody.AddForce(Vector3.zero);
+                _rigidbody.velocity = Vector3.zero;
+            }
+        }
     }
-    public void StartJump()
-    {
-         _rigidbody.useGravity = false;
-    }
-    public void StopJump() 
-    {
-        _rigidbody.useGravity = true;
-    }
+
+    //  = controller.isGrounded;
+    // if (_animator.GetBool(_isJumpHash))
+    // {
+    //     // jumpAdjustCollider();
+    //     _vSpeed = 0f;
+    // }
+    // else if (_isGrounded)
+    // {
+    //     _vSpeed = 0f; // grounded character has vSpeed = 0...
+    //     //     _vSpeed = jumpSpeed;
+    // }
+    // else
+    // {
+    //     _vSpeed -= gravity * Time.deltaTime;
+    // }
+    // // apply gravity acceleration to vertical speed:
+    // Vector3 vertMove = new Vector3(0f, _vSpeed, 0f);
+    // controller.Move(vertMove * Time.deltaTime);
+
+    // public void StartJump()
+    // {
+    //      _rigidbody.useGravity = false;
+    // }
+    // public void StopJump()
+    // {
+    //     _rigidbody.useGravity = true;
+    // }
 }

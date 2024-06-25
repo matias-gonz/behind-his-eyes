@@ -8,6 +8,6 @@ public class Jump : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("isJump", false);
-        GameObject.Find("Player").GetComponent<ThirdPersonMovement>().StopJump();
+        // GameObject.Find("Player").GetComponent<ThirdPersonMovement>().StopJump();
     }
 }

@@ -339,7 +339,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         bool isJump = _animator.GetBool(_isJumpHash);
         if (_jumpPressed && !isJump && !_isProne && !_isCrouched)
         {
-            GetComponent<ThirdPersonMovement>().StopJump();
+            // GetComponent<ThirdPersonMovement>().StopJump();
             // _rigidbody.useGravity = false;
             _animator.SetBool(_isJumpHash, true);
         }
