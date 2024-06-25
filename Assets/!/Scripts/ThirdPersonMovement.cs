@@ -38,29 +38,32 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        MoveXZandTurn();
+        if (!_animator.GetBool(_isJumpHash))
+        {
+            VerticalVelocity();
+        }
+    }
+
+    private void MoveXZandTurn()
+    {
         _forwardMovement = _animator.GetFloat(_velocityZHash);
         _sidewardMovement = _animator.GetFloat(_velocityXHash);
+
         // walk direction in normal cordinate system
         Vector3 direction = new Vector3(_sidewardMovement, 0f, _forwardMovement);
+        float targetAngle = cam.eulerAngles.y;
 
-        float targetAngle = cam.eulerAngles.y; //Mathf.Atan2(velocityZ, velocityX) * Mathf.Rad2Deg;
-        // transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-
+        //direction in relation to camera including for strafe walking
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction;
         Vector3 currentPosition = transform.position;
         Vector3 intermediatePosition =
             currentPosition + moveDir * speedMultiplier * Time.fixedDeltaTime;
-        // make sure character moves in direction of target angle
+        // make sure character moves in direction of target angle, i.e. where the camera is looking
         _rigidbody.Move(intermediatePosition, Quaternion.Euler(0f, targetAngle, 0f));
-        // _rigidbody.velocity =
-
-        if (!_animator.GetBool(_isJumpHash))
-        {
-            verticalVelocity();
-        }
     }
 
-    private void verticalVelocity()
+    private void VerticalVelocity()
     {
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
@@ -81,5 +84,10 @@ public class ThirdPersonMovement : MonoBehaviour
             _rigidbody.AddForce(Vector3.zero);
             _rigidbody.velocity = Vector3.zero;
         }
+    }
+
+    public bool GetIsGrounded()
+    {
+        return _isGrounded;
     }
 }
