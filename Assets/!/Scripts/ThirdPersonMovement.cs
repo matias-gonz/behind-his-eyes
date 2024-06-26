@@ -75,7 +75,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private void VerticalVelocity()
     {
         float distanceToGround = DistanceToGround();
-        bool isGrounded =  distanceToGround <= 0.2f;
+        bool isGrounded = distanceToGround <= 0.2f;
         if (!isGrounded)
         {
             _timeFalling += Time.fixedDeltaTime;
@@ -93,17 +93,6 @@ public class ThirdPersonMovement : MonoBehaviour
             // all forces and velocities are reset if standing on ground.
             // _rigidbody.velocity = Vector3.zero;
             _rigidbody.velocity = new Vector3(0f, -0.1f, 0f);
-            _timeFalling = 0f;
-        }
-    }
-            float velocityY = _rigidbody.velocity.y - 9.81f * _timeFalling;
-            Vector3 fallingVelocity = new Vector3(0f, velocityY, 0f);
-            _rigidbody.velocity = fallingVelocity;
-        }
-        else
-        {
-            // all forces and velocities are reset if standing on ground.
-            _rigidbody.velocity = Vector3.zero;
             _timeFalling = 0f;
         }
     }
