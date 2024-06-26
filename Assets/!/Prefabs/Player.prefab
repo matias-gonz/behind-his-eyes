@@ -1569,7 +1569,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   speedMultiplier: 3
-  jumpSpeed: 4
   gravity: 9.8
 --- !u!136 &7245086291701221048
 CapsuleCollider:
@@ -1603,7 +1602,7 @@ Rigidbody:
   m_GameObject: {fileID: 4514849483161549247}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}

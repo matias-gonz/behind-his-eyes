@@ -47,6 +47,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             _rigidbody.velocity = Vector3.zero;
         }
+        _rigidbody.AddForce(new Vector3(0f, 0f, 0f));
     }
 
     private void MoveXZandTurn()
@@ -73,18 +74,25 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void VerticalVelocity()
     {
-        bool isGrounded = DistanceToGround() <= 0.2f;
+        float distanceToGround = DistanceToGround();
+        bool isGrounded = distanceToGround <= 0.2f;
         if (!isGrounded)
         {
             _timeFalling += Time.fixedDeltaTime;
-            float velocityY = _rigidbody.velocity.y - 9.81f * _timeFalling;
+            float velocityY = _rigidbody.velocity.y - 0.1f * 9.81f * _timeFalling;
             Vector3 fallingVelocity = new Vector3(0f, velocityY, 0f);
             _rigidbody.velocity = fallingVelocity;
+        }
+        else if (distanceToGround == 0f)
+        {
+            _rigidbody.velocity = Vector3.zero;
+            _timeFalling = 0f;
         }
         else
         {
             // all forces and velocities are reset if standing on ground.
-            _rigidbody.velocity = Vector3.zero;
+            // _rigidbody.velocity = Vector3.zero;
+            _rigidbody.velocity = new Vector3(0f, -0.1f, 0f);
             _timeFalling = 0f;
         }
     }
