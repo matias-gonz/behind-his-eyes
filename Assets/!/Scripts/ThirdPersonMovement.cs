@@ -17,6 +17,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private float _forwardMovement;
     private float _sidewardMovement;
     private bool _isGrounded = true;
+    private float _timeFalling = 0f;
 
     //hashes
     private int _velocityXHash;
@@ -43,6 +44,10 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             VerticalVelocity();
         }
+        else
+        {
+            _rigidbody.velocity = Vector3.zero;
+        }
     }
 
     private void MoveXZandTurn()
@@ -61,33 +66,44 @@ public class ThirdPersonMovement : MonoBehaviour
             currentPosition + moveDir * speedMultiplier * Time.fixedDeltaTime;
         // make sure character moves in direction of target angle, i.e. where the camera is looking
         _rigidbody.Move(intermediatePosition, Quaternion.Euler(0f, targetAngle, 0f));
+        Vector3 resetVeolocityXZ = new Vector3(0f, _rigidbody.velocity.y, 0f);
+        _rigidbody.velocity = resetVeolocityXZ;
     }
 
     private void VerticalVelocity()
     {
-        RaycastHit hit = new RaycastHit();
-        if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
-        {
-            float distanceToGround = hit.distance;
-            _isGrounded = distanceToGround <= 0.02f;
-        }
-
+        _isGrounded = DistanceToGround() <= 0.2f;
         if (!_isGrounded)
         {
-            Vector3 gravityVector = new Vector3(0f, -9.8f, 0f);
-            _rigidbody.AddForce(gravityVector);
-            // _rigidbody.velocity = gravityVector;
+            _timeFalling += Time.fixedDeltaTime;
+            float velocityY = _rigidbody.velocity.y - 9.81f * _timeFalling;
+            Vector3 fallingVelocity = new Vector3(0f, velocityY, 0f);
+            _rigidbody.velocity = fallingVelocity;
         }
         else
         {
             // all forces and velocities are reset if standing on ground.
-            _rigidbody.AddForce(Vector3.zero);
             _rigidbody.velocity = Vector3.zero;
+            _timeFalling = 0f;
         }
     }
 
-    public bool GetIsGrounded()
+    private float DistanceToGround()
     {
-        return _isGrounded;
+        float distanceToGround;
+        RaycastHit hit = new RaycastHit();
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
+        {
+             distanceToGround = hit.distance;
+        } else
+        {
+            distanceToGround = 0f;
+        }
+        return distanceToGround;
+    }
+
+    public bool JumpingAllowed()
+    {
+        return DistanceToGround() <= 0.2f;
     }
 }

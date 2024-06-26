@@ -84,10 +84,10 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     void Update()
     {
         bool isJump = _animator.GetBool(_isJumpHash);
-        StartToJump(isJump);
         CheckPlayerInputAllowed(isJump);
         if (_allowPlayerInput)
         {
+            StartToJump(isJump);
             // handle player input
             ChangeStance(_runPressed, _crouchedClicked, _proneClicked);
             float currentMaxVelocity = CalculateCurrentMaxVelocity(_runPressed);
@@ -379,12 +379,13 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     // jumping can be triggered while player is standing and not in a Jump
     void StartToJump(bool isJump)
     {
-        bool isGrounded = _thirdPersonMovement.GetIsGrounded();
-        if (_jumpPressed && !isJump && isGrounded && !_isProne && !_isCrouched)
+        if (_jumpPressed)
         {
-            // GetComponent<ThirdPersonMovement>().StopJump();
-            // _rigidbody.useGravity = false;
-            _animator.SetBool(_isJumpHash, true);
+            bool jumpingAllowed = _thirdPersonMovement.JumpingAllowed();
+            if (!isJump && jumpingAllowed && !_isProne && !_isCrouched)
+            {
+                _animator.SetBool(_isJumpHash, true);
+            }
         }
     }
 
