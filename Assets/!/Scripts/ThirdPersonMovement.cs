@@ -96,6 +96,17 @@ public class ThirdPersonMovement : MonoBehaviour
             _timeFalling = 0f;
         }
     }
+            float velocityY = _rigidbody.velocity.y - 9.81f * _timeFalling;
+            Vector3 fallingVelocity = new Vector3(0f, velocityY, 0f);
+            _rigidbody.velocity = fallingVelocity;
+        }
+        else
+        {
+            // all forces and velocities are reset if standing on ground.
+            _rigidbody.velocity = Vector3.zero;
+            _timeFalling = 0f;
+        }
+    }
 
     private float DistanceToGround()
     {
