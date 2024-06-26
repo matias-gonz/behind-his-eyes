@@ -16,7 +16,6 @@ public class ThirdPersonMovement : MonoBehaviour
     // local variables
     private float _forwardMovement;
     private float _sidewardMovement;
-    private bool _isGrounded = true;
     private float _timeFalling = 0f;
 
     //hashes
@@ -65,15 +64,17 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 intermediatePosition =
             currentPosition + moveDir * speedMultiplier * Time.fixedDeltaTime;
         // make sure character moves in direction of target angle, i.e. where the camera is looking
-        _rigidbody.Move(intermediatePosition, Quaternion.Euler(0f, targetAngle, 0f));
-        Vector3 resetVeolocityXZ = new Vector3(0f, _rigidbody.velocity.y, 0f);
-        _rigidbody.velocity = resetVeolocityXZ;
+        _rigidbody.MovePosition(intermediatePosition);
+        // Debug.Log(intermediatePosition);
+        _rigidbody.MoveRotation(Quaternion.Euler(0f, targetAngle, 0f));
+        Vector3 resetVelocityXZ = new Vector3(0f, _rigidbody.velocity.y, 0f);
+        _rigidbody.velocity = resetVelocityXZ;
     }
 
     private void VerticalVelocity()
     {
-        _isGrounded = DistanceToGround() <= 0.2f;
-        if (!_isGrounded)
+        bool isGrounded = DistanceToGround() <= 0.2f;
+        if (!isGrounded)
         {
             _timeFalling += Time.fixedDeltaTime;
             float velocityY = _rigidbody.velocity.y - 9.81f * _timeFalling;
@@ -94,11 +95,13 @@ public class ThirdPersonMovement : MonoBehaviour
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
         {
-             distanceToGround = hit.distance;
-        } else
+            distanceToGround = hit.distance;
+        }
+        else
         {
             distanceToGround = 0f;
         }
+        Debug.Log(distanceToGround);
         return distanceToGround;
     }
 
