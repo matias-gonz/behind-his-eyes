@@ -8,6 +8,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private Animator _animator;
     private Rigidbody _rigidbody;
     public Transform cam;
+    private PlayerAudio playerAudio;
 
     // constants
     public float speedMultiplier = 3f;
@@ -33,12 +34,14 @@ public class ThirdPersonMovement : MonoBehaviour
         _isJumpHash = Animator.StringToHash("isJump");
         // turns mouse cursor invisible and locks it in place, allowing indefinite mouse movement
         Cursor.lockState = CursorLockMode.Locked;
+        playerAudio = GetComponent<PlayerAudio>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         MoveXZandTurn();
+        playerAudio.MoveAudio(_animator, _velocityXHash, _velocityZHash);
         if (!_animator.GetBool(_isJumpHash))
         {
             VerticalVelocity();
