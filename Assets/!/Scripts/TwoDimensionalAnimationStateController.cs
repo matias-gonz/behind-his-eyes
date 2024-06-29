@@ -358,8 +358,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         else if (_isCrouched)
         {
             proneCollider.enabled = false;
-            crouchCollider.enabled = true;
-            standingCollider.enabled = false;
+            crouchCollider.enabled = false;
+            standingCollider.enabled = true;
         }
         else
         {
