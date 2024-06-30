@@ -41,7 +41,7 @@ public class ThirdPersonMovement : MonoBehaviour
     void FixedUpdate()
     {
         MoveXZandTurn();
-        playerAudio.MoveAudio(_animator, _velocityXHash, _velocityZHash);
+        playerAudio.HandlePlayerAudio(_animator, _velocityXHash, _velocityZHash);
         if (!_animator.GetBool(_isJumpHash))
         {
             VerticalVelocity();
