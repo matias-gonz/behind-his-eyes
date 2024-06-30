@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
+using utils; // 确保导入了 utils 命名空间
 
 public class PlayerAudio : MonoBehaviour
 {
     public AudioSource audioSource;
-    public List<AudioClip> audioPlayer = new List<AudioClip>();
+    public List<Audio> audioPlayer = new List<Audio>(); // 使用 Audio 结构体
     private AudioClip currentClip;
 
     private float moveAudioCooldown = 0;
     private float jumpAudioCooldown = 0;
+
+    public float proneDelay = 0.01f; // 序列化延迟变量
+    public float walkDelay = 0.01f; // 序列化延迟变量
+    public float runDelay = 0.01f; // 序列化延迟变量
+    public float jumpDelay = 0.5f; // 序列化延迟变量
 
     void Start()
     {
@@ -25,75 +30,102 @@ public class PlayerAudio : MonoBehaviour
 
     public void HandlePlayerAudio(Animator ani, int velocityXHash, int velocityZHash)
     {
-        if (!Input.GetKey(KeyCode.LeftShift))
+        if (ani.GetBool("isJump"))
         {
-            if (ani.GetBool("isProne"))
-            {
-                HandleProneMovement(ani, velocityXHash, velocityZHash);
-            }
-            else
-            {
-                HandleWalkingMovement(ani, velocityXHash, velocityZHash);
-            }
+            HandleJumpingMovement(ani);
         }
-        else
+        else if (Input.GetKey(KeyCode.LeftShift))
         {
             HandleRunningMovement(ani, velocityXHash, velocityZHash);
         }
-
-        HandleJumpingMovement(ani);
+        else if (ani.GetBool("isProne"))
+        {
+            HandleProneMovement(ani, velocityXHash, velocityZHash);
+        }
+        else
+        {
+            HandleWalkingMovement(ani, velocityXHash, velocityZHash);
+        }
     }
 
     private void HandleProneMovement(Animator ani, int velocityXHash, int velocityZHash)
     {
-        if ((ani.GetFloat(velocityZHash) != 0 || ani.GetFloat(velocityXHash) != 0) && moveAudioCooldown >= 1f)
+        if (ani.GetFloat(velocityZHash) != 0 || ani.GetFloat(velocityXHash) != 0)
         {
-            moveAudioCooldown = 0;
-            Debug.Log("moveAudioCooldown" + moveAudioCooldown);
-            PlayAudio("Prone", 0.01f, true);
+            if (moveAudioCooldown >= 1f)
+            {
+                moveAudioCooldown = 0;
+                PlayAudio("Prone", proneDelay, true);
+            }
+        }
+        else
+        {
+            StopAudio();
         }
     }
 
     private void HandleWalkingMovement(Animator ani, int velocityXHash, int velocityZHash)
     {
-        if ((ani.GetFloat(velocityZHash) != 0 || ani.GetFloat(velocityXHash) != 0) && moveAudioCooldown >= 0.55f)
+        if (ani.GetFloat(velocityZHash) != 0 || ani.GetFloat(velocityXHash) != 0)
         {
-            moveAudioCooldown = 0;
-            Debug.Log("moveAudioCooldown" + moveAudioCooldown);
-            PlayAudio("Walk", 0.01f, true);
+            if (moveAudioCooldown >= 0.55f)
+            {
+                moveAudioCooldown = 0;
+                PlayAudio("Walk", walkDelay, true);
+            }
+        }
+        else
+        {
+            StopAudio();
         }
     }
 
     private void HandleRunningMovement(Animator ani, int velocityXHash, int velocityZHash)
     {
-        if ((ani.GetFloat(velocityZHash) != 0 || ani.GetFloat(velocityXHash) != 0) && Input.GetKeyDown(KeyCode.LeftShift))
+        if (ani.GetFloat(velocityZHash) != 0 || ani.GetFloat(velocityXHash) != 0)
         {
-            PlayAudio("Run", 0.01f, false);
+            if (audioSource.clip == null || audioSource.clip.name != "Run")
+            {
+                PlayAudio("Run", runDelay, true);
+            }
+        }
+        else
+        {
+            StopAudio();
         }
     }
 
     private void HandleJumpingMovement(Animator ani)
     {
-        if (ani.GetBool("isJump") && jumpAudioCooldown >= 1f)
+        if (jumpAudioCooldown >= 1f)
         {
             jumpAudioCooldown = 0;
-            Debug.Log("Jump");
-            PlayAudio("Jump", 0.5f, true);
+            PlayAudio("Jump", jumpDelay, false);
         }
     }
 
-    private void PlayAudio(string clipName, float delay, bool isLooping)
+    private void PlayAudio(string clipId, float delay, bool isLooping)
     {
-        currentClip = audioPlayer.Find(playerClip => playerClip.name == clipName);
-        if (currentClip != null)
+        Audio audio = audioPlayer.Find(playerAudio => playerAudio.id == clipId);
+        if (audio.clip != null)
         {
+            currentClip = audio.clip;
+            audioSource.Stop(); // 停止当前播放的音频
             audioSource.clip = currentClip;
             audioSource.loop = isLooping;
             audioSource.PlayDelayed(delay);
         }
         else
         {
-            Debug.LogWarning($"Audio clip {clipName} not found!");
+            Debug.LogWarning($"Audio clip {clipId} not found!");
+        }
+    }
+
+    private void StopAudio()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
         }
     }
 }
