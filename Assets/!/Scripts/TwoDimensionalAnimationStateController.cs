@@ -19,8 +19,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     private Rigidbody _rigidbody;
     private PlayerInput _input;
     ThirdPersonMovement _thirdPersonMovement;
-    public Collider standingCollider;
-    public Collider crouchCollider;
+    public Collider upRightCollider;
     public Collider proneCollider;
 
     // local variables for animation state
@@ -352,20 +351,17 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         if (_isProne)
         {
             proneCollider.enabled = true;
-            crouchCollider.enabled = false;
-            standingCollider.enabled = false;
+            upRightCollider.enabled = false;
         }
         else if (_isCrouched)
         {
             proneCollider.enabled = false;
-            crouchCollider.enabled = true;
-            standingCollider.enabled = false;
+            upRightCollider.enabled = true;
         }
         else
         {
             proneCollider.enabled = false;
-            crouchCollider.enabled = false;
-            standingCollider.enabled = true;
+            upRightCollider.enabled = true;
         }
     }
 
