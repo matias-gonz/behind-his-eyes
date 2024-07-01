@@ -1,0 +1,2902 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RifleIdle
+  serializedVersion: 7
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.055358693, y: 0.46050647, z: 0.011654528, w: 0.8858518}
+        inSlope: {x: -0.0086202845, y: -0.00074207777, z: 0.0042067096, w: -0.00021100043}
+        outSlope: {x: -0.0086202845, y: -0.00074207777, z: 0.0042067096, w: -0.00021100043}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: -0.06394086, y: 0.4602873, z: 0.016073624, w: 0.88531846}
+        inSlope: {x: 0.025822656, y: 0.00048458623, z: -0.013349395, w: 0.0018543022}
+        outSlope: {x: 0.025822656, y: 0.00048458623, z: -0.013349395, w: 0.0018543022}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: -0.055358753, y: 0.46050635, z: 0.011654397, w: 0.88585186}
+        inSlope: {x: 0.002512897, y: -0.0005945569, z: -0.0014483104, w: 0.00048637437}
+        outSlope: {x: 0.002512897, y: -0.0005945569, z: -0.0014483104, w: 0.00048637437}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.013350178, y: -0.0035556518, z: -0.0066228327, w: 0.99988264}
+        inSlope: {x: 0.0030258389, y: 0.0005465979, z: -0.000491878, w: -0.0000411272}
+        outSlope: {x: 0.0030258389, y: 0.0005465979, z: -0.000491878, w: -0.0000411272}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: 0.025470087, y: -0.006294942, z: -0.005448982, w: 0.99964094}
+        inSlope: {x: -0.033628676, y: 0.006256761, z: -0.0036857917, w: 0.000875295}
+        outSlope: {x: -0.033628676, y: 0.006256761, z: -0.0036857917, w: 0.000875295}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.013367922, y: -0.003573064, z: -0.0067382446, w: 0.99988157}
+        inSlope: {x: -0.005301866, y: 0.0016295203, z: 0.0040504606, w: 0.000103712184}
+        outSlope: {x: -0.005301866, y: 0.0016295203, z: 0.0040504606, w: 0.000103712184}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.04271813, y: -0.009438877, z: -0.0036531286, w: 0.9990359}
+        inSlope: {x: -0.004410222, y: 0.00094486395, z: 0.0032524855, w: 0.00020921229}
+        outSlope: {x: -0.004410222, y: 0.00094486395, z: 0.0032524855, w: 0.00020921229}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: 0.05040189, y: -0.012663355, z: -0.0089807315, w: 0.99860835}
+        inSlope: {x: -0.016307902, y: 0.004951167, z: 0.0114573315, w: 0.0009879479}
+        outSlope: {x: -0.016307902, y: 0.004951167, z: 0.0114573315, w: 0.0009879479}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.04271071, y: -0.0094213635, z: -0.0036559266, w: 0.9990364}
+        inSlope: {x: -0.010129483, y: 0.0060185473, z: 0.0067724166, w: 0.00051677274}
+        outSlope: {x: -0.010129483, y: 0.0060185473, z: 0.0067724166, w: 0.00051677274}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.073627286, y: -0.0089184325, z: -0.0015391286, w: 0.9972448}
+        inSlope: {x: -0.014527067, y: 0.0057433075, z: -0.0045839786, w: 0.0011122227}
+        outSlope: {x: -0.014527067, y: 0.0057433075, z: -0.0045839786, w: 0.0011122227}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.2666668
+        value: {x: 0.09406786, y: -0.015538872, z: 0.004454198, w: 0.9954346}
+        inSlope: {x: 0.016514791, y: -0.008882323, z: 0.0050046546, w: -0.0017210825}
+        outSlope: {x: 0.016514791, y: -0.008882323, z: 0.0050046546, w: -0.0017210825}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.073619865, y: -0.008919757, z: -0.0015405718, w: 0.9972453}
+        inSlope: {x: -0.028867526, y: 0.012214149, z: -0.008867527, w: 0.002244117}
+        outSlope: {x: -0.028867526, y: 0.012214149, z: -0.008867527, w: 0.002244117}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.054617316, y: -0.04862993, z: -0.0010511335, w: 0.9973219}
+        inSlope: {x: 0.0040413067, y: 0.000250116, z: -0.005663833, w: -0.00021636485}
+        outSlope: {x: 0.0040413067, y: 0.000250116, z: -0.005663833, w: -0.00021636485}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: 0.05168189, y: -0.04975882, z: 0.0044073295, w: 0.99741346}
+        inSlope: {x: 0.008420915, y: 0.0023885653, z: -0.005340814, w: -0.0002941492}
+        outSlope: {x: 0.008420915, y: 0.0023885653, z: -0.005340814, w: -0.0002941492}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.054620624, y: -0.048676938, z: -0.0008922464, w: 0.9973196}
+        inSlope: {x: 0.0010563444, y: 0.0032189891, z: -0.013883182, w: 0.000089407054}
+        outSlope: {x: 0.0010563444, y: 0.0032189891, z: -0.013883182, w: 0.000089407054}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.022039361, y: -0.048637956, z: 0.0005361602, w: 0.9985732}
+        inSlope: {x: 0.0040071085, y: 0.000073313706, z: -0.005651252, w: -0.0000822544}
+        outSlope: {x: 0.0040071085, y: 0.000073313706, z: -0.005651252, w: -0.0000822544}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: 0.019101504, y: -0.049588636, z: 0.0060286447, w: 0.9985689}
+        inSlope: {x: 0.008426112, y: 0.002215842, z: -0.0054102233, w: -0.000018775481}
+        outSlope: {x: 0.008426112, y: 0.002215842, z: -0.0054102233, w: -0.000018775481}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.022043694, y: -0.048678637, z: 0.0006975401, w: 0.998571}
+        inSlope: {x: 0.0010234313, y: 0.0027823474, z: -0.013943983, w: 0.00012516987}
+        outSlope: {x: 0.0010234313, y: 0.0027823474, z: -0.013943983, w: 0.00012516987}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.7192587, y: -0.34738427, z: 0.4300474, w: 0.42077348}
+        inSlope: {x: -0.011313557, y: -0.0036424396, z: -0.016756654, w: 0.033396184}
+        outSlope: {x: -0.011313557, y: -0.0036424396, z: -0.016756654, w: 0.033396184}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1666667
+        value: {x: 0.7320717, y: -0.33437818, z: 0.4251272, w: 0.4141607}
+        inSlope: {x: 0.025898542, y: 0.02405899, z: 0.008963504, w: -0.03555182}
+        outSlope: {x: 0.025898542, y: 0.02405899, z: 0.008963504, w: -0.03555182}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0333335
+        value: {x: 0.7211843, y: -0.3458097, z: 0.43085265, w: 0.41794124}
+        inSlope: {x: -0.031138573, y: -0.026323572, z: -0.00977976, w: 0.042035468}
+        outSlope: {x: -0.031138573, y: -0.026323572, z: -0.00977976, w: 0.042035468}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.7192587, y: -0.34738445, z: 0.43004742, w: 0.42077324}
+        inSlope: {x: -0.02798083, y: -0.022641443, z: -0.013107968, w: 0.04266415}
+        outSlope: {x: -0.02798083, y: -0.022641443, z: -0.013107968, w: 0.04266415}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.3825056, y: 0.20012587, z: -0.06784845, w: 0.89946413}
+        inSlope: {x: 0.015139281, y: -0.018212644, z: 0.03493443, w: 0.00021636485}
+        outSlope: {x: 0.015139281, y: -0.018212644, z: 0.03493443, w: 0.00021636485}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1
+        value: {x: 0.36319032, y: 0.2257388, z: -0.08364462, w: 0.9000769}
+        inSlope: {x: -0.047007017, y: 0.043792393, z: -0.05898474, w: 0.0025060754}
+        outSlope: {x: -0.047007017, y: 0.043792393, z: -0.05898474, w: 0.0025060754}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.7666668
+        value: {x: 0.36389688, y: 0.21902929, z: -0.0881302, w: 0.9010207}
+        inSlope: {x: 0.06164974, y: -0.06461939, z: 0.06197138, w: -0.0031328232}
+        outSlope: {x: 0.06164974, y: -0.06461939, z: 0.06197138, w: -0.0031328232}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.3825275, y: 0.20013167, z: -0.067836285, w: 0.8994544}
+        inSlope: {x: 0.049161363, y: -0.047797456, z: 0.043261614, w: -0.0068879193}
+        outSlope: {x: 0.049161363, y: -0.047797456, z: 0.043261614, w: -0.0068879193}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.5596916, y: 0.5863856, z: -0.39194578, w: 0.43505836}
+        inSlope: {x: 0.009357332, y: 0.017017722, z: 0.020363329, w: -0.016672611}
+        outSlope: {x: 0.009357332, y: 0.017017722, z: 0.020363329, w: -0.016672611}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1333334
+        value: {x: 0.56416434, y: 0.57774204, z: -0.3994531, w: 0.4340161}
+        inSlope: {x: -0.015652467, y: -0.02108125, z: -0.025930233, w: 0.024540853}
+        outSlope: {x: -0.015652467, y: -0.02108125, z: -0.025930233, w: 0.024540853}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.55968475, y: 0.5864882, z: -0.39185387, w: 0.43501163}
+        inSlope: {x: 0.0034439596, y: 0.029926328, z: 0.012283635, w: -0.03363583}
+        outSlope: {x: 0.0034439596, y: 0.029926328, z: 0.012283635, w: -0.03363583}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.079976246, y: 0.20411566, z: -0.030039737, w: 0.9752119}
+        inSlope: {x: 0.010578408, y: -0.006296932, z: -0.014619547, w: -0.000007152557}
+        outSlope: {x: 0.010578408, y: -0.006296932, z: -0.014619547, w: -0.000007152557}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1
+        value: {x: 0.05874723, y: 0.20715448, z: -0.029002277, w: 0.976112}
+        inSlope: {x: -0.022764564, y: 0.013018314, z: 0.016843783, w: -0.0008913863}
+        outSlope: {x: -0.022764564, y: 0.013018314, z: 0.016843783, w: -0.0008913863}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0333335
+        value: {x: 0.07811656, y: 0.2048978, z: -0.029227579, w: 0.9752233}
+        inSlope: {x: 0.03747248, y: -0.0033357693, z: -0.015802411, w: -0.0027707133}
+        outSlope: {x: 0.03747248, y: -0.0033357693, z: -0.015802411, w: -0.0027707133}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.08005975, y: 0.20409791, z: -0.029954474, w: 0.9752114}
+        inSlope: {x: 0.022537954, y: -0.01949342, z: -0.0073479186, w: 0.0020188112}
+        outSlope: {x: 0.022537954, y: -0.01949342, z: -0.0073479186, w: 0.0020188112}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.22611526, y: -0.049397737, z: -0.13810821, w: 0.9629942}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.22611526, y: -0.049397737, z: -0.13810821, w: 0.9629942}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandThumb1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.00027450558, y: 0.005300108, z: 0.037564028, w: 0.99928015}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.00027450558, y: 0.005300108, z: 0.037564028, w: 0.99928015}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandThumb1/ww2_ger_test_archetype:LeftHandThumb2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.12709774, y: 0.06919929, z: -0.27409714, w: 0.9507515}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: -0.12709774, y: 0.06919929, z: -0.27409714, w: 0.9507515}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandThumb1/ww2_ger_test_archetype:LeftHandThumb2/ww2_ger_test_archetype:LeftHandThumb3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.14876343, y: -0.09329664, z: -0.041485265, w: 0.98358744}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.14876343, y: -0.09329664, z: -0.041485265, w: 0.98358744}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandIndex1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.24462345, y: -0.0013113571, z: 0.047391307, w: 0.9684584}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.24462345, y: -0.0013113571, z: 0.047391307, w: 0.9684584}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandIndex1/ww2_ger_test_archetype:LeftHandIndex2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.2453917, y: -0.00050226075, z: 0.014469374, w: 0.9693159}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.2453917, y: -0.00050226075, z: 0.014469374, w: 0.9693159}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandIndex1/ww2_ger_test_archetype:LeftHandIndex2/ww2_ger_test_archetype:LeftHandIndex3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.14865033, y: -0.08081958, z: -0.044726193, w: 0.98456633}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.14865033, y: -0.08081958, z: -0.044726193, w: 0.98456633}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandMiddle1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.38437474, y: 0.000040248586, z: 0.07783864, w: 0.9198898}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.38437474, y: 0.000040248586, z: 0.07783864, w: 0.9198898}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandMiddle1/ww2_ger_test_archetype:LeftHandMiddle2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.36871758, y: -0.002437152, z: 0.058867943, w: 0.9276723}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.36871758, y: -0.002437152, z: 0.058867943, w: 0.9276723}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandMiddle1/ww2_ger_test_archetype:LeftHandMiddle2/ww2_ger_test_archetype:LeftHandMiddle3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.1305399, y: 0.053084243, z: -0.031571597, w: 0.9895174}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.1305399, y: 0.053084243, z: -0.031571597, w: 0.9895174}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandRing1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.54394674, y: 0.00081801525, z: 0.15301697, w: 0.82504976}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.54394674, y: 0.00081801525, z: 0.15301697, w: 0.82504976}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandRing1/ww2_ger_test_archetype:LeftHandRing2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.26340702, y: -0.018677281, z: 0.15045878, w: 0.9526962}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.26340702, y: -0.018677281, z: 0.15045878, w: 0.9526962}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandRing1/ww2_ger_test_archetype:LeftHandRing2/ww2_ger_test_archetype:LeftHandRing3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.03714525, y: 0.2019622, z: -0.041774664, w: 0.97779673}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.03714525, y: 0.2019622, z: -0.041774664, w: 0.97779673}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandPinky1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.3989878, y: 0.005042278, z: 0.1718935, w: 0.9006864}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.3989878, y: 0.005042278, z: 0.1718935, w: 0.9006864}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandPinky1/ww2_ger_test_archetype:LeftHandPinky2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.25268307, y: -0.0036042973, z: 0.1344048, w: 0.9581616}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.25268307, y: -0.0036042973, z: 0.1344048, w: 0.9581616}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandPinky1/ww2_ger_test_archetype:LeftHandPinky2/ww2_ger_test_archetype:LeftHandPinky3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.69541335, y: 0.3831062, z: -0.4320829, w: 0.42770815}
+        inSlope: {x: -0.0036048887, y: -0.00940293, z: 0.033749342, w: 0.04824489}
+        outSlope: {x: -0.0036048887, y: -0.00940293, z: 0.033749342, w: 0.04824489}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.0333334
+        value: {x: 0.68697983, y: 0.4043631, z: -0.43811423, w: 0.41545776}
+        inSlope: {x: -0.0071936785, y: 0.041939877, z: -0.012364078, w: -0.04195776}
+        outSlope: {x: -0.0071936785, y: 0.041939877, z: -0.012364078, w: -0.04195776}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.4000001
+        value: {x: 0.69091076, y: 0.40654638, z: -0.4414646, w: 0.4030774}
+        inSlope: {x: 0.035719905, y: -0.046002164, z: -0.002105536, w: -0.016993599}
+        outSlope: {x: 0.035719905, y: -0.046002164, z: -0.002105536, w: -0.016993599}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.9333334
+        value: {x: 0.69683206, y: 0.38632405, z: -0.43621412, w: 0.41820574}
+        inSlope: {x: 0.0016021947, y: -0.036584884, z: 0.029145332, w: 0.06165993}
+        outSlope: {x: 0.0016021947, y: -0.036584884, z: 0.029145332, w: 0.06165993}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.6954622, y: 0.38304478, z: -0.43200898, w: 0.4277585}
+        inSlope: {x: -0.033382807, y: 0.017265396, z: -0.00082254485, w: 0.03809903}
+        outSlope: {x: -0.033382807, y: 0.017265396, z: -0.00082254485, w: 0.03809903}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.27764416, y: 0.19101974, z: 0.21145757, w: 0.91744804}
+        inSlope: {x: 0.013295709, y: 0.024762152, z: -0.022597162, w: -0.0039947033}
+        outSlope: {x: 0.013295709, y: 0.024762152, z: -0.022597162, w: -0.0039947033}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1
+        value: {x: 0.25856164, y: 0.1682828, z: 0.24625036, w: 0.91879684}
+        inSlope: {x: 0.006271438, y: -0.069926694, z: 0.048363335, w: -0.0019079454}
+        outSlope: {x: 0.006271438, y: -0.069926694, z: 0.048363335, w: -0.0019079454}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.4000001
+        value: {x: 0.26421323, y: 0.14901833, z: 0.2448064, w: 0.92089885}
+        inSlope: {x: -0.0016665473, y: -0.0053487774, z: -0.06957836, w: 0.019997675}
+        outSlope: {x: -0.0016665473, y: -0.0053487774, z: -0.06957836, w: 0.019997675}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.8000001
+        value: {x: 0.2697596, y: 0.16915223, z: 0.22276968, w: 0.92140704}
+        inSlope: {x: 0.027652707, y: 0.07970795, z: -0.061274678, w: -0.007914312}
+        outSlope: {x: 0.027652707, y: 0.07970795, z: -0.061274678, w: -0.007914312}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.27771765, y: 0.19103871, z: 0.21134454, w: 0.9174479}
+        inSlope: {x: 0.028712181, y: 0.08963906, z: 0.05006348, w: -0.038654245}
+        outSlope: {x: 0.028712181, y: 0.08963906, z: 0.05006348, w: -0.038654245}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.11934133, y: -0.24976397, z: 0.71890336, w: 0.6376155}
+        inSlope: {x: 0.0032132862, y: -0.0017358362, z: 0.00059187406, w: -0.0019472836}
+        outSlope: {x: 0.0032132862, y: -0.0017358362, z: 0.00059187406, w: -0.0019472836}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.0666667
+        value: {x: 0.13146801, y: -0.25873902, z: 0.71848446, w: 0.6321}
+        inSlope: {x: 0.010657991, y: -0.0062155784, z: 0.0010210286, w: -0.005920535}
+        outSlope: {x: 0.010657991, y: -0.0062155784, z: 0.0010210286, w: -0.005920535}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.7666668
+        value: {x: 0.1250182, y: -0.25212362, z: 0.71990526, w: 0.63446087}
+        inSlope: {x: -0.009927536, y: 0.009977827, z: 0.0014501824, w: 0.0042852797}
+        outSlope: {x: -0.009927536, y: 0.009977827, z: 0.0014501824, w: 0.0042852797}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.11922558, y: -0.24972707, z: 0.7189971, w: 0.63754594}
+        inSlope: {x: -0.076573566, y: -0.008349278, z: -0.010512481, w: 0.02307596}
+        outSlope: {x: -0.076573566, y: -0.008349278, z: -0.010512481, w: 0.02307596}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.12590261, y: -0.029748525, z: 0.1454781, w: 0.9808668}
+        inSlope: {x: -0.038252097, y: -0.025455335, z: 0.018053947, w: 0.0014197825}
+        outSlope: {x: -0.038252097, y: -0.025455335, z: 0.018053947, w: 0.0014197825}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.0666667
+        value: {x: 0.1228671, y: -0.018546227, z: 0.13736424, w: 0.9826957}
+        inSlope: {x: 0.04234754, y: 0.055787876, z: -0.010908108, w: -0.0027099277}
+        outSlope: {x: 0.04234754, y: 0.055787876, z: -0.010908108, w: -0.0027099277}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.7333335
+        value: {x: 0.13750915, y: -0.014480838, z: 0.13802639, w: 0.98072946}
+        inSlope: {x: -0.02378738, y: -0.05913435, z: 0.024601642, w: -0.00096738053}
+        outSlope: {x: -0.02378738, y: -0.05913435, z: 0.024601642, w: -0.00096738053}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.1258589, y: -0.029721338, z: 0.14532351, w: 0.9808962}
+        inSlope: {x: -0.0122214975, y: -0.06304527, z: 0.015836671, w: -0.0026142623}
+        outSlope: {x: -0.0122214975, y: -0.06304527, z: 0.015836671, w: -0.0026142623}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.18632942, y: 0.19016965, z: 0.15701413, w: 0.9510328}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.18632942, y: 0.19016965, z: 0.15701413, w: 0.9510328}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandThumb1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.008209203, y: -0.026735075, z: -0.1368318, w: 0.99019945}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: -0.008209203, y: -0.026735075, z: -0.1368318, w: 0.99019945}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandThumb1/ww2_ger_test_archetype:RightHandThumb2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1516633, y: -0.021940248, z: -0.118114784, w: 0.9811044}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: -0.1516633, y: -0.021940248, z: -0.118114784, w: 0.9811044}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandThumb1/ww2_ger_test_archetype:RightHandThumb2/ww2_ger_test_archetype:RightHandThumb3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.03542524, y: 0.010687277, z: 0.0008706586, w: 0.9993148}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.03542524, y: 0.010687277, z: 0.0008706586, w: 0.9993148}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandIndex1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.100407, y: -0.000017386175, z: -0.02622636, w: 0.9946008}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.100407, y: -0.000017386175, z: -0.02622636, w: 0.9946008}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandIndex1/ww2_ger_test_archetype:RightHandIndex2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.28812844, y: 0.0032611233, z: -0.023093427, w: 0.9573077}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.28812844, y: 0.0032611233, z: -0.023093427, w: 0.9573077}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandIndex1/ww2_ger_test_archetype:RightHandIndex2/ww2_ger_test_archetype:RightHandIndex3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.007967563, y: 0.0019447305, z: -0.060502637, w: 0.9981344}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: -0.007967563, y: 0.0019447305, z: -0.060502637, w: 0.9981344}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandMiddle1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.7717917, y: -0.000020801332, z: -0.13486975, w: 0.62140787}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.7717917, y: -0.000020801332, z: -0.13486975, w: 0.62140787}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandMiddle1/ww2_ger_test_archetype:RightHandMiddle2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.574367, y: 0.0011443578, z: -0.09729253, w: 0.8127948}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.574367, y: 0.0011443578, z: -0.09729253, w: 0.8127948}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandMiddle1/ww2_ger_test_archetype:RightHandMiddle2/ww2_ger_test_archetype:RightHandMiddle3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.0835765, y: -0.16402206, z: -0.07634622, w: 0.9799403}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.0835765, y: -0.16402206, z: -0.07634622, w: 0.9799403}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandRing1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.8184867, y: 0.004474944, z: -0.17593606, w: 0.5469059}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.8184867, y: 0.004474944, z: -0.17593606, w: 0.5469059}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandRing1/ww2_ger_test_archetype:RightHandRing2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.6190816, y: -0.00944165, z: -0.1394499, w: 0.7727889}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.6190816, y: -0.00944165, z: -0.1394499, w: 0.7727889}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandRing1/ww2_ger_test_archetype:RightHandRing2/ww2_ger_test_archetype:RightHandRing3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.032930654, y: -0.26724622, z: -0.04531165, w: 0.9619989}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.032930654, y: -0.26724622, z: -0.04531165, w: 0.9619989}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandPinky1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.6894158, y: -0.01074866, z: -0.23752606, w: 0.6842308}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.6894158, y: -0.01074866, z: -0.23752606, w: 0.6842308}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandPinky1/ww2_ger_test_archetype:RightHandPinky2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.5900418, y: 0.006138153, z: -0.23825958, w: 0.77139187}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.5900418, y: 0.006138153, z: -0.23825958, w: 0.77139187}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandPinky1/ww2_ger_test_archetype:RightHandPinky2/ww2_ger_test_archetype:RightHandPinky3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.13699996, y: 0.1492855, z: 0.9726516, w: 0.113550626}
+        inSlope: {x: -0.000018328426, y: -0.0031498072, z: 0.00019669531, w: 0.002441704}
+        outSlope: {x: -0.000018328426, y: -0.0031498072, z: 0.00019669531, w: 0.002441704}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: -0.1368145, y: 0.14858153, z: 0.9724682, w: 0.11623693}
+        inSlope: {x: -0.0007686771, y: 0.00092603354, z: 0.0007554896, w: -0.008407728}
+        outSlope: {x: -0.0007686771, y: 0.00092603354, z: 0.0007554896, w: -0.008407728}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: -0.13699967, y: 0.14928557, z: 0.97265166, w: 0.113550216}
+        inSlope: {x: 0.00013098134, y: 0.0022485873, z: -0.00024676346, w: -0.0006859756}
+        outSlope: {x: 0.00013098134, y: 0.0022485873, z: -0.00024676346, w: -0.0006859756}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:LeftUpLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.23303527, y: 0.12818784, z: -0.008855602, w: 0.96394193}
+        inSlope: {x: -0.01192063, y: -0.003083646, z: -0.0005805026, w: -0.002480149}
+        outSlope: {x: -0.01192063, y: -0.003083646, z: -0.0005805026, w: -0.002480149}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: -0.24659304, y: 0.12563865, z: -0.009892642, w: 0.9608897}
+        inSlope: {x: 0.043049272, y: 0.007622622, z: 0.0034573008, w: 0.010085115}
+        outSlope: {x: 0.043049272, y: 0.007622622, z: 0.0034573008, w: 0.010085115}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: -0.23303542, y: 0.1281881, z: -0.00885561, w: 0.9639419}
+        inSlope: {x: 0.0006642944, y: -0.000101477, z: 0.0001291373, w: 0.00017523782}
+        outSlope: {x: 0.0006642944, y: -0.000101477, z: 0.0001291373, w: 0.00017523782}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:LeftUpLeg/ww2_ger_test_archetype:LeftLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.4596772, y: 0.092947975, z: -0.022600224, w: 0.8829195}
+        inSlope: {x: 0.005115866, y: 0.0009206682, z: 0.0013850256, w: -0.0027269123}
+        outSlope: {x: 0.005115866, y: 0.0009206682, z: 0.0013850256, w: -0.0027269123}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: 0.46415442, y: 0.09366317, z: -0.021637354, w: 0.88052243}
+        inSlope: {x: -0.014349831, y: -0.0024046027, z: -0.0033066361, w: 0.0077381805}
+        outSlope: {x: -0.014349831, y: -0.0024046027, z: -0.0033066361, w: 0.0077381805}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.45967743, y: 0.092947595, z: -0.022600284, w: 0.8829194}
+        inSlope: {x: -0.000036656893, y: -0.0000075995995, z: 0.000003017488, w: 0.000019669551}
+        outSlope: {x: -0.000036656893, y: -0.0000075995995, z: 0.000003017488, w: 0.000019669551}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:LeftUpLeg/ww2_ger_test_archetype:LeftLeg/ww2_ger_test_archetype:LeftFoot
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.31442055, y: 0.030465262, z: -0.0114899445, w: 0.9487252}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.31442055, y: 0.030465262, z: -0.0114899445, w: 0.9487252}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:LeftUpLeg/ww2_ger_test_archetype:LeftLeg/ww2_ger_test_archetype:LeftFoot/ww2_ger_test_archetype:LeftToeBase
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.19213367, y: 0.11900271, z: 0.96201706, w: -0.15312164}
+        inSlope: {x: -0.00022754072, y: -0.0049276645, z: 0.00011622905, w: -0.0033836064}
+        outSlope: {x: -0.00022754072, y: -0.0049276645, z: 0.00011622905, w: -0.0033836064}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: 0.19141501, y: 0.1174347, z: 0.9618781, w: -0.15607658}
+        inSlope: {x: 0.0024700933, y: 0.0036461314, z: 0.00053376006, w: 0.009066769}
+        outSlope: {x: 0.0024700933, y: 0.0036461314, z: 0.00053376006, w: 0.009066769}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.19213465, y: 0.11900396, z: 0.96201664, w: -0.15312193}
+        inSlope: {x: 0.000051856092, y: 0.0017125921, z: -0.00014126314, w: 0.0005082791}
+        outSlope: {x: 0.000051856092, y: 0.0017125921, z: -0.00014126314, w: 0.0005082791}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:RightUpLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.31747848, y: -0.026133293, z: 0.021714184, w: 0.9476566}
+        inSlope: {x: -0.008897781, y: 0.0017862393, z: 0.00033784655, w: -0.002941489}
+        outSlope: {x: -0.008897781, y: 0.0017862393, z: 0.00033784655, w: -0.002941489}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: -0.32935625, y: -0.023929624, z: 0.022205032, w: 0.94364125}
+        inSlope: {x: 0.03758136, y: -0.0069127018, z: -0.0014690976, w: 0.012975645}
+        outSlope: {x: 0.03758136, y: -0.0069127018, z: -0.0014690976, w: 0.012975645}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: -0.3174821, y: -0.026133081, z: 0.021714043, w: 0.9476554}
+        inSlope: {x: 0.00081092195, y: -0.0011288758, z: 0.00032851505, w: 0.00023424647}
+        outSlope: {x: 0.00081092195, y: -0.0011288758, z: 0.00032851505, w: 0.00023424647}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:RightUpLeg/ww2_ger_test_archetype:RightLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.5718666, y: -0.08636805, z: -0.016814418, w: 0.81561416}
+        inSlope: {x: 0.004003644, y: -0.00045150516, z: -0.00068658957, w: -0.0028699634}
+        outSlope: {x: 0.004003644, y: -0.00045150516, z: -0.00068658957, w: -0.0028699634}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333334
+        value: {x: 0.57590723, y: -0.086483136, z: -0.016727572, w: 0.81275564}
+        inSlope: {x: -0.012898755, y: 0.00039741435, z: -0.00022248385, w: 0.0091776345}
+        outSlope: {x: -0.012898755, y: 0.00039741435, z: -0.00022248385, w: 0.0091776345}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.5718691, y: -0.08636669, z: -0.016812738, w: 0.8156126}
+        inSlope: {x: -0.000051856092, y: -0.00026039805, z: -0.000541695, w: -0.000003576282}
+        outSlope: {x: -0.000051856092, y: -0.00026039805, z: -0.000541695, w: -0.000003576282}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:RightUpLeg/ww2_ger_test_archetype:RightLeg/ww2_ger_test_archetype:RightFoot
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.28473148, y: -0.043821234, z: -0.016552506, w: 0.95746213}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.28473148, y: -0.043821234, z: -0.016552506, w: 0.95746213}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:RightUpLeg/ww2_ger_test_archetype:RightLeg/ww2_ger_test_archetype:RightFoot/ww2_ger_test_archetype:RightToeBase
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.007285925, y: 0.9412131, z: 0.004493628}
+        inSlope: {x: -0.00057204015, y: -0.002450452, z: -0.00046938093}
+        outSlope: {x: -0.00057204015, y: -0.002450452, z: -0.00046938093}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.56666666
+        value: {x: 0.0054752766, y: 0.9385688, z: 0.0030707393}
+        inSlope: {x: -0.004911049, y: -0.005753222, z: -0.0038549907}
+        outSlope: {x: -0.0049110404, y: -0.0057259635, z: -0.0038549022}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.7
+        value: {x: 0.0047417884, y: 0.93773556, z: 0.002494772}
+        inSlope: {x: -0.0067149606, y: -0.0075436244, z: -0.005276881}
+        outSlope: {x: -0.0067149377, y: -0.0075348914, z: -0.0052767647}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.93333334
+        value: {x: 0.0032478583, y: 0.9360807, z: 0.0013205069}
+        inSlope: {x: -0.005357787, y: -0.0058681974, z: -0.0042139124}
+        outSlope: {x: -0.005357798, y: -0.0058619957, z: -0.0042139417}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.2333333
+        value: {x: 0.0024412354, y: 0.93521225, z: 0.00068688364}
+        inSlope: {x: 0.0007115849, y: 0.0009413591, z: 0.00054999796}
+        outSlope: {x: 0.000711595, y: 0.00094016007, z: 0.0005499981}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.4666667
+        value: {x: 0.0032037061, y: 0.93625075, z: 0.0012868557}
+        inSlope: {x: 0.0053548925, y: 0.0072481227, z: 0.004194494}
+        outSlope: {x: 0.005354967, y: 0.0072409553, z: 0.004194618}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6
+        value: {x: 0.004149341, y: 0.93749446, z: 0.002028916}
+        inSlope: {x: 0.008434542, y: 0.010840506, z: 0.006633155}
+        outSlope: {x: 0.008434695, y: 0.010833204, z: 0.006633195}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0666666
+        value: {x: 0.0072598, y: 0.9412058, z: 0.004474261}
+        inSlope: {x: 0.001309768, y: 0.0010899142, z: 0.0010175321}
+        outSlope: {x: 0.001309637, y: 0.0010851189, z: 0.0010174857}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1
+        value: {x: 0.0072859717, y: 0.94121236, z: 0.0044936617}
+        inSlope: {x: 0.00078520074, y: 0.00019138899, z: 0.00058207347}
+        outSlope: {x: 0.00078520074, y: 0.00019138899, z: 0.00058207347}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandThumb1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandThumb1/ww2_ger_test_archetype:LeftHandThumb2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandThumb1/ww2_ger_test_archetype:LeftHandThumb2/ww2_ger_test_archetype:LeftHandThumb3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandIndex1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandIndex1/ww2_ger_test_archetype:LeftHandIndex2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandIndex1/ww2_ger_test_archetype:LeftHandIndex2/ww2_ger_test_archetype:LeftHandIndex3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandMiddle1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandMiddle1/ww2_ger_test_archetype:LeftHandMiddle2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandMiddle1/ww2_ger_test_archetype:LeftHandMiddle2/ww2_ger_test_archetype:LeftHandMiddle3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandRing1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandRing1/ww2_ger_test_archetype:LeftHandRing2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandRing1/ww2_ger_test_archetype:LeftHandRing2/ww2_ger_test_archetype:LeftHandRing3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandPinky1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandPinky1/ww2_ger_test_archetype:LeftHandPinky2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandPinky1/ww2_ger_test_archetype:LeftHandPinky2/ww2_ger_test_archetype:LeftHandPinky3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandThumb1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandThumb1/ww2_ger_test_archetype:RightHandThumb2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandThumb1/ww2_ger_test_archetype:RightHandThumb2/ww2_ger_test_archetype:RightHandThumb3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandIndex1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandIndex1/ww2_ger_test_archetype:RightHandIndex2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandIndex1/ww2_ger_test_archetype:RightHandIndex2/ww2_ger_test_archetype:RightHandIndex3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandMiddle1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandMiddle1/ww2_ger_test_archetype:RightHandMiddle2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandMiddle1/ww2_ger_test_archetype:RightHandMiddle2/ww2_ger_test_archetype:RightHandMiddle3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandRing1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandRing1/ww2_ger_test_archetype:RightHandRing2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandRing1/ww2_ger_test_archetype:RightHandRing2/ww2_ger_test_archetype:RightHandRing3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandPinky1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandPinky1/ww2_ger_test_archetype:RightHandPinky2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:RightShoulder/ww2_ger_test_archetype:RightArm/ww2_ger_test_archetype:RightForeArm/ww2_ger_test_archetype:RightHand/ww2_ger_test_archetype:RightHandPinky1/ww2_ger_test_archetype:RightHandPinky2/ww2_ger_test_archetype:RightHandPinky3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:LeftUpLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:LeftUpLeg/ww2_ger_test_archetype:LeftLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:LeftUpLeg/ww2_ger_test_archetype:LeftLeg/ww2_ger_test_archetype:LeftFoot
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:LeftUpLeg/ww2_ger_test_archetype:LeftLeg/ww2_ger_test_archetype:LeftFoot/ww2_ger_test_archetype:LeftToeBase
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:RightUpLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:RightUpLeg/ww2_ger_test_archetype:RightLeg
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:RightUpLeg/ww2_ger_test_archetype:RightLeg/ww2_ger_test_archetype:RightFoot
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:RightUpLeg/ww2_ger_test_archetype:RightLeg/ww2_ger_test_archetype:RightFoot/ww2_ger_test_archetype:RightToeBase
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 30
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 2.1000001
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
