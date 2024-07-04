@@ -2,41 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using utils;
 
 public class PlayerAudio : MonoBehaviour
 {
     public AudioSource audioSource;
-    public List<AudioClip> audioPlayer = new List<AudioClip>();
-    private AudioClip currentClip;
+    public List<Audio> audioPlayer = new List<Audio>();
+    private AudioClip _currentClip;
 
     void Start()
     {
-        // initialize audioSource
         audioSource = GetComponent<AudioSource>();
     }
 
-    //walk
     public void Walk()
     {
         PlayAudio("Walk");
     }
-    //crouch
+
     public void Crouched()
     {
         PlayAudio("Crouched");
     }
-    //crawl
+
     public void Crawl()
     {
         PlayAudio("Crawl");
     }
-    //run
+
     public void Run()
     {
         Debug.Log("Run");
         PlayAudio("Walk");
     }
-    //jump
+
     public void Jump()
     {
         PlayAudio("Jump");
@@ -44,18 +43,24 @@ public class PlayerAudio : MonoBehaviour
 
     public void PlayAudio(string clipName)
     {
-        foreach (AudioClip playerClip in audioPlayer)
+        // Use the Find method to find the matching audio clip
+        Audio? audioToPlay = audioPlayer.Find(a => a.id == clipName);
+
+        // If the audio clip is not found, log a warning message and return
+        if (audioToPlay == null || !audioToPlay.HasValue)
         {
-            if (playerClip.name == clipName)
-            {
-                currentClip = playerClip;
-                Debug.Log(clipName);
-            }
+            Debug.LogWarning("Audio clip not found: " + clipName);
+            return;
         }
 
-        if (currentClip != null)
+        // Get the found audio clip
+        _currentClip = audioToPlay.Value.clip;
+        Debug.Log(clipName);
+
+        // Play the audio clip
+        if (_currentClip != null)
         {
-            audioSource.clip = currentClip;
+            audioSource.clip = _currentClip;
             audioSource.Play();
             audioSource.loop = false;
         }
