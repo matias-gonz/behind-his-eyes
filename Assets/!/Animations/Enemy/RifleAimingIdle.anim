@@ -178,31 +178,6 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.022039339, y: -0.048640378, z: 0.0005520152, w: 0.99857306}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 2.1000001
-        value: {x: 0.022039339, y: -0.048640378, z: 0.0005520152, w: 0.99857306}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
         value: {x: 0.7192592, y: -0.34738395, z: 0.43004695, w: 0.42077357}
         inSlope: {x: -0.011308192, y: -0.0036308167, z: -0.016767383, w: 0.033402443}
         outSlope: {x: -0.011308192, y: -0.0036308167, z: -0.016767383, w: 0.033402443}
@@ -1249,6 +1224,40 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:LeftShoulder/ww2_ger_test_archetype:LeftArm/ww2_ger_test_archetype:LeftForeArm/ww2_ger_test_archetype:LeftHand/ww2_ger_test_archetype:LeftHandThumb1/ww2_ger_test_archetype:LeftHandThumb2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.021039553, y: -0.36864924, z: -0.0066021187, w: 0.929307}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: -0.000041458876, y: 0.00008652287, z: 0.00009012799, w: 0.000057681915}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.0333333
+        value: {x: 0.007941327, y: -0.34236917, z: 0.024851918, w: 0.9392032}
+        inSlope: {x: -0.00003514992, y: 0.000057681915, z: 0.00008832543, w: 0}
+        outSlope: {x: 0.000035797704, y: -0.000055879344, z: -0.00008905771, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1000001
+        value: {x: 0.021039553, y: -0.36864924, z: -0.0066021187, w: 0.929307}
+        inSlope: {x: 0.00004016328, y: -0.00008381902, z: -0.00008469213, w: -0.000055879344}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
   m_CompressedRotationCurves: []
   m_EulerCurves:
   - curve:
@@ -2573,6 +2582,15 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
+      path: 2872492733
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
       path: 802627239
       attribute: 1
       script: {fileID: 0}
@@ -2610,15 +2628,6 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 962076087
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 2872492733
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -4154,126 +4163,6 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
     path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.022039339
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.1000001
-        value: 0.022039339
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.048640378
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.1000001
-        value: -0.048640378
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.0005520152
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.1000001
-        value: 0.0005520152
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.99857306
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.1000001
-        value: 0.99857306
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -13712,6 +13601,162 @@ AnimationClip:
     classID: 4
     script: {fileID: 0}
     flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.021039553
+        inSlope: 0
+        outSlope: -0.000041458876
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.0333333
+        value: 0.007941327
+        inSlope: -0.00003514992
+        outSlope: 0.000035797704
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.1000001
+        value: 0.021039553
+        inSlope: 0.00004016328
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.36864924
+        inSlope: 0
+        outSlope: 0.00008652287
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.0333333
+        value: -0.34236917
+        inSlope: 0.000057681915
+        outSlope: -0.000055879344
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.1000001
+        value: -0.36864924
+        inSlope: -0.00008381902
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0066021187
+        inSlope: 0
+        outSlope: 0.00009012799
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.0333333
+        value: 0.024851918
+        inSlope: 0.00008832543
+        outSlope: -0.00008905771
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.1000001
+        value: -0.0066021187
+        inSlope: -0.00008469213
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.929307
+        inSlope: 0
+        outSlope: 0.000057681915
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.0333333
+        value: 0.9392032
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.1000001
+        value: 0.929307
+        inSlope: -0.000055879344
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: ww2_ger_test_archetype:Hips/ww2_ger_test_archetype:Spine/ww2_ger_test_archetype:Spine1/ww2_ger_test_archetype:Spine2/ww2_ger_test_archetype:Neck/ww2_ger_test_archetype:Head
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
   m_EulerEditorCurves:
   - serializedVersion: 2
     curve:
@@ -14277,7 +14322,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2.525813
+        value: 1.962
         inSlope: 0.000006811959
         outSlope: 0.000006811959
         tangentMode: 0
@@ -14285,8 +14330,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 1.0333333
+        value: 1.83
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 2.1000001
-        value: 2.525813
+        value: 1.962
         inSlope: 0.000006811959
         outSlope: 0.000006811959
         tangentMode: 0
@@ -14307,7 +14361,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -5.57865
+        value: -43.303
         inSlope: 0.000008855546
         outSlope: 0.000008855546
         tangentMode: 0
@@ -14315,8 +14369,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 1.0333333
+        value: -40.019
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 2.1000001
-        value: -5.57865
+        value: -43.303
         inSlope: 0.000008855546
         outSlope: 0.000008855546
         tangentMode: 0
@@ -14337,7 +14400,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.05973437
+        value: -1.593
         inSlope: -0.0000054123143
         outSlope: -0.0000054123143
         tangentMode: 0
@@ -14345,8 +14408,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 1.0333333
+        value: 2.365
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 2.1000001
-        value: -0.05973437
+        value: -1.593
         inSlope: -0.0000054123143
         outSlope: -0.0000054123143
         tangentMode: 0
