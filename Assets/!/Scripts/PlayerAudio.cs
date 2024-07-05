@@ -17,31 +17,30 @@ public class PlayerAudio : MonoBehaviour
 
     public void Walk()
     {
-        PlayAudio("Walk");
+        PlayAudio("Walk", 1f);
     }
 
     public void Crouched()
     {
-        PlayAudio("Crouched");
+        PlayAudio("Crouched", 0.5f);
     }
 
     public void Crawl()
     {
-        PlayAudio("Crawl");
+        PlayAudio("Crawl", 0.15f);
     }
 
     public void Run()
     {
-        Debug.Log("Run");
-        PlayAudio("Walk");
+        PlayAudio("Walk", 1f);
     }
 
     public void Jump()
     {
-        PlayAudio("Jump");
+        PlayAudio("Jump", 1f);
     }
 
-    public void PlayAudio(string clipName)
+    public void PlayAudio(string clipName, float volume)
     {
         Audio? audioToPlay = audioPlayer.Find(a => a.id == clipName);
 
@@ -52,11 +51,11 @@ public class PlayerAudio : MonoBehaviour
         }
 
         _currentClip = audioToPlay.Value.clip;
-        Debug.Log(clipName);
 
         if (_currentClip != null)
         {
             audioSource.clip = _currentClip;
+            audioSource.volume = volume;
             audioSource.Play();
             audioSource.loop = false;
 
