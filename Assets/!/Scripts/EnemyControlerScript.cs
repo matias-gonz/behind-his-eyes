@@ -30,7 +30,8 @@ public class EnemyControllerScript : MonoBehaviour
         _runningSpeed = 4 * walkingSpeed;
         _velocityZHash = Animator.StringToHash("Velocity Z");
         _direction = Vector3.zero;
-        _isIdle = false;
+        _isIdle = true;
+        _currentTargetPosition = transform.position;
     }
 
     private void FixedUpdate()
@@ -40,7 +41,7 @@ public class EnemyControllerScript : MonoBehaviour
         {
             return;
         }
-
+        
         float targetAngle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg;
         float angle = Mathf.SmoothDampAngle(this.transform.eulerAngles.y, targetAngle, ref _angularVelocity,
             TurnSmoothTime);
@@ -114,5 +115,10 @@ public class EnemyControllerScript : MonoBehaviour
     private void CalculateDirection()
     {
         _direction = (_currentTargetPosition - transform.position).normalized;
+    }
+    
+    public void EngageTarget(Vector3 targetDirection)
+    {
+        Stop();
     }
 }
