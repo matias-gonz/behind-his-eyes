@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
-    
-
-    private Transform UI, task, GunPanel;
+    private Transform UI, task;
     private Transform player;
-    private Text taskName, taskContent,bulletNum;
+    private Text taskName, taskContent;
     private bool up, down, right, left,isJump, isCrouched, isCrawl;
     public static bool isPickUp;
-    private int taskIndex=0;
-    private int bltNum = 30;
+    private int taskIndex;
 
 
     // Start is called before the first frame update
@@ -28,7 +26,6 @@ public class StartGame : MonoBehaviour
     {
         CurrentTaskIsCompulish();
         CurrentTask();
-        GameOver();
     }
 
     private void InitValue()
@@ -36,10 +33,8 @@ public class StartGame : MonoBehaviour
         player = GameObject.Find("Player").transform;
         UI = GameObject.Find("Canvas").transform;
         task = UI.Find("MainPanel/Task");
-        GunPanel = UI.Find("MainPanel/GunPanel");
         taskName = task.Find("TaskName").GetComponentInChildren<Text>();
         taskContent = task.Find("TaskContent").GetComponentInChildren<Text>();
-        bulletNum = GunPanel.Find("Image/BulletNum").GetComponent<Text>();
     }
 
     private void InitEvent()
@@ -51,34 +46,36 @@ public class StartGame : MonoBehaviour
         isJump = false;
         isCrouched = false;
         isCrawl = false;
-        bulletNum.text = bltNum.ToString();
-        GunPanel.gameObject.SetActive(false);
+        taskIndex = 0;
     }
 
     private void CurrentTask()
     {
-        taskName.text = "Task Name" + taskIndex + "/" + 6;
+        taskName.text = "Task not completed" + taskIndex + "/" + 7;
         switch (taskIndex)
         {
             case 0:
                 player.GetComponent<TwoDimensionalAnimationStateController>().enabled = false;
-                taskContent.text = "Task Content";
+                taskContent.text = "Move your mouse to look around";
                 break;
             case 1:
                 player.GetComponent<TwoDimensionalAnimationStateController>().enabled = true;
-                taskContent.text = "Task1";
+                taskContent.text = "Now press WASD to move around";
                 break;
             case 2:
-                taskContent.text = "Task2";
+                taskContent.text = "Press Space to jump";
                 break;
             case 3:
-                taskContent.text = "Task3";
+                taskContent.text = "Press left shift to crouch";
                 break;
             case 4:
-                taskContent.text = "Task4";
+                taskContent.text = "Press shift+space to jump across a pit,only walk and jump is not enough ";
                 break;
             case 5:
-                taskContent.text = "Task5";
+                taskContent.text = "press C and WASD to crawl";
+                break;
+            case 6:
+                taskContent.text = "shoot";
                 break;
             default:
                 break;
@@ -110,7 +107,6 @@ public class StartGame : MonoBehaviour
             }
             if (right&&left&&up&&down)
             {
-                Debug.Log(taskIndex);
                 right = false; left = false; up = false; down = false;
                    taskIndex++;
             }
@@ -135,7 +131,6 @@ public class StartGame : MonoBehaviour
             }
             if (right && left && up && down)
             {
-                Debug.Log(taskIndex);
                 right = false; left = false; up = false; down = false;
                 taskIndex++;
             }
@@ -143,41 +138,42 @@ public class StartGame : MonoBehaviour
         else if (taskIndex == 2)
         {
             if (Input.GetKeyDown(KeyCode.Space)) isJump = true;
-            Debug.Log(isJump);
-            Debug.Log(player.transform.position.z);
-            if (player.transform.localPosition.x>64&&isJump)
+            if (player.transform.localPosition.x>49&&isJump)
             {
-                Debug.Log("jump=" + isJump);
                 taskIndex++;
             }
         }
         else if (taskIndex == 3)
         {
             if (Input.GetKeyDown(KeyCode.C)) isCrouched = true;
-            if (player.transform.localPosition.x > 104 && isCrouched)
+            if (player.transform.localPosition.x > 100 && isCrouched)
             {
                 taskIndex++;
             }
         }
         else if (taskIndex == 4)
         {
-            if (Input.GetKeyDown(KeyCode.X)) isCrawl = true;
-            if (player.transform.localPosition.x > 141 && isCrawl)
+            if (player.transform.localPosition.x > 117.5f)
             {
                 taskIndex++;
+            }
+            else if (player.transform.localPosition.y < 47f)
+            {
+                SceneManager.LoadScene("Start");
             }
         }
         else if (taskIndex == 5)
         {
-            taskIndex++;
+            if (Input.GetKeyDown(KeyCode.X)) isCrawl = true;
+            if (player.transform.localPosition.x > 140 && isCrawl)
+            {
+                taskIndex++;
+            }
         }
-    }
-
-    private void GameOver()
-    {
-        if (taskIndex==6)
+        
+        else if (taskIndex == 6)
         {
-
+            taskIndex++;
         }
     }
 }
