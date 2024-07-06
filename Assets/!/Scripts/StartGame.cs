@@ -75,7 +75,7 @@ public class StartGame : MonoBehaviour
                 taskContent.text = "press C and WASD to crawl";
                 break;
             case 6:
-                taskContent.text = "shoot";
+                taskContent.text = "Erschieß sie!Du dummes Schwein";
                 break;
             default:
                 break;
