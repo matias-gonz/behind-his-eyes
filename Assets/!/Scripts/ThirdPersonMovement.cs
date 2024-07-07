@@ -109,7 +109,6 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             distanceToGround = 0f;
         }
-        Debug.Log(distanceToGround);
         return distanceToGround;
     }
 
