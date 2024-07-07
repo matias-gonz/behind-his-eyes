@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyControllerScript : MonoBehaviour
 {
     private Animator _animator;
-    public TwoDimensionalAnimationStateController twoDimensionalAnimationStateController;
+    private TwoDimensionalAnimationStateController _twoDimensionalAnimationStateController;
     public float walkingSpeed = 1.5f;
     private float _runningSpeed; //must be 4 times higher than speed
     public float animationMaxSpeed = 2f;
@@ -37,6 +37,12 @@ public class EnemyControllerScript : MonoBehaviour
         _isIdle = true;
         _currentTargetPosition = transform.position;
         _isEngaging = false;
+    }
+
+    //called by detection script at start
+    public void InitialiseEnemyControllerScript(GameObject target)
+    {
+        _twoDimensionalAnimationStateController = target.GetComponent<TwoDimensionalAnimationStateController>();
     }
 
     private void FixedUpdate()
@@ -152,7 +158,7 @@ public class EnemyControllerScript : MonoBehaviour
             _animator.SetBool(_RifleAimHash, true);
             //check if player is invincible
             //otherwise call player script for being engaged to look at guard
-            twoDimensionalAnimationStateController.GettingEngaged();
+            _twoDimensionalAnimationStateController.GettingEngaged();
         } else
         {
             RotateToCurrentTarget(targetDirection);
@@ -168,6 +174,6 @@ public class EnemyControllerScript : MonoBehaviour
 
     public void KillTarget()
     {
-        twoDimensionalAnimationStateController.GettingKilled();
+        _twoDimensionalAnimationStateController.GettingKilled();
     }
 }

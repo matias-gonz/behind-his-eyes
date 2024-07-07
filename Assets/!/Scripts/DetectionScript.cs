@@ -18,6 +18,7 @@ public class DetectionScript : MonoBehaviour
     {
         _layerMask = LayerMask.GetMask("Level");
         _colliders = target.GetComponents<Collider>();
+        enemyControllerScript.InitialiseEnemyControllerScript(target);
     }
 
     void Update()
