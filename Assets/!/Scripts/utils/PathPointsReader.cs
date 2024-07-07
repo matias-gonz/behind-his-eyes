@@ -36,10 +36,12 @@ namespace utils
 
         public static List<PathPoint> ReadPathPoints(string pathName)
         {
-            string path = $"Assets/!/Resources/Paths/{pathName}.json";
+            string path = $"Paths/{pathName}";
             List<PathPoint> pathPoints = new List<PathPoint>();
-            string text = System.IO.File.ReadAllText(path);
-            PathPointRaw[] pathPointRaws = JsonHelper.FromJson<PathPointRaw>(text);
+            TextAsset text = Resources.Load<TextAsset>(path);
+            string rawText = text.text;
+            Debug.Log(rawText);
+            PathPointRaw[] pathPointRaws = JsonHelper.FromJson<PathPointRaw>(rawText);
             foreach (var pathPointRaw in pathPointRaws)
             {
                 pathPoints.Add(new PathPoint
