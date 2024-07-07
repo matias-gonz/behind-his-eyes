@@ -13,12 +13,13 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float maximumCrouchVelocity = 0.5f;
     public float maximumProneVelocity = 0.25f;
     public float maximumBackwardsVelocity = 0.5f;
+    public bool invincible = false;
 
     // references
     private Animator _animator;
     private Rigidbody _rigidbody;
     private PlayerInput _input;
-    ThirdPersonMovement _thirdPersonMovement;
+    private ThirdPersonMovement _thirdPersonMovement;
     public Collider upRightCollider;
     public Collider proneCollider;
 
@@ -72,7 +73,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
-        _thirdPersonMovement = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
+        _thirdPersonMovement = gameObject.GetComponent<ThirdPersonMovement>(); 
         _velocityXHash = Animator.StringToHash("Velocity X");
         _velocityZHash = Animator.StringToHash("Velocity Z");
         _fallDownBackwardsHash = Animator.StringToHash("fallDownBackwards");
@@ -389,14 +390,24 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
     }
 
-    public void GettingEngaged()
+    public void GettingEngaged(Vector3 direction)
     {
-        _animator.SetBool(_SpottedHash, true);
+        _velocityZ = 0f;
+        _velocityX = 0f;
+        if(!invincible)
+        {
+            _animator.SetBool(_SpottedHash, true);
+        }
+        
     }
     
     public void GettingKilled()
     {
-        _animator.SetBool(_DyingHash, true);
+        if (!invincible)
+        {
+            _animator.SetBool(_DyingHash, true);
+        }
+        
     }
 
     // Toggle character controls action map
