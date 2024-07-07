@@ -18,7 +18,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     private Animator _animator;
     private Rigidbody _rigidbody;
     private PlayerInput _input;
-    ThirdPersonMovement _thirdPersonMovement;
+    private ThirdPersonMovement _thirdPersonMovement;
     public Collider upRightCollider;
     public Collider proneCollider;
 
@@ -35,6 +35,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     private int _isCrouchedHash;
     private int _isProneHash;
     private int _isJumpHash;
+    private int _DyingHash;
+    private int _SpottedHash;
 
     //variables to store player input
     private bool _forwardPressed;
@@ -70,20 +72,22 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
-        _thirdPersonMovement = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
+        _thirdPersonMovement = gameObject.GetComponent<ThirdPersonMovement>(); 
         _velocityXHash = Animator.StringToHash("Velocity X");
         _velocityZHash = Animator.StringToHash("Velocity Z");
         _fallDownBackwardsHash = Animator.StringToHash("fallDownBackwards");
         _isCrouchedHash = Animator.StringToHash("isCrouched");
         _isProneHash = Animator.StringToHash("isProne");
         _isJumpHash = Animator.StringToHash("isJump");
+        _DyingHash = Animator.StringToHash("Dying");
+        _SpottedHash = Animator.StringToHash("Spotted");
     }
 
     // Update is called once per frame
     void Update()
     {
         bool isJump = _animator.GetBool(_isJumpHash);
-        CheckPlayerInputAllowed(isJump);
+        CheckPlayerInputAllowed();
         if (_allowPlayerInput)
         {
             StartToJump(isJump);
@@ -365,11 +369,11 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
     }
 
-    void CheckPlayerInputAllowed(bool isJump)
+    void CheckPlayerInputAllowed()
     {
-        bool animationEventPlaying = _animator.GetBool(_fallDownBackwardsHash);
+        bool animationEventPlaying = _animator.GetBool(_fallDownBackwardsHash) || _animator.GetBool(_SpottedHash);
         // block playerinput if animation is currently being played
-        _allowPlayerInput = !animationEventPlaying && !isJump;
+        _allowPlayerInput = !animationEventPlaying;
     }
 
     // jumping can be triggered while player is standing and not in a Jump
@@ -383,6 +387,26 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
                 _animator.SetBool(_isJumpHash, true);
             }
         }
+    }
+
+    public void GettingEngaged(Vector3 direction)
+    {
+        _velocityZ = 0f;
+        _velocityX = 0f;
+        if(!GameManager.Instance.godMode)
+        {
+            _animator.SetBool(_SpottedHash, true);
+        }
+        
+    }
+    
+    public void GettingKilled()
+    {
+        if (!GameManager.Instance.godMode)
+        {
+            _animator.SetBool(_DyingHash, true);
+        }
+        
     }
 
     // Toggle character controls action map
