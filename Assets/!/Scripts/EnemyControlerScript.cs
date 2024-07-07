@@ -163,7 +163,7 @@ public class EnemyControllerScript : MonoBehaviour
         }
     }
 
-    private void DisgageTarget()
+    private void DisengageTarget()
     {
         _isEngaging = false;
         _animator.SetBool(_RifleAimHash, false);

@@ -51,9 +51,14 @@ public class DetectionScript : MonoBehaviour
 
         if (!directions.Any(direction => CheckRay(direction, rayStart, distance))) return;
 
-        AudioManager.Instance.PlaySoundFx("alert");
-         //spotted target
         enemyControllerScript.EngageTarget(playerDirection);
+        
+        Invoke(nameof(GameOver), 6f);
+    }
+    
+    private void GameOver()
+    {
+        GameManager.Instance.GameOver();
     }
 
     private Collider FindTargetCollider()

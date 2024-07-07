@@ -13,7 +13,6 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float maximumCrouchVelocity = 0.5f;
     public float maximumProneVelocity = 0.25f;
     public float maximumBackwardsVelocity = 0.5f;
-    public bool invincible = false;
 
     // references
     private Animator _animator;
@@ -394,7 +393,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     {
         _velocityZ = 0f;
         _velocityX = 0f;
-        if(!invincible)
+        if(!GameManager.Instance.godMode)
         {
             _animator.SetBool(_SpottedHash, true);
         }
@@ -403,7 +402,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     
     public void GettingKilled()
     {
-        if (!invincible)
+        if (!GameManager.Instance.godMode)
         {
             _animator.SetBool(_DyingHash, true);
         }
