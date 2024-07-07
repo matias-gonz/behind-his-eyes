@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,13 +24,13 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("CentralCity");
+        SceneManager.LoadScene("CentralCity");
     }
 
     public void GameOver()
     {
         if (godMode) return;
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOver");
     }
 }
