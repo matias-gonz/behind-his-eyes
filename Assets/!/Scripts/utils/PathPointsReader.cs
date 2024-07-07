@@ -40,7 +40,6 @@ namespace utils
             List<PathPoint> pathPoints = new List<PathPoint>();
             TextAsset text = Resources.Load<TextAsset>(path);
             string rawText = text.text;
-            Debug.Log(rawText);
             PathPointRaw[] pathPointRaws = JsonHelper.FromJson<PathPointRaw>(rawText);
             foreach (var pathPointRaw in pathPointRaws)
             {
