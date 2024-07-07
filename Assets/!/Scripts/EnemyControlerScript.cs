@@ -149,9 +149,17 @@ public class EnemyControllerScript : MonoBehaviour
             _isEngaging = true;
             RotateToCurrentTarget(targetDirection);
             _animator.SetBool(_RifleAimHash, true);
+            //check if player is invincible
+            //otherwise call player script for being engaged to look at guard
         } else
         {
             RotateToCurrentTarget(targetDirection);
         }
+    }
+    private void DisgageTarget()
+    {
+        _isEngaging = false;
+        _animator.SetBool(_RifleAimHash, false);
+        _isIdle = false;
     }
 }
