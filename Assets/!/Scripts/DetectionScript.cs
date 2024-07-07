@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DetectionScript : MonoBehaviour
 {
@@ -50,6 +51,8 @@ public class DetectionScript : MonoBehaviour
         if (!directions.Any(direction => CheckRay(direction, rayStart, distance))) return;
 
         AudioManager.Instance.PlaySoundFx("alert");
+        
+        GameManager.Instance.GameOver();
     }
 
     private Collider FindTargetCollider()
