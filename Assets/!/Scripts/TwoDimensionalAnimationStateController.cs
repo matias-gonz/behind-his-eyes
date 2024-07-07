@@ -385,6 +385,12 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
     }
 
+    public void GettingEngaged()
+    {}
+    
+    public void GettingKilled()
+    {}
+
     // Toggle character controls action map
     void OnEnable()
     {
