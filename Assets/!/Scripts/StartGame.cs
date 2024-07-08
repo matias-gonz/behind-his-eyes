@@ -51,26 +51,26 @@ public class StartGame : MonoBehaviour
 
     private void CurrentTask()
     {
-        taskName.text = "Task not completed" + taskIndex + "/" + 7;
+        taskName.text = "Task progress" + taskIndex + "/" + 7;
         switch (taskIndex)
         {
             case 0:
                 taskContent.text = "Move your mouse to look around";
                 break;
             case 1:
-                taskContent.text = "Now press WASD to move around";
+                taskContent.text = "Now press 'W','A','S','D' to move around";
                 break;
             case 2:
-                taskContent.text = "Press Space to jump";
+                taskContent.text = "Press 'space' to jump";
                 break;
             case 3:
-                taskContent.text = "Press left shift to crouch";
+                taskContent.text = "Press 'left control' to crouch";
                 break;
             case 4:
-                taskContent.text = "Press shift+space to jump across a pit,only walk and jump is not enough ";
+                taskContent.text = "Press 'shift'+'space' to jump across a pit,only walk and jump cannot get through ";
                 break;
             case 5:
-                taskContent.text = "press C and WASD to crawl";
+                taskContent.text = "press 'C' plus 'WASD' to crawl";
                 break;
             case 6:
                 taskContent.text = "shoot";
@@ -143,8 +143,8 @@ public class StartGame : MonoBehaviour
         }
         else if (taskIndex == 3)
         {
-            if (Input.GetKeyDown(KeyCode.X)) isCrawl = true;
-            if (player.transform.localPosition.x > 90 && isCrawl)
+            if (Input.GetKeyDown(KeyCode.LeftControl)) isCrouched = true;
+            if (player.transform.localPosition.x > 90 && isCrouched)
             {
                 taskIndex++;
             }
@@ -165,8 +165,8 @@ public class StartGame : MonoBehaviour
         }
         else if (taskIndex == 5)
         {
-            if (Input.GetKeyDown(KeyCode.C)) isCrouched = true;
-            if (player.transform.localPosition.x > 140 && isCrouched)
+            if (Input.GetKeyDown(KeyCode.C)) isCrawl = true;
+            if (player.transform.localPosition.x > 140 && isCrawl)
             {
                 taskIndex++;
             }
