@@ -116,4 +116,13 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         return DistanceToGround() <= 0.2f;
     }
+
+    public void DeathBackwards()
+    {
+        
+        // Vector3 deltaPos = transform.position + new Vector3(-0.0020382f - 0.13759f, 0f, 10f);
+        // _rigidbody.MovePosition(deltaPos);
+        // Debug.Log("Death Backwards move to");
+        // Debug.Log(deltaPos);
+    }
 }
