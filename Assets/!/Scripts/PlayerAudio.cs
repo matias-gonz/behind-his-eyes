@@ -6,7 +6,6 @@ public class PlayerAudio : MonoBehaviour
 {
     public AudioSource audioSource;
     public Audio[] audioPlayer;
-    private AudioClip _currentClip;
 
     void Start()
     {
