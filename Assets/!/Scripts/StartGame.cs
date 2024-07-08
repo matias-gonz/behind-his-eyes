@@ -136,15 +136,15 @@ public class StartGame : MonoBehaviour
         else if (taskIndex == 2)
         {
             if (Input.GetKeyDown(KeyCode.Space)) isJump = true;
-            if (player.transform.localPosition.x>49&&isJump)
+            if (player.transform.localPosition.x>57&&isJump)
             {
                 taskIndex++;
             }
         }
         else if (taskIndex == 3)
         {
-            if (Input.GetKeyDown(KeyCode.C)) isCrouched = true;
-            if (player.transform.localPosition.x > 65 && isCrouched)
+            if (Input.GetKeyDown(KeyCode.X)) isCrawl = true;
+            if (player.transform.localPosition.x > 90 && isCrawl)
             {
                 taskIndex++;
             }
@@ -155,17 +155,27 @@ public class StartGame : MonoBehaviour
             {
                 taskIndex++;
             }
-            else if (player.transform.localPosition.y < 47f)
+            else if (player.transform.localPosition.y < 47)
             {
-                SceneManager.LoadScene("Start");
+                UI.Find("MainPanel/Black").gameObject.SetActive(true);
+                player.localPosition = new Vector3(100, 55, 85);
+                player.Rotate(new Vector3(0, 90, 0));
+                StartCoroutine(ReStart());
             }
         }
         else if (taskIndex == 5)
         {
-            if (Input.GetKeyDown(KeyCode.X)) isCrawl = true;
-            if (player.transform.localPosition.x > 140 && isCrawl)
+            if (Input.GetKeyDown(KeyCode.C)) isCrouched = true;
+            if (player.transform.localPosition.x > 140 && isCrouched)
             {
                 taskIndex++;
+            }
+            if (player.transform.localPosition.y < 46.5f)
+            {
+                UI.Find("MainPanel/Black").gameObject.SetActive(true);
+                player.localPosition = new Vector3(120, 55, 85);
+                player.Rotate(new Vector3(0, 90, 0));
+                StartCoroutine(ReStart());
             }
         }
         
@@ -173,5 +183,12 @@ public class StartGame : MonoBehaviour
         {
             taskIndex++;
         }
+    }
+
+
+    IEnumerator ReStart()
+    {
+        yield return new WaitForSeconds(1);
+        UI.Find("MainPanel/Black").gameObject.SetActive(false);
     }
 }
