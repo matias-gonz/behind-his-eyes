@@ -23,10 +23,5 @@ public class MapLoadingScript : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 }
