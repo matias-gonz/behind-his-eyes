@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
-using System.IO;
-using utils;
+using utils; 
 
 public class PlayerAudio : MonoBehaviour
 {
     public AudioSource audioSource;
-    public List<Audio> audioPlayer = new List<Audio>();
+    public Audio[] audioPlayer;
     private AudioClip _currentClip;
 
     void Start()
@@ -42,23 +40,29 @@ public class PlayerAudio : MonoBehaviour
 
     public void PlayAudio(string clipName, float volume)
     {
-        Audio? audioToPlay = audioPlayer.Find(a => a.id == clipName);
+        Audio? audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
 
-        if (audioToPlay == null || !audioToPlay.HasValue)
+        // Add the check for audioToPlay.Value.clip being null into this guard clause
+        if (audioToPlay == null || audioToPlay.Value.clip == null)
         {
-            Debug.LogWarning("Audio clip not found: " + clipName);
+            UnityEngine.Debug.LogWarning("Audio clip not found: " + clipName);
             return;
         }
 
+        // Assign and check _currentClip in one step
         _currentClip = audioToPlay.Value.clip;
-
-        if (_currentClip != null)
+        if (_currentClip == null)
         {
-            audioSource.clip = _currentClip;
-            audioSource.volume = volume;
-            audioSource.Play();
-            audioSource.loop = false;
-
+            UnityEngine.Debug.LogWarning("Audio clip is null or not loaded: " + clipName);
+            return;
         }
+
+        // Now we're sure _currentClip is not null, proceed to play it
+        audioSource.clip = _currentClip;
+        audioSource.volume = volume;
+        audioSource.Play();
+        audioSource.loop = false;
     }
+
 }
+
