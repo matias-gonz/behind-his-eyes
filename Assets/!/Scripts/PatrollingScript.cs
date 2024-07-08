@@ -8,7 +8,7 @@ public class PatrollingScript : MonoBehaviour
     public EnemyControllerScript enemyControllerScript;
     public string pathName;
     public bool isPatrolling = true;
-    private Vector3 StartingPosition;
+    private Vector3 _startingPosition;
 
     private bool _hasReachedCurrentGoal = true; //initialise with true
     private List<PathPoint> _pathPoints = new List<PathPoint>();
