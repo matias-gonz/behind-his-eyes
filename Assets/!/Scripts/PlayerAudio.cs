@@ -43,7 +43,7 @@ public class PlayerAudio : MonoBehaviour
 
         if (audioToPlay == null || audioToPlay.Value.clip == null)
         {
-            UnityEngine.Debug.LogWarning("audio not found " + clipName);
+            UnityEngine.Debug.LogWarning("Audio clip not found: " + clipName);
             return;
         }
 
