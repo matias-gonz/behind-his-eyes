@@ -55,11 +55,9 @@ public class StartGame : MonoBehaviour
         switch (taskIndex)
         {
             case 0:
-                player.GetComponent<TwoDimensionalAnimationStateController>().enabled = false;
                 taskContent.text = "Move your mouse to look around";
                 break;
             case 1:
-                player.GetComponent<TwoDimensionalAnimationStateController>().enabled = true;
                 taskContent.text = "Now press WASD to move around";
                 break;
             case 2:
