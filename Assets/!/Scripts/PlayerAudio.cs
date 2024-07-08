@@ -47,9 +47,8 @@ public class PlayerAudio : MonoBehaviour
             return;
         }
 
-        _currentClip = audioToPlay.Value.clip;
 
-        audioSource.clip = _currentClip;
+        audioSource.clip = audioToPlay.Value.clip;
         audioSource.volume = volume;
         audioSource.Play();
         audioSource.loop = false;
