@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyControllerScript : MonoBehaviour
 {
     private Animator _animator;
+    private TwoDimensionalAnimationStateController _twoDimensionalAnimationStateController;
     public float walkingSpeed = 1.5f;
     private float _runningSpeed; //must be 4 times higher than speed
     public float animationMaxSpeed = 2f;
@@ -21,6 +22,8 @@ public class EnemyControllerScript : MonoBehaviour
     private Vector3 _currentTargetPosition;
     private bool _isIdle;
     private int _velocityZHash; //forwards animation
+    private int _RifleAimHash;
+    private bool _isEngaging;
 
     void Start()
     {
@@ -29,30 +32,58 @@ public class EnemyControllerScript : MonoBehaviour
         _currentSpeed = walkingSpeed; //for testing purposes
         _runningSpeed = 4 * walkingSpeed;
         _velocityZHash = Animator.StringToHash("Velocity Z");
+        _RifleAimHash = Animator.StringToHash("RifleAim");
         _direction = Vector3.zero;
-        _isIdle = false;
+        _isIdle = true;
+        _currentTargetPosition = transform.position;
+        _isEngaging = false;
+    }
+
+    //called by detection script at start
+    public void InitialiseEnemyControllerScript(GameObject target)
+    {
+        _twoDimensionalAnimationStateController = target.GetComponent<TwoDimensionalAnimationStateController>();
     }
 
     private void FixedUpdate()
     {
-        CalculateDirection();
-        if (_direction == Vector3.zero)
+        if (!_isEngaging || !_isIdle)
         {
-            return;
+            if (_currentTargetPosition != transform.position)
+            {
+                // Continue Patrol
+                MoveToCurrentTarget();
+            }
         }
+        else { }
+    }
 
-        float targetAngle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg;
-        float angle = Mathf.SmoothDampAngle(this.transform.eulerAngles.y, targetAngle, ref _angularVelocity,
-            TurnSmoothTime);
+    private void RotateToCurrentTarget(Vector3 targetDirection)
+    {
+        float targetAngle = Mathf.Atan2(targetDirection.x, targetDirection.z) * Mathf.Rad2Deg;
+        float angle = Mathf.SmoothDampAngle(
+            this.transform.eulerAngles.y,
+            targetAngle,
+            ref _angularVelocity,
+            TurnSmoothTime
+        );
+        transform.rotation = Quaternion.Euler(0, angle, 0);
+    }
+
+    private void MoveToCurrentTarget()
+    {
+        _direction = CalculateDirection(_currentTargetPosition);
+        RotateToCurrentTarget(_direction);
+
         Vector3 currentPosition = transform.position;
-
         float distanceFromGoal = Vector3.Distance(currentPosition, _currentTargetPosition);
         CalculateCurrentSpeed(distanceFromGoal);
-        Vector3 intermediatePosition = currentPosition + _direction * (_currentSpeed * Time.fixedDeltaTime);
+        Vector3 intermediatePosition =
+            currentPosition + _direction * (_currentSpeed * Time.fixedDeltaTime);
 
         //move and transform Enemy
         _rigidbody.MovePosition(intermediatePosition);
-        transform.rotation = Quaternion.Euler(0, angle, 0);
+
         // maps  to animation max speed boundaries
         if (_animator)
         {
@@ -109,10 +140,38 @@ public class EnemyControllerScript : MonoBehaviour
     {
         // _currentTargetPosition = transform.position;
         _isIdle = true;
+        _currentSpeed = 0f;
     }
 
-    private void CalculateDirection()
+    private Vector3 CalculateDirection(Vector3 targetPosition)
     {
-        _direction = (_currentTargetPosition - transform.position).normalized;
+        return (targetPosition - transform.position).normalized;
+    }
+
+    public void EngageTarget(Vector3 targetDirection)
+    {
+        if (!_isEngaging)
+        {
+            Stop();
+            _isEngaging = true;
+            RotateToCurrentTarget(targetDirection);
+            _animator.SetBool(_RifleAimHash, true);
+            _twoDimensionalAnimationStateController.GettingEngaged(targetDirection);
+        } else
+        {
+            RotateToCurrentTarget(targetDirection);
+        }
+    }
+
+    private void DisengageTarget()
+    {
+        _isEngaging = false;
+        _animator.SetBool(_RifleAimHash, false);
+        _isIdle = false;
+    }
+
+    public void KillTarget()
+    {
+        _twoDimensionalAnimationStateController.GettingKilled();
     }
 }

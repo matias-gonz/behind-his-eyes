@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class DetectionScript : MonoBehaviour
 {
-    public GameObject target;
+    public EnemyControllerScript enemyControllerScript;
+    public GameObject target; 
     public float fov = 120f;
     public float viewDistance = 10f;
     public float tolerance = 0.2f;
@@ -17,6 +18,7 @@ public class DetectionScript : MonoBehaviour
     {
         _layerMask = LayerMask.GetMask("Level");
         _colliders = target.GetComponents<Collider>();
+        enemyControllerScript.InitialiseEnemyControllerScript(target);
     }
 
     void Update()
@@ -49,7 +51,14 @@ public class DetectionScript : MonoBehaviour
 
         if (!directions.Any(direction => CheckRay(direction, rayStart, distance))) return;
 
-        AudioManager.Instance.PlaySoundFx("alert");
+        enemyControllerScript.EngageTarget(playerDirection);
+        
+        Invoke(nameof(GameOver), 6f);
+    }
+    
+    private void GameOver()
+    {
+        GameManager.Instance.GameOver();
     }
 
     private Collider FindTargetCollider()
