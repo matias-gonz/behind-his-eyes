@@ -13,11 +13,6 @@ public class TriggerPatrollingScript : MonoBehaviour
         playerColliders = player.GetComponents<Collider>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
