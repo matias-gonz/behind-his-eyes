@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using UnityEngine;
-using utils; 
+using utils;
 
 public class PlayerAudio : MonoBehaviour
 {
@@ -37,27 +37,18 @@ public class PlayerAudio : MonoBehaviour
     {
         PlayAudio("Jump", 1f);
     }
-
     public void PlayAudio(string clipName, float volume)
     {
         Audio? audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
 
-        // Add the check for audioToPlay.Value.clip being null into this guard clause
         if (audioToPlay == null || audioToPlay.Value.clip == null)
         {
-            UnityEngine.Debug.LogWarning("Audio clip not found: " + clipName);
+            UnityEngine.Debug.LogWarning("音频剪辑未找到: " + clipName);
             return;
         }
 
-        // Assign and check _currentClip in one step
         _currentClip = audioToPlay.Value.clip;
-        if (_currentClip == null)
-        {
-            UnityEngine.Debug.LogWarning("Audio clip is null or not loaded: " + clipName);
-            return;
-        }
 
-        // Now we're sure _currentClip is not null, proceed to play it
         audioSource.clip = _currentClip;
         audioSource.volume = volume;
         audioSource.Play();
@@ -65,4 +56,3 @@ public class PlayerAudio : MonoBehaviour
     }
 
 }
-
