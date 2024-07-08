@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+using Vec3 = UnityEngine.Vector3;
 
 public class StartGame : MonoBehaviour
 {
@@ -155,17 +158,10 @@ public class StartGame : MonoBehaviour
             {
                 taskIndex++;
             }
-            else if (player.transform.localPosition.y < 47)
-            {
-                UI.Find("MainPanel/Black").gameObject.SetActive(true);
-                player.localPosition = new Vector3(100, 55, 85);
-                player.Rotate(new Vector3(0, 90, 0));
-                StartCoroutine(ReStart());
-            }
         }
         else if (taskIndex == 5)
         {
-            if (Input.GetKeyDown(KeyCode.C)) isCrawl = true;
+            if (Input.GetKeyDown(KeyCode.C)) isCrouched = true;
             if (player.transform.localPosition.x > 140 && isCrawl)
             {
                 taskIndex++;
@@ -173,15 +169,18 @@ public class StartGame : MonoBehaviour
             if (player.transform.localPosition.y < 46.5f)
             {
                 UI.Find("MainPanel/Black").gameObject.SetActive(true);
-                player.localPosition = new Vector3(120, 55, 85);
-                player.Rotate(new Vector3(0, 90, 0));
+                player.localPosition = new Vec3(120, 55, 85);
+                player.Rotate(new Vec3(0, 90, 0));
                 StartCoroutine(ReStart());
             }
         }
-        
         else if (taskIndex == 6)
         {
             taskIndex++;
+        }
+        if (taskIndex != 5 && player.transform.localPosition.y < 46.5f)
+        {
+            Again();
         }
     }
 
@@ -191,4 +190,14 @@ public class StartGame : MonoBehaviour
         yield return new WaitForSeconds(1);
         UI.Find("MainPanel/Black").gameObject.SetActive(false);
     }
+
+    private void Again()
+    {
+        UI.Find("MainPanel/Black").gameObject.SetActive(true);
+        player.localPosition = new Vec3(100, 55, 85);
+        player.Rotate(new Vec3(0, 90, 0));
+        StartCoroutine(ReStart());
+    }
+
 }
+
