@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using UnityEngine;
 using utils;
 
@@ -24,7 +23,7 @@ public class PlayerAudio : MonoBehaviour
 
     public void Crawl()
     {
-        PlayAudio("Crawl", 0.15f);
+        PlayAudio("Crawl", 0.20f);
     }
 
     public void Run()
@@ -38,16 +37,16 @@ public class PlayerAudio : MonoBehaviour
     }
     public void PlayAudio(string clipName, float volume)
     {
-        Audio? audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
+        Audio audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
 
-        if (audioToPlay == null || audioToPlay.Value.clip == null)
+        if (audioToPlay.clip == null)
         {
-            UnityEngine.Debug.LogWarning("Audio clip not found: " + clipName);
+            Debug.LogWarning("Audio clip not found: " + clipName);
             return;
         }
 
 
-        audioSource.clip = audioToPlay.Value.clip;
+        audioSource.clip = audioToPlay.clip;
         audioSource.volume = volume;
         audioSource.Play();
         audioSource.loop = false;
