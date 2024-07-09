@@ -10,8 +10,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform cam;
 
     // constants
-    public float speedMultiplier = 3f;
-    public float gravity = 9.81f;
+    public const float SpeedMultiplier = 3f;
+    public const float Gravity = 9.81f;
 
     // local variables
     private float _forwardMovement;
@@ -63,7 +63,7 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction;
         Vector3 currentPosition = transform.position;
         Vector3 intermediatePosition =
-            currentPosition + moveDir * speedMultiplier * Time.fixedDeltaTime;
+            currentPosition + moveDir * SpeedMultiplier * Time.fixedDeltaTime;
         // make sure character moves in direction of target angle, i.e. where the camera is looking
         _rigidbody.MovePosition(intermediatePosition);
         // Debug.Log(intermediatePosition);
@@ -79,7 +79,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (!isGrounded)
         {
             _timeFalling += Time.fixedDeltaTime;
-            float velocityY = _rigidbody.velocity.y - 0.1f * 9.81f * _timeFalling;
+            float velocityY = _rigidbody.velocity.y - 0.1f * Gravity * _timeFalling;
             Vector3 fallingVelocity = new Vector3(0f, velocityY, 0f);
             _rigidbody.velocity = fallingVelocity;
         }
@@ -115,14 +115,5 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool JumpingAllowed()
     {
         return DistanceToGround() <= 0.2f;
-    }
-
-    public void DeathBackwards()
-    {
-        
-        // Vector3 deltaPos = transform.position + new Vector3(-0.0020382f - 0.13759f, 0f, 10f);
-        // _rigidbody.MovePosition(deltaPos);
-        // Debug.Log("Death Backwards move to");
-        // Debug.Log(deltaPos);
     }
 }
