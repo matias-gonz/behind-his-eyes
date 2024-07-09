@@ -24,6 +24,8 @@ public class EnemyControllerScript : MonoBehaviour
     private int _velocityZHash; //forwards animation
     private int _RifleAimHash;
     private bool _isEngaging;
+    private bool _isStatic;
+
 
     void Start()
     {
@@ -37,26 +39,25 @@ public class EnemyControllerScript : MonoBehaviour
         _isIdle = true;
         _currentTargetPosition = transform.position;
         _isEngaging = false;
+        _isStatic = true;
     }
 
     //called by detection script at start
     public void InitialiseEnemyControllerScript(GameObject target)
     {
-        _twoDimensionalAnimationStateController = target.GetComponent<TwoDimensionalAnimationStateController>();
+        _twoDimensionalAnimationStateController =
+            target.GetComponent<TwoDimensionalAnimationStateController>();
     }
 
     private void FixedUpdate()
     {
-        if (!_isEngaging && !_isIdle)
-        {
-            if (_currentTargetPosition != transform.position)
-            {
-                Debug.Log(gameObject);  
+        if (!_isEngaging && !_isStatic)
+        {  
                 // Continue Patrol
                 MoveToCurrentTarget();
-            }
         }
-        else { }
+        else { 
+        }
     }
 
     private void RotateToCurrentTarget(Vector3 targetDirection)
@@ -73,17 +74,19 @@ public class EnemyControllerScript : MonoBehaviour
 
     private void MoveToCurrentTarget()
     {
-        _direction = CalculateDirection(_currentTargetPosition);
-        RotateToCurrentTarget(_direction);
-
         Vector3 currentPosition = transform.position;
         float distanceFromGoal = Vector3.Distance(currentPosition, _currentTargetPosition);
         CalculateCurrentSpeed(distanceFromGoal);
-        Vector3 intermediatePosition =
-            currentPosition + _direction * (_currentSpeed * Time.fixedDeltaTime);
+        if (distanceFromGoal >= 0.1f)
+        {
+            _direction = CalculateDirection(_currentTargetPosition);
+            RotateToCurrentTarget(_direction);
 
-        //move and transform Enemy
-        _rigidbody.MovePosition(intermediatePosition);
+            Vector3 intermediatePosition =
+                currentPosition + _direction * (_currentSpeed * Time.fixedDeltaTime);
+            //move and transform Enemy
+            _rigidbody.MovePosition(intermediatePosition);
+        }
 
         // maps  to animation max speed boundaries
         if (_animator)
@@ -135,6 +138,7 @@ public class EnemyControllerScript : MonoBehaviour
         _currentTargetPosition = position;
         _currentMaxSpeed = isRunning ? _runningSpeed : walkingSpeed;
         _isIdle = false;
+        _isStatic = false;
     }
 
     public void Stop()
@@ -158,7 +162,8 @@ public class EnemyControllerScript : MonoBehaviour
             RotateToCurrentTarget(targetDirection);
             _animator.SetBool(_RifleAimHash, true);
             _twoDimensionalAnimationStateController.GettingEngaged(targetDirection);
-        } else
+        }
+        else
         {
             RotateToCurrentTarget(targetDirection);
         }
