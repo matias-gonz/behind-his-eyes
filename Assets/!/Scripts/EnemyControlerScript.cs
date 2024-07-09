@@ -47,10 +47,11 @@ public class EnemyControllerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_isEngaging || !_isIdle)
+        if (!_isEngaging && !_isIdle)
         {
             if (_currentTargetPosition != transform.position)
             {
+                Debug.Log(gameObject);  
                 // Continue Patrol
                 MoveToCurrentTarget();
             }
@@ -172,6 +173,7 @@ public class EnemyControllerScript : MonoBehaviour
 
     public void KillTarget()
     {
+        AudioManager.Instance.PlaySoundFx("k98");
         _twoDimensionalAnimationStateController.GettingKilled();
     }
 }
