@@ -35,6 +35,7 @@ public class PlayerAudio : MonoBehaviour
     {
         PlayAudio("Jump", 1f);
     }
+
     public void PlayAudio(string clipName, float volume)
     {
         Audio audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
@@ -51,5 +52,4 @@ public class PlayerAudio : MonoBehaviour
         audioSource.Play();
         audioSource.loop = false;
     }
-
 }
