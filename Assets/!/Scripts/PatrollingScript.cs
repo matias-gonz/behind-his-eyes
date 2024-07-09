@@ -8,7 +8,8 @@ public class PatrollingScript : MonoBehaviour
     public EnemyControllerScript enemyControllerScript;
     public string pathName;
     public bool isPatrolling = true;
-    
+    private Vector3 _startingPosition;
+
     private bool _hasReachedCurrentGoal = true; //initialise with true
     private List<PathPoint> _pathPoints = new List<PathPoint>();
     private int _currentPointIndex = 0;
@@ -18,6 +19,7 @@ public class PatrollingScript : MonoBehaviour
     void Start()
     {
         _pathPoints = PathPointsReader.ReadPathPoints(pathName);
+        _startingPosition = transform.position; //only set here!
     }
 
     void Update()
@@ -27,7 +29,7 @@ public class PatrollingScript : MonoBehaviour
             return;
         }
 
-        Vector3 position = transform.position;
+        Vector3 position = transform.position - _startingPosition;
         position.y = 0;
         if (!_hasReachedCurrentGoal && Vector3.Distance(position, _pathPoints[_currentPointIndex].Position) < 0.2f)
         {
@@ -39,7 +41,7 @@ public class PatrollingScript : MonoBehaviour
         else if (_hasReachedCurrentGoal)
         {
             _hasReachedCurrentGoal = false;
-            enemyControllerScript.MoveTo(_pathPoints[_currentPointIndex].Position, false);
+            enemyControllerScript.MoveTo(_pathPoints[_currentPointIndex].Position + _startingPosition, false);
         }
     }
 
@@ -49,4 +51,5 @@ public class PatrollingScript : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         _isWaiting = false;
     }
+    
 }

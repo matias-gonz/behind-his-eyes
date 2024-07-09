@@ -29,6 +29,7 @@ public class EnemyControllerScript : MonoBehaviour
     private bool _isEngaging;
     private bool _isSus;
     private bool _isIdle;
+    private bool _isStatic;
 
     // Hashes
     private int _velocityZHash; //forwards animation
@@ -42,11 +43,12 @@ public class EnemyControllerScript : MonoBehaviour
         _runningSpeed = 4 * walkingSpeed;
         _targetDirection = Vector3.zero;
         _currentTargetPosition = transform.position;
-        _isIdle = true;
         _isEngaging = false;
         _isSus = false;
+        _isIdle = true;
+        _isStatic = true;
         _velocityZHash = Animator.StringToHash("Velocity Z");
-        _RifleAimHash = Animator.StringToHash("RifleAim");        
+        _RifleAimHash = Animator.StringToHash("RifleAim");  
     }
 
     //called by detection script at start
@@ -58,13 +60,10 @@ public class EnemyControllerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_isEngaging || !_isIdle)
+        if (!_isEngaging && !_isStatic)
         {
-            if (_currentTargetPosition != transform.position)
-            {
-                // Continue Patrol
-                MoveToCurrentTarget();
-            }
+            // Continue Patrol
+            MoveToCurrentTarget();
         }
         else if (_isEngaging)
         {
@@ -80,6 +79,7 @@ public class EnemyControllerScript : MonoBehaviour
             _currentTargetPosition = position;
             _currentMaxSpeed = isRunning ? _runningSpeed : walkingSpeed;
             _isIdle = false;
+            _isStatic = false;
         }
     }
 
@@ -90,7 +90,7 @@ public class EnemyControllerScript : MonoBehaviour
             _isIdle = true;
             _currentSpeed = 0f;
         }
-    } 
+    }
 
     // Engaging Target Methods
     public void EngageTarget(Vector3 targetDirection)
@@ -111,6 +111,7 @@ public class EnemyControllerScript : MonoBehaviour
 
     public void KillTarget()
     {
+        AudioManager.Instance.PlaySoundFx("k98");
         _twoDimensionalAnimationStateController.GettingKilled();
     }
 
@@ -136,17 +137,18 @@ public class EnemyControllerScript : MonoBehaviour
 
     private void MoveToCurrentTarget()
     {
-        Vector3 direction = CalculateDirection(_currentTargetPosition);
-        RotateToCurrentTarget(direction);
-
         Vector3 currentPosition = transform.position;
         float distanceFromGoal = Vector3.Distance(currentPosition, _currentTargetPosition);
-        CalculateCurrentSpeed(distanceFromGoal);
-        Vector3 intermediatePosition =
-            currentPosition + direction * (_currentSpeed * Time.fixedDeltaTime);
-
-        //move and transform Enemy
-        _rigidbody.MovePosition(intermediatePosition);
+        //always calculate so animator can adjust speed
+        CalculateCurrentSpeed(distanceFromGoal); 
+        if (distanceFromGoal >= 0.1f)
+        {
+            Vector3 direction = CalculateDirection(_currentTargetPosition);
+            RotateToCurrentTarget(direction);
+            Vector3 intermediatePosition =
+                currentPosition + direction * (_currentSpeed * Time.fixedDeltaTime);
+            _rigidbody.MovePosition(intermediatePosition);
+        }
 
         // maps  to animation max speed boundaries
         if (_animator)
