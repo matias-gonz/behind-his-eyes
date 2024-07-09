@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("CentralCity");
+        SceneManager.LoadScene("StreetLevel");
         Cursor.lockState = CursorLockMode.Locked;
     }
 
