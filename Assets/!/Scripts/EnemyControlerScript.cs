@@ -28,8 +28,8 @@ public class EnemyControllerScript : MonoBehaviour
     // Guard Status
     private bool _isEngaging;
     private bool _isSus;
-    private bool _isIdle;
-    private bool _isStatic;
+    private bool _PatrolWait;
+    private bool _isGuarding;
 
     // Hashes
     private int _velocityZHash; //forwards animation
@@ -45,8 +45,8 @@ public class EnemyControllerScript : MonoBehaviour
         _currentTargetPosition = transform.position;
         _isEngaging = false;
         _isSus = false;
-        _isIdle = true;
-        _isStatic = true;
+        _PatrolWait = true;
+        _isGuarding = true;
         _velocityZHash = Animator.StringToHash("Velocity Z");
         _RifleAimHash = Animator.StringToHash("RifleAim");  
     }
@@ -60,7 +60,7 @@ public class EnemyControllerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_isEngaging && !_isStatic)
+        if (!_isEngaging && !_isGuarding)
         {
             // Continue Patrol
             MoveToCurrentTarget();
@@ -72,22 +72,22 @@ public class EnemyControllerScript : MonoBehaviour
     }
 
     // Patrolling methods
-    public void MoveTo(Vector3 position, bool isRunning)
+    public void PatrolTo(Vector3 position, bool isRunning)
     {
         if (!_isEngaging)
         {
             _currentTargetPosition = position;
             _currentMaxSpeed = isRunning ? _runningSpeed : walkingSpeed;
-            _isIdle = false;
-            _isStatic = false;
+            _PatrolWait = false;
+            _isGuarding = false;
         }
     }
 
-    public void Stop()
+    public void PatrolWait()
     {
         if (!_isEngaging)
         {
-            _isIdle = true;
+            _PatrolWait = true;
             _currentSpeed = 0f;
         }
     }
@@ -97,7 +97,7 @@ public class EnemyControllerScript : MonoBehaviour
     {
         if (!_isEngaging)
         {
-            Stop();
+            PatrolWait();
             _isEngaging = true;
             _targetDirection = targetDirection;
             _animator.SetBool(_RifleAimHash, true);
@@ -119,7 +119,7 @@ public class EnemyControllerScript : MonoBehaviour
     {
         _isEngaging = false;
         _animator.SetBool(_RifleAimHash, false);
-        _isIdle = false;
+        _PatrolWait = false;
     }
 
     // Enemy movement
@@ -166,7 +166,7 @@ public class EnemyControllerScript : MonoBehaviour
     //adjust speed when starting to move or getting close to the goal position
     private void CalculateCurrentSpeed(float distanceFromGoal)
     {
-        if (_isIdle)
+        if (_PatrolWait)
         {
             _currentSpeed = 0f;
         }

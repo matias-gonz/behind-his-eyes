@@ -34,14 +34,14 @@ public class PatrollingScript : MonoBehaviour
         if (!_hasReachedCurrentGoal && Vector3.Distance(position, _pathPoints[_currentPointIndex].Position) < 0.2f)
         {
             _hasReachedCurrentGoal = true;
-            enemyControllerScript.Stop();
+            enemyControllerScript.PatrolWait();
             StartCoroutine(Wait(_pathPoints[_currentPointIndex].WaitTime));
             _currentPointIndex = (_currentPointIndex + 1) % _pathPoints.Count;
         }
         else if (_hasReachedCurrentGoal)
         {
             _hasReachedCurrentGoal = false;
-            enemyControllerScript.MoveTo(_pathPoints[_currentPointIndex].Position + _startingPosition, false);
+            enemyControllerScript.PatrolTo(_pathPoints[_currentPointIndex].Position + _startingPosition, false);
         }
     }
 
