@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("StreetLevel");
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void GameOver()
@@ -32,5 +33,6 @@ public class GameManager : MonoBehaviour
         if (godMode) return;
 
         SceneManager.LoadScene("GameOver");
+        Cursor.lockState = CursorLockMode.None;
     }
 }
