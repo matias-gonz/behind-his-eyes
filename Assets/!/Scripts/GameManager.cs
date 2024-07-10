@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Scene = utils.Scene;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,5 +35,13 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("GameOver");
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void LoadScene(Scene nextScene)
+    {
+        if (nextScene == Scene.StreetLevel)
+        {
+            RestartGame();
+        }
     }
 }
