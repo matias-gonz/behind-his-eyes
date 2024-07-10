@@ -14,7 +14,7 @@ public class PlayerAudio : MonoBehaviour
 
     public void Walk()
     {
-        PlayAudio("Walk", 1f);
+        PlayAudio("Walk", 0.8f);
     }
 
     public void Crouched()
