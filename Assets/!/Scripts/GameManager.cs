@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Scene = utils.Scene;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("CentralCity");
+        SceneManager.LoadScene("StreetLevel");
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void GameOver()
@@ -32,5 +34,14 @@ public class GameManager : MonoBehaviour
         if (godMode) return;
 
         SceneManager.LoadScene("GameOver");
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void LoadScene(Scene nextScene)
+    {
+        if (nextScene == Scene.StreetLevel)
+        {
+            RestartGame();
+        }
     }
 }

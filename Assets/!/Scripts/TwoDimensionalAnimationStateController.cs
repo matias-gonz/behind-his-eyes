@@ -371,7 +371,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
     void CheckPlayerInputAllowed()
     {
-        bool animationEventPlaying = _animator.GetBool(_fallDownBackwardsHash) || _animator.GetBool(_SpottedHash);
+        bool animationEventPlaying = _animator.GetBool(_fallDownBackwardsHash) || _animator.GetBool(_DyingHash);
         // block playerinput if animation is currently being played
         _allowPlayerInput = !animationEventPlaying;
     }
@@ -391,8 +391,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
     public void GettingEngaged(Vector3 direction)
     {
-        _velocityZ = 0f;
-        _velocityX = 0f;
+        
         if(!GameManager.Instance.godMode)
         {
             _animator.SetBool(_SpottedHash, true);
@@ -404,6 +403,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     {
         if (!GameManager.Instance.godMode)
         {
+            _velocityZ = 0f;
+            _velocityX = 0f;
             _animator.SetBool(_DyingHash, true);
         }
         
