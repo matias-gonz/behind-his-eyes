@@ -21,7 +21,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public Collider proneCollider;
 
     // local variables for animation state
-    private bool _isCrouched = false;
+    private bool _isCrouched = true;
     private bool _isProne = false;
     private float _velocityX = 0.0f;
     private float _velocityZ = 0.0f;

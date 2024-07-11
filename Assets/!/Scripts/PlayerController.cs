@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start() 
-    { 
+    void Start()
+    {
         // turns mouse cursor invisible and locks it in place, allowing indefinite mouse movement
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -54,11 +54,11 @@ public class PlayerController : MonoBehaviour
         if (!isAirBorne)
         {
             bool isStanding = _animationController.IsStanding();
-        JumpPressed(isStanding);
-        RunPressed(isStanding);
-        StancePressed();
+            JumpPressed(isStanding);
+            RunPressed(isStanding);
+            StancePressed();
         }
-        
+
         _animationController.UpdateVelocity(
             _forwardPressed,
             _backwardPressed,
@@ -66,14 +66,15 @@ public class PlayerController : MonoBehaviour
             _rightPressed,
             _runPressed
         );
-
-        // call third person movement??
+        _crouchedClicked = false;
+        _proneClicked = false;
     }
 
     private bool AirBorne()
     {
-        if(_animationController.IsJumping()) return true;
-        return !_thirdPersonMovement.GetIsGrounded(); 
+        if (_animationController.IsJumping())
+            return true;
+        return !_thirdPersonMovement.GetIsGrounded();
     }
 
     private void JumpPressed(bool isStanding)
