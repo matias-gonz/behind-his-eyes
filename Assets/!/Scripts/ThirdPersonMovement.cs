@@ -5,18 +5,17 @@ using UnityEngine;
 public class ThirdPersonMovement : MonoBehaviour
 {
     //components
-    private Animator _animator;
     private Rigidbody _rigidbody;
     public Transform cam;
+    public TwoDimensionalAnimationStateController _animationController;
 
     // constants
     public const float SpeedMultiplier = 3f;
     public const float Gravity = 9.81f;
 
     // local variables
-    private float _forwardMovement;
-    private float _sidewardMovement;
     private float _timeFalling = 0f;
+    private bool _isGrounded;
 
     //hashes
     private int _velocityXHash;
@@ -26,34 +25,22 @@ public class ThirdPersonMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
-        _velocityXHash = Animator.StringToHash("Velocity X");
-        _velocityZHash = Animator.StringToHash("Velocity Z");
-        _isJumpHash = Animator.StringToHash("isJump");
-        // turns mouse cursor invisible and locks it in place, allowing indefinite mouse movement
-        Cursor.lockState = CursorLockMode.Locked;
+        _isGrounded = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        MoveXZandTurn();
-        if (!_animator.GetBool(_isJumpHash))
-        {
-            VerticalVelocity();
-        }
-        else
-        {
-            _rigidbody.velocity = Vector3.zero;
-        }
+        VerticalVelocity();
+        MoveXZandTurn();   
         _rigidbody.AddForce(new Vector3(0f, 0f, 0f));
     }
 
     private void MoveXZandTurn()
     {
-        _forwardMovement = _animator.GetFloat(_velocityZHash);
-        _sidewardMovement = _animator.GetFloat(_velocityXHash);
+        float _forwardMovement = _animationController.GetVelocityZ();
+        float _sidewardMovement = _animationController.GetVelocityX();
 
         // walk direction in normal cordinate system
         Vector3 direction = new Vector3(_sidewardMovement, 0f, _forwardMovement);
@@ -72,30 +59,47 @@ public class ThirdPersonMovement : MonoBehaviour
         _rigidbody.velocity = resetVelocityXZ;
     }
 
+    public bool GetIsGrounded()
+    {
+        return _isGrounded;
+    }
+   
     private void VerticalVelocity()
     {
-        float distanceToGround = DistanceToGround();
-        bool isGrounded = distanceToGround <= 0.2f;
-        if (!isGrounded)
+        if (_animationController.IsJumping())
         {
-            _timeFalling += Time.fixedDeltaTime;
-            float velocityY = _rigidbody.velocity.y - 0.1f * Gravity * _timeFalling;
-            Vector3 fallingVelocity = new Vector3(0f, velocityY, 0f);
-            _rigidbody.velocity = fallingVelocity;
+            _rigidbody.velocity = Vector3.zero;
+            _timeFalling = 0.5f;
+        } else
+        {
+        float distanceToGround = DistanceToGround();
+        _isGrounded = distanceToGround <= 0.2f;
+        if (!_isGrounded)
+        {
+           FreeFall();
         }
         else if (distanceToGround == 0f)
         {
             _rigidbody.velocity = Vector3.zero;
             _timeFalling = 0f;
-        }
-        else
+        } else
         {
-            // all forces and velocities are reset if standing on ground.
-            // _rigidbody.velocity = Vector3.zero;
             _rigidbody.velocity = new Vector3(0f, -0.1f, 0f);
             _timeFalling = 0f;
         }
+  
+        }
     }
+
+    private void FreeFall()
+    {
+         _timeFalling += Time.fixedDeltaTime;
+            float velocityY = _rigidbody.velocity.y - 0.1f * Gravity * _timeFalling;
+            Vector3 fallingVelocity = new Vector3(0f, velocityY, 0f);
+            _rigidbody.velocity = fallingVelocity;
+    }
+    
+    
 
     private float DistanceToGround()
     {
@@ -112,8 +116,5 @@ public class ThirdPersonMovement : MonoBehaviour
         return distanceToGround;
     }
 
-    public bool JumpingAllowed()
-    {
-        return DistanceToGround() <= 0.2f;
-    }
+   
 }
