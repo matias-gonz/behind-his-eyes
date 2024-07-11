@@ -13,4 +13,3 @@ public class MonologuePreKill : StateMachineBehaviour
         animator.SetInteger("idlePreKill", animator.GetInteger("idlePreKill") - 1);
     }
 }
-    
