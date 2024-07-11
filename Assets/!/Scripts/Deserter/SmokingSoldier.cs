@@ -18,6 +18,7 @@ public class SmokingSoldier : MonoBehaviour
 
     private void KillDeserter()
     {
+        AudioManager.Instance.PlaySoundFx("k98");
         _deserterScript.GettingKilled();
     }
 }
