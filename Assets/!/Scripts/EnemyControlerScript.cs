@@ -18,7 +18,7 @@ public class EnemyControllerScript : MonoBehaviour
     private float _currentSpeed; //formerly speed
     private float _currentMaxSpeed;
     private const float Acceleration = 2f;
-    private const float TurnSmoothTime = 0.3f;
+    private const float TurnSmoothTime = 0.2f;
     private float _angularVelocity;
 
     //Target
