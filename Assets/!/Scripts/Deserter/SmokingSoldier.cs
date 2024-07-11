@@ -13,8 +13,6 @@ public class SmokingSoldier : MonoBehaviour
         _deserterScript = lonelyDeserter.GetComponent<Deserter>();
     }
 
-    // Update is called once per frame
-    void Update() { }
 
     private void KillDeserter()
     {
