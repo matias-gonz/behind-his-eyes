@@ -10,15 +10,17 @@ public class DetectionScript : MonoBehaviour
     public GameObject target; 
     public float fov = 120f;
     public float viewDistance = 10f;
-    public float closeRange = 2f;
+    public float maxSoundRange = 10f;
     public float tolerance = 0.2f;
     private LayerMask _layerMask;
     private Collider[] _colliders;
+    private ThirdPersonMovement _thirdPersonMovement;
 
     private void Start()
     {
         _layerMask = LayerMask.GetMask("Level");
         _colliders = target.GetComponents<Collider>();
+        _thirdPersonMovement = target.GetComponent<ThirdPersonMovement>();
         enemyControllerScript.InitialiseEnemyControllerScript(target);
     }
 
@@ -33,13 +35,14 @@ public class DetectionScript : MonoBehaviour
         float distance = Vector3.Distance(transform.position, target.transform.position);
         if (distance > viewDistance) return;
 
-        // Check if the target is in the field of view
+        // Check if the target is in the field of view OR enemy can hear the target
         Vector3 playerDirection = target.transform.position - transform.position;
         playerDirection.y = 0;
         Vector3 lookDirection = transform.forward;
         lookDirection.y = 0;
         float angle = Vector3.Angle(playerDirection, lookDirection);
-        if (distance > closeRange && angle > fov / 2) return;
+        float soundRange = maxSoundRange; // TODO: Implement getSoundRange() from player
+        if (distance > soundRange && angle > fov / 2) return;
 
         // Check if the target is in sight
         Vector3 rayStart = transform.position;
