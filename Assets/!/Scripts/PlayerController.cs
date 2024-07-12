@@ -9,14 +9,19 @@ public class PlayerController : MonoBehaviour
     public TwoDimensionalAnimationStateController _animationController;
     private PlayerInput _input;
 
+    public float goIntoProneTime = 0.8f;
+
     //variables to store player input
     private bool _forwardPressed;
     private bool _backwardPressed;
     private bool _runPressed;
     private bool _leftPressed;
     private bool _rightPressed;
-    private bool _crouchedClicked;
-    private bool _proneClicked;
+    private bool _crouchPronePerformed;
+    private bool _crouchProneCanceled = false;
+    private float _crouchedProneTimer = 0f;
+    private bool _crouchedPressed;
+    private bool _pronePressed;
     private bool _jumpPressed;
 
     void Awake()
@@ -31,9 +36,12 @@ public class PlayerController : MonoBehaviour
             _leftPressed = ctx.ReadValueAsButton();
         _input.CharacterControls.MovementRight.performed += ctx =>
             _rightPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.Crouch.started += ctx =>
-            _crouchedClicked = ctx.ReadValueAsButton();
-        _input.CharacterControls.Prone.started += ctx => _proneClicked = ctx.ReadValueAsButton();
+        // _input.CharacterControls.Crouch.started += ctx =>
+        //     _crouchedClicked = ctx.ReadValueAsButton();
+        _input.CharacterControls.Prone.performed += ctx =>
+            _crouchPronePerformed = ctx.ReadValueAsButton();
+        _input.CharacterControls.Prone.canceled += ctx => _crouchProneCanceled = true;
+
         _input.CharacterControls.Jump.performed += ctx => _jumpPressed = ctx.ReadValueAsButton();
     }
 
@@ -56,6 +64,7 @@ public class PlayerController : MonoBehaviour
             bool isStanding = _animationController.IsStanding();
             JumpPressed(isStanding);
             RunPressed(isStanding);
+            CrouchPronePressed();
             StancePressed();
         }
 
@@ -66,8 +75,34 @@ public class PlayerController : MonoBehaviour
             _rightPressed,
             _runPressed
         );
-        _crouchedClicked = false;
-        _proneClicked = false;
+        _crouchedPressed = false;
+        _pronePressed = false;
+        _crouchProneCanceled = false;
+    }
+
+    private void CrouchPronePressed()
+    {
+        if (_crouchProneCanceled)
+        {
+            if (_crouchedProneTimer < goIntoProneTime)
+            {
+                _crouchedPressed = true;
+            }
+            else
+            {
+                _crouchedProneTimer = 0f;
+            }
+        }
+
+        if (_crouchPronePerformed)
+        {
+            float newTimer = _crouchedProneTimer + Time.deltaTime;
+            if (_crouchedProneTimer < goIntoProneTime && newTimer >= goIntoProneTime)
+            {
+                _pronePressed = true;
+            }
+            _crouchedProneTimer = newTimer;
+        }
     }
 
     private bool AirBorne()
@@ -104,11 +139,11 @@ public class PlayerController : MonoBehaviour
     {
         if (_runPressed || _jumpPressed)
             return;
-        if (_proneClicked)
+        if (_pronePressed)
         {
             _animationController.ToggleProne();
         }
-        else if (_crouchedClicked)
+        else if (_crouchedPressed)
         {
             _animationController.ToggleCrouch();
         }

@@ -21,8 +21,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public Collider proneCollider;
 
     // local variables for animation state
-    private bool _isCrouched = true;
-    private bool _isProne = false;
+
     private float _velocityX = 0.0f;
     private float _velocityZ = 0.0f;
 
@@ -145,8 +144,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
     private float CalculateCurrentMaxVelocity(bool runPressed)
     {
-        bool isProne = _animator.GetBool(_isCrouchedHash);
-        bool isCrouched = _animator.GetBool(_isProneHash);
+        bool isCrouched = _animator.GetBool(_isCrouchedHash);
+        bool isProne = _animator.GetBool(_isProneHash);
         float currentMaxVelocity;
         if (isProne)
         {
@@ -222,7 +221,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
 
         // trying to sprint backwards while standing results in the character stumbeling
-        if (backwardPressed && runPressed && !_isCrouched && !_isProne)
+        if (backwardPressed && runPressed && IsStanding())
         {
             _velocityZ = 0f;
             _velocityX = 0f;
