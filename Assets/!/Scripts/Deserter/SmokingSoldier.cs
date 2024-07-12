@@ -16,13 +16,12 @@ public class SmokingSoldier : MonoBehaviour
         _deserterScript = lonelyDeserter.GetComponent<Deserter>();
         _animator = GetComponent<Animator>();
         _doExecuteHash = Animator.StringToHash("DoExecute");
-        DisableExecute();
     }
 
     public void DisableExecute()
     {
         _animator.SetBool(_doExecuteHash, false);
-        _deserterScript.GettingKilled();
+        _deserterScript.SkipDeath();
     }
 
     private void KillDeserter()
