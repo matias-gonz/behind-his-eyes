@@ -18,7 +18,7 @@ public class SmokingSoldier : MonoBehaviour
         _doExecuteHash = Animator.StringToHash("DoExecute");
     }
 
-    public void DisableExecute()
+    public void SkipExecutionAnimation()
     {
         _animator.SetBool(_doExecuteHash, false);
         _deserterScript.SkipDeath();
