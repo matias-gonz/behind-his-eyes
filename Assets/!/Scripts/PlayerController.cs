@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private float _crouchedProneTimer = 0f;
     private bool _crouchedPressed;
     private bool _pronePressed;
-    private bool _jumpPressed;
+    private bool _jumpClicked = false;
 
     void Awake()
     {
@@ -36,13 +36,11 @@ public class PlayerController : MonoBehaviour
             _leftPressed = ctx.ReadValueAsButton();
         _input.CharacterControls.MovementRight.performed += ctx =>
             _rightPressed = ctx.ReadValueAsButton();
-        // _input.CharacterControls.Crouch.started += ctx =>
-        //     _crouchedClicked = ctx.ReadValueAsButton();
-        _input.CharacterControls.Prone.performed += ctx =>
+        _input.CharacterControls.CrouchProne.performed += ctx =>
             _crouchPronePerformed = ctx.ReadValueAsButton();
-        _input.CharacterControls.Prone.canceled += ctx => _crouchProneCanceled = true;
+        _input.CharacterControls.CrouchProne.canceled += ctx => _crouchProneCanceled = true;
 
-        _input.CharacterControls.Jump.performed += ctx => _jumpPressed = ctx.ReadValueAsButton();
+        _input.CharacterControls.Jump.started += ctx => _jumpClicked = ctx.ReadValueAsButton();
     }
 
     // Start is called before the first frame update
@@ -78,6 +76,7 @@ public class PlayerController : MonoBehaviour
         _crouchedPressed = false;
         _pronePressed = false;
         _crouchProneCanceled = false;
+        _jumpClicked = false;
     }
 
     private void CrouchPronePressed()
@@ -114,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
     private void JumpPressed(bool isStanding)
     {
-        if (!_jumpPressed)
+        if (!_jumpClicked)
             return;
         if (isStanding)
         {
@@ -137,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
     private void StancePressed()
     {
-        if (_runPressed || _jumpPressed)
+        if (_runPressed || _jumpClicked)
             return;
         if (_pronePressed)
         {

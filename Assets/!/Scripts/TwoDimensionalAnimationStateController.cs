@@ -15,7 +15,6 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float maximumRunVelocity = 2.0f;
     public float maximumCrouchVelocity = 0.5f;
     public float maximumProneVelocity = 0.25f;
-    public float maximumBackwardsVelocity = 0.5f;
 
     public Collider upRightCollider;
     public Collider proneCollider;
@@ -179,7 +178,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
 
         // accelerate backward, but only to walking speed
-        if (backwardPressed && _velocityZ > -maximumBackwardsVelocity)
+        if (backwardPressed && _velocityZ > -currentMaxVelocity)
         {
             _velocityZ -= Time.deltaTime * acceleration;
         }
@@ -281,18 +280,18 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
 
         //lock backward to walk speed
-        if (backwardPressed && _velocityZ < -maximumBackwardsVelocity)
+        if (backwardPressed && _velocityZ < -currentMaxVelocity)
         {
-            _velocityZ = -maximumBackwardsVelocity;
+            _velocityZ = -currentMaxVelocity;
         }
         // round to maximumWalkVelocity if within offset
         else if (
             backwardPressed
-            && _velocityZ > -maximumBackwardsVelocity
-            && _velocityZ < (-maximumBackwardsVelocity + 0.05f)
+            && _velocityZ > -currentMaxVelocity
+            && _velocityZ < (-currentMaxVelocity + 0.05f)
         )
         {
-            _velocityZ = -maximumBackwardsVelocity;
+            _velocityZ = -currentMaxVelocity;
         }
 
         //locking left
