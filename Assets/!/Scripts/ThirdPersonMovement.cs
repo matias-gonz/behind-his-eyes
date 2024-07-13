@@ -47,7 +47,7 @@ public class ThirdPersonMovement : MonoBehaviour
         float speed =
             Mathf.Max(Mathf.Abs(_forwardMovement), Mathf.Abs(_sidewardMovement)) * SpeedMultiplier;
         
-        if (speed == 0 && DistanceToGround() == 0 && !isJumping)
+        if (speed == 0 && DistanceToGround() < 0.05 && !isJumping)
         {
             _rigidbody.isKinematic = true;
             return;
@@ -103,9 +103,9 @@ public class ThirdPersonMovement : MonoBehaviour
             {
                 FreeFall();
             }
-            else if (distanceToGround == 0f)
+            else if (distanceToGround < 0.05f)
             {
-                // _rigidbody.velocity = Vector3.zero;
+                // becomes rigidbody so no velocity here
                 _timeFalling = 0f;
             }
             else
