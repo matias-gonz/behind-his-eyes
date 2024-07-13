@@ -1479,6 +1479,7 @@ GameObject:
   - component: {fileID: 5008557186593552270}
   - component: {fileID: 8132848639047653971}
   - component: {fileID: 1287324326615721425}
+  - component: {fileID: 7038103100538441920}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1552,7 +1553,6 @@ MonoBehaviour:
   maximumRunVelocity: 2
   maximumCrouchVelocity: 0.5
   maximumProneVelocity: 0.25
-  maximumBackwardsVelocity: 0.5
   upRightCollider: {fileID: 7245086291701221048}
   proneCollider: {fileID: 5008557186593552270}
 --- !u!114 &3240364155029121252
@@ -1568,6 +1568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  _animationController: {fileID: 327623586495336380}
 --- !u!136 &7245086291701221048
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1759,6 +1760,21 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 540d83f3555bb4796b8a43d097243ea3, type: 3}
   - id: Jump
     clip: {fileID: 8300000, guid: 3d8f480d252db9449b2f978284506f8e, type: 3}
+--- !u!114 &7038103100538441920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514849483161549247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfab48f726b42b5f8c2d3579b725771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thirdPersonMovement: {fileID: 3240364155029121252}
+  _animationController: {fileID: 327623586495336380}
+  goIntoProneTime: 0.8
 --- !u!1 &4899586341017006717
 GameObject:
   m_ObjectHideFlags: 0

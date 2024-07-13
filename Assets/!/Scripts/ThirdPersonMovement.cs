@@ -5,18 +5,19 @@ using UnityEngine;
 public class ThirdPersonMovement : MonoBehaviour
 {
     //components
-    private Animator _animator;
     private Rigidbody _rigidbody;
     public Transform cam;
+    public TwoDimensionalAnimationStateController _animationController;
 
     // constants
     public const float SpeedMultiplier = 3f;
     public const float Gravity = 9.81f;
+    private const float TurnSmoothTime = 0.2f;
+    private float _angularVelocity;
 
     // local variables
-    private float _forwardMovement;
-    private float _sidewardMovement;
     private float _timeFalling = 0f;
+    private bool _isGrounded;
 
     //hashes
     private int _velocityXHash;
@@ -26,79 +27,105 @@ public class ThirdPersonMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
-        _velocityXHash = Animator.StringToHash("Velocity X");
-        _velocityZHash = Animator.StringToHash("Velocity Z");
-        _isJumpHash = Animator.StringToHash("isJump");
-        // turns mouse cursor invisible and locks it in place, allowing indefinite mouse movement
-        Cursor.lockState = CursorLockMode.Locked;
+        _isGrounded = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        MoveXZandTurn();
-        if (!_animator.GetBool(_isJumpHash))
-        {
-            VerticalVelocity();
-        }
-        else
-        {
-            _rigidbody.velocity = Vector3.zero;
-        }
+        bool isJumping = _animationController.IsJumping();
+        MoveXZandTurn(isJumping);
+        VerticalVelocity(isJumping);
         _rigidbody.AddForce(new Vector3(0f, 0f, 0f));
     }
 
-    private void MoveXZandTurn()
+    private void MoveXZandTurn(bool isJumping)
     {
-        _forwardMovement = _animator.GetFloat(_velocityZHash);
-        _sidewardMovement = _animator.GetFloat(_velocityXHash);
+        float _forwardMovement = _animationController.GetVelocityZ();
+        float _sidewardMovement = _animationController.GetVelocityX();
+        float speed =
+            Mathf.Max(Mathf.Abs(_forwardMovement), Mathf.Abs(_sidewardMovement)) * SpeedMultiplier;
+        
+        if (speed == 0 && DistanceToGround() < 0.05 && !isJumping)
+        {
+            _rigidbody.isKinematic = true;
+            return;
+        }
+        else
+            _rigidbody.isKinematic = false;
+        if (speed == 0)
+            return;
 
         // walk direction in normal cordinate system
-        Vector3 direction = new Vector3(_sidewardMovement, 0f, _forwardMovement);
-        float targetAngle = cam.eulerAngles.y;
+        Vector3 direction = new Vector3(_sidewardMovement, 0f, _forwardMovement).normalized;
+        float targetAngle = RotateToCurrentTarget(cam.eulerAngles.y);
 
-        //direction in relation to camera including for strafe walking
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction;
         Vector3 currentPosition = transform.position;
-        Vector3 intermediatePosition =
-            currentPosition + moveDir * SpeedMultiplier * Time.fixedDeltaTime;
-        // make sure character moves in direction of target angle, i.e. where the camera is looking
+        Vector3 intermediatePosition = currentPosition + moveDir * speed * Time.fixedDeltaTime;
         _rigidbody.MovePosition(intermediatePosition);
-        // Debug.Log(intermediatePosition);
-        _rigidbody.MoveRotation(Quaternion.Euler(0f, targetAngle, 0f));
+
         Vector3 resetVelocityXZ = new Vector3(0f, _rigidbody.velocity.y, 0f);
         _rigidbody.velocity = resetVelocityXZ;
     }
 
-    private void VerticalVelocity()
+    private float RotateToCurrentTarget(float targetAngle)
     {
-        float distanceToGround = DistanceToGround();
-        bool isGrounded = distanceToGround <= 0.2f;
-        if (!isGrounded)
-        {
-            _timeFalling += Time.fixedDeltaTime;
-            float velocityY = _rigidbody.velocity.y - 0.1f * Gravity * _timeFalling;
-            Vector3 fallingVelocity = new Vector3(0f, velocityY, 0f);
-            _rigidbody.velocity = fallingVelocity;
-        }
-        else if (distanceToGround == 0f)
+        // float targetAngle = Mathf.Atan2(targetDirection.x, targetDirection.z) * Mathf.Rad2Deg;
+        float angle = Mathf.SmoothDampAngle(
+            this.transform.eulerAngles.y,
+            targetAngle,
+            ref _angularVelocity,
+            TurnSmoothTime
+        );
+        _rigidbody.MoveRotation(Quaternion.Euler(0f, angle, 0f));
+        return angle;
+    }
+
+    public bool GetIsGrounded()
+    {
+        return _isGrounded;
+    }
+
+    private void VerticalVelocity(bool isJumping)
+    {
+        if (isJumping)
         {
             _rigidbody.velocity = Vector3.zero;
-            _timeFalling = 0f;
+            _timeFalling = 0.5f;
         }
         else
         {
-            // all forces and velocities are reset if standing on ground.
-            // _rigidbody.velocity = Vector3.zero;
-            _rigidbody.velocity = new Vector3(0f, -0.1f, 0f);
-            _timeFalling = 0f;
+            float distanceToGround = DistanceToGround();
+            _isGrounded = distanceToGround <= 0.2f;
+            if (!_isGrounded)
+            {
+                FreeFall();
+            }
+            else if (distanceToGround < 0.05f)
+            {
+                // becomes rigidbody so no velocity here
+                _timeFalling = 0f;
+            }
+            else
+            {
+                _rigidbody.velocity = new Vector3(0f, -0.1f, 0f);
+                _timeFalling = 0f;
+            }
         }
     }
 
-    private float DistanceToGround()
+    private void FreeFall()
     {
+        _timeFalling += Time.fixedDeltaTime;
+        float velocityY = _rigidbody.velocity.y - 0.1f * Gravity * _timeFalling;
+        Vector3 fallingVelocity = new Vector3(0f, velocityY, 0f);
+        _rigidbody.velocity = fallingVelocity;
+    }
+
+    private float DistanceToGround()
+    {      
         float distanceToGround;
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
@@ -110,10 +137,5 @@ public class ThirdPersonMovement : MonoBehaviour
             distanceToGround = 0f;
         }
         return distanceToGround;
-    }
-
-    public bool JumpingAllowed()
-    {
-        return DistanceToGround() <= 0.2f;
     }
 }
