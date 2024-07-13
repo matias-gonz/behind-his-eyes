@@ -34,19 +34,20 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        VerticalVelocity();
-        MoveXZandTurn();
+        bool isJumping = _animationController.IsJumping();
+        MoveXZandTurn(isJumping);
+        VerticalVelocity(isJumping);
         _rigidbody.AddForce(new Vector3(0f, 0f, 0f));
     }
 
-    private void MoveXZandTurn()
+    private void MoveXZandTurn(bool isJumping)
     {
         float _forwardMovement = _animationController.GetVelocityZ();
         float _sidewardMovement = _animationController.GetVelocityX();
         float speed =
             Mathf.Max(Mathf.Abs(_forwardMovement), Mathf.Abs(_sidewardMovement)) * SpeedMultiplier;
-
-        if (speed == 0 && DistanceToGround() == 0)
+        
+        if (speed == 0 && DistanceToGround() == 0 && !isJumping)
         {
             _rigidbody.isKinematic = true;
             return;
@@ -87,9 +88,9 @@ public class ThirdPersonMovement : MonoBehaviour
         return _isGrounded;
     }
 
-    private void VerticalVelocity()
+    private void VerticalVelocity(bool isJumping)
     {
-        if (_animationController.IsJumping())
+        if (isJumping)
         {
             _rigidbody.velocity = Vector3.zero;
             _timeFalling = 0.5f;
@@ -124,7 +125,7 @@ public class ThirdPersonMovement : MonoBehaviour
     }
 
     private float DistanceToGround()
-    {
+    {      
         float distanceToGround;
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
