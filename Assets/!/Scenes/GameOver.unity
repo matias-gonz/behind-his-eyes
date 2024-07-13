@@ -451,6 +451,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4733234335328316098, guid: 69da171010052470a8a6a96867d7c559, type: 3}
+      propertyPath: restartButton
+      value: 
+      objectReference: {fileID: 293928129382623743}
     - target: {fileID: 4904877477149468209, guid: 69da171010052470a8a6a96867d7c559, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -540,6 +544,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69da171010052470a8a6a96867d7c559, type: 3}
+--- !u!1 &293928129382623743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8662915400447382470, guid: 69da171010052470a8a6a96867d7c559, type: 3}
+  m_PrefabInstance: {fileID: 293928129382623742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
