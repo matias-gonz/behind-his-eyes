@@ -3746,6 +3746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmokingSoldier
       objectReference: {fileID: 0}
+    - target: {fileID: 8806937275697277533, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
+      propertyPath: m_TagString
+      value: InitialSoldier
+      objectReference: {fileID: 0}
     - target: {fileID: 8896664749327672098, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 11.065772
@@ -4023,7 +4027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613383662}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 30.115906, y: 3.6426468, z: 14.44397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9813,7 +9817,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 626129254}
-  m_LocalEulerAnglesHint: {x: 0, y: -135, z: 0}
+  m_LocalEulerAnglesHint: {x: 33.69, y: 90, z: 0}
 --- !u!114 &1855781633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11718,7 +11722,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038332903}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25466168, y: 0.034788992, z: -0.009167822, w: 0.96636075}
+  m_LocalRotation: {x: 0.25452, y: 0.047419008, z: -0.012496162, w: 0.9658234}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

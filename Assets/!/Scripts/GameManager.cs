@@ -12,8 +12,7 @@ public class GameManager : MonoBehaviour
     public bool godMode = false;
     
     private Checkpoint? _checkpoint = null;
-    private GameObject _player;
-
+    
     private void Awake()
     {
         if (!Instance)
@@ -27,19 +26,21 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    private void Start()
+    private IEnumerator RestartGame()
     {
-        _player = GameObject.FindWithTag("Player");
-    }
-
-    public void RestartGame()
-    {
-        SceneManager.LoadScene("StreetLevel");
-        Debug.Log(_checkpoint);
-        if (_checkpoint != null && _player)
+        AsyncOperation op = SceneManager.LoadSceneAsync("StreetLevel");
+        while (!op.isDone)
         {
-            _player.transform.position = _checkpoint.Value.position;
-            _player.transform.rotation = _checkpoint.Value.rotation;
+            yield return null;
+        }
+        if (_checkpoint != null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            player.transform.position = _checkpoint.Value.position;
+            player.transform.rotation = _checkpoint.Value.rotation;
+            GameObject initialSoldier = GameObject.FindWithTag("InitialSoldier");
+            SmokingSoldier s = initialSoldier.GetComponent<SmokingSoldier>();
+            s.SkipExecutionAnimation();
         }
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         if (nextScene == Scene.StreetLevel)
         {
-            RestartGame();
+            StartCoroutine(nameof(RestartGame));
         }
     }
 
