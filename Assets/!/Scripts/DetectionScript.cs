@@ -10,6 +10,7 @@ public class DetectionScript : MonoBehaviour
     public GameObject target; 
     public float fov = 120f;
     public float viewDistance = 10f;
+    public float closeRange = 2f;
     public float tolerance = 0.2f;
     private LayerMask _layerMask;
     private Collider[] _colliders;
@@ -38,7 +39,7 @@ public class DetectionScript : MonoBehaviour
         Vector3 lookDirection = transform.forward;
         lookDirection.y = 0;
         float angle = Vector3.Angle(playerDirection, lookDirection);
-        if (angle > fov / 2) return;
+        if (distance > closeRange && angle > fov / 2) return;
 
         // Check if the target is in sight
         Vector3 rayStart = transform.position;
