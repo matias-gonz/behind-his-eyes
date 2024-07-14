@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     private PlayerInput _input;
 
     public float goIntoProneTime = 0.8f;
+    public float _standingViewFactor = 1f;
+    public float _crouchingViewFactor = 0.5f;
+    public float _proneViewFactor = 0.3f;
 
     //variables to store player input
     private bool _forwardPressed;
@@ -78,6 +81,24 @@ public class PlayerController : MonoBehaviour
         _crouchProneCanceled = false;
         _jumpClicked = false;
     }
+    
+    public float GetViewDistance(float maximumViewDistance)
+    {
+        float viewDistance;
+        if (_animationController.IsStanding()) {
+            viewDistance = _standingViewFactor * maximumViewDistance;
+        } else
+        {
+            viewDistance = maximumViewDistance;
+        }
+        return viewDistance;
+
+    }
+
+    // public float GetNoiseDistance()
+    // {
+
+    // }
 
     private void CrouchPronePressed()
     {
