@@ -9,16 +9,18 @@ public class DetectionScript : MonoBehaviour
     public EnemyControllerScript enemyControllerScript;
     public GameObject target; 
     public float fov = 120f;
-    public float viewDistance = 10f;
+    public float maxViewDistance = 10f;
     public float closeRange = 2f;
     public float tolerance = 0.2f;
     private LayerMask _layerMask;
     private Collider[] _colliders;
+    private ThirdPersonMovement _thirdPersonMovement;
 
     private void Start()
     {
         _layerMask = LayerMask.GetMask("Level");
         _colliders = target.GetComponents<Collider>();
+        _thirdPersonMovement = target.GetComponent<ThirdPersonMovement>();
         enemyControllerScript.InitialiseEnemyControllerScript(target);
     }
 
@@ -31,6 +33,7 @@ public class DetectionScript : MonoBehaviour
 
         // Check if the target is in range
         float distance = Vector3.Distance(transform.position, target.transform.position);
+        float viewDistance = maxViewDistance; // TODO: Implement view distance based on the target's state
         if (distance > viewDistance) return;
 
         // Check if the target is in the field of view
