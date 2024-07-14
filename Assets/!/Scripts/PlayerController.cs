@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public ThirdPersonMovement _thirdPersonMovement;
     public TwoDimensionalAnimationStateController _animationController;
+    public CameraControl _cameraControl;
     private PlayerInput _input;
 
     public float goIntoProneTime = 0.8f;
@@ -77,6 +78,15 @@ public class PlayerController : MonoBehaviour
         _pronePressed = false;
         _crouchProneCanceled = false;
         _jumpClicked = false;
+    }
+
+    public void GettingKilled(Vector3 direction)
+    {
+        if (!GameManager.Instance.godMode)
+        {
+            _animationController.Dying();
+            _cameraControl.RotateTPCam(direction);
+        }  
     }
 
     private void CrouchPronePressed()
