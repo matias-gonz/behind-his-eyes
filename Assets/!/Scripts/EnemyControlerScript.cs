@@ -7,7 +7,7 @@ public class EnemyControllerScript : MonoBehaviour
 {
     // Components
     private Animator _animator;
-    private TwoDimensionalAnimationStateController _twoDimensionalAnimationStateController;
+    private PlayerController _playerController;
     private Rigidbody _rigidbody;
 
     // Enemy Movement and Animation
@@ -52,8 +52,8 @@ public class EnemyControllerScript : MonoBehaviour
     //called by detection script at start
     public void InitialiseEnemyControllerScript(GameObject target)
     {
-        _twoDimensionalAnimationStateController =
-            target.GetComponent<TwoDimensionalAnimationStateController>();
+        _playerController =
+            target.GetComponent<PlayerController>();
     }
 
     private void FixedUpdate()
@@ -97,7 +97,6 @@ public class EnemyControllerScript : MonoBehaviour
             _isEngaging = true;
             _targetDirection = targetDirection;
             _animator.SetBool(_rifleAimHash, true);
-            _twoDimensionalAnimationStateController.GettingEngaged(targetDirection);
         }
         else
         {
@@ -108,7 +107,7 @@ public class EnemyControllerScript : MonoBehaviour
     public void KillTarget()
     {
         AudioManager.Instance.PlaySoundFx("k98");
-        _twoDimensionalAnimationStateController.GettingKilled();
+        _playerController.GettingKilled(_targetDirection);
     }
 
     private void DisengageTarget()
