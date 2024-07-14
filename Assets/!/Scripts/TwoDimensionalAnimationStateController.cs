@@ -355,21 +355,10 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         return _velocityZ;
     }
 
-    public void GettingEngaged(Vector3 direction)
+    public void Dying()
     {
-        if (!GameManager.Instance.godMode)
-        {
-            _animator.SetBool(_SpottedHash, true);
-        }
-    }
-
-    public void GettingKilled()
-    {
-        if (!GameManager.Instance.godMode)
-        {
             _velocityZ = 0f;
             _velocityX = 0f;
             _animator.SetBool(_DyingHash, true);
-        }
     }
 }

@@ -1387,6 +1387,7 @@ GameObject:
   - component: {fileID: 8132848639047653971}
   - component: {fileID: 1287324326615721425}
   - component: {fileID: 7038103100538441920}
+  - component: {fileID: 3852417935818244108}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1680,7 +1681,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _thirdPersonMovement: {fileID: 3240364155029121252}
   _animationController: {fileID: 327623586495336380}
+  _cameraControl: {fileID: 3852417935818244108}
   goIntoProneTime: 0.8
+--- !u!114 &3852417935818244108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514849483161549247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704a6c67c799b79bb9ef0a478f779ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirdPersonCam: {fileID: 0}
 --- !u!1 &4899586341017006717
 GameObject:
   m_ObjectHideFlags: 0
