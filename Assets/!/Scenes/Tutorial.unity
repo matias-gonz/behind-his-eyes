@@ -921,7 +921,7 @@ Transform:
   m_GameObject: {fileID: 294806526}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.527325, y: 6.1314507, z: 11.78}
+  m_LocalPosition: {x: 25.527325, y: 6.1314507, z: 11.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5501,7 +5501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1269444643
 Transform:
   m_ObjectHideFlags: 0
@@ -6140,6 +6140,7 @@ GameObject:
   - component: {fileID: 1342023281}
   - component: {fileID: 1342023283}
   - component: {fileID: 1342023282}
+  - component: {fileID: 1342023284}
   m_Layer: 0
   m_Name: TriggerShoot
   m_TagString: Untagged
@@ -6197,6 +6198,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 18, y: 3, z: 1}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &1342023284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342023280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fa72e920cf244a1857fc4d2723c969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 10
 --- !u!1 &1363324030 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7419484988925110762, guid: f97626a3872dc44b8a7beb6dca974da2, type: 3}
@@ -6752,7 +6766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451583645}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25452, y: 0.047419008, z: -0.012496162, w: 0.9658234}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7075,7 +7089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532786087}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27232742, y: -0, z: -0, w: 0.96220464}
+  m_LocalRotation: {x: 0.27232736, y: -0, z: -0, w: 0.9622047}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9959,6 +9973,10 @@ PrefabInstance:
     - target: {fileID: 3505433102155677455, guid: 89ce12f39bf5f4486b08fe711bfc6729, type: 3}
       propertyPath: m_Name
       value: TriggerPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505433102155677455, guid: 89ce12f39bf5f4486b08fe711bfc6729, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3797824659909189394, guid: 89ce12f39bf5f4486b08fe711bfc6729, type: 3}
       propertyPath: m_LocalPosition.x
