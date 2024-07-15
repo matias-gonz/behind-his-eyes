@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,23 +13,44 @@ public struct Title
 public class TitleController : MonoBehaviour
 {
     public Title[] titles;
-    
+
+    private void Start()
+    {
+        foreach (Title title in titles)
+        {
+            title.title.SetActive(false);
+        }
+
+        ShowTitle("look-around");
+        StartCoroutine(nameof(TriggerWalkTitle));
+    }
+
     public void ShowTitle(string titleId)
     {
-        Title currentTitle = System.Array.Find(titles, t => t.title.activeSelf);
+        Title currentTitle = Array.Find(titles, t => t.title.activeSelf);
         if (currentTitle.title != null)
         {
             currentTitle.title.SetActive(false);
         }
-        
-        Title titleToPlay = System.Array.Find(titles, t => t.id == titleId);
+
+        Title titleToPlay = Array.Find(titles, t => t.id == titleId);
 
         if (titleToPlay.title == null)
         {
-            UnityEngine.Debug.LogWarning("Title not found: " + titleId);
+            Debug.LogWarning("Title not found: " + titleId);
             return;
         }
 
         titleToPlay.title.SetActive(true);
+    }
+
+    IEnumerator TriggerWalkTitle()
+    {
+        yield return new WaitForSeconds(4);
+        Title currentTitle = Array.Find(titles, t => t.title.activeSelf);
+        if (currentTitle.id == "look-around")
+        {
+            ShowTitle("walk");
+        }
     }
 }
