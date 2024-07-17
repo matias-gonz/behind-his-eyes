@@ -44,9 +44,9 @@ public class ThirdPersonMovement : MonoBehaviour
         return _isGrounded;
     }
 
-    public float GetSpeed()
+    public float SpeedNoiseFactor()
     {
-        return _speed;
+        return _speed/(2f*SpeedMultiplier);
     }
 
     private void MoveXZandTurn(bool isJumping)
@@ -54,9 +54,8 @@ public class ThirdPersonMovement : MonoBehaviour
         float _forwardMovement = _animationController.GetVelocityZ();
         float _sidewardMovement = _animationController.GetVelocityX();
         _speed =
-            Mathf.Sqrt(Mathf.Pow(_forwardMovement, 2) + Mathf.Pow(_sidewardMovement, 2))
+            Mathf.Max(Mathf.Abs(_forwardMovement), Mathf.Abs(_sidewardMovement))
             * SpeedMultiplier;
-
         if (_speed == 0 && DistanceToGround() < 0.05 && !isJumping)
         {
             _rigidbody.isKinematic = true;

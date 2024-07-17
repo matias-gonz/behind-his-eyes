@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public float _standingViewFactor = 1f;
     public float _crouchingViewFactor = 0.5f;
     public float _proneViewFactor = 0.3f;
+    public float _standingsoundFactor = 1f;
+    public float _crouchingsoundFactor = 0.3f;
+    public float _pronesoundFactor = 0.5f;
 
     //variables to store player input
     private bool _forwardPressed;
@@ -100,10 +103,23 @@ public class PlayerController : MonoBehaviour
         return viewFactor * maximumViewDistance;
     }
 
-    // public float GetNoiseDistance()
-    // {
-
-    // }
+    public float GetNoiseDistance(float maximumNoiseDistance)
+    {
+        float soundFactor = 1f;
+        if (_animationController.IsStanding())
+        {
+            soundFactor = _standingsoundFactor;
+        }
+        else if (_animationController.IsCrouched())
+        {
+            soundFactor = _crouchingsoundFactor;
+        }
+        else if (_animationController.IsProne())
+        {
+            soundFactor = _pronesoundFactor;
+        }
+        return soundFactor * _thirdPersonMovement.SpeedNoiseFactor() * maximumNoiseDistance;
+    }
 
     private void CrouchPronePressed()
     {
