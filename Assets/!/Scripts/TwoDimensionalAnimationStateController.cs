@@ -76,6 +76,16 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         return !_animator.GetBool(_isCrouchedHash) && !_animator.GetBool(_isProneHash);
     }
 
+    public bool IsCrouched()
+    {
+        return _animator.GetBool(_isCrouchedHash);
+    }
+
+    public bool IsProne()
+    {
+        return _animator.GetBool(_isProneHash);
+    }
+
     public void StandUp()
     {
         _animator.SetBool(_isCrouchedHash, false);

@@ -18,10 +18,9 @@ public class ThirdPersonMovement : MonoBehaviour
     // local variables
     private float _timeFalling = 0f;
     private bool _isGrounded;
+    private float _speed = 0f;
 
     //hashes
-    private int _velocityXHash;
-    private int _velocityZHash;
     private int _isJumpHash;
 
     // Start is called before the first frame update
@@ -40,21 +39,32 @@ public class ThirdPersonMovement : MonoBehaviour
         _rigidbody.AddForce(new Vector3(0f, 0f, 0f));
     }
 
+    public bool GetIsGrounded()
+    {
+        return _isGrounded;
+    }
+
+    public float GetSpeed()
+    {
+        return _speed;
+    }
+
     private void MoveXZandTurn(bool isJumping)
     {
         float _forwardMovement = _animationController.GetVelocityZ();
         float _sidewardMovement = _animationController.GetVelocityX();
-        float speed =
-            Mathf.Max(Mathf.Abs(_forwardMovement), Mathf.Abs(_sidewardMovement)) * SpeedMultiplier;
-        
-        if (speed == 0 && DistanceToGround() < 0.05 && !isJumping)
+        _speed =
+            Mathf.Sqrt(Mathf.Pow(_forwardMovement, 2) + Mathf.Pow(_sidewardMovement, 2))
+            * SpeedMultiplier;
+
+        if (_speed == 0 && DistanceToGround() < 0.05 && !isJumping)
         {
             _rigidbody.isKinematic = true;
             return;
         }
         else
             _rigidbody.isKinematic = false;
-        if (speed == 0)
+        if (_speed == 0)
             return;
 
         // walk direction in normal cordinate system
@@ -63,7 +73,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction;
         Vector3 currentPosition = transform.position;
-        Vector3 intermediatePosition = currentPosition + moveDir * speed * Time.fixedDeltaTime;
+        Vector3 intermediatePosition = currentPosition + moveDir * _speed * Time.fixedDeltaTime;
         _rigidbody.MovePosition(intermediatePosition);
 
         Vector3 resetVelocityXZ = new Vector3(0f, _rigidbody.velocity.y, 0f);
@@ -81,11 +91,6 @@ public class ThirdPersonMovement : MonoBehaviour
         );
         _rigidbody.MoveRotation(Quaternion.Euler(0f, angle, 0f));
         return angle;
-    }
-
-    public bool GetIsGrounded()
-    {
-        return _isGrounded;
     }
 
     private void VerticalVelocity(bool isJumping)
@@ -125,7 +130,7 @@ public class ThirdPersonMovement : MonoBehaviour
     }
 
     private float DistanceToGround()
-    {      
+    {
         float distanceToGround;
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))

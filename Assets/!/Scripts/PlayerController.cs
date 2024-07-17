@@ -81,18 +81,23 @@ public class PlayerController : MonoBehaviour
         _crouchProneCanceled = false;
         _jumpClicked = false;
     }
-    
+
     public float GetViewDistance(float maximumViewDistance)
     {
-        float viewDistance;
-        if (_animationController.IsStanding()) {
-            viewDistance = _standingViewFactor * maximumViewDistance;
-        } else
+        float viewFactor = 1f;
+        if (_animationController.IsStanding())
         {
-            viewDistance = maximumViewDistance;
+            viewFactor = _standingViewFactor;
         }
-        return viewDistance;
-
+        else if (_animationController.IsCrouched())
+        {
+            viewFactor = _crouchingViewFactor;
+        }
+        else if (_animationController.IsProne())
+        {
+            viewFactor = _proneViewFactor;
+        }
+        return viewFactor * maximumViewDistance;
     }
 
     // public float GetNoiseDistance()
