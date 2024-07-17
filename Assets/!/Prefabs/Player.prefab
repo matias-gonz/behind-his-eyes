@@ -1679,8 +1679,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfab48f726b42b5f8c2d3579b725771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _thirdPersonMovement: {fileID: 3240364155029121252}
-  _animationController: {fileID: 327623586495336380}
+  thirdPersonMovement: {fileID: 3240364155029121252}
+  animationController: {fileID: 327623586495336380}
+  goIntoProneTime: 0.8
+  standingViewFactor: 1
+  crouchingViewFactor: 0.8
+  proneViewFactor: 0.6
+  jumpingSoundFactor: 1
+  standingSoundFactor: 1
+  crouchingSoundFactor: 0.3
+  proneSoundFactor: 0.5
   _cameraControl: {fileID: 3852417935818244108}
   goIntoProneTime: 0.8
 --- !u!114 &3852417935818244108
