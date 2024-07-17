@@ -9,13 +9,15 @@ public class PlayerController : MonoBehaviour
     public TwoDimensionalAnimationStateController _animationController;
     private PlayerInput _input;
 
+    //detection parameters
     public float goIntoProneTime = 0.8f;
     public float _standingViewFactor = 1f;
     public float _crouchingViewFactor = 0.5f;
     public float _proneViewFactor = 0.3f;
-    public float _standingsoundFactor = 1f;
-    public float _crouchingsoundFactor = 0.3f;
-    public float _pronesoundFactor = 0.5f;
+    public float _jumpingSoundFactor = 1f;
+    public float _standingSoundFactor = 1f;
+    public float _crouchingSoundFactor = 0.3f;
+    public float _proneSoundFactor = 0.5f;
 
     //variables to store player input
     private bool _forwardPressed;
@@ -106,17 +108,21 @@ public class PlayerController : MonoBehaviour
     public float GetNoiseDistance(float maximumNoiseDistance)
     {
         float soundFactor = 1f;
-        if (_animationController.IsStanding())
+        if (_animationController.IsJumping())
         {
-            soundFactor = _standingsoundFactor;
+            return _jumpingSoundFactor * maximumNoiseDistance;
+        }
+        else if (_animationController.IsStanding())
+        {
+            soundFactor = _standingSoundFactor;
         }
         else if (_animationController.IsCrouched())
         {
-            soundFactor = _crouchingsoundFactor;
+            soundFactor = _crouchingSoundFactor;
         }
         else if (_animationController.IsProne())
         {
-            soundFactor = _pronesoundFactor;
+            soundFactor = _proneSoundFactor;
         }
         return soundFactor * _thirdPersonMovement.SpeedNoiseFactor() * maximumNoiseDistance;
     }

@@ -19,6 +19,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private float _timeFalling = 0f;
     private bool _isGrounded;
     private float _speed = 0f;
+    private float maximumMovementVelocity;
 
     //hashes
     private int _isJumpHash;
@@ -26,8 +27,10 @@ public class ThirdPersonMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maximumMovementVelocity = _animationController.GetMaximumRunVelocity();
         _rigidbody = GetComponent<Rigidbody>();
         _isGrounded = true;
+
     }
 
     // Update is called once per frame
@@ -46,7 +49,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public float SpeedNoiseFactor()
     {
-        return _speed/(2f*SpeedMultiplier);
+        return _speed/(maximumMovementVelocity*SpeedMultiplier);
     }
 
     private void MoveXZandTurn(bool isJumping)
