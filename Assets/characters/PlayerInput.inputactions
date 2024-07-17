@@ -60,16 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Crouch",
-                    "type": "Button",
-                    "id": "972ef7d3-71aa-4cf9-b89f-9fbf827e186e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Prone",
+                    "name": "CrouchProne",
                     "type": "Button",
                     "id": "eb3da6e1-b966-4ad9-873d-dae42697aca4",
                     "expectedControlType": "Button",
@@ -152,7 +143,7 @@
                     "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
-                    "action": "Crouch",
+                    "action": "CrouchProne",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -163,7 +154,7 @@
                     "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
-                    "action": "Prone",
+                    "action": "CrouchProne",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

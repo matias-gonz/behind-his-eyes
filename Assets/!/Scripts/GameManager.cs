@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Scene = utils.Scene;
 
+
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
     public bool godMode = false;
-
+    
+    private Checkpoint? _checkpoint = null;
+    
     private void Awake()
     {
         if (!Instance)
@@ -22,10 +25,23 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void RestartGame()
+    
+    private IEnumerator RestartGame()
     {
-        SceneManager.LoadScene("StreetLevel");
+        AsyncOperation op = SceneManager.LoadSceneAsync("StreetLevel");
+        while (!op.isDone)
+        {
+            yield return null;
+        }
+        if (_checkpoint != null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            player.transform.position = _checkpoint.Value.position;
+            player.transform.rotation = _checkpoint.Value.rotation;
+            GameObject initialSoldier = GameObject.FindWithTag("InitialSoldier");
+            SmokingSoldier s = initialSoldier.GetComponent<SmokingSoldier>();
+            s.SkipExecutionAnimation();
+        }
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -41,7 +57,12 @@ public class GameManager : MonoBehaviour
     {
         if (nextScene == Scene.StreetLevel)
         {
-            RestartGame();
+            StartCoroutine(nameof(RestartGame));
         }
+    }
+
+    public void SetCheckpoint(Checkpoint checkpoint)
+    {
+        _checkpoint = checkpoint;
     }
 }

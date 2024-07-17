@@ -82,16 +82,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Crouch"",
-                    ""type"": ""Button"",
-                    ""id"": ""972ef7d3-71aa-4cf9-b89f-9fbf827e186e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Prone"",
+                    ""name"": ""CrouchProne"",
                     ""type"": ""Button"",
                     ""id"": ""eb3da6e1-b966-4ad9-873d-dae42697aca4"",
                     ""expectedControlType"": ""Button"",
@@ -174,7 +165,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Crouch"",
+                    ""action"": ""CrouchProne"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -185,7 +176,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Prone"",
+                    ""action"": ""CrouchProne"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -202,8 +193,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_CharacterControls_MovementRight = m_CharacterControls.FindAction("MovementRight", throwIfNotFound: true);
         m_CharacterControls_Jump = m_CharacterControls.FindAction("Jump", throwIfNotFound: true);
         m_CharacterControls_MovementBackward = m_CharacterControls.FindAction("MovementBackward", throwIfNotFound: true);
-        m_CharacterControls_Crouch = m_CharacterControls.FindAction("Crouch", throwIfNotFound: true);
-        m_CharacterControls_Prone = m_CharacterControls.FindAction("Prone", throwIfNotFound: true);
+        m_CharacterControls_CrouchProne = m_CharacterControls.FindAction("CrouchProne", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,8 +261,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_MovementRight;
     private readonly InputAction m_CharacterControls_Jump;
     private readonly InputAction m_CharacterControls_MovementBackward;
-    private readonly InputAction m_CharacterControls_Crouch;
-    private readonly InputAction m_CharacterControls_Prone;
+    private readonly InputAction m_CharacterControls_CrouchProne;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -283,8 +272,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @MovementRight => m_Wrapper.m_CharacterControls_MovementRight;
         public InputAction @Jump => m_Wrapper.m_CharacterControls_Jump;
         public InputAction @MovementBackward => m_Wrapper.m_CharacterControls_MovementBackward;
-        public InputAction @Crouch => m_Wrapper.m_CharacterControls_Crouch;
-        public InputAction @Prone => m_Wrapper.m_CharacterControls_Prone;
+        public InputAction @CrouchProne => m_Wrapper.m_CharacterControls_CrouchProne;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -312,12 +300,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MovementBackward.started += instance.OnMovementBackward;
             @MovementBackward.performed += instance.OnMovementBackward;
             @MovementBackward.canceled += instance.OnMovementBackward;
-            @Crouch.started += instance.OnCrouch;
-            @Crouch.performed += instance.OnCrouch;
-            @Crouch.canceled += instance.OnCrouch;
-            @Prone.started += instance.OnProne;
-            @Prone.performed += instance.OnProne;
-            @Prone.canceled += instance.OnProne;
+            @CrouchProne.started += instance.OnCrouchProne;
+            @CrouchProne.performed += instance.OnCrouchProne;
+            @CrouchProne.canceled += instance.OnCrouchProne;
         }
 
         private void UnregisterCallbacks(ICharacterControlsActions instance)
@@ -340,12 +325,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MovementBackward.started -= instance.OnMovementBackward;
             @MovementBackward.performed -= instance.OnMovementBackward;
             @MovementBackward.canceled -= instance.OnMovementBackward;
-            @Crouch.started -= instance.OnCrouch;
-            @Crouch.performed -= instance.OnCrouch;
-            @Crouch.canceled -= instance.OnCrouch;
-            @Prone.started -= instance.OnProne;
-            @Prone.performed -= instance.OnProne;
-            @Prone.canceled -= instance.OnProne;
+            @CrouchProne.started -= instance.OnCrouchProne;
+            @CrouchProne.performed -= instance.OnCrouchProne;
+            @CrouchProne.canceled -= instance.OnCrouchProne;
         }
 
         public void RemoveCallbacks(ICharacterControlsActions instance)
@@ -371,7 +353,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMovementRight(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMovementBackward(InputAction.CallbackContext context);
-        void OnCrouch(InputAction.CallbackContext context);
-        void OnProne(InputAction.CallbackContext context);
+        void OnCrouchProne(InputAction.CallbackContext context);
     }
 }

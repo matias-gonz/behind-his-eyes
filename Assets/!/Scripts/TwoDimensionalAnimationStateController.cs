@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class TwoDimensionalAnimationStateController : MonoBehaviour
 {
+    // references
+    private Animator _animator;
+
     //constants
     public float acceleration = 2.0f;
     public float deceleration = 2.0f;
@@ -12,19 +15,12 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float maximumRunVelocity = 2.0f;
     public float maximumCrouchVelocity = 0.5f;
     public float maximumProneVelocity = 0.25f;
-    public float maximumBackwardsVelocity = 0.5f;
 
-    // references
-    private Animator _animator;
-    private Rigidbody _rigidbody;
-    private PlayerInput _input;
-    private ThirdPersonMovement _thirdPersonMovement;
     public Collider upRightCollider;
     public Collider proneCollider;
 
     // local variables for animation state
-    private bool _isCrouched = false;
-    private bool _isProne = false;
+
     private float _velocityX = 0.0f;
     private float _velocityZ = 0.0f;
 
@@ -38,41 +34,11 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     private int _DyingHash;
     private int _SpottedHash;
 
-    //variables to store player input
-    private bool _forwardPressed;
-    private bool _backwardPressed;
-    private bool _runPressed;
-    private bool _leftPressed;
-    private bool _rightPressed;
-    private bool _crouchedClicked;
-    private bool _proneClicked;
-    private bool _jumpPressed;
-    private bool _allowPlayerInput = true;
-
-    void Awake()
-    {
-        _input = new PlayerInput();
-        _input.CharacterControls.Run.performed += ctx => _runPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.MovementForward.performed += ctx =>
-            _forwardPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.MovementBackward.performed += ctx =>
-            _backwardPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.MovementLeft.performed += ctx =>
-            _leftPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.MovementRight.performed += ctx =>
-            _rightPressed = ctx.ReadValueAsButton();
-        _input.CharacterControls.Crouch.started += ctx =>
-            _crouchedClicked = ctx.ReadValueAsButton();
-        _input.CharacterControls.Prone.started += ctx => _proneClicked = ctx.ReadValueAsButton();
-        _input.CharacterControls.Jump.performed += ctx => _jumpPressed = ctx.ReadValueAsButton();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _rigidbody = GetComponent<Rigidbody>();
-        _thirdPersonMovement = gameObject.GetComponent<ThirdPersonMovement>(); 
+
         _velocityXHash = Animator.StringToHash("Velocity X");
         _velocityZHash = Animator.StringToHash("Velocity Z");
         _fallDownBackwardsHash = Animator.StringToHash("fallDownBackwards");
@@ -84,45 +50,134 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() { }
+
+    public bool CheckAnimationEventPlaying()
     {
-        bool isJump = _animator.GetBool(_isJumpHash);
-        CheckPlayerInputAllowed();
-        if (_allowPlayerInput)
-        {
-            StartToJump(isJump);
-            // handle player input
-            ChangeStance(_runPressed, _crouchedClicked, _proneClicked);
-            float currentMaxVelocity = CalculateCurrentMaxVelocity(_runPressed);
-
-            ChangeVelocity(
-                _forwardPressed,
-                _backwardPressed,
-                _leftPressed,
-                _rightPressed,
-                _runPressed,
-                currentMaxVelocity
-            );
-            LockOrResetVelocity(
-                _forwardPressed,
-                _backwardPressed,
-                _leftPressed,
-                _rightPressed,
-                _runPressed,
-                currentMaxVelocity
-            );
-        }
-
-        //reset clicked values
-        _crouchedClicked = false;
-        _proneClicked = false;
-        _animator.SetFloat(_velocityZHash, _velocityZ);
-        _animator.SetFloat(_velocityXHash, _velocityX);
-        _animator.SetBool(_isCrouchedHash, _isCrouched);
-        _animator.SetBool(_isProneHash, _isProne);
+        bool animationEventPlaying =
+            _animator.GetBool(_fallDownBackwardsHash) || _animator.GetBool(_DyingHash);
+        return animationEventPlaying;
     }
 
-    void ChangeVelocity(
+    public bool IsJumping()
+    {
+        return _animator.GetBool(_isJumpHash);
+    }
+
+     public float GetMaximumRunVelocity()
+    {
+        return maximumRunVelocity;
+    }
+
+    // jumping can be triggered while player is standing and not in a Jump
+    public void StartToJump()
+    {
+        _animator.SetBool(_isJumpHash, true);
+    }
+
+    // Stance change
+    public bool IsStanding()
+    {
+        return !_animator.GetBool(_isCrouchedHash) && !_animator.GetBool(_isProneHash);
+    }
+
+    public bool IsCrouched()
+    {
+        return _animator.GetBool(_isCrouchedHash);
+    }
+
+    public bool IsProne()
+    {
+        return _animator.GetBool(_isProneHash);
+    }
+
+    public void StandUp()
+    {
+        _animator.SetBool(_isCrouchedHash, false);
+        _animator.SetBool(_isProneHash, false);
+        ChangeControllerCollider(false);
+    }
+
+    public void ToggleCrouch()
+    {
+        _animator.SetBool(_isCrouchedHash, !_animator.GetBool(_isCrouchedHash));
+        _animator.SetBool(_isProneHash, false);
+        ChangeControllerCollider(false);
+    }
+
+    public void ToggleProne()
+    {
+        bool goIntoProne = !_animator.GetBool(_isProneHash);
+        _animator.SetBool(_isCrouchedHash, false);
+        _animator.SetBool(_isProneHash, goIntoProne);
+        ChangeControllerCollider(goIntoProne);
+    }
+
+    void ChangeControllerCollider(bool isProne)
+    {
+        if (isProne)
+        {
+            proneCollider.enabled = true;
+            upRightCollider.enabled = false;
+        }
+        else
+        {
+            proneCollider.enabled = false;
+            upRightCollider.enabled = true;
+        }
+    }
+
+    public void UpdateVelocity(
+        bool forwardPressed,
+        bool backwardPressed,
+        bool leftPressed,
+        bool rightPressed,
+        bool runPressed
+    )
+    {
+        float currentMaxVelocity = CalculateCurrentMaxVelocity(runPressed);
+        ChangeVelocity(
+            forwardPressed,
+            backwardPressed,
+            leftPressed,
+            rightPressed,
+            runPressed,
+            currentMaxVelocity
+        );
+        LockOrResetVelocity(
+            forwardPressed,
+            backwardPressed,
+            leftPressed,
+            rightPressed,
+            runPressed,
+            currentMaxVelocity
+        );
+        _animator.SetFloat(_velocityZHash, _velocityZ);
+        _animator.SetFloat(_velocityXHash, _velocityX);
+    }
+
+    private float CalculateCurrentMaxVelocity(bool runPressed)
+    {
+        bool isCrouched = _animator.GetBool(_isCrouchedHash);
+        bool isProne = _animator.GetBool(_isProneHash);
+        float currentMaxVelocity;
+        if (isProne)
+        {
+            currentMaxVelocity = maximumProneVelocity;
+        }
+        else if (isCrouched)
+        {
+            currentMaxVelocity = maximumCrouchVelocity;
+        }
+        else
+        {
+            currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
+        }
+
+        return currentMaxVelocity;
+    }
+
+    private void ChangeVelocity(
         bool forwardPressed,
         bool backwardPressed,
         bool leftPressed,
@@ -138,7 +193,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
 
         // accelerate backward, but only to walking speed
-        if (backwardPressed && _velocityZ > -maximumBackwardsVelocity)
+        if (backwardPressed && _velocityZ > -currentMaxVelocity)
         {
             _velocityZ -= Time.deltaTime * acceleration;
         }
@@ -180,7 +235,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
 
         // trying to sprint backwards while standing results in the character stumbeling
-        if (backwardPressed && runPressed && !_isCrouched && !_isProne)
+        if (backwardPressed && runPressed && IsStanding())
         {
             _velocityZ = 0f;
             _velocityX = 0f;
@@ -188,7 +243,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
     }
 
-    void LockOrResetVelocity(
+    private void LockOrResetVelocity(
         bool forwardPressed,
         bool backwardPressed,
         bool leftPressed,
@@ -240,18 +295,18 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
 
         //lock backward to walk speed
-        if (backwardPressed && _velocityZ < -maximumBackwardsVelocity)
+        if (backwardPressed && _velocityZ < -currentMaxVelocity)
         {
-            _velocityZ = -maximumBackwardsVelocity;
+            _velocityZ = -currentMaxVelocity;
         }
         // round to maximumWalkVelocity if within offset
         else if (
             backwardPressed
-            && _velocityZ > -maximumBackwardsVelocity
-            && _velocityZ < (-maximumBackwardsVelocity + 0.05f)
+            && _velocityZ > -currentMaxVelocity
+            && _velocityZ < (-currentMaxVelocity + 0.05f)
         )
         {
-            _velocityZ = -maximumBackwardsVelocity;
+            _velocityZ = -currentMaxVelocity;
         }
 
         //locking left
@@ -305,119 +360,20 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
     }
 
-    // changes stance if there is some input that motivates such a change
-    // prone overrides crouch
-    // character stands up when runPressed ist held.
-    void ChangeStance(bool runPressed, bool crouchedClicked, bool proneClicked)
+    public float GetVelocityX()
     {
-        if (runPressed && (_isCrouched || _isProne))
-        {
-            _isCrouched = false;
-            _isProne = false;
-            ChangeControllerCollider();
-        }
-        else if (proneClicked)
-        {
-            _isProne = !_isProne;
-            _isCrouched = false;
-            ChangeControllerCollider();
-        }
-        else if (crouchedClicked)
-        {
-            _isCrouched = !_isCrouched;
-            _isProne = false;
-            ChangeControllerCollider();
-        }
-        // only call ChangeControllerCollider when stance not changed
+        return _velocityX;
     }
 
-    float CalculateCurrentMaxVelocity(bool runPressed)
+    public float GetVelocityZ()
     {
-        float currentMaxVelocity;
-        if (_isProne)
-        {
-            currentMaxVelocity = maximumProneVelocity;
-        }
-        else if (_isCrouched)
-        {
-            currentMaxVelocity = maximumCrouchVelocity;
-        }
-        else
-        {
-            currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
-        }
-
-        return currentMaxVelocity;
+        return _velocityZ;
     }
 
-    void ChangeControllerCollider()
+    public void Dying()
     {
-        if (_isProne)
-        {
-            proneCollider.enabled = true;
-            upRightCollider.enabled = false;
-        }
-        else if (_isCrouched)
-        {
-            proneCollider.enabled = false;
-            upRightCollider.enabled = true;
-        }
-        else
-        {
-            proneCollider.enabled = false;
-            upRightCollider.enabled = true;
-        }
-    }
-
-    void CheckPlayerInputAllowed()
-    {
-        bool animationEventPlaying = _animator.GetBool(_fallDownBackwardsHash) || _animator.GetBool(_DyingHash);
-        // block playerinput if animation is currently being played
-        _allowPlayerInput = !animationEventPlaying;
-    }
-
-    // jumping can be triggered while player is standing and not in a Jump
-    void StartToJump(bool isJump)
-    {
-        if (_jumpPressed)
-        {
-            bool jumpingAllowed = _thirdPersonMovement.JumpingAllowed();
-            if (!isJump && jumpingAllowed && !_isProne && !_isCrouched)
-            {
-                _animator.SetBool(_isJumpHash, true);
-            }
-        }
-    }
-
-    public void GettingEngaged(Vector3 direction)
-    {
-        
-        if(!GameManager.Instance.godMode)
-        {
-            _animator.SetBool(_SpottedHash, true);
-        }
-        
-    }
-    
-    public void GettingKilled()
-    {
-        if (!GameManager.Instance.godMode)
-        {
             _velocityZ = 0f;
             _velocityX = 0f;
             _animator.SetBool(_DyingHash, true);
-        }
-        
-    }
-
-    // Toggle character controls action map
-    void OnEnable()
-    {
-        _input.CharacterControls.Enable();
-    }
-
-    void OnDisable()
-    {
-        _input.CharacterControls.Disable();
     }
 }

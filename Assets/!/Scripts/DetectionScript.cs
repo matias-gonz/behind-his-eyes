@@ -8,19 +8,19 @@ public class DetectionScript : MonoBehaviour
 {
     public EnemyControllerScript enemyControllerScript;
     public GameObject target; 
-    public float fov = 120f;
-    public float viewDistance = 10f;
+    public float fov = 135f;
+    public float maxViewDistance = 20f;
     public float maxSoundRange = 10f;
     public float tolerance = 0.2f;
     private LayerMask _layerMask;
     private Collider[] _colliders;
-    private ThirdPersonMovement _thirdPersonMovement;
+    private PlayerController _playerController;
 
     private void Start()
     {
         _layerMask = LayerMask.GetMask("Level");
         _colliders = target.GetComponents<Collider>();
-        _thirdPersonMovement = target.GetComponent<ThirdPersonMovement>();
+        _playerController = target.GetComponent<PlayerController>();
         enemyControllerScript.InitialiseEnemyControllerScript(target);
     }
 
@@ -33,6 +33,7 @@ public class DetectionScript : MonoBehaviour
 
         // Check if the target is in range
         float distance = Vector3.Distance(transform.position, target.transform.position);
+        float viewDistance = _playerController.GetViewDistance(maxViewDistance);
         if (distance > viewDistance) return;
 
         // Check if the target is in the field of view OR enemy can hear the target
@@ -107,5 +108,15 @@ public class DetectionScript : MonoBehaviour
 
         Debug.DrawRay(rayStart, direction * distance, Color.red);
         return true;
+    }
+    
+    private void OnDrawGizmos()
+    {
+        float distance = Vector3.Distance(transform.position, target.transform.position);
+        float viewDistance = _playerController.GetViewDistance(maxViewDistance);
+        if (distance > viewDistance*1.5) return;
+        
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, viewDistance);
     }
 }
