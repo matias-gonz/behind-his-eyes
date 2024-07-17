@@ -1667,6 +1667,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 540d83f3555bb4796b8a43d097243ea3, type: 3}
   - id: Jump
     clip: {fileID: 8300000, guid: 3d8f480d252db9449b2f978284506f8e, type: 3}
+  - id: FallDown
+    clip: {fileID: 8300000, guid: 05da9ce588a30d634a229d45dec655ed, type: 3}
 --- !u!114 &7038103100538441920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1679,10 +1681,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfab48f726b42b5f8c2d3579b725771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _thirdPersonMovement: {fileID: 3240364155029121252}
-  _animationController: {fileID: 327623586495336380}
+  thirdPersonMovement: {fileID: 3240364155029121252}
+  animationController: {fileID: 327623586495336380}
   _cameraControl: {fileID: 3852417935818244108}
   goIntoProneTime: 0.8
+  standingViewFactor: 1
+  crouchingViewFactor: 0.8
+  proneViewFactor: 0.6
+  jumpingSoundFactor: 1
+  standingSoundFactor: 2
+  crouchingSoundFactor: 1.5
+  proneSoundFactor: 2.5
 --- !u!114 &3852417935818244108
 MonoBehaviour:
   m_ObjectHideFlags: 0
