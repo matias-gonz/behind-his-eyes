@@ -10,7 +10,7 @@ public class DetectionScript : MonoBehaviour
     public GameObject target; 
     public float fov = 135f;
     public float maxViewDistance = 20f;
-    public float closeRange = 2f;
+    public float maxSoundRange = 10f;
     public float tolerance = 0.2f;
     private LayerMask _layerMask;
     private Collider[] _colliders;
@@ -36,13 +36,14 @@ public class DetectionScript : MonoBehaviour
         float viewDistance = _playerController.GetViewDistance(maxViewDistance);
         if (distance > viewDistance) return;
 
-        // Check if the target is in the field of view
+        // Check if the target is in the field of view OR enemy can hear the target
         Vector3 playerDirection = target.transform.position - transform.position;
         playerDirection.y = 0;
         Vector3 lookDirection = transform.forward;
         lookDirection.y = 0;
         float angle = Vector3.Angle(playerDirection, lookDirection);
-        if (distance > closeRange && angle > fov / 2) return;
+        float soundRange = _playerController.GetNoiseDistance(maxSoundRange);
+        if (distance > soundRange && angle > fov / 2) return;
 
         // Check if the target is in sight
         Vector3 rayStart = transform.position;
@@ -113,9 +114,12 @@ public class DetectionScript : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, target.transform.position);
         float viewDistance = _playerController.GetViewDistance(maxViewDistance);
+        float soundRange = _playerController.GetNoiseDistance(maxSoundRange);
         if (distance > viewDistance*1.5) return;
         
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, viewDistance);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, soundRange);
     }
 }

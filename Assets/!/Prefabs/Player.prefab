@@ -1683,16 +1683,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thirdPersonMovement: {fileID: 3240364155029121252}
   animationController: {fileID: 327623586495336380}
+  _cameraControl: {fileID: 3852417935818244108}
   goIntoProneTime: 0.8
   standingViewFactor: 1
   crouchingViewFactor: 0.8
   proneViewFactor: 0.6
   jumpingSoundFactor: 1
-  standingSoundFactor: 1
-  crouchingSoundFactor: 0.3
-  proneSoundFactor: 0.5
-  _cameraControl: {fileID: 3852417935818244108}
-  goIntoProneTime: 0.8
+  standingSoundFactor: 2
+  crouchingSoundFactor: 1.5
+  proneSoundFactor: 2.5
 --- !u!114 &3852417935818244108
 MonoBehaviour:
   m_ObjectHideFlags: 0
