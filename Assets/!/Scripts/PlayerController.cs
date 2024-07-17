@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public ThirdPersonMovement thirdPersonMovement;
     public TwoDimensionalAnimationStateController animationController;
+    public CameraControl _cameraControl;
     private PlayerInput _input;
 
     //detection parameters
@@ -125,6 +126,15 @@ public class PlayerController : MonoBehaviour
             soundFactor = proneSoundFactor;
         }
         return soundFactor * thirdPersonMovement.SpeedNoiseFactor() * maximumNoiseDistance;
+    }
+
+    public void GettingKilled(Vector3 direction)
+    {
+        if (!GameManager.Instance.godMode)
+        {
+            _animationController.Dying();
+            _cameraControl.RotateTPCam(direction);
+        }  
     }
 
     private void CrouchPronePressed()
