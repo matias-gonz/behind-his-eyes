@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!GameManager.Instance.godMode)
         {
-            _animationController.Dying();
+            animationController.Dying();
             _cameraControl.RotateTPCam(direction);
         }  
     }
