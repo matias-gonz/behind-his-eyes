@@ -19,56 +19,44 @@ public class PlayerAudio : MonoBehaviour
 
     public void Walk()
     {
-        PlayAudio(RandomAudio("walk"), 0.8f, true);
+        PlayAudio(RandomAudio("walk"), 0.8f);
     }
 
     public void LeftCrouched()
     {
-        PlayAudio("LeftCrouch", 0.5f, false);
+        PlayAudio("LeftCrouch", 0.5f);
     }
 
     
     public void RightCrouched()
     {
-        PlayAudio("RightCrouch", 0.5f, false);
+        PlayAudio("RightCrouch", 0.5f);
     }
 
 
     public void Crawl()
     {
-        PlayAudio("Crawl", 0.20f, false);
+        PlayAudio("Crawl", 0.20f);
     }
 
     public void Run()
     {
-        PlayAudio(RandomAudio("run"), 1f, true);
+        PlayAudio(RandomAudio("run"), 1f);
     }
 
     public void Jump()
     {
-        PlayAudio("Jump", 1f, false);
+        PlayAudio("Jump", 1f);
     }
 
     public void FallDown()
     {
-        PlayAudio("FallDown", 0.7f, false);
+        PlayAudio("FallDown", 0.7f);
     }
 
-    public void PlayAudio(string clipName, float volume, bool isRandom)
+    public void PlayAudio(string clipName, float volume)
     {
         Audio audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
-        if (isRandom)
-        {
-            foreach (AudioClip audioClip in audioClips)
-            {
-                System.Console.WriteLine(audioClip.name);
-                if (!DicAudioPlayer.ContainsKey(audioClip.name))
-                {
-                    DicAudioPlayer.Add(audioClip.name, audioClip);
-                }
-            }
-            audioToPlay.clip = DicAudioPlayer[clipName];
-        }
         if (audioToPlay.clip == null)
         {
             UnityEngine.Debug.LogWarning("Audio clip not found: " + clipName);
