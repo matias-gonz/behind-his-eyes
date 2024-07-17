@@ -3303,7 +3303,8 @@ MonoBehaviour:
   enemyControllerScript: {fileID: 8298327512672982210}
   target: {fileID: 0}
   fov: 120
-  viewDistance: 10
+  maxViewDistance: 20
+  closeRange: 2
   tolerance: 0.2
 --- !u!136 &6631450350165608641
 CapsuleCollider:
