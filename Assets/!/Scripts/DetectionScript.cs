@@ -42,7 +42,7 @@ public class DetectionScript : MonoBehaviour
         Vector3 lookDirection = transform.forward;
         lookDirection.y = 0;
         float angle = Vector3.Angle(playerDirection, lookDirection);
-        float soundRange = maxSoundRange; // TODO: Implement getSoundRange() from player
+        float soundRange = _playerController.GetNoiseDistance(maxSoundRange);
         if (distance > soundRange && angle > fov / 2) return;
 
         // Check if the target is in sight
@@ -114,9 +114,12 @@ public class DetectionScript : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, target.transform.position);
         float viewDistance = _playerController.GetViewDistance(maxViewDistance);
+        float soundRange = _playerController.GetNoiseDistance(maxSoundRange);
         if (distance > viewDistance*1.5) return;
         
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, viewDistance);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, soundRange);
     }
 }

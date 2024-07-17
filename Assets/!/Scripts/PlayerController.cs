@@ -16,9 +16,9 @@ public class PlayerController : MonoBehaviour
     public float crouchingViewFactor = 0.8f;
     public float proneViewFactor = 0.65f;
     public float jumpingSoundFactor = 1f;
-    public float standingSoundFactor = 1f;
-    public float crouchingSoundFactor = 0.3f;
-    public float proneSoundFactor = 0.5f;
+    public float standingSoundFactor = 2f;
+    public float crouchingSoundFactor = 1.5f;
+    public float proneSoundFactor = 2.5f;
 
     //variables to store player input
     private bool _forwardPressed;
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         {
             return jumpingSoundFactor * maximumNoiseDistance;
         }
-        else if (animationController.IsStanding())
+        if (animationController.IsStanding())
         {
             soundFactor = standingSoundFactor;
         }
