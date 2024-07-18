@@ -23,6 +23,14 @@ public class CameraControl : MonoBehaviour
                 5 * Time.deltaTime
             )
             .eulerAngles.y;
+        
+        thirdPersonCam.m_YAxis.Value = Quaternion
+            .Lerp(
+                Quaternion.Euler(0, thirdPersonCam.m_YAxis.Value, 0),
+                Quaternion.Euler(0, 0.5f, 0),
+                5 * Time.deltaTime
+            )
+            .eulerAngles.y;
 
         if (Mathf.Abs(thirdPersonCam.m_XAxis.Value - _gettingKilledAngle) < 0.1f)
         {

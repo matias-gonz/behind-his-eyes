@@ -5,12 +5,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public ThirdPersonMovement _thirdPersonMovement;
-    public TwoDimensionalAnimationStateController _animationController;
+    public ThirdPersonMovement thirdPersonMovement;
+    public TwoDimensionalAnimationStateController animationController;
     public CameraControl _cameraControl;
     private PlayerInput _input;
 
+    //detection parameters
     public float goIntoProneTime = 0.8f;
+    public float standingViewFactor = 1f;
+    public float crouchingViewFactor = 0.8f;
+    public float proneViewFactor = 0.65f;
+    public float jumpingSoundFactor = 1f;
+    public float standingSoundFactor = 2f;
+    public float crouchingSoundFactor = 1.5f;
+    public float proneSoundFactor = 2.5f;
 
     //variables to store player input
     private bool _forwardPressed;
@@ -56,18 +64,18 @@ public class PlayerController : MonoBehaviour
     {
         bool isAirBorne = AirBorne();
         // block playerinput if animation is currently being played
-        if (_animationController.CheckAnimationEventPlaying())
+        if (animationController.CheckAnimationEventPlaying())
             return;
         if (!isAirBorne)
         {
-            bool isStanding = _animationController.IsStanding();
+            bool isStanding = animationController.IsStanding();
             JumpPressed(isStanding);
             RunPressed(isStanding);
             CrouchPronePressed();
             StancePressed();
         }
 
-        _animationController.UpdateVelocity(
+        animationController.UpdateVelocity(
             _forwardPressed,
             _backwardPressed,
             _leftPressed,
@@ -80,11 +88,51 @@ public class PlayerController : MonoBehaviour
         _jumpClicked = false;
     }
 
+    public float GetViewDistance(float maximumViewDistance)
+    {
+        float viewFactor = 1f;
+        if (animationController.IsStanding())
+        {
+            viewFactor = standingViewFactor;
+        }
+        else if (animationController.IsCrouched())
+        {
+            viewFactor = crouchingViewFactor;
+        }
+        else if (animationController.IsProne())
+        {
+            viewFactor = proneViewFactor;
+        }
+        return viewFactor * maximumViewDistance;
+    }
+
+    public float GetNoiseDistance(float maximumNoiseDistance)
+    {
+        float soundFactor = 1f;
+        if (animationController.IsJumping())
+        {
+            return jumpingSoundFactor * maximumNoiseDistance;
+        }
+        if (animationController.IsStanding())
+        {
+            soundFactor = standingSoundFactor;
+        }
+        else if (animationController.IsCrouched())
+        {
+            soundFactor = crouchingSoundFactor;
+        }
+        else if (animationController.IsProne())
+        {
+            soundFactor = proneSoundFactor;
+        }
+        return soundFactor * thirdPersonMovement.SpeedNoiseFactor() * maximumNoiseDistance;
+    }
+
     public void GettingKilled(Vector3 direction)
     {
         if (!GameManager.Instance.godMode)
         {
-            _animationController.Dying();
+            animationController.Dying();
             _cameraControl.RotateTPCam(direction);
         }  
     }
@@ -116,9 +164,9 @@ public class PlayerController : MonoBehaviour
 
     private bool AirBorne()
     {
-        if (_animationController.IsJumping())
+        if (animationController.IsJumping())
             return true;
-        return !_thirdPersonMovement.GetIsGrounded();
+        return !thirdPersonMovement.GetIsGrounded();
     }
 
     private void JumpPressed(bool isStanding)
@@ -127,11 +175,11 @@ public class PlayerController : MonoBehaviour
             return;
         if (isStanding)
         {
-            _animationController.StartToJump();
+            animationController.StartToJump();
         }
         else
         {
-            _animationController.StandUp();
+            animationController.StandUp();
         }
     }
 
@@ -141,7 +189,7 @@ public class PlayerController : MonoBehaviour
             return;
         if (isStanding)
             return;
-        _animationController.StandUp();
+        animationController.StandUp();
     }
 
     private void StancePressed()
@@ -150,11 +198,11 @@ public class PlayerController : MonoBehaviour
             return;
         if (_pronePressed)
         {
-            _animationController.ToggleProne();
+            animationController.ToggleProne();
         }
         else if (_crouchedPressed)
         {
-            _animationController.ToggleCrouch();
+            animationController.ToggleCrouch();
         }
     }
 
