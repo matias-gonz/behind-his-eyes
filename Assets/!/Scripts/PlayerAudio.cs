@@ -37,6 +37,11 @@ public class PlayerAudio : MonoBehaviour
         PlayAudio("Jump", 1f);
     }
 
+    public void FallDown()
+    {
+        PlayAudio("FallDown", 0.7f);
+    }
+    
     public void PlayAudio(string clipName, float volume)
     {
         Audio audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
