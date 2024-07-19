@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private bool _rifleFireClicked = false;
 
     private bool _aimMode;
+    private Vector2 _oldMousePosition;
 
     void Awake()
     {
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (_aimMode)
         {
             RifleAction();
+            _rifleFireClicked = false;
             return;
         }
         bool isAirBorne = AirBorne();
@@ -163,16 +165,26 @@ public class PlayerController : MonoBehaviour
             animationController.StandUp();
         }
         _aimMode = true;
+        _oldMousePosition = Mouse.current.position.ReadValue();
         animationController.RifleAim();
     }
 
     private void RifleAction()
     {
-        if (!_rifleFireClicked)
-            return;
-
-        Debug.Log("_rifleFireClicked");
+        //  float deltaX = _input.GetAxis("MouseX");
+        // float deltaY = _input.GetAxis("MouseY");
+        // Vector2 mousePosition = Mouse.current.position.ReadValue();
+        // float deltaX = mousePosition.x - _oldMousePosition.y;
+        // float deltaY = mousePosition.y - _oldMousePosition.y;
+        // Debug.Log("deltaX");
+        // Debug.Log(deltaX);
+        // Debug.Log("deltaY");
+        // Debug.Log(deltaY);        
+        // _oldMousePosition = mousePosition;
+        if (_rifleFireClicked)
+        {
         animationController.RifleFire();
+        }
     }
 
     private void CrouchPronePressed()
