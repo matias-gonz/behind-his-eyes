@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
     private bool _crouchedPressed;
     private bool _pronePressed;
     private bool _jumpClicked = false;
+    private bool _rifleAimClicked = false;
+    private bool _rifleFireClicked = false;
+
+    private bool _aimMode;
 
     void Awake()
     {
@@ -50,6 +54,10 @@ public class PlayerController : MonoBehaviour
         _input.CharacterControls.CrouchProne.canceled += ctx => _crouchProneCanceled = true;
 
         _input.CharacterControls.Jump.started += ctx => _jumpClicked = ctx.ReadValueAsButton();
+        _input.CharacterControls.RifleAim.started += ctx =>
+            _rifleAimClicked = ctx.ReadValueAsButton();
+        _input.CharacterControls.RifleFire.started += ctx =>
+            _rifleFireClicked = ctx.ReadValueAsButton();
     }
 
     // Start is called before the first frame update
@@ -62,6 +70,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_aimMode)
+        {
+            RifleAction();
+            return;
+        }
         bool isAirBorne = AirBorne();
         // block playerinput if animation is currently being played
         if (animationController.CheckAnimationEventPlaying())
@@ -73,6 +86,7 @@ public class PlayerController : MonoBehaviour
             RunPressed(isStanding);
             CrouchPronePressed();
             StancePressed();
+            GoAimMode(isStanding);
         }
 
         animationController.UpdateVelocity(
@@ -86,6 +100,8 @@ public class PlayerController : MonoBehaviour
         _pronePressed = false;
         _crouchProneCanceled = false;
         _jumpClicked = false;
+        _rifleAimClicked = false;
+        _rifleFireClicked = false;
     }
 
     public float GetViewDistance(float maximumViewDistance)
@@ -134,7 +150,29 @@ public class PlayerController : MonoBehaviour
         {
             animationController.Dying();
             _cameraControl.RotateTPCam(direction);
-        }  
+        }
+    }
+
+    private void GoAimMode(bool isStanding)
+    {
+        if (!_rifleAimClicked)
+            return;
+        Debug.Log("RifleAction");
+        if (!isStanding)
+        {
+            animationController.StandUp();
+        }
+        _aimMode = true;
+        animationController.RifleAim();
+    }
+
+    private void RifleAction()
+    {
+        if (!_rifleFireClicked)
+            return;
+
+        Debug.Log("_rifleFireClicked");
+        animationController.RifleFire();
     }
 
     private void CrouchPronePressed()

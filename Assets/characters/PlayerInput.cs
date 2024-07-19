@@ -89,6 +89,24 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RifleAim"",
+                    ""type"": ""Button"",
+                    ""id"": ""8688a6f5-59a6-4155-92ff-f0e70b57a2d4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RifleFire"",
+                    ""type"": ""Button"",
+                    ""id"": ""f3e7daea-3d56-4f1d-898f-1822819067cc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -179,6 +197,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""CrouchProne"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad3a0415-281f-4f0d-b6d2-6a06d3eb5f95"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RifleAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b038d4b4-f955-41c9-a047-1906f6cff815"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RifleFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -194,6 +234,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_CharacterControls_Jump = m_CharacterControls.FindAction("Jump", throwIfNotFound: true);
         m_CharacterControls_MovementBackward = m_CharacterControls.FindAction("MovementBackward", throwIfNotFound: true);
         m_CharacterControls_CrouchProne = m_CharacterControls.FindAction("CrouchProne", throwIfNotFound: true);
+        m_CharacterControls_RifleAim = m_CharacterControls.FindAction("RifleAim", throwIfNotFound: true);
+        m_CharacterControls_RifleFire = m_CharacterControls.FindAction("RifleFire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -262,6 +304,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_Jump;
     private readonly InputAction m_CharacterControls_MovementBackward;
     private readonly InputAction m_CharacterControls_CrouchProne;
+    private readonly InputAction m_CharacterControls_RifleAim;
+    private readonly InputAction m_CharacterControls_RifleFire;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -273,6 +317,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_CharacterControls_Jump;
         public InputAction @MovementBackward => m_Wrapper.m_CharacterControls_MovementBackward;
         public InputAction @CrouchProne => m_Wrapper.m_CharacterControls_CrouchProne;
+        public InputAction @RifleAim => m_Wrapper.m_CharacterControls_RifleAim;
+        public InputAction @RifleFire => m_Wrapper.m_CharacterControls_RifleFire;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -303,6 +349,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @CrouchProne.started += instance.OnCrouchProne;
             @CrouchProne.performed += instance.OnCrouchProne;
             @CrouchProne.canceled += instance.OnCrouchProne;
+            @RifleAim.started += instance.OnRifleAim;
+            @RifleAim.performed += instance.OnRifleAim;
+            @RifleAim.canceled += instance.OnRifleAim;
+            @RifleFire.started += instance.OnRifleFire;
+            @RifleFire.performed += instance.OnRifleFire;
+            @RifleFire.canceled += instance.OnRifleFire;
         }
 
         private void UnregisterCallbacks(ICharacterControlsActions instance)
@@ -328,6 +380,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @CrouchProne.started -= instance.OnCrouchProne;
             @CrouchProne.performed -= instance.OnCrouchProne;
             @CrouchProne.canceled -= instance.OnCrouchProne;
+            @RifleAim.started -= instance.OnRifleAim;
+            @RifleAim.performed -= instance.OnRifleAim;
+            @RifleAim.canceled -= instance.OnRifleAim;
+            @RifleFire.started -= instance.OnRifleFire;
+            @RifleFire.performed -= instance.OnRifleFire;
+            @RifleFire.canceled -= instance.OnRifleFire;
         }
 
         public void RemoveCallbacks(ICharacterControlsActions instance)
@@ -354,5 +412,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMovementBackward(InputAction.CallbackContext context);
         void OnCrouchProne(InputAction.CallbackContext context);
+        void OnRifleAim(InputAction.CallbackContext context);
+        void OnRifleFire(InputAction.CallbackContext context);
     }
 }
