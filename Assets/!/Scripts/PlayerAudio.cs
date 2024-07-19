@@ -12,6 +12,11 @@ public class PlayerAudio : MonoBehaviour
 
     public Dictionary<string, AudioClip> DicAudioPlayer { get => dicAudioPlayer; set => dicAudioPlayer = value; }
 
+
+    enum RandomClip
+    {
+        walkOrRun, diescream, blood
+    }
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -19,56 +24,59 @@ public class PlayerAudio : MonoBehaviour
 
     public void Walk()
     {
-        PlayAudio(RandomAudio("walk"), 0.8f, true);
+        PlayAudio(RandomAudio("walk", (int)RandomClip.walkOrRun), 0.8f);
     }
 
     public void LeftCrouched()
     {
-        PlayAudio("LeftCrouch", 0.5f, false);
+        PlayAudio("LeftCrouch", 0.5f);
     }
 
-    
+
     public void RightCrouched()
     {
-        PlayAudio("RightCrouch", 0.5f, false);
+        PlayAudio("RightCrouch", 0.5f);
     }
 
 
     public void Crawl()
     {
-        PlayAudio("Crawl", 0.20f, false);
+        PlayAudio("Crawl", 0.20f);
     }
 
     public void Run()
     {
-        PlayAudio(RandomAudio("run"), 1f, true);
+        PlayAudio(RandomAudio("run", (int)RandomClip.walkOrRun), 1f);
+    }
+
+    public void DieScream()
+    {
+        PlayAudio(RandomAudio("diescream", (int)RandomClip.diescream), 0.8f);
+    }
+
+    public void Blood()
+    {
+        PlayAudio(RandomAudio("blood", (int)RandomClip.blood), 3.5f);
+    }
+
+    public void BulletHit()
+    {
+        PlayAudio("BulletHit", 1.5f);
     }
 
     public void Jump()
     {
-        PlayAudio("Jump", 1f, false);
+        PlayAudio("Jump", 1f);
     }
 
     public void FallDown()
     {
-        PlayAudio("FallDown", 0.7f, false);
+        PlayAudio("FallDown", 0.7f);
     }
 
-    public void PlayAudio(string clipName, float volume, bool isRandom)
+    public void PlayAudio(string clipName, float volume)
     {
         Audio audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
-        if (isRandom)
-        {
-            foreach (AudioClip audioClip in audioClips)
-            {
-                System.Console.WriteLine(audioClip.name);
-                if (!DicAudioPlayer.ContainsKey(audioClip.name))
-                {
-                    DicAudioPlayer.Add(audioClip.name, audioClip);
-                }
-            }
-            audioToPlay.clip = DicAudioPlayer[clipName];
-        }
         if (audioToPlay.clip == null)
         {
             UnityEngine.Debug.LogWarning("Audio clip not found: " + clipName);
@@ -81,13 +89,22 @@ public class PlayerAudio : MonoBehaviour
     }
 
 
-    private string RandomAudio(string clipName)
+    private string RandomAudio(string clipName, int indexClip)
     {
-        int index = Random.Range(1, 6);
+        int index = 0;
+        switch (indexClip)
+        {
+            case 0:
+                index = Random.Range(1, 6);
+                break;
+            case 1:
+                index = Random.Range(1, 4);
+                break;
+            case 2:
+                index = Random.Range(1, 3);
+                break;
+        }
         return clipName + index;
     }
 
 }
-
-
-
