@@ -82,7 +82,7 @@ public class ThirdPersonMovement : MonoBehaviour
         _rigidbody.velocity = resetVelocityXZ;
     }
 
-    private float RotateToCurrentTarget(float targetAngle)
+    public float RotateToCurrentTarget(float targetAngle)
     {
         // float targetAngle = Mathf.Atan2(targetDirection.x, targetDirection.z) * Mathf.Rad2Deg;
         float angle = Mathf.SmoothDampAngle(

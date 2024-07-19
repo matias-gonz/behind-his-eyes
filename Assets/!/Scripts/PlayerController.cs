@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour
 
     private bool _aimMode;
     private Vector2 _oldMousePosition;
+    private float _currentAngleX = 0f;
+    private float _offSetXLeft = 15f;
+    private float _offSetXRight = 15f;
+    private float _currentAngleY = 0f;
 
     void Awake()
     {
@@ -165,28 +169,46 @@ public class PlayerController : MonoBehaviour
             animationController.StandUp();
         }
         _aimMode = true;
-        _oldMousePosition = Mouse.current.position.ReadValue();
+        _currentAngleX = transform.rotation.x;
+        _offSetXLeft = _currentAngleX - _offSetXLeft;
+        _offSetXRight = _currentAngleX + _offSetXRight;
         animationController.RifleAim();
     }
 
     private void RifleAction()
     {
-        //  float deltaX = _input.GetAxis("MouseX");
-        // float deltaY = _input.GetAxis("MouseY");
-        // Vector2 mousePosition = Mouse.current.position.ReadValue();
-        // float deltaX = mousePosition.x - _oldMousePosition.y;
-        // float deltaY = mousePosition.y - _oldMousePosition.y;
-        // Debug.Log("deltaX");
-        // Debug.Log(deltaX);
-        // Debug.Log("deltaY");
-        // Debug.Log(deltaY);        
-        // _oldMousePosition = mousePosition;
+        
+        // _currentAngleY 
+        Vector2 mouse = _input.CharacterControls.Look.ReadValue<Vector2>();
+        AimRotateX(mouse.x);
+        
+        Debug.Log("deltaX");
+        Debug.Log(mouse.x);
+        Debug.Log("deltaY");
+        Debug.Log(mouse.y);
         if (_rifleFireClicked)
         {
         animationController.RifleFire();
         }
     }
 
+    private void AimRotateX(float deltaX)
+    {
+        float currentAngleCheck = _currentAngleX += deltaX;
+        if (currentAngleCheck < _offSetXLeft)
+        {
+            _currentAngleX = _offSetXLeft;
+        } else
+        if (currentAngleCheck > _offSetXRight)
+        {
+            _currentAngleX = _offSetXRight;
+        } else
+        {
+            _currentAngleX = currentAngleCheck;
+        }
+        
+        thirdPersonMovement.RotateToCurrentTarget(_currentAngleX);
+    }
     private void CrouchPronePressed()
     {
         if (_crouchProneCanceled)

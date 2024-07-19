@@ -87,22 +87,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MouseX",
-                    "type": "Value",
-                    "id": "fe4f645e-d116-494d-a3c8-e7d8b8a77b1d",
-                    "expectedControlType": "Axis",
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "af8110e8-07d2-4131-a59f-c0d258ab6802",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "MouseY",
-                    "type": "Value",
-                    "id": "d4676dc9-1240-4f2f-9fcf-29caafc242ec",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -218,23 +209,12 @@
                 },
                 {
                     "name": "",
-                    "id": "609e5ec1-0237-4214-81df-54e88fec1c1a",
-                    "path": "<Mouse>/delta/x",
+                    "id": "ced3ec58-7089-48f8-b78d-ff7127e5823e",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MouseX",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "aea26c3e-44fd-4dbf-9a85-e02d7b832cb7",
-                    "path": "<Mouse>/delta/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseY",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
