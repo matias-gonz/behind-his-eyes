@@ -1750,15 +1750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8132848639047653971}
-  audioPlayer:
-  - id: LeftCrouch
-    clip: {fileID: 8300000, guid: d755fe0ff90a040ae8137fa020cd32b3, type: 3}
-  - id: Crawl
-    clip: {fileID: 8300000, guid: 540d83f3555bb4796b8a43d097243ea3, type: 3}
-  - id: Jump
-    clip: {fileID: 8300000, guid: 3d8f480d252db9449b2f978284506f8e, type: 3}
-  - id: RightCrouch
-    clip: {fileID: 8300000, guid: 5daad147cd7c5419e972b87435a32590, type: 3}
+  walkAudio:
   - id: walk1
     clip: {fileID: 8300000, guid: dccae52c90e604ddcb520f15077839f4, type: 3}
   - id: walk2
@@ -1767,8 +1759,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9c323665a41ec4d07ab3e56384faad0d, type: 3}
   - id: walk4
     clip: {fileID: 8300000, guid: d431e89d65b774c38adfffb35def2a58, type: 3}
-  - id: walk5
-    clip: {fileID: 8300000, guid: 318bb57d8e8404ceeb5fea37a7aa1184, type: 3}
+  runAudio:
   - id: run1
     clip: {fileID: 8300000, guid: 542d03c474a6244d79b3e368600bd2d6, type: 3}
   - id: run2
@@ -1779,21 +1770,23 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 399d9a1d3fdea458d9ab4a840debdd29, type: 3}
   - id: run5
     clip: {fileID: 8300000, guid: cb22019aaede04b209943d64f9c82db7, type: 3}
-  - id: FallDown
-    clip: {fileID: 8300000, guid: 005d20317fa9d4ed5921ab59693fac9d, type: 3}
+  dieScreamAudio:
   - id: diescream1
     clip: {fileID: 8300000, guid: 7df0eb138305a48069a74ae5a1b65bdf, type: 3}
   - id: diescream2
     clip: {fileID: 8300000, guid: 897cd736b412c41f7b473cdf80ba82a4, type: 3}
   - id: diescream3
     clip: {fileID: 8300000, guid: 9385f6c78b5474c77939854677f37933, type: 3}
-  - id: blood1
-    clip: {fileID: 8300000, guid: 91a08bbb0bc10421ca77eaf782f2c631, type: 3}
-  - id: blood2
-    clip: {fileID: 8300000, guid: f42227fda0ea64047a9738f44365a4fb, type: 3}
-  - id: BulletHit
-    clip: {fileID: 8300000, guid: 0fdbfb12947ef4702a3c5fc00855ce84, type: 3}
-  audioClips: []
+  bloodAudio: []
+  otherAudio:
+  - id: Crawl
+    clip: {fileID: 8300000, guid: 540d83f3555bb4796b8a43d097243ea3, type: 3}
+  - id: Jump
+    clip: {fileID: 8300000, guid: 3d8f480d252db9449b2f978284506f8e, type: 3}
+  - id: LeftCrouch
+    clip: {fileID: 8300000, guid: d755fe0ff90a040ae8137fa020cd32b3, type: 3}
+  - id: RightCrouch
+    clip: {fileID: 8300000, guid: 5daad147cd7c5419e972b87435a32590, type: 3}
 --- !u!1 &4899586341017006717
 GameObject:
   m_ObjectHideFlags: 0
