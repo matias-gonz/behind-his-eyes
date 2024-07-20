@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     // Rifle Aim Down Sights parameters
     public bool _aimMode = false;
+    private bool _inAimZone = false;
 
     void Awake()
     {
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour
     {
         // turns mouse cursor invisible and locks it in place, allowing indefinite mouse movement
         Cursor.lockState = CursorLockMode.Locked;
+        InAimZone(true);
     }
 
     // Update is called once per frame
@@ -88,7 +90,10 @@ public class PlayerController : MonoBehaviour
             RunPressed(isStanding);
             CrouchPronePressed();
             StancePressed();
-            GoAimMode(isStanding);
+            if (_inAimZone)
+            {
+                GoAimMode(isStanding);
+            }
         }
 
         animationController.UpdateVelocity(
@@ -155,6 +160,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void InAimZone(bool isInAimZone)
+    {
+        _inAimZone = isInAimZone;
+    }
+
     private void GoAimMode(bool isStanding)
     {
         if (!_rifleAimClicked)
@@ -174,11 +184,9 @@ public class PlayerController : MonoBehaviour
         thirdPersonMovement.RifleAim(mouse.x, mouse.y);
         if (_rifleFireClicked)
         {
-             animationController.RifleFire();
+            animationController.RifleFire();
         }
     }
-
-    
 
     private void CrouchPronePressed()
     {

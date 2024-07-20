@@ -42,6 +42,11 @@ public class PlayerAudio : MonoBehaviour
         PlayAudio("FallDown", 0.7f);
     }
     
+    public void FireK98()
+    {
+        PlayAudio("k98", 1f);
+    }
+    
     public void PlayAudio(string clipName, float volume)
     {
         Audio audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
