@@ -59,6 +59,10 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(nameof(RestartGame));
         }
+        else
+        {
+            SceneManager.LoadScene(nextScene.ToString());
+        }
     }
 
     public void SetCheckpoint(Checkpoint checkpoint)

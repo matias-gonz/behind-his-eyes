@@ -30,7 +30,6 @@ public class ThirdPersonMovement : MonoBehaviour
         maximumMovementVelocity = _animationController.GetMaximumRunVelocity();
         _rigidbody = GetComponent<Rigidbody>();
         _isGrounded = true;
-
     }
 
     // Update is called once per frame
@@ -49,7 +48,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public float SpeedNoiseFactor()
     {
-        return _speed/(maximumMovementVelocity*SpeedMultiplier);
+        return _speed / (maximumMovementVelocity * SpeedMultiplier);
     }
 
     private void MoveXZandTurn(bool isJumping)
@@ -64,10 +63,10 @@ public class ThirdPersonMovement : MonoBehaviour
             _rigidbody.isKinematic = true;
             return;
         }
-        else
-            _rigidbody.isKinematic = false;
-        if (_speed == 0)
-            return;
+
+        _rigidbody.isKinematic = false;
+
+        if (_speed == 0) return;
 
         // walk direction in normal cordinate system
         Vector3 direction = new Vector3(_sidewardMovement, 0f, _forwardMovement).normalized;
@@ -75,7 +74,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction;
         Vector3 currentPosition = transform.position;
-        Vector3 intermediatePosition = currentPosition + moveDir * _speed * Time.fixedDeltaTime;
+        Vector3 intermediatePosition = currentPosition + moveDir * (_speed * Time.fixedDeltaTime);
         _rigidbody.MovePosition(intermediatePosition);
 
         Vector3 resetVelocityXZ = new Vector3(0f, _rigidbody.velocity.y, 0f);
@@ -84,7 +83,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private float RotateToCurrentTarget(float targetAngle)
     {
-        // float targetAngle = Mathf.Atan2(targetDirection.x, targetDirection.z) * Mathf.Rad2Deg;
         float angle = Mathf.SmoothDampAngle(
             this.transform.eulerAngles.y,
             targetAngle,
@@ -143,6 +141,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             distanceToGround = 0f;
         }
+
         return distanceToGround;
     }
 }
