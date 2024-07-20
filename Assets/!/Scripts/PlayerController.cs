@@ -35,12 +35,8 @@ public class PlayerController : MonoBehaviour
     private bool _rifleAimClicked = false;
     private bool _rifleFireClicked = false;
 
-    private bool _aimMode;
-    private Vector2 _oldMousePosition;
-    private float _currentAngleX = 0f;
-    private float _offSetXLeft = 15f;
-    private float _offSetXRight = 15f;
-    private float _currentAngleY = 0f;
+    // Rifle Aim Down Sights parameters
+    public bool _aimMode = false;
 
     void Awake()
     {
@@ -163,52 +159,27 @@ public class PlayerController : MonoBehaviour
     {
         if (!_rifleAimClicked)
             return;
-        Debug.Log("RifleAction");
         if (!isStanding)
         {
             animationController.StandUp();
         }
         _aimMode = true;
-        _currentAngleX = transform.rotation.x;
-        _offSetXLeft = _currentAngleX - _offSetXLeft;
-        _offSetXRight = _currentAngleX + _offSetXRight;
+        thirdPersonMovement.AimModeTransform();
         animationController.RifleAim();
     }
 
     private void RifleAction()
     {
-        
-        // _currentAngleY 
         Vector2 mouse = _input.CharacterControls.Look.ReadValue<Vector2>();
-        AimRotateX(mouse.x);
-        
-        Debug.Log("deltaX");
-        Debug.Log(mouse.x);
-        Debug.Log("deltaY");
-        Debug.Log(mouse.y);
+        thirdPersonMovement.RifleAim(mouse.x, mouse.y);
         if (_rifleFireClicked)
         {
-        animationController.RifleFire();
+             animationController.RifleFire();
         }
     }
 
-    private void AimRotateX(float deltaX)
-    {
-        float currentAngleCheck = _currentAngleX += deltaX;
-        if (currentAngleCheck < _offSetXLeft)
-        {
-            _currentAngleX = _offSetXLeft;
-        } else
-        if (currentAngleCheck > _offSetXRight)
-        {
-            _currentAngleX = _offSetXRight;
-        } else
-        {
-            _currentAngleX = currentAngleCheck;
-        }
-        
-        thirdPersonMovement.RotateToCurrentTarget(_currentAngleX);
-    }
+    
+
     private void CrouchPronePressed()
     {
         if (_crouchProneCanceled)
