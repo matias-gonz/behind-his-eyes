@@ -46,7 +46,11 @@ public class PlayerAudio : MonoBehaviour
     {
         PlayAudio("k98", 1f);
     }
-    
+
+    public void CycleK98()
+    {
+        PlayAudio("k98cycle", 1f);
+    }
     public void PlayAudio(string clipName, float volume)
     {
         Audio audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);

@@ -6961,16 +6961,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1287324326615721425, guid: 5b81efd7dffb4751a9a2528c3a5ba96a, type: 3}
       propertyPath: audioPlayer.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1287324326615721425, guid: 5b81efd7dffb4751a9a2528c3a5ba96a, type: 3}
       propertyPath: audioPlayer.Array.data[5].id
       value: k98
       objectReference: {fileID: 0}
     - target: {fileID: 1287324326615721425, guid: 5b81efd7dffb4751a9a2528c3a5ba96a, type: 3}
+      propertyPath: audioPlayer.Array.data[6].id
+      value: k98cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287324326615721425, guid: 5b81efd7dffb4751a9a2528c3a5ba96a, type: 3}
       propertyPath: audioPlayer.Array.data[5].clip
       value: 
       objectReference: {fileID: 8300000, guid: 9d756d191d0b54d1bb3274436625404a, type: 3}
+    - target: {fileID: 1287324326615721425, guid: 5b81efd7dffb4751a9a2528c3a5ba96a, type: 3}
+      propertyPath: audioPlayer.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d43d654cabcc80e386f62a4d5cf1775, type: 3}
     - target: {fileID: 1662258127975843199, guid: 5b81efd7dffb4751a9a2528c3a5ba96a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -13.293932

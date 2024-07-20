@@ -8,5 +8,6 @@ public class Playerk98Firing : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("RifleFire", false);
+        animator.gameObject.SendMessage("CycleK98");
     }
 }
