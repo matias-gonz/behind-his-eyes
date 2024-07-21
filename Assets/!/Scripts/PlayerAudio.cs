@@ -16,9 +16,8 @@ public class PlayerAudio : MonoBehaviour
     public Audio[] bulletHitAudio;
     public Audio[] jumpAudio;
     public Audio[] fallDownAudio;
-    public Audio[] FireK98;
-    public Audio[] CycleK98;
-
+    public Audio[] fireK98Audio;
+    public Audio[] k98CycleAudio;
 
     void Start()
     {
@@ -74,15 +73,15 @@ public class PlayerAudio : MonoBehaviour
     {
         PlayRandomAudio(fallDownAudio, 0.7f);
     }
-    
+
     public void FireK98()
     {
-        PlayAudio(k98Audio, 1f);
+        PlayRandomAudio(fireK98Audio, 1f);
     }
 
     public void CycleK98()
     {
-        PlayAudio(k98cycleAudio, 1f);
+        PlayRandomAudio(k98CycleAudio, 1f);
     }
 
     private void PlayRandomAudio(Audio[] audioArray, float volume)
