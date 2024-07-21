@@ -1,11 +1,23 @@
-using System.Diagnostics;
+using System.Collections.Generic;
 using UnityEngine;
 using utils;
 
 public class PlayerAudio : MonoBehaviour
 {
     public AudioSource audioSource;
-    public Audio[] audioPlayer;
+
+    public Audio[] walkAudio;
+    public Audio[] runAudio;
+    public Audio[] dieScreamAudio;
+    public Audio[] bloodAudio;
+    public Audio[] leftCrouchAudio;
+    public Audio[] rightCrouchAudio;
+    public Audio[] crawlAudio;
+    public Audio[] bulletHitAudio;
+    public Audio[] jumpAudio;
+    public Audio[] fallDownAudio;
+    public Audio[] fireK98Audio;
+    public Audio[] k98CycleAudio;
 
     void Start()
     {
@@ -14,58 +26,87 @@ public class PlayerAudio : MonoBehaviour
 
     public void Walk()
     {
-        PlayAudio("Walk", 0.8f);
+        PlayRandomAudio(walkAudio, 0.8f);
     }
 
-    public void Crouched()
+    public void LeftCrouched()
     {
-        PlayAudio("Crouched", 0.5f);
+        PlayRandomAudio(leftCrouchAudio, 0.5f);
+    }
+
+    public void RightCrouched()
+    {
+        PlayRandomAudio(rightCrouchAudio, 0.5f);
     }
 
     public void Crawl()
     {
-        PlayAudio("Crawl", 0.20f);
+        PlayRandomAudio(crawlAudio, 0.20f);
     }
 
     public void Run()
     {
-        PlayAudio("Walk", 1f);
+        PlayRandomAudio(runAudio, 1f);
+    }
+
+    public void DieScream()
+    {
+        PlayRandomAudio(dieScreamAudio, 0.8f);
+    }
+
+    public void Blood()
+    {
+        PlayRandomAudio(bloodAudio, 3.5f);
+    }
+
+    public void BulletHit()
+    {
+        PlayRandomAudio(bulletHitAudio, 1.5f);
     }
 
     public void Jump()
     {
-        PlayAudio("Jump", 1f);
+        PlayRandomAudio(jumpAudio, 1f);
     }
 
     public void FallDown()
     {
-        PlayAudio("FallDown", 0.7f);
+        PlayRandomAudio(fallDownAudio, 0.7f);
     }
-    
+
     public void FireK98()
     {
-        PlayAudio("k98", 1f);
+        PlayRandomAudio(fireK98Audio, 1f);
     }
 
     public void CycleK98()
     {
-        PlayAudio("k98cycle", 1f);
+        PlayRandomAudio(k98CycleAudio, 1f);
     }
-    public void PlayAudio(string clipName, float volume)
-    {
-        Audio audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
 
-        if (audioToPlay.clip == null)
+    private void PlayRandomAudio(Audio[] audioArray, float volume)
+    {
+        if (audioArray.Length == 0)
         {
-            UnityEngine.Debug.LogWarning("Audio clip not found: " + clipName);
+            Debug.LogWarning("Audio array is empty");
             return;
         }
 
+        Audio audioClip = audioArray[Random.Range(0, audioArray.Length)];
+        PlayAudio(audioClip, volume);
+    }
 
-        audioSource.clip = audioToPlay.clip;
+    public void PlayAudio(Audio audioClip, float volume)
+    {
+        if (audioClip.clip == null)
+        {
+            Debug.LogWarning("Audio clip not found: " + audioClip.id);
+            return;
+        }
+
+        audioSource.clip = audioClip.clip;
         audioSource.volume = volume;
         audioSource.Play();
         audioSource.loop = false;
     }
-
 }
