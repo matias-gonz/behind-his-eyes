@@ -42,17 +42,17 @@ public class PlayerAudio : MonoBehaviour
 
     public void LeftCrouched()
     {
-        PlayAudio(FindAudioClip("LeftCrouch"), 0.5f);
+        PlayAudio(GetSpecificAudio("LeftCrouch", audioClipDictionary[RandomClip.Other]), 0.5f);
     }
 
     public void RightCrouched()
     {
-        PlayAudio(FindAudioClip("RightCrouch"), 0.5f);
+        PlayAudio(GetSpecificAudio("RightCrouch", audioClipDictionary[RandomClip.Other]), 0.5f);
     }
 
     public void Crawl()
     {
-        PlayAudio(FindAudioClip("Crawl"), 0.20f);
+        PlayAudio(GetSpecificAudio("Crawl", audioClipDictionary[RandomClip.Other]), 0.20f);
     }
 
     public void Run()
@@ -72,17 +72,17 @@ public class PlayerAudio : MonoBehaviour
 
     public void BulletHit()
     {
-        PlayAudio(FindAudioClip("BulletHit"), 1.5f);
+        PlayAudio(GetSpecificAudio("BulletHit", audioClipDictionary[RandomClip.Other]), 1.5f);
     }
 
     public void Jump()
     {
-        PlayAudio(FindAudioClip("Jump"), 1f);
+        PlayAudio(GetSpecificAudio("Jump", audioClipDictionary[RandomClip.Other]), 1f);
     }
 
     public void FallDown()
     {
-        PlayAudio(FindAudioClip("FallDown"), 0.7f);
+        PlayAudio(GetSpecificAudio("FallDown", audioClipDictionary[RandomClip.Other]), 0.7f);
     }
 
     private void PlayRandomAudio(RandomClip clipType, float volume)
@@ -105,37 +105,9 @@ public class PlayerAudio : MonoBehaviour
         audioSource.loop = false;
     }
 
-    private Audio FindAudioClip(string clipName)
+    private Audio GetSpecificAudio(string clipName, Audio[] audioArray)
     {
-        foreach (var audio in walkAudio)
-        {
-            if (audio.id == clipName)
-            {
-                return audio;
-            }
-        }
-        foreach (var audio in runAudio)
-        {
-            if (audio.id == clipName)
-            {
-                return audio;
-            }
-        }
-        foreach (var audio in dieScreamAudio)
-        {
-            if (audio.id == clipName)
-            {
-                return audio;
-            }
-        }
-        foreach (var audio in bloodAudio)
-        {
-            if (audio.id == clipName)
-            {
-                return audio;
-            }
-        }
-        foreach (var audio in otherAudio)
+        foreach (var audio in audioArray)
         {
             if (audio.id == clipName)
             {
