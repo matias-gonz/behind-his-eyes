@@ -67,7 +67,6 @@ public class PlayerController : MonoBehaviour
     {
         // turns mouse cursor invisible and locks it in place, allowing indefinite mouse movement
         Cursor.lockState = CursorLockMode.Locked;
-        InAimZone(true);
     }
 
     // Update is called once per frame
