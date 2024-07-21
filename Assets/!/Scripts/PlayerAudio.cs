@@ -4,72 +4,72 @@ using utils;
 
 public class PlayerAudio : MonoBehaviour
 {
-    public AudioSource AudioSource;
+    public AudioSource audioSource;
 
-    public Audio[] WalkAudio;
-    public Audio[] RunAudio;
-    public Audio[] DieScreamAudio;
-    public Audio[] BloodAudio;
-    public Audio[] LeftCrouchAudio;
-    public Audio[] RightCrouchAudio;
-    public Audio[] CrawlAudio;
-    public Audio[] BulletHitAudio;
-    public Audio[] JumpAudio;
-    public Audio[] FallDownAudio;
+    public Audio[] walkAudio;
+    public Audio[] runAudio;
+    public Audio[] dieScreamAudio;
+    public Audio[] bloodAudio;
+    public Audio[] leftCrouchAudio;
+    public Audio[] rightCrouchAudio;
+    public Audio[] crawlAudio;
+    public Audio[] bulletHitAudio;
+    public Audio[] jumpAudio;
+    public Audio[] fallDownAudio;
 
     void Start()
     {
-        AudioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Walk()
     {
-        PlayRandomAudio(WalkAudio, 0.8f);
+        PlayRandomAudio(walkAudio, 0.8f);
     }
 
     public void LeftCrouched()
     {
-        PlayRandomAudio(LeftCrouchAudio, 0.5f);
+        PlayRandomAudio(leftCrouchAudio, 0.5f);
     }
 
     public void RightCrouched()
     {
-        PlayRandomAudio(RightCrouchAudio, 0.5f);
+        PlayRandomAudio(rightCrouchAudio, 0.5f);
     }
 
     public void Crawl()
     {
-        PlayRandomAudio(CrawlAudio, 0.20f);
+        PlayRandomAudio(crawlAudio, 0.20f);
     }
 
     public void Run()
     {
-        PlayRandomAudio(RunAudio, 1f);
+        PlayRandomAudio(runAudio, 1f);
     }
 
     public void DieScream()
     {
-        PlayRandomAudio(DieScreamAudio, 0.8f);
+        PlayRandomAudio(dieScreamAudio, 0.8f);
     }
 
     public void Blood()
     {
-        PlayRandomAudio(BloodAudio, 3.5f);
+        PlayRandomAudio(bloodAudio, 3.5f);
     }
 
     public void BulletHit()
     {
-        PlayRandomAudio(BulletHitAudio, 1.5f);
+        PlayRandomAudio(bulletHitAudio, 1.5f);
     }
 
     public void Jump()
     {
-        PlayRandomAudio(JumpAudio, 1f);
+        PlayRandomAudio(jumpAudio, 1f);
     }
 
     public void FallDown()
     {
-        PlayRandomAudio(FallDownAudio, 0.7f);
+        PlayRandomAudio(fallDownAudio, 0.7f);
     }
 
     private void PlayRandomAudio(Audio[] audioArray, float volume)
@@ -80,7 +80,7 @@ public class PlayerAudio : MonoBehaviour
             return;
         }
 
-        Audio audioClip = audioArray.Length == 1 ? audioArray[0] : audioArray[Random.Range(0, audioArray.Length)];
+        Audio audioClip = audioArray[Random.Range(0, audioArray.Length)];
         PlayAudio(audioClip, volume);
     }
 
@@ -92,9 +92,9 @@ public class PlayerAudio : MonoBehaviour
             return;
         }
 
-        AudioSource.clip = audioClip.clip;
-        AudioSource.volume = volume;
-        AudioSource.Play();
-        AudioSource.loop = false;
+        audioSource.clip = audioClip.clip;
+        audioSource.volume = volume;
+        audioSource.Play();
+        audioSource.loop = false;
     }
 }

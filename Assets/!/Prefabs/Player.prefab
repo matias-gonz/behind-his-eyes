@@ -1778,15 +1778,20 @@ MonoBehaviour:
   - id: diescream3
     clip: {fileID: 8300000, guid: 9385f6c78b5474c77939854677f37933, type: 3}
   bloodAudio: []
-  otherAudio:
-  - id: Crawl
-    clip: {fileID: 8300000, guid: 540d83f3555bb4796b8a43d097243ea3, type: 3}
-  - id: Jump
-    clip: {fileID: 8300000, guid: 3d8f480d252db9449b2f978284506f8e, type: 3}
+  leftCrouchAudio:
   - id: LeftCrouch
     clip: {fileID: 8300000, guid: d755fe0ff90a040ae8137fa020cd32b3, type: 3}
+  rightCrouchAudio:
   - id: RightCrouch
     clip: {fileID: 8300000, guid: 5daad147cd7c5419e972b87435a32590, type: 3}
+  crawlAudio:
+  - id: Crawl
+    clip: {fileID: 8300000, guid: 540d83f3555bb4796b8a43d097243ea3, type: 3}
+  bulletHitAudio: []
+  jumpAudio:
+  - id: Jump
+    clip: {fileID: 8300000, guid: 3d8f480d252db9449b2f978284506f8e, type: 3}
+  fallDownAudio: []
 --- !u!1 &4899586341017006717
 GameObject:
   m_ObjectHideFlags: 0
