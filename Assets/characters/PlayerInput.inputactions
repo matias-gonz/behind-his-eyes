@@ -67,6 +67,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RifleAim",
+                    "type": "Button",
+                    "id": "8688a6f5-59a6-4155-92ff-f0e70b57a2d4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RifleFire",
+                    "type": "Button",
+                    "id": "f3e7daea-3d56-4f1d-898f-1822819067cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "af8110e8-07d2-4131-a59f-c0d258ab6802",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -155,6 +182,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "CrouchProne",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad3a0415-281f-4f0d-b6d2-6a06d3eb5f95",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RifleAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b038d4b4-f955-41c9-a047-1906f6cff815",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RifleFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ced3ec58-7089-48f8-b78d-ff7127e5823e",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

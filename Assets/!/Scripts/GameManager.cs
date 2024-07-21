@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public bool godMode = false;
     
+    private int _shotsFired = 0;
     private Checkpoint? _checkpoint = null;
     
     private void Awake()
@@ -68,5 +69,10 @@ public class GameManager : MonoBehaviour
     public void SetCheckpoint(Checkpoint checkpoint)
     {
         _checkpoint = checkpoint;
+    }
+    
+    public void AddShot()
+    {
+        _shotsFired++;
     }
 }
