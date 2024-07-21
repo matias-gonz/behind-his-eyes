@@ -4,90 +4,83 @@ using utils;
 
 public class PlayerAudio : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public Audio[] walkAudio;
-    public Audio[] runAudio;
-    public Audio[] dieScreamAudio;
-    public Audio[] bloodAudio;
-    public Audio[] otherAudio;
-    private Dictionary<RandomClip, Audio[]> audioClipDictionary;
+    public AudioSource AudioSource;
 
-    enum RandomClip
-    {
-        Walk, Run, DieScream, Blood, Other
-    }
+    public Audio[] WalkAudio;
+    public Audio[] RunAudio;
+    public Audio[] DieScreamAudio;
+    public Audio[] BloodAudio;
+    public Audio[] LeftCrouchAudio;
+    public Audio[] RightCrouchAudio;
+    public Audio[] CrawlAudio;
+    public Audio[] BulletHitAudio;
+    public Audio[] JumpAudio;
+    public Audio[] FallDownAudio;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        InitializeAudioClipDictionary();
-    }
-
-    private void InitializeAudioClipDictionary()
-    {
-        audioClipDictionary = new Dictionary<RandomClip, Audio[]>
-        {
-            { RandomClip.Walk, walkAudio },
-            { RandomClip.Run, runAudio },
-            { RandomClip.DieScream, dieScreamAudio },
-            { RandomClip.Blood, bloodAudio },
-            { RandomClip.Other, otherAudio }
-        };
+        AudioSource = GetComponent<AudioSource>();
     }
 
     public void Walk()
     {
-        PlayRandomAudio(RandomClip.Walk, 0.8f);
+        PlayRandomAudio(WalkAudio, 0.8f);
     }
 
     public void LeftCrouched()
     {
-        PlayAudio(GetSpecificAudio("LeftCrouch", audioClipDictionary[RandomClip.Other]), 0.5f);
+        PlayRandomAudio(LeftCrouchAudio, 0.5f);
     }
 
     public void RightCrouched()
     {
-        PlayAudio(GetSpecificAudio("RightCrouch", audioClipDictionary[RandomClip.Other]), 0.5f);
+        PlayRandomAudio(RightCrouchAudio, 0.5f);
     }
 
     public void Crawl()
     {
-        PlayAudio(GetSpecificAudio("Crawl", audioClipDictionary[RandomClip.Other]), 0.20f);
+        PlayRandomAudio(CrawlAudio, 0.20f);
     }
 
     public void Run()
     {
-        PlayRandomAudio(RandomClip.Run, 1f);
+        PlayRandomAudio(RunAudio, 1f);
     }
 
     public void DieScream()
     {
-        PlayRandomAudio(RandomClip.DieScream, 0.8f);
+        PlayRandomAudio(DieScreamAudio, 0.8f);
     }
 
     public void Blood()
     {
-        PlayRandomAudio(RandomClip.Blood, 3.5f);
+        PlayRandomAudio(BloodAudio, 3.5f);
     }
 
     public void BulletHit()
     {
-        PlayAudio(GetSpecificAudio("BulletHit", audioClipDictionary[RandomClip.Other]), 1.5f);
+        PlayRandomAudio(BulletHitAudio, 1.5f);
     }
 
     public void Jump()
     {
-        PlayAudio(GetSpecificAudio("Jump", audioClipDictionary[RandomClip.Other]), 1f);
+        PlayRandomAudio(JumpAudio, 1f);
     }
 
     public void FallDown()
     {
-        PlayAudio(GetSpecificAudio("FallDown", audioClipDictionary[RandomClip.Other]), 0.7f);
+        PlayRandomAudio(FallDownAudio, 0.7f);
     }
 
-    private void PlayRandomAudio(RandomClip clipType, float volume)
+    private void PlayRandomAudio(Audio[] audioArray, float volume)
     {
-        Audio audioClip = GetRandomAudioClip(clipType);
+        if (audioArray.Length == 0)
+        {
+            Debug.LogWarning("Audio array is empty");
+            return;
+        }
+
+        Audio audioClip = audioArray.Length == 1 ? audioArray[0] : audioArray[Random.Range(0, audioArray.Length)];
         PlayAudio(audioClip, volume);
     }
 
@@ -95,37 +88,13 @@ public class PlayerAudio : MonoBehaviour
     {
         if (audioClip.clip == null)
         {
-            UnityEngine.Debug.LogWarning("Audio clip not found: " + audioClip.id);
+            Debug.LogWarning("Audio clip not found: " + audioClip.id);
             return;
         }
 
-        audioSource.clip = audioClip.clip;
-        audioSource.volume = volume;
-        audioSource.Play();
-        audioSource.loop = false;
-    }
-
-    private Audio GetSpecificAudio(string clipName, Audio[] audioArray)
-    {
-        foreach (var audio in audioArray)
-        {
-            if (audio.id == clipName)
-            {
-                return audio;
-            }
-        }
-
-        return new Audio();
-    }
-
-    private Audio GetRandomAudioClip(RandomClip clipType)
-    {
-        if (audioClipDictionary.TryGetValue(clipType, out var clips))
-        {
-            int index = Random.Range(0, clips.Length);
-            return clips[index];
-        }
-
-        return new Audio();
+        AudioSource.clip = audioClip.clip;
+        AudioSource.volume = volume;
+        AudioSource.Play();
+        AudioSource.loop = false;
     }
 }
