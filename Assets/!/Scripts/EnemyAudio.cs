@@ -38,6 +38,17 @@ public class EnemyAudio : MonoBehaviour
         PlayAudio("k98cycle", 1f);
     }
 
+    public void SmokeN(int number)
+    {
+        if (number > 4 || number < 0)
+        {
+            UnityEngine.Debug.LogWarning("Sound clip id is out of bounds: " + number);
+            return;
+        }
+        UnityEngine.Debug.Log("smoke" + number.ToString());
+        PlayAudio("smoke" + number.ToString(), 1f);
+    }
+
     public void PlayAudio(string clipName, float volume)
     {
         Audio audioToPlay = System.Array.Find(audioPlayer, a => a.id == clipName);
