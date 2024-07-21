@@ -10,15 +10,29 @@ public class PlayerAudio : MonoBehaviour
     public Audio[] dieScreamAudio;
     public Audio[] bloodAudio;
     public Audio[] otherAudio;
+    private Dictionary<RandomClip, Audio[]> audioClipDictionary;
 
     enum RandomClip
     {
-        Walk, Run, DieScream, Blood
+        Walk, Run, DieScream, Blood, Other
     }
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        InitializeAudioClipDictionary();
+    }
+
+    private void InitializeAudioClipDictionary()
+    {
+        audioClipDictionary = new Dictionary<RandomClip, Audio[]>
+        {
+            { RandomClip.Walk, walkAudio },
+            { RandomClip.Run, runAudio },
+            { RandomClip.DieScream, dieScreamAudio },
+            { RandomClip.Blood, bloodAudio },
+            { RandomClip.Other, otherAudio }
+        };
     }
 
     public void Walk()
@@ -28,17 +42,17 @@ public class PlayerAudio : MonoBehaviour
 
     public void LeftCrouched()
     {
-        PlayAudio("LeftCrouch", 0.5f);
+        PlayAudio(FindAudioClip("LeftCrouch"), 0.5f);
     }
 
     public void RightCrouched()
     {
-        PlayAudio("RightCrouch", 0.5f);
+        PlayAudio(FindAudioClip("RightCrouch"), 0.5f);
     }
 
     public void Crawl()
     {
-        PlayAudio("Crawl", 0.20f);
+        PlayAudio(FindAudioClip("Crawl"), 0.20f);
     }
 
     public void Run()
@@ -58,36 +72,34 @@ public class PlayerAudio : MonoBehaviour
 
     public void BulletHit()
     {
-        PlayAudio("BulletHit", 1.5f);
+        PlayAudio(FindAudioClip("BulletHit"), 1.5f);
     }
 
     public void Jump()
     {
-        PlayAudio("Jump", 1f);
+        PlayAudio(FindAudioClip("Jump"), 1f);
     }
 
     public void FallDown()
     {
-        PlayAudio("FallDown", 0.7f);
+        PlayAudio(FindAudioClip("FallDown"), 0.7f);
     }
 
     private void PlayRandomAudio(RandomClip clipType, float volume)
     {
-        string clipName = RandomAudio(clipType);
-        PlayAudio(clipName, volume);
+        Audio audioClip = GetRandomAudioClip(clipType);
+        PlayAudio(audioClip, volume);
     }
 
-    public void PlayAudio(string clipName, float volume)
+    public void PlayAudio(Audio audioClip, float volume)
     {
-        Audio audioToPlay = FindAudioClip(clipName);
-
-        if (audioToPlay.clip == null)
+        if (audioClip.clip == null)
         {
-            UnityEngine.Debug.LogWarning("Audio clip not found: " + clipName);
+            UnityEngine.Debug.LogWarning("Audio clip not found: " + audioClip.id);
             return;
         }
 
-        audioSource.clip = audioToPlay.clip;
+        audioSource.clip = audioClip.clip;
         audioSource.volume = volume;
         audioSource.Play();
         audioSource.loop = false;
@@ -95,56 +107,53 @@ public class PlayerAudio : MonoBehaviour
 
     private Audio FindAudioClip(string clipName)
     {
-        Audio audioToPlay = System.Array.Find(walkAudio, a => a.id == clipName);
-        if (audioToPlay.clip == null)
+        foreach (var audio in walkAudio)
         {
-            audioToPlay = System.Array.Find(runAudio, a => a.id == clipName);
+            if (audio.id == clipName)
+            {
+                return audio;
+            }
         }
-        if (audioToPlay.clip == null)
+        foreach (var audio in runAudio)
         {
-            audioToPlay = System.Array.Find(dieScreamAudio, a => a.id == clipName);
+            if (audio.id == clipName)
+            {
+                return audio;
+            }
         }
-        if (audioToPlay.clip == null)
+        foreach (var audio in dieScreamAudio)
         {
-            audioToPlay = System.Array.Find(bloodAudio, a => a.id == clipName);
+            if (audio.id == clipName)
+            {
+                return audio;
+            }
         }
-        if (audioToPlay.clip == null)
+        foreach (var audio in bloodAudio)
         {
-            audioToPlay = System.Array.Find(otherAudio, a => a.id == clipName);
+            if (audio.id == clipName)
+            {
+                return audio;
+            }
         }
-        return audioToPlay;
+        foreach (var audio in otherAudio)
+        {
+            if (audio.id == clipName)
+            {
+                return audio;
+            }
+        }
+
+        return new Audio();
     }
 
-    private string RandomAudio(RandomClip clipType)
+    private Audio GetRandomAudioClip(RandomClip clipType)
     {
-        int index = 0;
-        int maxIndex = 0;
-        string clipName = "";
-
-        switch (clipType)
+        if (audioClipDictionary.TryGetValue(clipType, out var clips))
         {
-            case RandomClip.Walk:
-                maxIndex = walkAudio.Length;
-                clipName = "walk";
-                break;
-            case RandomClip.Run:
-                maxIndex = runAudio.Length;
-                clipName = "run";
-                break;
-            case RandomClip.DieScream:
-                maxIndex = dieScreamAudio.Length;
-                clipName = "diescream";
-                break;
-            case RandomClip.Blood:
-                maxIndex = bloodAudio.Length;
-                clipName = "blood";
-                break;
+            int index = Random.Range(0, clips.Length);
+            return clips[index];
         }
 
-        if (maxIndex > 0)
-        {
-            index = Random.Range(1, maxIndex + 1);
-        }
-        return clipName + index;
+        return new Audio();
     }
 }
