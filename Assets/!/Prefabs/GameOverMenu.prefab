@@ -218,7 +218,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3842349535157385433}
-  - component: {fileID: 4733234335328316098}
   m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
@@ -242,18 +241,6 @@ Transform:
   - {fileID: 2729674660171503072}
   m_Father: {fileID: 4904877477149468209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4733234335328316098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3473129337137576274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b360798893c42a791f1a3e4e37321a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4918116419605541753
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2729674660171503072}
+  - component: {fileID: 79966601792344890}
   - component: {fileID: 3004790655427816637}
   - component: {fileID: 8250352485859667749}
   - component: {fileID: 1704498931417357106}
@@ -427,6 +415,18 @@ RectTransform:
   m_AnchoredPosition: {x: -36.817406, y: -17.827597}
   m_SizeDelta: {x: 128.7205, y: 54.6944}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &79966601792344890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662915400447382470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b360798893c42a791f1a3e4e37321a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &3004790655427816637
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -509,8 +509,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4733234335328316098}
-        m_TargetAssemblyTypeName: GameOverMenu, Assembly-CSharp
+      - m_Target: {fileID: 79966601792344890}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:

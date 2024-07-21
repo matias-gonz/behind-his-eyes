@@ -77,7 +77,9 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         _currentAngleX = AimRotate(mouseX, _currentAngleX, 0.01f, _offSetXLeft, _offSetXRight);
         _currentAngleY = AimRotate(-mouseY, _currentAngleY, 0.01f, -5f, 5f);
-        _rigidbody.MoveRotation(Quaternion.Euler(_currentAngleY, SmoothAngle(_currentAngleX, 0.1f), 0f));
+        _rigidbody.MoveRotation(
+            Quaternion.Euler(_currentAngleY, SmoothAngle(_currentAngleX, 0.1f), 0f)
+        );
     }
 
     private float AimRotate(
@@ -116,8 +118,9 @@ public class ThirdPersonMovement : MonoBehaviour
             _rigidbody.isKinematic = true;
             return;
         }
-        else
-            _rigidbody.isKinematic = false;
+
+        _rigidbody.isKinematic = false;
+
         if (_speed == 0)
             return;
 
@@ -127,16 +130,15 @@ public class ThirdPersonMovement : MonoBehaviour
 
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction;
         Vector3 currentPosition = transform.position;
-        Vector3 intermediatePosition = currentPosition + moveDir * _speed * Time.fixedDeltaTime;
+        Vector3 intermediatePosition = currentPosition + moveDir * (_speed * Time.fixedDeltaTime);
         _rigidbody.MovePosition(intermediatePosition);
 
         Vector3 resetVelocityXZ = new Vector3(0f, _rigidbody.velocity.y, 0f);
         _rigidbody.velocity = resetVelocityXZ;
     }
 
-    public float RotateToCurrentTarget(float targetAngle)
+    private float RotateToCurrentTarget(float targetAngle)
     {
-        // float targetAngle = Mathf.Atan2(targetDirection.x, targetDirection.z) * Mathf.Rad2Deg;
         float angle = SmoothAngle(targetAngle, TurnSmoothTime);
         _rigidbody.MoveRotation(Quaternion.Euler(0f, angle, 0f));
         return angle;
@@ -200,6 +202,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             distanceToGround = 0f;
         }
+
         return distanceToGround;
     }
 }
