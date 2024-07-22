@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MonologuePostKill : StateMachineBehaviour
 {
-    public EnemyAudio enemyAudio;
 
     public override void OnStateEnter(
         Animator animator,
