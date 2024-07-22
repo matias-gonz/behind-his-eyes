@@ -45,7 +45,6 @@ public class EnemyAudio : MonoBehaviour
             UnityEngine.Debug.LogWarning("Sound clip id is out of bounds: " + number);
             return;
         }
-        UnityEngine.Debug.Log("smoke" + number.ToString());
         PlayAudio("smoke" + number.ToString(), 1f);
     }
 
