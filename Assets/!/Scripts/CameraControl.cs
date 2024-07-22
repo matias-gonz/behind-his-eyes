@@ -6,14 +6,13 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public CinemachineFreeLook thirdPersonCam;
-    private bool doSnapCamera = false;
+    private bool _doSnapCamera = false;
     private float _gettingKilledAngle = 0f;
 
 
     void LateUpdate()
     {
-        if (!doSnapCamera)
-            return;
+        if (!_doSnapCamera) return;
         //Basically, create two new Quaternions with the values in the y and let Quaternion.Lerp handle it
 
         thirdPersonCam.m_XAxis.Value = Quaternion
@@ -23,7 +22,7 @@ public class CameraControl : MonoBehaviour
                 5 * Time.deltaTime
             )
             .eulerAngles.y;
-        
+
         thirdPersonCam.m_YAxis.Value = Quaternion
             .Lerp(
                 Quaternion.Euler(0, thirdPersonCam.m_YAxis.Value, 0),
@@ -34,13 +33,13 @@ public class CameraControl : MonoBehaviour
 
         if (Mathf.Abs(thirdPersonCam.m_XAxis.Value - _gettingKilledAngle) < 0.1f)
         {
-            doSnapCamera = false;
+            _doSnapCamera = false;
         }
     }
 
     public void RotateTPCam(Vector3 direction)
     {
         _gettingKilledAngle = Mathf.Atan2(-direction.x, -direction.z) * Mathf.Rad2Deg;
-        doSnapCamera = true;
+        _doSnapCamera = true;
     }
 }

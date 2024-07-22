@@ -33,6 +33,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     private int _isJumpHash;
     private int _DyingHash;
     private int _SpottedHash;
+    private int _RifleIdleHash;
+    private int _RifleAimHash;
+    private int _RifleFireHash;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +50,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         _isJumpHash = Animator.StringToHash("isJump");
         _DyingHash = Animator.StringToHash("Dying");
         _SpottedHash = Animator.StringToHash("Spotted");
+        _RifleIdleHash = Animator.StringToHash("RifleIdle");
+        _RifleAimHash = Animator.StringToHash("RifleAim");
+        _RifleFireHash = Animator.StringToHash("RifleFire");
     }
 
     // Update is called once per frame
@@ -59,12 +65,27 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         return animationEventPlaying;
     }
 
+    public void RifleAim()
+    {
+        _animator.SetBool(_RifleIdleHash, true);
+        _animator.SetBool(_RifleAimHash, true);
+    }
+
+    public void RifleFire()
+    {
+        Debug.Log("RifleFire");
+        if (_animator.GetBool(_RifleAimHash))
+        {
+            _animator.SetBool(_RifleFireHash, true);
+        }
+    }
+
     public bool IsJumping()
     {
         return _animator.GetBool(_isJumpHash);
     }
 
-     public float GetMaximumRunVelocity()
+    public float GetMaximumRunVelocity()
     {
         return maximumRunVelocity;
     }
@@ -372,8 +393,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
     public void Dying()
     {
-            _velocityZ = 0f;
-            _velocityX = 0f;
-            _animator.SetBool(_DyingHash, true);
+        _velocityZ = 0f;
+        _velocityX = 0f;
+        _animator.SetBool(_DyingHash, true);
     }
 }

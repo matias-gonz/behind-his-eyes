@@ -21,6 +21,14 @@ public class ThirdPersonMovement : MonoBehaviour
     private float _speed = 0f;
     private float maximumMovementVelocity;
 
+    // Rifle Aim Down Sights parameters
+    public bool _aimMode = false;
+    private float _currentAngleX = 270f;
+    private const float _offSetAxis = 15f;
+    private float _offSetXLeft;
+    private float _offSetXRight;
+    private float _currentAngleY = 0f;
+
     //hashes
     private int _isJumpHash;
 
@@ -30,12 +38,15 @@ public class ThirdPersonMovement : MonoBehaviour
         maximumMovementVelocity = _animationController.GetMaximumRunVelocity();
         _rigidbody = GetComponent<Rigidbody>();
         _isGrounded = true;
-
+        _offSetXLeft = _currentAngleX - _offSetAxis;
+        _offSetXRight = _currentAngleX + _offSetAxis;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (_aimMode)
+            return;
         bool isJumping = _animationController.IsJumping();
         MoveXZandTurn(isJumping);
         VerticalVelocity(isJumping);
@@ -49,7 +60,51 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public float SpeedNoiseFactor()
     {
-        return _speed/(maximumMovementVelocity*SpeedMultiplier);
+        return _speed / (maximumMovementVelocity * SpeedMultiplier);
+    }
+
+    public void AimModeTransform()
+    {
+        _rigidbody.isKinematic = false;
+        _aimMode = true;
+        _rigidbody.MovePosition(new Vector3(24f, 5.3f, 82.5f));
+        _rigidbody.isKinematic = true;
+        // _rigidbody.AddForce(new Vector3(0f, 0f, 0f));
+        // _rigidbody.velocity = Vector3.zero;
+    }
+
+    public void RifleAim(float mouseX, float mouseY)
+    {
+        _currentAngleX = AimRotate(mouseX, _currentAngleX, 0.01f, _offSetXLeft, _offSetXRight);
+        _currentAngleY = AimRotate(-mouseY, _currentAngleY, 0.01f, -5f, 5f);
+        _rigidbody.MoveRotation(
+            Quaternion.Euler(_currentAngleY, SmoothAngle(_currentAngleX, 0.1f), 0f)
+        );
+    }
+
+    private float AimRotate(
+        float delta,
+        float currentAngle,
+        float factor,
+        float lowerBounds,
+        float higherBounds
+    )
+    {
+        float finalAngle;
+        float currentAngleCheck = currentAngle += factor * delta;
+        if (currentAngleCheck < lowerBounds)
+        {
+            finalAngle = lowerBounds;
+        }
+        else if (currentAngleCheck > higherBounds)
+        {
+            finalAngle = higherBounds;
+        }
+        else
+        {
+            finalAngle = currentAngleCheck;
+        }
+        return finalAngle;
     }
 
     private void MoveXZandTurn(bool isJumping)
@@ -57,15 +112,15 @@ public class ThirdPersonMovement : MonoBehaviour
         float _forwardMovement = _animationController.GetVelocityZ();
         float _sidewardMovement = _animationController.GetVelocityX();
         _speed =
-            Mathf.Max(Mathf.Abs(_forwardMovement), Mathf.Abs(_sidewardMovement))
-            * SpeedMultiplier;
+            Mathf.Max(Mathf.Abs(_forwardMovement), Mathf.Abs(_sidewardMovement)) * SpeedMultiplier;
         if (_speed == 0 && DistanceToGround() < 0.05 && !isJumping)
         {
             _rigidbody.isKinematic = true;
             return;
         }
-        else
-            _rigidbody.isKinematic = false;
+
+        _rigidbody.isKinematic = false;
+
         if (_speed == 0)
             return;
 
@@ -75,7 +130,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * direction;
         Vector3 currentPosition = transform.position;
-        Vector3 intermediatePosition = currentPosition + moveDir * _speed * Time.fixedDeltaTime;
+        Vector3 intermediatePosition = currentPosition + moveDir * (_speed * Time.fixedDeltaTime);
         _rigidbody.MovePosition(intermediatePosition);
 
         Vector3 resetVelocityXZ = new Vector3(0f, _rigidbody.velocity.y, 0f);
@@ -84,15 +139,19 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private float RotateToCurrentTarget(float targetAngle)
     {
-        // float targetAngle = Mathf.Atan2(targetDirection.x, targetDirection.z) * Mathf.Rad2Deg;
-        float angle = Mathf.SmoothDampAngle(
+        float angle = SmoothAngle(targetAngle, TurnSmoothTime);
+        _rigidbody.MoveRotation(Quaternion.Euler(0f, angle, 0f));
+        return angle;
+    }
+
+    private float SmoothAngle(float targetAngle, float turnSmoothTime)
+    {
+        return Mathf.SmoothDampAngle(
             this.transform.eulerAngles.y,
             targetAngle,
             ref _angularVelocity,
-            TurnSmoothTime
+            turnSmoothTime
         );
-        _rigidbody.MoveRotation(Quaternion.Euler(0f, angle, 0f));
-        return angle;
     }
 
     private void VerticalVelocity(bool isJumping)
@@ -143,6 +202,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             distanceToGround = 0f;
         }
+
         return distanceToGround;
     }
 }
