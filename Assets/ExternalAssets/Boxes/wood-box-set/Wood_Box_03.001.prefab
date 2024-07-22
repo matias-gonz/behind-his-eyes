@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6740713051324565216
+--- !u!1 &2212826797224234852
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4885133399331928948}
-  - component: {fileID: 3462655041478832077}
-  - component: {fileID: 1696520258462663025}
+  - component: {fileID: 2535156181107939288}
+  - component: {fileID: 6612846345569228676}
+  - component: {fileID: 6045174726777157137}
   m_Layer: 0
   m_Name: Wood_Box_03.001
   m_TagString: Untagged
@@ -18,37 +18,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4885133399331928948
+--- !u!4 &2535156181107939288
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6740713051324565216}
+  m_GameObject: {fileID: 2212826797224234852}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000000013969931, y: 0.999315, z: 0.000000037723105, w: 0.037007466}
-  m_LocalPosition: {x: -0.48443604, y: 0.054730088, z: -0.5662079}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: -156.48402, y: 0.18938455, z: -84.44677}
+  m_LocalScale: {x: 100.00003, y: 100, z: 100.00003}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6804868916237460172}
+  - {fileID: 267573223679965748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 175.758, z: 0}
---- !u!33 &3462655041478832077
+--- !u!33 &6612846345569228676
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6740713051324565216}
+  m_GameObject: {fileID: 2212826797224234852}
   m_Mesh: {fileID: -2429719758574791741, guid: 6ec69cd9e447756459dc7aa6a3af7d56, type: 3}
---- !u!23 &1696520258462663025
+--- !u!23 &6045174726777157137
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6740713051324565216}
+  m_GameObject: {fileID: 2212826797224234852}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &7001912578992005195
+--- !u!1 &6156199439503754011
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,8 +95,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6804868916237460172}
-  - component: {fileID: 47824013364557257}
+  - component: {fileID: 267573223679965748}
+  - component: {fileID: 5236667618021228321}
   m_Layer: 0
   m_Name: Col1
   m_TagString: Untagged
@@ -104,28 +104,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6804868916237460172
+--- !u!4 &267573223679965748
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7001912578992005195}
+  m_GameObject: {fileID: 6156199439503754011}
   serializedVersion: 2
   m_LocalRotation: {x: 7.013898e-14, y: 0.039591223, z: 0.0000000029890275, w: 0.99921596}
   m_LocalPosition: {x: -0.000013106421, y: 2.28316e-12, z: -0.000030241361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4885133399331928948}
+  m_Father: {fileID: 2535156181107939288}
   m_LocalEulerAnglesHint: {x: 0, y: 4.538, z: 0}
---- !u!65 &47824013364557257
+--- !u!65 &5236667618021228321
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7001912578992005195}
+  m_GameObject: {fileID: 6156199439503754011}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
