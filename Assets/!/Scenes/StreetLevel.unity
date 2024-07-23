@@ -1591,9 +1591,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 443948190}
     m_Modifications:
+    - target: {fileID: 916777971315443406, guid: 9d133c663ef369e48bffb18e73c1a36d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5447267881446530727, guid: 9d133c663ef369e48bffb18e73c1a36d, type: 3}
       propertyPath: m_Name
       value: Wood_Box_02.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447267881446530727, guid: 9d133c663ef369e48bffb18e73c1a36d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6108707690213531544, guid: 9d133c663ef369e48bffb18e73c1a36d, type: 3}
       propertyPath: m_LocalScale.x
@@ -2635,6 +2643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oak Barrel 3 (more materials in folder)
       objectReference: {fileID: 0}
+    - target: {fileID: 7830877534838831781, guid: 816c7b5dd641308438d972247de75fda, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8452899311866553686, guid: 816c7b5dd641308438d972247de75fda, type: 3}
       propertyPath: m_LocalScale.x
       value: 119.99996
@@ -3042,6 +3054,10 @@ PrefabInstance:
     - target: {fileID: 3682720897721046614, guid: 481de95d4788bb746b9c360dabcc8220, type: 3}
       propertyPath: m_Name
       value: Oak Barrel 2 (more materials in folder) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682720897721046614, guid: 481de95d4788bb746b9c360dabcc8220, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4401,6 +4417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood_Box_01.001
       objectReference: {fileID: 0}
+    - target: {fileID: 1657925354770546113, guid: 4d9a3fbcc91f8994dbff610bc12a018a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2102297235049090084, guid: 4d9a3fbcc91f8994dbff610bc12a018a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.4259944
@@ -4440,6 +4460,10 @@ PrefabInstance:
     - target: {fileID: 2102297235049090084, guid: 4d9a3fbcc91f8994dbff610bc12a018a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7476252516127984413, guid: 4d9a3fbcc91f8994dbff610bc12a018a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4822,6 +4846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box_low (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6734650346360447154, guid: c8000884376df0c4792a6d470ee60b68, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4835,9 +4863,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 533902973}
     m_Modifications:
+    - target: {fileID: 135170851784072463, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058382535460774213, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256860401164247653, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697537028719391576, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4869234198050274284, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
       propertyPath: m_Name
       value: opel_blitz
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869234198050274284, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933678283669032560, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5249277525389484374, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
       propertyPath: m_LocalScale.x
@@ -4891,6 +4943,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[5]
       value: 
       objectReference: {fileID: 2100000, guid: 59809dcd6f5bf4a47a93889543a32f81, type: 2}
+    - target: {fileID: 8527616409704855141, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676349924818878393, guid: 721ef9ac0b974604a98c4418ab0f9d73, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5401,6 +5461,10 @@ PrefabInstance:
     - target: {fileID: 6342789789715306126, guid: 85b3b29dad443a24083f3bbc7a18adaa, type: 3}
       propertyPath: m_Name
       value: box
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342789789715306126, guid: 85b3b29dad443a24083f3bbc7a18adaa, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6466,6 +6530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oak Barrel 1 (more materials in folder) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 927468618242710532, guid: 78b4c8db3151be447b20f77a913a13e7, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7656272735534460928, guid: 78b4c8db3151be447b20f77a913a13e7, type: 3}
       propertyPath: m_LocalScale.x
       value: 119.99997
@@ -6656,6 +6724,10 @@ PrefabInstance:
     - target: {fileID: 6734650346360447154, guid: c8000884376df0c4792a6d470ee60b68, type: 3}
       propertyPath: m_Name
       value: box_low
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734650346360447154, guid: c8000884376df0c4792a6d470ee60b68, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7140,6 +7212,10 @@ PrefabInstance:
     - target: {fileID: 4708512380422047941, guid: 108b4f552c8478049800852d973c8adf, type: 3}
       propertyPath: m_Name
       value: box2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708512380422047941, guid: 108b4f552c8478049800852d973c8adf, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8253637992163531181, guid: 108b4f552c8478049800852d973c8adf, type: 3}
       propertyPath: m_LocalScale.x
@@ -8456,6 +8532,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[3]
       value: 
       objectReference: {fileID: 2100000, guid: 52723e7eb1fcf46409ce5f1a3b754c42, type: 2}
+    - target: {fileID: 5339070832635717677, guid: a94a3b03eb872f64c89d62504cae31d5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5819431389821665240, guid: a94a3b03eb872f64c89d62504cae31d5, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.014999995
@@ -8507,6 +8587,14 @@ PrefabInstance:
     - target: {fileID: 6595828042950747490, guid: a94a3b03eb872f64c89d62504cae31d5, type: 3}
       propertyPath: m_Name
       value: opel_blitz_damaged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595828042950747490, guid: a94a3b03eb872f64c89d62504cae31d5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8888174723623422225, guid: a94a3b03eb872f64c89d62504cae31d5, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8878,9 +8966,81 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 443948190}
     m_Modifications:
+    - target: {fileID: 401031005045542467, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 908068197836740857, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277279441361677252, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550473224198590868, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596235372865447930, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634768658565681281, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810631329490170483, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264660760554804524, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476600626979404826, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296499661488468850, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574217108779788505, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4213573414867539328, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918607858991391110, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173576726012267165, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5232334217394408592, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
       propertyPath: m_Name
       value: suitcase(open)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232334217394408592, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053942285885480643, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751078700679920553, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236286187060149044, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8442843653613315700, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
       propertyPath: m_LocalScale.x
@@ -8933,6 +9093,10 @@ PrefabInstance:
     - target: {fileID: 8442843653613315700, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611562234379777867, guid: a9940b950b2861942a4a8592ff4ef52d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -9432,9 +9596,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3002520015545641642, guid: 6e53e69a8d0acfe40a4dcb02b6525db1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3864977704652200421, guid: 6e53e69a8d0acfe40a4dcb02b6525db1, type: 3}
       propertyPath: m_Name
       value: Weapon Crate 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3864977704652200421, guid: 6e53e69a8d0acfe40a4dcb02b6525db1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875306285446938367, guid: 6e53e69a8d0acfe40a4dcb02b6525db1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277478148810004999, guid: 6e53e69a8d0acfe40a4dcb02b6525db1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9504,6 +9684,10 @@ PrefabInstance:
     - target: {fileID: 3682720897721046614, guid: 481de95d4788bb746b9c360dabcc8220, type: 3}
       propertyPath: m_Name
       value: Oak Barrel 2 (more materials in folder)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682720897721046614, guid: 481de95d4788bb746b9c360dabcc8220, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12017,6 +12201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oak Barrel 1 (more materials in folder)
       objectReference: {fileID: 0}
+    - target: {fileID: 927468618242710532, guid: 78b4c8db3151be447b20f77a913a13e7, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7656272735534460928, guid: 78b4c8db3151be447b20f77a913a13e7, type: 3}
       propertyPath: m_LocalScale.x
       value: 119.99997
@@ -12459,6 +12647,10 @@ PrefabInstance:
     - target: {fileID: 927468618242710532, guid: 78b4c8db3151be447b20f77a913a13e7, type: 3}
       propertyPath: m_Name
       value: Oak Barrel 1 (more materials in folder)
+      objectReference: {fileID: 0}
+    - target: {fileID: 927468618242710532, guid: 78b4c8db3151be447b20f77a913a13e7, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7656272735534460928, guid: 78b4c8db3151be447b20f77a913a13e7, type: 3}
       propertyPath: m_LocalScale.x
