@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class MonologuePostKill : StateMachineBehaviour
 {
+
     public override void OnStateEnter(
         Animator animator,
         AnimatorStateInfo stateInfo,
         int layerIndex
     )
     {
-        animator.SetInteger("idlePostKill", animator.GetInteger("idlePostKill") - 1);
+        int currentCounter = animator.GetInteger("idlePostKill") -1;
+        animator.SetInteger("idlePostKill",  currentCounter);
+        if (currentCounter == 3)
+        {
+            animator.gameObject.SendMessage("SmokeN", 3);
+        } else
+        if (currentCounter == 1)
+        {
+            animator.gameObject.SendMessage("SmokeN", 4);
+        }  
     }
 }
