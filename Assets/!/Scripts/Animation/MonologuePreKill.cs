@@ -10,6 +10,15 @@ public class MonologuePreKill : StateMachineBehaviour
         int layerIndex
     )
     {
-        animator.SetInteger("idlePreKill", animator.GetInteger("idlePreKill") - 1);
+        int currentCounter = animator.GetInteger("idlePreKill") -1;
+        animator.SetInteger("idlePreKill",  currentCounter);
+        if (currentCounter == 5)
+        {
+            animator.gameObject.SendMessage("SmokeN", 1);
+        } else
+        if (currentCounter == 1)
+        {
+            animator.gameObject.SendMessage("SmokeN", 2);
+        }        
     }
 }
