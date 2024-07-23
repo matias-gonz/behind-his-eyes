@@ -106,7 +106,6 @@ public class EnemyControllerScript : MonoBehaviour
 
     public void KillTarget()
     {
-        AudioManager.Instance.PlaySoundFx("k98");
         _playerController.GettingKilled(_targetDirection);
     }
 
