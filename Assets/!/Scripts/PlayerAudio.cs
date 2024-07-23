@@ -28,7 +28,7 @@ public class PlayerAudio : MonoBehaviour
 
     public void Crouched()
     {
-        PlayRandomAudio(stepAudio, 0.5f);
+        PlayRandomAudio(stepAudio, 0.40f);
     }
 
     public void Crawl()
