@@ -12,7 +12,7 @@ public class CardsScript : MonoBehaviour
 
     void Start()
     {
-        titleCard.gameObject.SetActive(true);
+        titleCard.gameObject.SetActive(false);
         settingCard.gameObject.SetActive(false);
         card1.gameObject.SetActive(false);
         card2.gameObject.SetActive(false);
@@ -22,32 +22,19 @@ public class CardsScript : MonoBehaviour
 
     private IEnumerator ShowCards()
     {
-        titleCard.Show();
-        yield return new WaitForSeconds(5);
-        titleCard.Hide();
-        yield return new WaitForSeconds(2);
-        
-        settingCard.gameObject.SetActive(true);
-        settingCard.Show();
-        yield return new WaitForSeconds(5);
-        settingCard.Hide();
-        yield return new WaitForSeconds(2);
-        
-        card1.gameObject.SetActive(true);
-        card1.Show();
-        yield return new WaitForSeconds(5);
-        card1.Hide();
-        yield return new WaitForSeconds(2);
-        
-        card2.gameObject.SetActive(true);
-        card2.Show();
-        yield return new WaitForSeconds(5);
-        card2.Hide();
-        yield return new WaitForSeconds(2);
-        
-        card3.gameObject.SetActive(true);
-        card3.Show();
-        yield return new WaitForSeconds(5);
-        card3.Hide();
+        yield return ShowCard(titleCard, 5, 2);
+        yield return ShowCard(settingCard, 5, 2);
+        yield return ShowCard(card1, 10, 2);
+        yield return ShowCard(card2, 14, 2);
+        yield return ShowCard(card3, 6, 2);
+    }
+    
+    private IEnumerator ShowCard(Card card, float duration, float outDelay)
+    {
+        card.gameObject.SetActive(true);
+        card.Show();
+        yield return new WaitForSeconds(duration);
+        card.Hide();
+        yield return new WaitForSeconds(outDelay);
     }
 }

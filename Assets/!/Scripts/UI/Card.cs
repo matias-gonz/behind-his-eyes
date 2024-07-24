@@ -8,11 +8,7 @@ public class Card : MonoBehaviour
     
     public void Show()
     {
-        foreach (var line in lines)
-        {
-            Debug.Log(line);
-            line.Show();
-        }    
+        StartCoroutine(ShowLines()); 
     }
     
     public void Hide()
@@ -21,5 +17,14 @@ public class Card : MonoBehaviour
         {
             line.Hide();
         }
+    }
+
+    private IEnumerator ShowLines()
+    {
+        foreach (var line in lines)
+        {
+            line.Show();
+            yield return new WaitForSeconds(4f);
+        }  
     }
 }
