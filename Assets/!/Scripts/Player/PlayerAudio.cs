@@ -79,6 +79,8 @@ public class PlayerAudio : MonoBehaviour
 
     public void SmokeN(int number)
     {
+        number -= 1;
+
         if (number >= smokeAudio.Length || number < 0)
         {
             UnityEngine.Debug.LogWarning("Sound clip id is out of bounds: " + number);
@@ -86,6 +88,7 @@ public class PlayerAudio : MonoBehaviour
         }
         PlayAudio(smokeAudio[number], 1f);
     }
+
 
     private void PlayRandomAudio(Audio[] audioArray, float volume)
     {
