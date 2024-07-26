@@ -24,12 +24,12 @@ public class PlayerAudio : MonoBehaviour
 
     public void Walk()
     {
-        PlayRandomAudio(stepAudio, 0.8f);
+        PlayRandomAudio(stepAudio, 0.5f);
     }
 
     public void Crouched()
     {
-        PlayRandomAudio(stepAudio, 0.40f);
+        PlayRandomAudio(stepAudio, 0.35f);
     }
 
     public void Crawl()
@@ -39,7 +39,7 @@ public class PlayerAudio : MonoBehaviour
 
     public void Run()
     {
-        PlayRandomAudio(stepAudio, 1f);
+        PlayRandomAudio(stepAudio, 0.8f);
     }
 
     public void DieScream()
@@ -116,3 +116,4 @@ public class PlayerAudio : MonoBehaviour
         audioSource.loop = false;
     }
 }
+
