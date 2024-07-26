@@ -15,7 +15,7 @@ public class PlayerAudio : MonoBehaviour
     public Audio[] fallDownAudio;
     public Audio[] fireK98Audio;
     public Audio[] k98CycleAudio;
-    public Audio[] smokingSoldierVoiceLines; 
+    public Audio[] voiceLines; 
 
     void Start()
     {
@@ -81,12 +81,12 @@ public class PlayerAudio : MonoBehaviour
     {
         number -= 1;
 
-        if (number >= smokingSoldierVoiceLines.Length || number < 0)
+        if (number >= voiceLines.Length || number < 0)
         {
             UnityEngine.Debug.LogWarning("Sound clip id is out of bounds: " + number);
             return;
         }
-        PlayAudio(smokingSoldierVoiceLines[number], 1f);
+        PlayAudio(voiceLines[number], 1f);
     }
 
 
