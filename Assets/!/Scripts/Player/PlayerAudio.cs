@@ -77,7 +77,7 @@ public class PlayerAudio : MonoBehaviour
         PlayRandomAudio(k98CycleAudio, 1f);
     }
 
-    public void SmokeN(int number)
+    public void Speak(int number)
     {
         number -= 1;
 
