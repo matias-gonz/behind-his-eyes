@@ -15,11 +15,11 @@ public class MonologuePostKill : StateMachineBehaviour
         animator.SetInteger("idlePostKill",  currentCounter);
         if (currentCounter == 3)
         {
-            animator.gameObject.SendMessage("Speak", 3);
+            animator.gameObject.SendMessage("PlayNextLine");
         } else
         if (currentCounter == 1)
         {
-            animator.gameObject.SendMessage("Speak", 4);
+            animator.gameObject.SendMessage("PlayNextLine");
         }  
     }
 }
