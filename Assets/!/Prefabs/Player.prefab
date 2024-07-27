@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4514849483161549247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c8049d0e7b0e0008c11d6d50325228, type: 3}
+  m_Script: {fileID: 11500000, guid: 49755e5ea6c174e1990c21517adce006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8132848639047653971}
@@ -2046,14 +2046,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9385f6c78b5474c77939854677f37933, type: 3}
   bloodAudio: []
   crawlAudio:
-  - id: Crawl
+  - id: crawl1
     clip: {fileID: 8300000, guid: 540d83f3555bb4796b8a43d097243ea3, type: 3}
   bulletHitAudio: []
   jumpAudio:
-  - id: Jump
+  - id: jump
     clip: {fileID: 8300000, guid: 3d8f480d252db9449b2f978284506f8e, type: 3}
   fallDownAudio:
-  - id: FallDown
+  - id: falldown
     clip: {fileID: 8300000, guid: 05da9ce588a30d634a229d45dec655ed, type: 3}
   fireK98Audio:
   - id: k98
@@ -2061,7 +2061,7 @@ MonoBehaviour:
   k98CycleAudio:
   - id: k98cycle
     clip: {fileID: 8300000, guid: 3d43d654cabcc80e386f62a4d5cf1775, type: 3}
-  smokeAudio: []
+  voiceLines: []
 --- !u!114 &7038103100538441920
 MonoBehaviour:
   m_ObjectHideFlags: 0
