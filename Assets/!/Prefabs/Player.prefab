@@ -2002,25 +2002,66 @@ MonoBehaviour:
   m_GameObject: {fileID: 4514849483161549247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c8049d0e7b0e0008c11d6d50325228, type: 3}
+  m_Script: {fileID: 11500000, guid: 49755e5ea6c174e1990c21517adce006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  audioPlayer:
-  - id: Walk
-    clip: {fileID: 8300000, guid: 1f0199a4c6005ec4abbb302f71bc036d, type: 3}
-  - id: Crouched
-    clip: {fileID: 8300000, guid: 1f0199a4c6005ec4abbb302f71bc036d, type: 3}
-  - id: Crawl
+  audioSource: {fileID: 8132848639047653971}
+  stepAudio:
+  - id: step1
+    clip: {fileID: 8300000, guid: 9ddca7fa09b9e44e6a2fb5b3ac31d394, type: 3}
+  - id: step2
+    clip: {fileID: 8300000, guid: 2862b53d606254f97b958b8089e676e1, type: 3}
+  - id: step3
+    clip: {fileID: 8300000, guid: 033bf0049a2864df09c696c14c590dab, type: 3}
+  - id: step4
+    clip: {fileID: 8300000, guid: b974e52358a96425ca5dd602c4fc497c, type: 3}
+  - id: step5
+    clip: {fileID: 8300000, guid: a4e8d421abee04dc0b2772466c09405f, type: 3}
+  - id: step6
+    clip: {fileID: 8300000, guid: 94a4110d802a045fe93158488fc15f52, type: 3}
+  - id: step7
+    clip: {fileID: 8300000, guid: 1c60c7aa8530a42a4a11996d41514b02, type: 3}
+  - id: step8
+    clip: {fileID: 8300000, guid: 9178d5685afd44475b17af15acb43b25, type: 3}
+  - id: step9
+    clip: {fileID: 8300000, guid: c8aede9f0449e48a39f561da74ba68e7, type: 3}
+  - id: step10
+    clip: {fileID: 8300000, guid: be0b746041d524556be5f913440a0770, type: 3}
+  - id: step11
+    clip: {fileID: 8300000, guid: d04338e9efde3468a9a96d3957026347, type: 3}
+  - id: step12
+    clip: {fileID: 8300000, guid: daf67dcf0d3bc4aec9b9fcb6d92202e2, type: 3}
+  - id: step13
+    clip: {fileID: 8300000, guid: c86ec749aa6a94b30abd950ca628f096, type: 3}
+  - id: step14
+    clip: {fileID: 8300000, guid: 2743322fc55854b66a0627973a72147d, type: 3}
+  - id: step15
+    clip: {fileID: 8300000, guid: 8928e97b6512444a69e733fd9157bf97, type: 3}
+  dieScreamAudio:
+  - id: diescream1
+    clip: {fileID: 8300000, guid: 7df0eb138305a48069a74ae5a1b65bdf, type: 3}
+  - id: diescream2
+    clip: {fileID: 8300000, guid: 897cd736b412c41f7b473cdf80ba82a4, type: 3}
+  - id: diescream3
+    clip: {fileID: 8300000, guid: 9385f6c78b5474c77939854677f37933, type: 3}
+  bloodAudio: []
+  crawlAudio:
+  - id: crawl1
     clip: {fileID: 8300000, guid: 540d83f3555bb4796b8a43d097243ea3, type: 3}
-  - id: Jump
+  bulletHitAudio: []
+  jumpAudio:
+  - id: jump
     clip: {fileID: 8300000, guid: 3d8f480d252db9449b2f978284506f8e, type: 3}
-  - id: FallDown
+  fallDownAudio:
+  - id: falldown
     clip: {fileID: 8300000, guid: 05da9ce588a30d634a229d45dec655ed, type: 3}
+  fireK98Audio:
   - id: k98
     clip: {fileID: 8300000, guid: 9d756d191d0b54d1bb3274436625404a, type: 3}
+  k98CycleAudio:
   - id: k98cycle
     clip: {fileID: 8300000, guid: 3d43d654cabcc80e386f62a4d5cf1775, type: 3}
+  voiceLines: []
 --- !u!114 &7038103100538441920
 MonoBehaviour:
   m_ObjectHideFlags: 0
