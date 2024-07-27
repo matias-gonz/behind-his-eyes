@@ -6663,6 +6663,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3837600327029001484, guid: e542cb70ccd114760b4a14c856ded9d4, type: 3}
   m_PrefabInstance: {fileID: 252988597686295618}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1211386841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8639168603763223683, guid: e542cb70ccd114760b4a14c856ded9d4, type: 3}
+  m_PrefabInstance: {fileID: 252988597686295618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a6d3c4307b146c588b267c96b7d4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1235813333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12772,6 +12783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmokingSoldier
       objectReference: {fileID: 0}
+    - target: {fileID: 3961688770062324995, guid: df910db8eb0855d4e993a81b5dc6cd4e, type: 3}
+      propertyPath: subtitles
+      value: 
+      objectReference: {fileID: 1211386841}
     - target: {fileID: 4586548106688348104, guid: df910db8eb0855d4e993a81b5dc6cd4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.586746

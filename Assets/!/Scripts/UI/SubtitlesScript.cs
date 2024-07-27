@@ -15,13 +15,13 @@ public class SubtitlesScript : MonoBehaviour
 
     public void ShowSubtitle(string subtitle, float duration)
     {
-        StartCoroutine(ShowSubtitleCoroutine(subtitle, duration));
-    }
-
-    private IEnumerator ShowSubtitleCoroutine(string subtitle, float duration)
-    {
         subtitles.text = subtitle;
         gameObject.SetActive(true);
+        StartCoroutine(SubtitleDelay(duration));
+    }
+
+    private IEnumerator SubtitleDelay(float duration)
+    {
         yield return new WaitForSeconds(duration);
         gameObject.SetActive(false);
     }

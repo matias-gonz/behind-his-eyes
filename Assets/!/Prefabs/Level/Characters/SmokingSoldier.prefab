@@ -852,7 +852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806937275697277533, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
       propertyPath: m_Name
-      value: SmokingSoldier Variant
+      value: SmokingSoldier
       objectReference: {fileID: 0}
     - target: {fileID: 8806937275697277533, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
       propertyPath: m_TagString
@@ -882,7 +882,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 11.4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1714964757401167988, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 9105439675005482065, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
@@ -892,6 +893,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8806937275697277533, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6967829763360399300}
+    - targetCorrespondingSourceObject: {fileID: 8806937275697277533, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 58652609690675714}
+    - targetCorrespondingSourceObject: {fileID: 8806937275697277533, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3961688770062324995}
   m_SourcePrefab: {fileID: 100100000, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
 --- !u!4 &1201647312010150141 stripped
 Transform:
@@ -916,3 +923,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lonelyDeserter: {fileID: 0}
+--- !u!114 &58652609690675714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497614224481656561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49755e5ea6c174e1990c21517adce006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 2125461207164272617}
+  stepAudio: []
+  dieScreamAudio: []
+  bloodAudio: []
+  crawlAudio: []
+  bulletHitAudio: []
+  jumpAudio: []
+  fallDownAudio: []
+  fireK98Audio:
+  - id: k98
+    clip: {fileID: 8300000, guid: 9d756d191d0b54d1bb3274436625404a, type: 3}
+  k98CycleAudio:
+  - id: k98cycle
+    clip: {fileID: 8300000, guid: 3d43d654cabcc80e386f62a4d5cf1775, type: 3}
+  voiceLines: []
+--- !u!114 &3961688770062324995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497614224481656561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758339b66950d4de8a12911f70aa95d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAudio: {fileID: 58652609690675714}
+  voiceLines:
+  - duration: 3
+    clip:
+      id: smoke1
+      clip: {fileID: 8300000, guid: d0af58fb14781365f846f7962bbda1ba, type: 3}
+    subtitle: We showed these insurgents.
+  - duration: 3.5
+    clip:
+      id: smoke2
+      clip: {fileID: 8300000, guid: d06d8c27b8f6122e09813b7a7cd29cb8, type: 3}
+    subtitle: 'Filthy Deserters. Those who run deserve to die. '
+  - duration: 3.5
+    clip:
+      id: smoke3
+      clip: {fileID: 8300000, guid: e490fdb3bfa8e01e987d1c378055b7e0, type: 3}
+    subtitle: 'What a weakling. I''ll find that other coward too. '
+  - duration: 5
+    clip:
+      id: smoke4
+      clip: {fileID: 8300000, guid: 0f8bd2dccfaa1e856b341e5275186e1f, type: 3}
+    subtitle: 'First a cigarette. We''ll get that other one soon. '
+  subtitles: {fileID: 0}
+--- !u!82 &2125461207164272617 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8326937242081561413, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
+  m_PrefabInstance: {fileID: 7993923394751444140}
+  m_PrefabAsset: {fileID: 0}
