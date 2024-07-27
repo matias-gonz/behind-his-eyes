@@ -14,11 +14,11 @@ public class MonologuePreKill : StateMachineBehaviour
         animator.SetInteger("idlePreKill",  currentCounter);
         if (currentCounter == 5)
         {
-            animator.gameObject.SendMessage("SmokeN", 1);
+            animator.gameObject.SendMessage("PlayNextLine");
         } else
         if (currentCounter == 1)
         {
-            animator.gameObject.SendMessage("SmokeN", 2);
+            animator.gameObject.SendMessage("PlayNextLine");
         }        
     }
 }

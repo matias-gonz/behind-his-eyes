@@ -15,7 +15,6 @@ public class PlayerAudio : MonoBehaviour
     public Audio[] fallDownAudio;
     public Audio[] fireK98Audio;
     public Audio[] k98CycleAudio;
-    public Audio[] voiceLines; 
 
     void Start()
     {
@@ -77,18 +76,6 @@ public class PlayerAudio : MonoBehaviour
         PlayRandomAudio(k98CycleAudio, 1f);
     }
 
-    public void SmokeN(int number)
-    {
-        number -= 1;
-
-        if (number >= voiceLines.Length || number < 0)
-        {
-            UnityEngine.Debug.LogWarning("Sound clip id is out of bounds: " + number);
-            return;
-        }
-        PlayAudio(voiceLines[number], 1f);
-    }
-
 
     private void PlayRandomAudio(Audio[] audioArray, float volume)
     {
@@ -116,4 +103,3 @@ public class PlayerAudio : MonoBehaviour
         audioSource.loop = false;
     }
 }
-
