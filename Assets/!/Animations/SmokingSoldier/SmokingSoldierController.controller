@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eb679870169521c8c3cfa9705f0ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyAudio: {fileID: 0}
 --- !u!206 &-7967955405138053418
 BlendTree:
   m_ObjectHideFlags: 1
@@ -432,7 +431,7 @@ AnimatorController:
   - m_Name: idlePostKill
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 5
+    m_DefaultInt: 7
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: DoExecute
