@@ -13,7 +13,8 @@ public struct Title
 public class TitleController : MonoBehaviour
 {
     public Title[] titles;
-
+    public VoiceLinesManager voiceLinesManager;
+    
     private void Start()
     {
         foreach (Title title in titles)
@@ -25,6 +26,7 @@ public class TitleController : MonoBehaviour
     public void StartTitles()
     {
         ShowTitle("look-around");
+        voiceLinesManager.PlayNextLine();
         StartCoroutine(nameof(TriggerWalkTitle));
     }
 
@@ -50,6 +52,7 @@ public class TitleController : MonoBehaviour
     IEnumerator TriggerWalkTitle()
     {
         yield return new WaitForSeconds(4);
+        voiceLinesManager.PlayNextLine();
         Title currentTitle = Array.Find(titles, t => t.title.activeSelf);
         if (currentTitle.id == "look-around")
         {
