@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class IntroManager : MonoBehaviour
 {
-    public void EndIntroCinematic() { }
+    public TitleController titleController;
+
+    public void EndIntroCinematic()
+    {
+        titleController.StartTitles();
+    }
 }
