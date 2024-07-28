@@ -6,21 +6,23 @@ using utils;
 
 public class TutorialShoot : MonoBehaviour
 {
-    public float delay = 10f;
+    public float delay = 60f;
     public PlayerController playerController;
     public TitleController titleController;
+    public VoiceLinesManager voiceLinesManager;
     private bool _alreadyTriggered = false;
     
 
     private void OnTriggerEnter(Collider other)
     {
         playerController.InAimZone(true);
-        titleController.ShowTitle("shoot");
+        titleController.ShowTitle("aim");
         
         if (_alreadyTriggered) return;
         
         StartCoroutine(nameof(LoadNextScene));
         _alreadyTriggered = true;
+        voiceLinesManager.PlayNextLine();
     }
 
     private void OnTriggerExit(Collider other)
@@ -35,12 +37,7 @@ public class TutorialShoot : MonoBehaviour
 
         while (elapsedTime < delay)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                GameManager.Instance.AddShot();
-                yield break; 
-            }
-            
+            Debug.Log("Waiting for " + (delay - elapsedTime) + " seconds");
             elapsedTime += Time.deltaTime; 
             yield return null;
         }
