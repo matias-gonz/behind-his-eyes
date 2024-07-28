@@ -15,6 +15,7 @@ public class SubtitlesScript : MonoBehaviour
 
     public void ShowSubtitle(string subtitle, float duration)
     {
+        Debug.Log("Showing subtitle: " + subtitle);
         subtitles.text = subtitle;
         gameObject.SetActive(true);
         StartCoroutine(SubtitleDelay(duration));
