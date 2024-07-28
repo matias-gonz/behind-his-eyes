@@ -26,7 +26,7 @@ public class VoiceLinesManager : MonoBehaviour
             Debug.LogWarning("No more voice lines to play");
             return;
         }
-
+        Debug.Log("Playing voice line " + _currentLine);
         playerAudio.PlayAudio(voiceLines[_currentLine].clip, 1);
         subtitles.ShowSubtitle(voiceLines[_currentLine].subtitle, voiceLines[_currentLine].duration);
         _currentLine++;

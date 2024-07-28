@@ -256,6 +256,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void AllowInput(bool allow)
+    {
+        if (allow)
+        {
+            OnEnable();
+        }
+        else
+        {
+            OnDisable();
+        }
+    }
+
     // Toggle character controls action map
     void OnEnable()
     {
