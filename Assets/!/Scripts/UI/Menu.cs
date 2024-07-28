@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Scene = utils.Scene;
+using utils;
 
 public class Menu : MonoBehaviour
 {
