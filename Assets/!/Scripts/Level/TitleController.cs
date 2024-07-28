@@ -20,7 +20,10 @@ public class TitleController : MonoBehaviour
         {
             title.title.SetActive(false);
         }
+    }
 
+    public void StartTitles()
+    {
         ShowTitle("look-around");
         StartCoroutine(nameof(TriggerWalkTitle));
     }
