@@ -7,7 +7,6 @@ public class PreTutorialCardsScript : MonoBehaviour
 {
     public Card titleCard;
     public Card timeCard;
-    public GameManager gameManager;
 
     void Start()
     {
@@ -20,7 +19,7 @@ public class PreTutorialCardsScript : MonoBehaviour
     {
         yield return ShowCard(titleCard, 5, 2);
         yield return ShowCard(timeCard, 4, 2);
-        gameManager.LoadScene(Scene.Tutorial);
+        GameManager.Instance.LoadScene(Scene.Tutorial);
     }
     
     private IEnumerator ShowCard(Card card, float duration, float outDelay)

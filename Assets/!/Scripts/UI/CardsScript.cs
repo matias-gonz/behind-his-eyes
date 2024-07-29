@@ -10,7 +10,6 @@ public class CardsScript : MonoBehaviour
     public Card card2;
     public Card card3;
     public Card timeCard;
-    public GameManager gameManager;
 
     void Start()
     {
@@ -29,7 +28,7 @@ public class CardsScript : MonoBehaviour
         yield return ShowCard(card2, 14, 2);
         yield return ShowCard(card3, 6, 2);
         yield return ShowCard(timeCard, 4, 2);
-        gameManager.LoadScene(Scene.StreetLevel);
+        GameManager.Instance.LoadScene(Scene.StreetLevel);
     }
     
     private IEnumerator ShowCard(Card card, float duration, float outDelay)
