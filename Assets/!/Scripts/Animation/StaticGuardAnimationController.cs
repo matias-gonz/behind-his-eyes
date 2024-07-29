@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class StaticGuardAnimationController : MonoBehaviour
 {
+    private Animator _animator;
+    public bool isSmoking = false;
     private int _isSmokingHash;
-    // Start is called before the first frame update
+
     void Start()
     {
-              _isSmokingHash = Animator.StringToHash("IsSmoking");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _animator = GetComponent<Animator>();
+        _isSmokingHash = Animator.StringToHash("IsSmoking");
+        _animator.SetBool(_isSmokingHash, isSmoking);
     }
 }
