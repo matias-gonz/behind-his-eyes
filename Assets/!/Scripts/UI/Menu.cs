@@ -22,6 +22,6 @@ public class Menu : MonoBehaviour
     public void StartGame()
     {
         _self.interactable = false;
-        GameManager.Instance.LoadScene(Scene.Tutorial);
+        GameManager.Instance.LoadScene(Scene.TitleCards);
     }
 }

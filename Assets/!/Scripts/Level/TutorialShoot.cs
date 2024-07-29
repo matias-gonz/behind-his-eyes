@@ -42,6 +42,6 @@ public class TutorialShoot : MonoBehaviour
             yield return null;
         }
 
-        GameManager.Instance.LoadScene(Scene.StreetLevel);
+        GameManager.Instance.LoadScene(Scene.StoryCards);
     }
 }
