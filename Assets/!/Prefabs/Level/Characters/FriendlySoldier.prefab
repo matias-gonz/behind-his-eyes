@@ -2170,6 +2170,7 @@ GameObject:
   - component: {fileID: 5150571928809842304}
   - component: {fileID: 3030510028580864055}
   - component: {fileID: 530314352328356258}
+  - component: {fileID: 1374120094928706477}
   m_Layer: 0
   m_Name: FriendlySoldier
   m_TagString: Untagged
@@ -2248,7 +2249,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2380,15 +2381,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 5794740953716348959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c8049d0e7b0e0008c11d6d50325228, type: 3}
+  m_Script: {fileID: 11500000, guid: 49755e5ea6c174e1990c21517adce006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 3030510028580864055}
-  audioPlayer:
-  - id: k98
-    clip: {fileID: 8300000, guid: 9d756d191d0b54d1bb3274436625404a, type: 3}
-  - id: k98cycle
-    clip: {fileID: 8300000, guid: 3d43d654cabcc80e386f62a4d5cf1775, type: 3}
+  audioSource: {fileID: 0}
+  stepAudio: []
+  dieScreamAudio: []
+  bloodAudio: []
+  crawlAudio: []
+  bulletHitAudio: []
+  jumpAudio: []
+  fallDownAudio: []
+  fireK98Audio: []
+  k98CycleAudio: []
+--- !u!114 &1374120094928706477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794740953716348959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758339b66950d4de8a12911f70aa95d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAudio: {fileID: 530314352328356258}
+  voiceLines:
+  - duration: 0
+    clip:
+      id: friendly1
+      clip: {fileID: 8300000, guid: a23b9fb24644bb0a0be70a7b8797b822, type: 3}
+    subtitle: 
+  - duration: 0
+    clip:
+      id: friendly2
+      clip: {fileID: 8300000, guid: 63d6f365a3dae1378b7dadc56094edd7, type: 3}
+    subtitle: 
+  - duration: 0
+    clip:
+      id: friendly3
+      clip: {fileID: 8300000, guid: 65dc520d51dd4d650a3ad3cd81754235, type: 3}
+    subtitle: 
+  - duration: 0
+    clip:
+      id: friendly4
+      clip: {fileID: 8300000, guid: 75f659da583395d5da9ba4c6b6fb7ad1, type: 3}
+    subtitle: 
+  - duration: 0
+    clip:
+      id: friendly5
+      clip: {fileID: 8300000, guid: f548e4b18a95f1f87b817a6bfa5bbd69, type: 3}
+    subtitle: 
+  subtitles: {fileID: 0}
 --- !u!1 &5897551866666562697
 GameObject:
   m_ObjectHideFlags: 0
