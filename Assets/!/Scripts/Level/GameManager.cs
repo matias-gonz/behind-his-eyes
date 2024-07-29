@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public bool godMode = false;
     
-    private int _shotsFired = 0;
     private Checkpoint? _checkpoint = null;
     
     private void Awake()
@@ -46,6 +45,16 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private IEnumerator StartTutorial()
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync("TutorialReal");
+        while (!op.isDone)
+        {
+            yield return null;
+        }
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     public void GameOver()
     {
         if (godMode) return;
@@ -54,25 +63,22 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void LoadScene(Scene nextScene)
+    public void LoadScene(Scene scene)
     {
-        if (nextScene == Scene.StreetLevel)
+
+        switch (scene)
         {
-            StartCoroutine(nameof(RestartGame));
-        }
-        else
-        {
-            SceneManager.LoadScene(nextScene.ToString());
+            case Scene.StreetLevel:
+                StartCoroutine(nameof(RestartGame));
+                break;
+            case Scene.Tutorial:
+                StartCoroutine(nameof(StartTutorial));
+                break;
         }
     }
 
     public void SetCheckpoint(Checkpoint checkpoint)
     {
         _checkpoint = checkpoint;
-    }
-    
-    public void AddShot()
-    {
-        _shotsFired++;
     }
 }
