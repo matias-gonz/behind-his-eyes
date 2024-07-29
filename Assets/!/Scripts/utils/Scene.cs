@@ -6,6 +6,8 @@ namespace utils
         None,
         Tutorial,
         StreetLevel,
+        StoryCards,
+        TitleCards,
         GameOver
     }
 }

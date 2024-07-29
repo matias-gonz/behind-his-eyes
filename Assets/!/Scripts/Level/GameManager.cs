@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 using Scene = utils.Scene;
 
 
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public bool godMode = false;
-    
-    private int _shotsFired = 0;
+
     private Checkpoint? _checkpoint = null;
-    
+    private string _nextScene;
+
     private void Awake()
     {
         if (!Instance)
@@ -26,15 +25,16 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-    private IEnumerator RestartGame()
+
+    private IEnumerator LoadScene()
     {
-        AsyncOperation op = SceneManager.LoadSceneAsync("StreetLevel");
+        AsyncOperation op = SceneManager.LoadSceneAsync(_nextScene);
         while (!op.isDone)
         {
             yield return null;
         }
-        if (_checkpoint != null)
+
+        if (_checkpoint != null && _nextScene == "StreetLevel")
         {
             GameObject player = GameObject.FindWithTag("Player");
             player.transform.position = _checkpoint.Value.position;
@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
             SmokingSoldier s = initialSoldier.GetComponent<SmokingSoldier>();
             s.SkipExecutionAnimation();
         }
+
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -54,25 +55,29 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void LoadScene(Scene nextScene)
+    public void LoadScene(Scene scene)
     {
-        if (nextScene == Scene.StreetLevel)
+        switch (scene)
         {
-            StartCoroutine(nameof(RestartGame));
+            case Scene.StreetLevel:
+                _nextScene = "StreetLevel";
+                break;
+            case Scene.Tutorial:
+                _nextScene = "TutorialReal";
+                break;
+            case Scene.StoryCards:
+                _nextScene = "StoryCards";
+                break;
+            case Scene.TitleCards:
+                _nextScene = "TitleCards";
+                break;
         }
-        else
-        {
-            SceneManager.LoadScene(nextScene.ToString());
-        }
+
+        StartCoroutine(nameof(LoadScene));
     }
 
     public void SetCheckpoint(Checkpoint checkpoint)
     {
         _checkpoint = checkpoint;
-    }
-    
-    public void AddShot()
-    {
-        _shotsFired++;
     }
 }
