@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
+[System.Serializable]
+public enum TimeLine
+{
+    CrawlDialogue,
+    FriendlyDialogue
+}
+
 public class TimeLinesDirector : MonoBehaviour
 {
-    [SerializeField]
-    private PlayableDirector crawlTLDirector;
+    [SerializeField] private PlayableDirector crawlTLDirector;
 
-    [SerializeField]
-    private PlayableDirector friendlyTLDirector;
+    [SerializeField] private PlayableDirector friendlyTLDirector;
 
-    void Start() { }
-
-    public void PlayCrawlDialogeTimeLine()
+    public void PlayTimeLine(TimeLine timeLine)
     {
-        crawlTLDirector.Play();
-    }
-
-    public void PlayFriendlyDialogeTimeLine()
-    {
-        friendlyTLDirector.Play();
+        switch (timeLine)
+        {
+            case TimeLine.CrawlDialogue:
+                crawlTLDirector.Play();
+                break;
+            case TimeLine.FriendlyDialogue:
+                friendlyTLDirector.Play();
+                break;
+        }
     }
 }
