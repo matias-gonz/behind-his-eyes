@@ -842,7 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Data:
     m_Root: {fileID: 3413280838206544956}
     m_Mid: {fileID: 8763315732407281017}
@@ -2041,7 +2041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Data:
     m_Root: {fileID: 3667086526916163485}
     m_Mid: {fileID: 1577292552113469217}
@@ -2848,6 +2848,7 @@ GameObject:
   - component: {fileID: 5108292403348466203}
   - component: {fileID: 182243147545704712}
   - component: {fileID: 4382633154614047121}
+  - component: {fileID: 8372330464980576694}
   m_Layer: 0
   m_Name: StaticGuard
   m_TagString: Untagged
@@ -3128,6 +3129,18 @@ MonoBehaviour:
   k98CycleAudio:
   - id: k98cycle
     clip: {fileID: 8300000, guid: 3d43d654cabcc80e386f62a4d5cf1775, type: 3}
+--- !u!114 &8372330464980576694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8092045628778312308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218bdc700ea9835548f1f3acf794c053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8109166065512333618
 GameObject:
   m_ObjectHideFlags: 0
