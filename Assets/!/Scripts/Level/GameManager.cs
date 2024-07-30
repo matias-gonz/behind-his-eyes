@@ -71,6 +71,9 @@ public class GameManager : MonoBehaviour
             case Scene.TitleCards:
                 _nextScene = "TitleCards";
                 break;
+            case Scene.End:
+                _nextScene = "End";
+                break;
         }
 
         StartCoroutine(nameof(LoadScene));
