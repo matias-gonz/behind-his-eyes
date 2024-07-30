@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private string _nextScene;
     private CursorLockMode _cursorLockMode;
 
+    public bool targetHit = false;
+    
     private void Awake()
     {
         if (!Instance)
@@ -95,5 +97,10 @@ public class GameManager : MonoBehaviour
     public void SetCheckpoint(Checkpoint checkpoint)
     {
         _checkpoint = checkpoint;
+    }
+    
+    public void TargetHit()
+    {
+        targetHit = true;
     }
 }
