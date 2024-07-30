@@ -9470,6 +9470,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf334425baf24fca9ba010eb539e438, type: 3}
+--- !u!114 &760650160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3073100620819431289, guid: 1bf334425baf24fca9ba010eb539e438, type: 3}
+  m_PrefabInstance: {fileID: 760650159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537d7a98773204272a6a3c0520ceadd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &762987861
 GameObject:
   m_ObjectHideFlags: 0
@@ -11057,6 +11068,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 23cbb09fbaf5c5173a2e0560884da677, type: 2}
     - {fileID: 11400000, guid: daf4d9bc7e1369dfd98b53b5247fff1a, type: 2}
     - {fileID: 11400000, guid: add6ec8b46083acad8eb724bd4a6b3c9, type: 2}
+    - {fileID: 11400000, guid: 608fa049cf72255f7b1727b2c14dfcf1, type: 2}
+    - {fileID: 11400000, guid: 0cf4469ce7493df748eee60d627aad11, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls: []
@@ -11170,6 +11183,34 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 760650160}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: EndFinished
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 625293799}
+          m_TargetAssemblyTypeName: VoiceLinesManager, Assembly-CSharp
+          m_MethodName: PlayNextLine
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27299,19 +27340,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99693745
+      value: 0.9969374
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07820306
+      value: 0.078203745
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.00000013676055
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.0000000107280425
       objectReference: {fileID: 0}
     - target: {fileID: 4722289592178299376, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27371,7 +27412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4783161151461561615, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11436515
+      value: 0.11436522
       objectReference: {fileID: 0}
     - target: {fileID: 4783161151461561615, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.y
