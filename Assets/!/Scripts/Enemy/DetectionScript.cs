@@ -112,6 +112,8 @@ public class DetectionScript : MonoBehaviour
     
     private void OnDrawGizmos()
     {
+        if(!target) return;
+        
         float distance = Vector3.Distance(transform.position, target.transform.position);
         float viewDistance = _playerController.GetViewDistance(maxViewDistance);
         float soundRange = _playerController.GetNoiseDistance(maxSoundRange);
