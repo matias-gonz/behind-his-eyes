@@ -24,4 +24,10 @@ public class Menu : MonoBehaviour
         _self.interactable = false;
         GameManager.Instance.LoadScene(Scene.TitleCards);
     }
+    
+    public void GoToMainMenu()
+    {
+        _self.interactable = false;
+        GameManager.Instance.LoadScene(Scene.MainMenu);
+    }
 }
