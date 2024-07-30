@@ -40,7 +40,6 @@ public class TutorialShoot : MonoBehaviour
 
         while (elapsedTime < delay)
         {
-            Debug.Log("Waiting for " + (delay - elapsedTime) + " seconds");
             elapsedTime += Time.deltaTime; 
             yield return null;
         }

@@ -73,7 +73,6 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
     public void RifleFire()
     {
-        Debug.Log("RifleFire");
         if (_animator.GetBool(_RifleAimHash))
         {
             _animator.SetBool(_RifleFireHash, true);
