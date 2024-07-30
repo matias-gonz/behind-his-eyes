@@ -7,7 +7,8 @@ using UnityEngine.Playables;
 public enum TimeLine
 {
     CrawlDialogue,
-    FriendlyDialogue
+    FriendlyDialogue,
+    GunRangeEnding
 }
 
 public class TimeLinesDirector : MonoBehaviour
@@ -15,6 +16,8 @@ public class TimeLinesDirector : MonoBehaviour
     [SerializeField] private PlayableDirector crawlTLDirector;
 
     [SerializeField] private PlayableDirector friendlyTLDirector;
+
+    [SerializeField] private PlayableDirector GunRangeEndingTLDirector;
 
     public void PlayTimeLine(TimeLine timeLine)
     {
@@ -26,6 +29,9 @@ public class TimeLinesDirector : MonoBehaviour
             case TimeLine.FriendlyDialogue:
                 friendlyTLDirector.Play();
                 break;
+            case TimeLine.GunRangeEnding:
+                GunRangeEndingTLDirector.Play();
+                break;                
         }
     }
 }
