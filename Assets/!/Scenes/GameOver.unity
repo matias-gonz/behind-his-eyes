@@ -475,6 +475,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2729674660171503072, guid: 69da171010052470a8a6a96867d7c559, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4733234335328316098, guid: 69da171010052470a8a6a96867d7c559, type: 3}
       propertyPath: restartButton
       value: 
@@ -558,6 +562,10 @@ PrefabInstance:
     - target: {fileID: 4904877477149468209, guid: 69da171010052470a8a6a96867d7c559, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987739731485622123, guid: 69da171010052470a8a6a96867d7c559, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8423398459429745542, guid: 69da171010052470a8a6a96867d7c559, type: 3}
       propertyPath: m_UiScaleMode
