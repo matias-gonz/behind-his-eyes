@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public ThirdPersonMovement thirdPersonMovement;
     public TwoDimensionalAnimationStateController animationController;
     public CameraControl _cameraControl;
+    public ShootTargetDetection shootTargetDetection;
     private PlayerInput _input;
 
     //detection parameters
@@ -190,6 +191,7 @@ public class PlayerController : MonoBehaviour
         thirdPersonMovement.RifleAim(mouse.x, mouse.y);
         if (_rifleFireClicked)
         {
+            shootTargetDetection.DetectHit();
             animationController.RifleFire();
         }
     }

@@ -1734,6 +1734,7 @@ GameObject:
   - component: {fileID: 7038103100538441920}
   - component: {fileID: 3852417935818244108}
   - component: {fileID: 289354030568776481}
+  - component: {fileID: 230993347705345152}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -2061,7 +2062,6 @@ MonoBehaviour:
   k98CycleAudio:
   - id: k98cycle
     clip: {fileID: 8300000, guid: 3d43d654cabcc80e386f62a4d5cf1775, type: 3}
-  voiceLines: []
 --- !u!114 &7038103100538441920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2077,6 +2077,7 @@ MonoBehaviour:
   thirdPersonMovement: {fileID: 3240364155029121252}
   animationController: {fileID: 327623586495336380}
   _cameraControl: {fileID: 3852417935818244108}
+  shootTargetDetection: {fileID: 230993347705345152}
   goIntoProneTime: 0.8
   standingViewFactor: 1
   crouchingViewFactor: 0.8
@@ -2115,6 +2116,19 @@ MonoBehaviour:
   - m_Rig: {fileID: 2794179769708609263}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &230993347705345152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514849483161549247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ecd5ab64662a44bf803b5da42912092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
 --- !u!1 &4899586341017006717
 GameObject:
   m_ObjectHideFlags: 0
