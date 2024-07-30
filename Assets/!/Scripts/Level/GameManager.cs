@@ -81,6 +81,10 @@ public class GameManager : MonoBehaviour
                 _nextScene = "TitleCards";
                 _cursorLockMode = CursorLockMode.Locked;
                 break;
+            case Scene.EndCards:
+                _nextScene = "EndCards";
+                _cursorLockMode = CursorLockMode.Locked;
+                break;
             case Scene.End:
                 _nextScene = "End";
                 _cursorLockMode = CursorLockMode.Locked;
