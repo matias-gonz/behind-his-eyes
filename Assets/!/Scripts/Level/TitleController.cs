@@ -59,4 +59,10 @@ public class TitleController : MonoBehaviour
             ShowTitle("walk");
         }
     }
+    
+    public string GetActiveTitle()
+    {
+        Title currentTitle = Array.Find(titles, t => t.title.activeSelf);
+        return currentTitle.id;
+    }
 }

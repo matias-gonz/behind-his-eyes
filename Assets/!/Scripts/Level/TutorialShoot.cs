@@ -17,8 +17,11 @@ public class TutorialShoot : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         playerController.InAimZone(true);
-        titleController.ShowTitle("aim");
         postProcessingController.swapActiveVolume();
+        
+        if (titleController.GetActiveTitle() == "shoot") return;
+        
+        titleController.ShowTitle("aim");
         
         if (_alreadyTriggered) return;
         
@@ -30,8 +33,11 @@ public class TutorialShoot : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         playerController.InAimZone(false);
-        titleController.ShowTitle("move-to-shooting-range");
         postProcessingController.swapActiveVolume();
+
+        if (titleController.GetActiveTitle() == "shoot") return;
+        
+        titleController.ShowTitle("move-to-shooting-range");
     }
 
     IEnumerator LoadNextScene()

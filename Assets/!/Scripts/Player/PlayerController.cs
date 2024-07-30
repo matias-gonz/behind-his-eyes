@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public TwoDimensionalAnimationStateController animationController;
     public CameraControl _cameraControl;
     public ShootTargetDetection shootTargetDetection;
+    public TitleController titleController;
+    public VoiceLinesManager voiceLinesManager;
     private PlayerInput _input;
 
     //detection parameters
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour
             _rifleFireClicked = false;
             return;
         }
+
         bool isAirBorne = AirBorne();
         // block playerinput if animation is currently being played
         if (animationController.CheckAnimationEventPlaying())
@@ -128,6 +131,7 @@ public class PlayerController : MonoBehaviour
         {
             viewFactor = proneViewFactor;
         }
+
         return viewFactor * maximumViewDistance;
     }
 
@@ -138,6 +142,7 @@ public class PlayerController : MonoBehaviour
         {
             return jumpingSoundFactor * maximumNoiseDistance;
         }
+
         if (animationController.IsStanding())
         {
             soundFactor = standingSoundFactor;
@@ -150,6 +155,7 @@ public class PlayerController : MonoBehaviour
         {
             soundFactor = proneSoundFactor;
         }
+
         return soundFactor * thirdPersonMovement.SpeedNoiseFactor() * maximumNoiseDistance;
     }
 
@@ -171,13 +177,19 @@ public class PlayerController : MonoBehaviour
     {
         if (!_rifleAimClicked)
             return;
+
         if (!isStanding)
         {
             animationController.StandUp();
         }
+
         _aimMode = true;
         thirdPersonMovement.AimModeTransform();
         animationController.RifleAim();
+
+        if (titleController) titleController.ShowTitle("shoot");
+        
+        if (voiceLinesManager) voiceLinesManager.PlayNextLine();
     }
 
     public void DisableUpdateMethod()
@@ -217,6 +229,7 @@ public class PlayerController : MonoBehaviour
             {
                 _pronePressed = true;
             }
+
             _crouchedProneTimer = newTimer;
         }
     }
