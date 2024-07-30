@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour
         LoadScene(Scene.GameOver);
     }
 
+    public void EndFinished()
+    {
+        LoadScene(Scene.EndCards);
+    }
+
     public void LoadScene(Scene scene)
     {
         switch (scene)
