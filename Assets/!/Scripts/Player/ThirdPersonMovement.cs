@@ -75,9 +75,10 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public void EndingSceneAimMode()
     {
-        Debug.Log("EndingSceneAimMode");
+        _rigidbody.isKinematic = false;
         transform.position = new Vector3(24f, 5.3f, 82.5f);
         transform.rotation =  Quaternion.Euler(0f, 270f, 0f);
+        _rigidbody.isKinematic = true;
     }
 
     public void RifleAim(float mouseX, float mouseY)

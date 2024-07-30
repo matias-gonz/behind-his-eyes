@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     // Rifle Aim Down Sights parameters
     public bool _aimMode = false;
+    private bool _ignoreAll = false;
     private bool _inAimZone = false;
 
     void Awake()
@@ -72,6 +73,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_ignoreAll) return;
         if (_aimMode)
         {
             RifleAction();
@@ -175,6 +177,11 @@ public class PlayerController : MonoBehaviour
         _aimMode = true;
         thirdPersonMovement.AimModeTransform();
         animationController.RifleAim();
+    }
+
+    public void DisableUpdateMethod()
+    {
+        _ignoreAll = true;
     }
 
     private void RifleAction()
