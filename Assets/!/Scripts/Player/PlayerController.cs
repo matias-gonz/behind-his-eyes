@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
         _inAimZone = isInAimZone;
     }
 
-    private void GoAimMode(bool isStanding)
+    public void GoAimMode(bool isStanding)
     {
         if (!_rifleAimClicked)
             return;
