@@ -8,6 +8,7 @@ namespace utils
         StreetLevel,
         StoryCards,
         TitleCards,
+        End,
         GameOver
     }
 }
