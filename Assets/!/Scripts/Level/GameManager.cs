@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
 
     private Checkpoint? _checkpoint = null;
     private string _nextScene;
+    private CursorLockMode _cursorLockMode;
 
+    public bool targetHit = false;
+    
     private void Awake()
     {
         if (!Instance)
@@ -44,32 +47,47 @@ public class GameManager : MonoBehaviour
             s.SkipExecutionAnimation();
         }
 
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = _cursorLockMode;
     }
 
     public void GameOver()
     {
         if (godMode) return;
 
-        SceneManager.LoadScene("GameOver");
-        Cursor.lockState = CursorLockMode.None;
+        LoadScene(Scene.GameOver);
     }
 
     public void LoadScene(Scene scene)
     {
         switch (scene)
         {
+            case Scene.MainMenu:
+                _nextScene = "MainMenu";
+                _cursorLockMode = CursorLockMode.None;
+                break;
             case Scene.StreetLevel:
                 _nextScene = "StreetLevel";
+                _cursorLockMode = CursorLockMode.Locked;
                 break;
             case Scene.Tutorial:
-                _nextScene = "TutorialReal";
+                _nextScene = "Tutorial";
+                _cursorLockMode = CursorLockMode.Locked;
                 break;
             case Scene.StoryCards:
                 _nextScene = "StoryCards";
+                _cursorLockMode = CursorLockMode.Locked;
                 break;
             case Scene.TitleCards:
                 _nextScene = "TitleCards";
+                _cursorLockMode = CursorLockMode.Locked;
+                break;
+            case Scene.End:
+                _nextScene = "End";
+                _cursorLockMode = CursorLockMode.Locked;
+                break;
+            case Scene.GameOver:
+                _nextScene = "GameOver";
+                _cursorLockMode = CursorLockMode.None;
                 break;
         }
 
@@ -79,5 +97,10 @@ public class GameManager : MonoBehaviour
     public void SetCheckpoint(Checkpoint checkpoint)
     {
         _checkpoint = checkpoint;
+    }
+    
+    public void TargetHit()
+    {
+        targetHit = true;
     }
 }

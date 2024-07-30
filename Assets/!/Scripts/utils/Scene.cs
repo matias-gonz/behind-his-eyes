@@ -4,10 +4,12 @@ namespace utils
     public enum Scene
     {
         None,
+        MainMenu,
         Tutorial,
         StreetLevel,
         StoryCards,
         TitleCards,
+        End,
         GameOver
     }
 }
