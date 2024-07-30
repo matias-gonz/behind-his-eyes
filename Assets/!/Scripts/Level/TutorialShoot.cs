@@ -10,6 +10,7 @@ public class TutorialShoot : MonoBehaviour
     public PlayerController playerController;
     public TitleController titleController;
     public VoiceLinesManager voiceLinesManager;
+    public PostProcessingController postProcessingController;
     private bool _alreadyTriggered = false;
     
 
@@ -17,6 +18,7 @@ public class TutorialShoot : MonoBehaviour
     {
         playerController.InAimZone(true);
         titleController.ShowTitle("aim");
+        postProcessingController.swapActiveVolume();
         
         if (_alreadyTriggered) return;
         
@@ -29,6 +31,7 @@ public class TutorialShoot : MonoBehaviour
     {
         playerController.InAimZone(false);
         titleController.ShowTitle("move-to-shooting-range");
+        postProcessingController.swapActiveVolume();
     }
 
     IEnumerator LoadNextScene()

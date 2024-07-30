@@ -23,6 +23,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     // Rifle Aim Down Sights parameters
     public bool _aimMode = false;
+    private bool _endingMode = false;
     private float _currentAngleX = 270f;
     private const float _offSetAxis = 15f;
     private float _offSetXLeft;
@@ -45,7 +46,7 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (_aimMode)
+        if (_aimMode || _endingMode)
             return;
         bool isJumping = _animationController.IsJumping();
         MoveXZandTurn(isJumping);
@@ -65,12 +66,21 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public void AimModeTransform()
     {
-        _rigidbody.isKinematic = false;
         _aimMode = true;
+        _rigidbody.isKinematic = false;
         _rigidbody.MovePosition(new Vector3(24f, 5.3f, 82.5f));
         _rigidbody.isKinematic = true;
         // _rigidbody.AddForce(new Vector3(0f, 0f, 0f));
         // _rigidbody.velocity = Vector3.zero;
+    }
+
+    public void EndingSceneAimMode()
+    {
+        _endingMode = true;
+        _rigidbody.isKinematic = false;
+        transform.position = new Vector3(24f, 5.3f, 82.5f);
+        transform.rotation =  Quaternion.Euler(0f, 270f, 0f);
+        _rigidbody.isKinematic = true;
     }
 
     public void RifleAim(float mouseX, float mouseY)
