@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour
         LoadScene(Scene.GameOver);
     }
 
+   public void StreetFinished()
+    {
+        LoadScene(Scene.End);
+    }
+
     public void EndFinished()
     {
         LoadScene(Scene.EndCards);
