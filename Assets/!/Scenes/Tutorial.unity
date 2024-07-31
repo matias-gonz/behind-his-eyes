@@ -2503,6 +2503,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8890281547749571159, guid: edaab936ea2d28a01824c98778f22c9a, type: 3}
+      propertyPath: alternativeAnimation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9159294029070786965, guid: edaab936ea2d28a01824c98778f22c9a, type: 3}
       propertyPath: m_Name
       value: StaticGuardMP40PanzerfaustCamoHelmetVariant Variant
@@ -9765,6 +9769,10 @@ PrefabInstance:
     - target: {fileID: 7008712471312148430, guid: a659cd8197914831fbe55dafe51ec590, type: 3}
       propertyPath: m_Name
       value: StaticGuardStgHelmetCamoVariant Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295607408756620300, guid: a659cd8197914831fbe55dafe51ec590, type: 3}
+      propertyPath: alternativeAnimation
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18005,6 +18013,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4280508661691235339, guid: bf3832a1dbe814a2a8d6a240accd75e1, type: 3}
+      propertyPath: isSmoking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7655928310939433106, guid: bf3832a1dbe814a2a8d6a240accd75e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.233279
@@ -23428,6 +23440,14 @@ PrefabInstance:
     - target: {fileID: 5468776641603130341, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885774710568266340, guid: a3193ab702407b5798c0790ceead238d, type: 3}
+      propertyPath: isSmoking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885774710568266340, guid: a3193ab702407b5798c0790ceead238d, type: 3}
+      propertyPath: alternativeAnimation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7256761677883780861, guid: a3193ab702407b5798c0790ceead238d, type: 3}
       propertyPath: m_LocalPosition.x
