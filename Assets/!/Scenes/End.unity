@@ -9470,17 +9470,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf334425baf24fca9ba010eb539e438, type: 3}
---- !u!114 &760650160 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3073100620819431289, guid: 1bf334425baf24fca9ba010eb539e438, type: 3}
-  m_PrefabInstance: {fileID: 760650159}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537d7a98773204272a6a3c0520ceadd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &762987861
 GameObject:
   m_ObjectHideFlags: 0
@@ -10990,6 +10979,7 @@ GameObject:
   - component: {fileID: 883574966}
   - component: {fileID: 883574967}
   - component: {fileID: 883574968}
+  - component: {fileID: 883574969}
   m_Layer: 0
   m_Name: GunRangeTimeline
   m_TagString: Untagged
@@ -11193,8 +11183,8 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 760650160}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        - m_Target: {fileID: 883574969}
+          m_TargetAssemblyTypeName: CallGameManagerTL, Assembly-CSharp
           m_MethodName: EndFinished
           m_Mode: 1
           m_Arguments:
@@ -11234,6 +11224,20 @@ MonoBehaviour:
   crawlTLDirector: {fileID: 0}
   friendlyTLDirector: {fileID: 0}
   GunRangeEndingTLDirector: {fileID: 883574966}
+  StreetCompleteTLDirector: {fileID: 0}
+  prisonersTLDirector: {fileID: 0}
+--- !u!114 &883574969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883574964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec35b5d2d97e7e8f6bd9c41188e442f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &884893905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27340,19 +27344,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9969374
+      value: 0.99693745
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.078203745
+      value: 0.07820306
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000013676055
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000107280425
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4722289592178299376, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27412,7 +27416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4783161151461561615, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11436522
+      value: 0.11436515
       objectReference: {fileID: 0}
     - target: {fileID: 4783161151461561615, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.y
