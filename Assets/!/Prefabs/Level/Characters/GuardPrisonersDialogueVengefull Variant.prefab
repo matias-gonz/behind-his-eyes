@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5825752589331233915
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.0430007
+      objectReference: {fileID: 0}
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.5699573
+      objectReference: {fileID: 0}
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9897659
+      objectReference: {fileID: 0}
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.1427013
+      objectReference: {fileID: 0}
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -73.592
+      objectReference: {fileID: 0}
+    - target: {fileID: 403605926443461511, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384398442008447678, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_Name
+      value: GuardPrisonersDialogueVengefull Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557600774525692548, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557600774525692548, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.035865307
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3384398442008447678, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6027744371471159024}
+  m_SourcePrefab: {fileID: 100100000, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+--- !u!114 &7792715027667340052 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4394512794944517999, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+  m_PrefabInstance: {fileID: 5825752589331233915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9092476751777035973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49755e5ea6c174e1990c21517adce006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &9092476751777035973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3384398442008447678, guid: 7618abc166d137e75bbceb4f96bdc454, type: 3}
+  m_PrefabInstance: {fileID: 5825752589331233915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6027744371471159024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9092476751777035973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758339b66950d4de8a12911f70aa95d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAudio: {fileID: 7792715027667340052}
+  voiceLines:
+  - duration: 5
+    clip:
+      id: prisoners1
+      clip: {fileID: 8300000, guid: 50a23d550b990e83095be0fc2284d857, type: 3}
+    subtitle: 'We really did take a lot of prisoners. Two dozen, in total probably
+      even more. '
+  - duration: 4.5
+    clip:
+      id: prisoners3
+      clip: {fileID: 8300000, guid: 96d694f894340a594913711f7db8c661, type: 3}
+    subtitle: 'We have executed a few in front of the town hall as an example. We''ll
+      lock the rest up. '
+  - duration: 2
+    clip:
+      id: prisoners5
+      clip: {fileID: 8300000, guid: 0f8ec49f1977db5839d9a5917167d87f, type: 3}
+    subtitle: 'And shoot them later. '
+  - duration: 5
+    clip:
+      id: prisoners6
+      clip: {fileID: 8300000, guid: e7b08196338f7770b8b4c0ac3d1ada65, type: 3}
+    subtitle: These Bolshevists and traitors will get what they deserve. They have
+      betrayed Germany.
+  subtitles: {fileID: 0}

@@ -9,7 +9,8 @@ public enum TimeLine
     CrawlDialogue,
     FriendlyDialogue,
     GunRangeEnding,
-    StreetComplete
+    StreetComplete,
+    PrisonersDialoge
 }
 
 public class TimeLinesDirector : MonoBehaviour
@@ -22,7 +23,7 @@ public class TimeLinesDirector : MonoBehaviour
 
     [SerializeField] private PlayableDirector StreetCompleteTLDirector;
 
-    
+    [SerializeField] private PlayableDirector prisonersTLDirector;
 
     public void PlayTimeLine(TimeLine timeLine)
     {
@@ -36,10 +37,13 @@ public class TimeLinesDirector : MonoBehaviour
                 break;
             case TimeLine.GunRangeEnding:
                 GunRangeEndingTLDirector.Play();
-                break;   
+                break;
             case TimeLine.StreetComplete:
                 StreetCompleteTLDirector.Play();
-                break;                                
+                break;
+            case TimeLine.PrisonersDialoge:
+                prisonersTLDirector.Play();
+                break;
         }
     }
 }
