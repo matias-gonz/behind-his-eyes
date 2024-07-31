@@ -1,32 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8742164632348594925
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
-  m_Name: Markers
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects:
-    - {fileID: -2679927497830057622}
-    - {fileID: 620405277674712434}
-    - {fileID: 8307724751022076339}
---- !u!114 &-6294976569863424369
+--- !u!114 &-8179581470646781372
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,14 +24,14 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: -1920417002443342452}
-    m_Duration: 3.2499999999999996
+    m_Asset: {fileID: 4576521188153734240}
+    m_Duration: 1.7333333333333334
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -6294976569863424369}
+    m_ParentTrack: {fileID: -8179581470646781372}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 0.6833333333333327
+    m_BlendOutDuration: 1.0333333333333334
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -115,17 +89,17 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: FadeToBlack
+    m_DisplayName: ThirdPersonCamera
   - m_Version: 1
-    m_Start: 2.566666666666667
+    m_Start: 0.7
     m_ClipIn: 0
-    m_Asset: {fileID: 2491700219208328004}
-    m_Duration: 2.016666666666666
+    m_Asset: {fileID: -974348766153501328}
+    m_Duration: 1.3166666666666669
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -6294976569863424369}
+    m_ParentTrack: {fileID: -8179581470646781372}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.6833333333333327
+    m_BlendInDuration: 1.0333333333333334
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -166,10 +140,10 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: ThirdPersonCamera
+    m_DisplayName: FadeToBlack
   m_Markers:
     m_Objects: []
---- !u!114 &-2679927497830057622
+--- !u!114 &-4906874248530540499
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,14 +152,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
-  m_Name: Signal Emitter
+  m_Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
+  m_Name: Markers
   m_EditorClassIdentifier: 
-  m_Time: 0.18333333333333332
-  m_Retroactive: 0
-  m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: cfdbb9900a1d0656dadec32997a94757, type: 2}
---- !u!114 &-1920417002443342452
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: 4963525864624485825}
+--- !u!114 &-974348766153501328
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: 
   VirtualCamera:
-    exposedName: ac96f4b06f27a9ee8b73f044db160f35
+    exposedName: d97f7bc530d9a0994a23a5d4b9d86078
     defaultValue: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -211,34 +193,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: IntroStreetTimeline
+  m_Name: StreetCompleteTimeLine
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:
-  - {fileID: -6294976569863424369}
+  - {fileID: -8179581470646781372}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
   m_DurationMode: 0
-  m_MarkerTrack: {fileID: -8742164632348594925}
---- !u!114 &620405277674712434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
-  m_Name: Signal Emitter
-  m_EditorClassIdentifier: 
-  m_Time: 0.03333333333333333
-  m_Retroactive: 0
-  m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: 581da5c51fb9ec726b983a10d09abb66, type: 2}
---- !u!114 &2491700219208328004
+  m_MarkerTrack: {fileID: -4906874248530540499}
+--- !u!114 &4576521188153734240
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,9 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: 
   VirtualCamera:
-    exposedName: 0335183247891be1daede332ebea313f
+    exposedName: 8f38326011190f14eb8c3cac4f081964
     defaultValue: {fileID: 0}
---- !u!114 &8307724751022076339
+--- !u!114 &4963525864624485825
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 2.566666666666667
+  m_Time: 1.9166666666666667
   m_Retroactive: 0
   m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: f37c3d97725cfb1f3acd1d561209e7c8, type: 2}
+  m_Asset: {fileID: 11400000, guid: 121e8f69ee7d8803b984de487ca00ea4, type: 2}
