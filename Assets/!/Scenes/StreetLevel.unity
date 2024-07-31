@@ -9136,6 +9136,7 @@ GameObject:
   - component: {fileID: 512205187}
   - component: {fileID: 512205188}
   - component: {fileID: 512205189}
+  - component: {fileID: 512205190}
   m_Layer: 0
   m_Name: StreetCompleteTimeLine
   m_TagString: Untagged
@@ -9197,8 +9198,8 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1865638541}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        - m_Target: {fileID: 512205190}
+          m_TargetAssemblyTypeName: CallGameManagerTL, Assembly-CSharp
           m_MethodName: StreetFinished
           m_Mode: 1
           m_Arguments:
@@ -9208,7 +9209,19 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
+          m_CallState: 1
+--- !u!114 &512205190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512205186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec35b5d2d97e7e8f6bd9c41188e442f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &522072156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36912,17 +36925,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf334425baf24fca9ba010eb539e438, type: 3}
---- !u!114 &1865638541 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3073100620819431289, guid: 1bf334425baf24fca9ba010eb539e438, type: 3}
-  m_PrefabInstance: {fileID: 1865638540}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537d7a98773204272a6a3c0520ceadd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1868978191
 PrefabInstance:
   m_ObjectHideFlags: 0
