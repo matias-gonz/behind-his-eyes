@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
     
     public void TargetHit()
     {
+        Debug.Log("TargetHit");
         targetHit = true;
     }
 }

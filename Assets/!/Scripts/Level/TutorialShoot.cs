@@ -11,6 +11,7 @@ public class TutorialShoot : MonoBehaviour
     public TitleController titleController;
     public VoiceLinesManager voiceLinesManager;
     public PostProcessingController postProcessingController;
+    public TimeLinesDirector timeLinesDirector;
     private bool _alreadyTriggered = false;
     
 
@@ -49,7 +50,6 @@ public class TutorialShoot : MonoBehaviour
             elapsedTime += Time.deltaTime; 
             yield return null;
         }
-
-        GameManager.Instance.LoadScene(Scene.StoryCards);
+        timeLinesDirector.PlayTimeLine(TimeLine.TutorialOutro);
     }
 }

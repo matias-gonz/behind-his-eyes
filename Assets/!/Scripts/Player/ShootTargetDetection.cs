@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using utils;
 
 public class ShootTargetDetection : MonoBehaviour
 {
+    public TimeLinesDirector timeLinesDirector;
     public GameObject camera;
     public GameManager gameManager;
     private LayerMask _layerMask;
@@ -21,8 +23,10 @@ public class ShootTargetDetection : MonoBehaviour
         Vector3 rayDirection = camera.transform.forward;
         if (Physics.Raycast(rayStart, rayDirection, out _, 100, _layerMask))
         {
-            Debug.Log("Hit!!!");
+            Debug.Log("Hit1!!!");
             gameManager.TargetHit();
+            timeLinesDirector.PlayTimeLine(TimeLine.TutorialOutro);
+            Debug.Log("Hit2!!!");
         }
     }
 }
