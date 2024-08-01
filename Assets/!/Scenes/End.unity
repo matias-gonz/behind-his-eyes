@@ -122,6 +122,39 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &716382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 716383}
+  m_Layer: 3
+  m_Name: FiringSquad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &716383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 316721893}
+  - {fileID: 1756893329}
+  m_Father: {fileID: 1021902292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2476793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5016659395564817578, guid: f9e3a21a08d41504894b8815b3753b94, type: 3}
@@ -3748,6 +3781,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315679654}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &316721892
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 716383}
+    m_Modifications:
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.8352757
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8599999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 57.684254
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.6591622
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.75200075
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 262.472
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175863058101124616, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+      propertyPath: m_Name
+      value: FiringSquad1 Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+--- !u!4 &316721893 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1341382554827104049, guid: 21377957f9c604457a5eacaaef734162, type: 3}
+  m_PrefabInstance: {fileID: 316721892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &323552733
 GameObject:
   m_ObjectHideFlags: 0
@@ -11229,6 +11324,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 716382}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 883574969}
@@ -13380,6 +13487,7 @@ Transform:
   - {fileID: 106316158}
   - {fileID: 1816545491}
   - {fileID: 530844051}
+  - {fileID: 716383}
   m_Father: {fileID: 536964249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1044789654
@@ -21939,6 +22047,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752085222}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1756893328
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 716383}
+    m_Modifications:
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.835
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 60.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179331131601790579, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+      propertyPath: m_Name
+      value: FiringSquad2 Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+--- !u!4 &1756893329 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1338095228886714186, guid: 77825425143963ea8bc15ab16156f0f7, type: 3}
+  m_PrefabInstance: {fileID: 1756893328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1762373627
 PrefabInstance:
   m_ObjectHideFlags: 0
