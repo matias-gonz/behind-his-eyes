@@ -11,22 +11,36 @@ public enum TimeLine
     GunRangeEnding,
     StreetComplete,
     PrisonersDialoge,
-    TutorialOutro
+    TutorialOutro,
+    PlayerShot,
+    PlayerNoShot
 }
 
 public class TimeLinesDirector : MonoBehaviour
 {
-    [SerializeField] private PlayableDirector crawlTLDirector;
+    [SerializeField]
+    private PlayableDirector crawlTLDirector;
 
-    [SerializeField] private PlayableDirector friendlyTLDirector;
+    [SerializeField]
+    private PlayableDirector friendlyTLDirector;
 
-    [SerializeField] private PlayableDirector GunRangeEndingTLDirector;
+    [SerializeField]
+    private PlayableDirector GunRangeEndingTLDirector;
 
-    [SerializeField] private PlayableDirector StreetCompleteTLDirector;
+    [SerializeField]
+    private PlayableDirector StreetCompleteTLDirector;
 
-    [SerializeField] private PlayableDirector prisonersTLDirector;
+    [SerializeField]
+    private PlayableDirector prisonersTLDirector;
 
-    [SerializeField] private PlayableDirector tutorialOutroTLDirector;
+    [SerializeField]
+    private PlayableDirector tutorialOutroTLDirector;
+
+    [SerializeField]
+    private PlayableDirector PlayerShotTLDirector;
+
+    [SerializeField]
+    private PlayableDirector PlayerNoShotTLDirector;
 
     public void PlayTimeLine(TimeLine timeLine)
     {
@@ -51,6 +65,26 @@ public class TimeLinesDirector : MonoBehaviour
             case TimeLine.TutorialOutro:
                 tutorialOutroTLDirector.Play();
                 break;
+            case TimeLine.PlayerShot:
+                PlayerShotTLDirector.Play();
+                break;
+            case TimeLine.PlayerNoShot:
+                PlayerNoShotTLDirector.Play();
+                break;
         }
+    }
+
+    public void PlayerShot()
+    {
+        TimeLine playerShotTL;
+        if (GameManager.Instance.targetHit)
+        {
+            playerShotTL = TimeLine.PlayerShot;
+        }
+        else
+        {
+            playerShotTL = TimeLine.PlayerNoShot;
+        }
+        PlayTimeLine(playerShotTL);
     }
 }
