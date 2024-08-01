@@ -7,7 +7,7 @@ public class CallGameManagerTL : MonoBehaviour
 {
     public void TutorialFinished()
     {
-        GameManager.Instance.LoadScene(Scene.StreetLevel);
+        GameManager.Instance.LoadScene(Scene.StoryCards);
     }
 
     public void StreetFinished()
