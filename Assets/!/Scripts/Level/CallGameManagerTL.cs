@@ -5,6 +5,11 @@ using Scene = utils.Scene;
 
 public class CallGameManagerTL : MonoBehaviour
 {
+    public void TutorialFinished()
+    {
+        GameManager.Instance.LoadScene(Scene.StreetLevel);
+    }
+
     public void StreetFinished()
     {
         GameManager.Instance.LoadScene(Scene.End);

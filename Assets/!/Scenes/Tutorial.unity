@@ -1030,6 +1030,8 @@ GameObject:
   m_Component:
   - component: {fileID: 114777136}
   - component: {fileID: 114777137}
+  - component: {fileID: 114777139}
+  - component: {fileID: 114777138}
   m_Layer: 0
   m_Name: OutroTimeline
   m_TagString: Untagged
@@ -1073,6 +1075,48 @@ PlayableDirector:
     m_References:
     - 641a088a1e7588eba959b36a6f9dd03f: {fileID: 1260947091}
     - 04cda2e5b3fb1e2a8b97c08d629c3554: {fileID: 1716652101087553477}
+--- !u!114 &114777138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114777135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: af6f75e8199e088cba623f4aef1c7e4b, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114777139}
+          m_TargetAssemblyTypeName: CallGameManagerTL, Assembly-CSharp
+          m_MethodName: TutorialFinished
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &114777139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114777135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec35b5d2d97e7e8f6bd9c41188e442f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &118370695
 GameObject:
   m_ObjectHideFlags: 0
@@ -26978,7 +27022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0068157967
+      value: -0.006815818
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.y
@@ -26986,7 +27030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592590287695630579, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07790508
+      value: -0.07790532
       objectReference: {fileID: 0}
     - target: {fileID: 4730268136646068138, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
       propertyPath: m_LocalRotation.w
