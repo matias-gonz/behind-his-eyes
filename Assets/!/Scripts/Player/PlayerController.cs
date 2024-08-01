@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public ShootTargetDetection shootTargetDetection;
     public TitleController titleController;
     public VoiceLinesManager voiceLinesManager;
+    public PlayerAudio playerAudio;
     private PlayerInput _input;
 
     //detection parameters
@@ -159,6 +160,11 @@ public class PlayerController : MonoBehaviour
         return soundFactor * thirdPersonMovement.SpeedNoiseFactor() * maximumNoiseDistance;
     }
 
+    public void GettingSpotted()
+    {
+        playerAudio.SpottedPlayer();
+    }
+                    
     public void GettingKilled(Vector3 direction)
     {
         if (!GameManager.Instance.godMode)

@@ -3304,6 +3304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyControllerScript: {fileID: 8298327512672982210}
+  playerAudio: {fileID: -1714964757401167988}
   target: {fileID: 0}
   fov: 120
   maxViewDistance: 20
@@ -3506,6 +3507,10 @@ MonoBehaviour:
   k98CycleAudio:
   - id: k98cycle
     clip: {fileID: 8300000, guid: 3d43d654cabcc80e386f62a4d5cf1775, type: 3}
+  detectionAudio:
+  - id: radarDetected
+    clip: {fileID: 8300000, guid: 267e32c86a912ba4997989e51f8fc79b, type: 3}
+  spottedAudio: []
 --- !u!1 &8881005426333453824
 GameObject:
   m_ObjectHideFlags: 0

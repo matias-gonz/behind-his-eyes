@@ -778,6 +778,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -7.549
       objectReference: {fileID: 0}
+    - target: {fileID: 7612400057799860527, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
+      propertyPath: playerAudio
+      value: 
+      objectReference: {fileID: 58652609690675714}
     - target: {fileID: 7857525600756878118, guid: a9f8eeb2930849c568f71f4c4a9077fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 11.07
@@ -949,6 +953,8 @@ MonoBehaviour:
   k98CycleAudio:
   - id: k98cycle
     clip: {fileID: 8300000, guid: 3d43d654cabcc80e386f62a4d5cf1775, type: 3}
+  detectionAudio: []
+  spottedAudio: []
 --- !u!114 &3961688770062324995
 MonoBehaviour:
   m_ObjectHideFlags: 0

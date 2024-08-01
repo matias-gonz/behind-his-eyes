@@ -7,6 +7,7 @@ using UnityEngine;
 public class DetectionScript : MonoBehaviour
 {
     public EnemyControllerScript enemyControllerScript;
+    public PlayerAudio playerAudio;
     public GameObject target; 
     public float fov = 135f;
     public float maxViewDistance = 20f;
@@ -54,7 +55,10 @@ public class DetectionScript : MonoBehaviour
 
         Vector3[] directions = GenerateDirections(rayStart, targetCollider);
 
-        if (!directions.Any(direction => CheckRay(direction, rayStart, distance))) return;
+        if (!directions.Any(direction => CheckRay(direction, rayStart, distance))) {
+             playerAudio.DetectionIndicator();
+            return;
+        }
 
         enemyControllerScript.EngageTarget(playerDirection);
         

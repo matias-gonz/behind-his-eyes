@@ -97,6 +97,7 @@ public class EnemyControllerScript : MonoBehaviour
             _isEngaging = true;
             _targetDirection = targetDirection;
             _animator.SetBool(_rifleAimHash, true);
+            _playerController.GettingSpotted();
         }
         else
         {
