@@ -7201,11 +7201,6 @@ MonoBehaviour:
   - duration: 3
     clip:
       id: ending6
-      clip: {fileID: 8300000, guid: 671eaad4e21ffa27cb33f233bcb02c18, type: 3}
-    subtitle: What lies behind these eyes?
-  - duration: 3
-    clip:
-      id: ending7
       clip: {fileID: 8300000, guid: 4dbe97b941f525691b82eacdc3cf3ad4, type: 3}
     subtitle: "We executed them\u2026"
   subtitles: {fileID: 1432294623}
@@ -11076,6 +11071,8 @@ PlayableDirector:
     value: {fileID: 2063136462}
   - key: {fileID: -3434559168508391740, guid: f94f0a586a65eb25ea068bfb47d8b078, type: 2}
     value: {fileID: 1990666536}
+  - key: {fileID: 800447329510485670, guid: f94f0a586a65eb25ea068bfb47d8b078, type: 2}
+    value: {fileID: 2063136468}
   m_ExposedReferences:
     m_References:
     - b21816de357aca4dfa0755891063fe72: {fileID: 347110526}
@@ -11277,6 +11274,7 @@ MonoBehaviour:
   GunRangeEndingTLDirector: {fileID: 883574966}
   StreetCompleteTLDirector: {fileID: 0}
   prisonersTLDirector: {fileID: 0}
+  tutorialOutroTLDirector: {fileID: 0}
 --- !u!114 &883574969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25456,6 +25454,11 @@ MonoBehaviour:
 --- !u!95 &2063136462 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2001042641341462280, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
+  m_PrefabInstance: {fileID: 1716652101087553476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2063136468 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3316165090627138809, guid: 7cf4d0bf1fcea0ed5bc8c4a26605fc01, type: 3}
   m_PrefabInstance: {fileID: 1716652101087553476}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2067955314
