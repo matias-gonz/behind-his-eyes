@@ -8,9 +8,7 @@ public class ShootTargetDetection : MonoBehaviour
 {
     public TimeLinesDirector timeLinesDirector;
     public GameObject camera;
-    public GameManager gameManager;
     private LayerMask _layerMask;
-    
 
     void Start()
     {
@@ -24,9 +22,8 @@ public class ShootTargetDetection : MonoBehaviour
         if (Physics.Raycast(rayStart, rayDirection, out _, 100, _layerMask))
         {
             Debug.Log("Hit1!!!");
-            gameManager.TargetHit();
+            GameManager.Instance.TargetHit();
             timeLinesDirector.PlayTimeLine(TimeLine.TutorialOutro);
-            Debug.Log("Hit2!!!");
         }
     }
 }
